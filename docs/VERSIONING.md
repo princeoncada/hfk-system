@@ -39,16 +39,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 1.1.0-stable |
-| Phase | Phase 1.1.0 |
-| State | stable |
+| Version | 1.2.0-alpha |
+| Phase | Phase 1.2.0 |
+| State | alpha |
 | Date | 2026-05-21 |
-| Summary | JSON Content Schema — Zod validation + 3 sample worksheets |
+| Summary | cozy_v1 worksheet template + print CSS |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 1.2.0-alpha | Phase 1.2.0 | alpha | 2026-05-21 | cozy_v1 worksheet template + print CSS |
 | 1.1.0-stable | Phase 1.1.0 | stable | 2026-05-21 | JSON Content Schema — Zod validation + 3 sample worksheets |
 | 1.0.5-stable | Patch 1.0.5 | stable | 2026-05-21 | Workflow hardening — remove Section 2, add upfront clarification step |
 | 1.0.4-stable | Patch 1.0.4 | stable | 2026-05-21 | Vault restructure — consolidate numbered root folders into vault/ |
@@ -60,5 +61,5 @@ Every version change must be applied to all four simultaneously:
 ## Next Phase
 
 Current stable version: 1.1.0-stable
-Current working version: none
-Next recommended phase: Phase 1.2.0 — cozy_v1 Worksheet Template
+Current working version: 1.2.0-alpha
+Next recommended phase: Phase 1.3.0 — Preview System

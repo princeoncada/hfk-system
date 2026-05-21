@@ -77,6 +77,10 @@ Git rules (mandatory):
 - Do NOT run npm commands (npm install, npm run dev,
   npm run type-check, etc.) — these belong in Section 2
   as USER-run validation steps
+- Use Test-Path -LiteralPath and Select-String -LiteralPath for
+  any path containing bracket characters (e.g. [id]). Without
+  -LiteralPath, PowerShell treats brackets as wildcards and
+  returns false negatives even when the file exists.
 
 Stop instruction (mandatory, always last):
 - Stop after implementation and summarize: files changed, logic added

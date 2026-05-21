@@ -39,9 +39,9 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 1.0.0-alpha |
+| Version | 1.0.0-stable |
 | Phase | Phase 1.0.0 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-21 |
 | Summary | Bootstrap — docs foundation + Next.js project scaffold |
 
@@ -49,10 +49,10 @@ Every version change must be applied to all four simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 1.0.0-alpha | Phase 1.0.0 | alpha | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
+| 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 ## Next Phase
 
-Current stable version: none (bootstrapping)
-Current working version: 1.0.0-alpha
+Current stable version: 1.0.0-stable
+Current working version: none
 Next recommended phase: Phase 1.1.0 - JSON Content Schema

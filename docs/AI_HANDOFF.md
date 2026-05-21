@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 1.3.0-alpha
+## Current Version: 1.3.0-stable
 
 ## Current Phase
 
-Phase 1.3.0 [1.3.0-alpha] — Preview System.
+Phase 1.3.0 [1.3.0-stable] — Preview System — stable.
 
 ## Architecture Invariant
 
@@ -45,7 +45,7 @@ Scope:
 
 ## Recommended Next Step
 
-After Phase 1.3.0 is stable, begin Phase 1.4.0 — Export System.
+Phase 1.4.0 — Export System.
 
 ## What Exists
 

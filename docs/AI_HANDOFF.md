@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 1.4.0-alpha
+## Current Version: 1.4.0-stable
 
 ## Current Phase
 
-Phase 1.4.0 [1.4.0-alpha] — Export System — alpha.
+Phase 1.4.0 [1.4.0-stable] — Export System — stable.
 
 ## Architecture Invariant
 
@@ -38,9 +38,9 @@ Scope:
 - Folder structure: content/, exports/, archives/, assets/, public/,
   src/components/templates/
 
-## Phase 1.4.0 [1.4.0-alpha]
+## Phase 1.4.0 [1.4.0-stable]
 
-Status: alpha
+Status: stable
 
 Purpose:
 Add a local export system that renders preview pages through Puppeteer

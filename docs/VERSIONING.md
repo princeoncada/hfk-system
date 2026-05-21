@@ -39,20 +39,21 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 1.0.0-stable |
-| Phase | Phase 1.0.0 |
-| State | stable |
+| Version | 1.0.1-alpha |
+| Phase | Patch 1.0.1 |
+| State | alpha |
 | Date | 2026-05-21 |
-| Summary | Bootstrap — docs foundation + Next.js project scaffold |
+| Summary | Docs hardening — chathead opener + session checkpoint workflow |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 1.0.1-alpha | Patch 1.0.1 | alpha | 2026-05-21 | Docs hardening — chathead opener + session checkpoint workflow |
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 ## Next Phase
 
 Current stable version: 1.0.0-stable
-Current working version: none
-Next recommended phase: Phase 1.1.0 - JSON Content Schema
+Current working version: 1.0.1-alpha
+Next recommended phase: Vault restructure, then Phase 1.1.0

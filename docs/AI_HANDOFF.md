@@ -1,11 +1,11 @@
 # AI Handoff
 
-## Current Version: 1.0.0-alpha
+## Current Version: 1.0.0-stable
 
 ## Current Phase
 
-Phase 1.0.0 [1.0.0-alpha] — Bootstrap — docs foundation + Next.js project
-scaffold — alpha, in progress.
+Phase 1.0.0 [1.0.0-stable] — Bootstrap — docs foundation + Next.js project
+scaffold — stable.
 
 ## Architecture Invariant
 
@@ -17,9 +17,9 @@ Filesystem-first, template-stable architecture is locked.
 - assets/avatars/ contains fixed brand assets that AI must never regenerate.
 - Templates are stable. Content is variable. They must never mix ownership.
 
-## Phase 1.0.0 [1.0.0-alpha]
+## Phase 1.0.0 [1.0.0-stable]
 
-Status: alpha — in progress
+Status: stable
 
 Purpose:
 Bootstrap the project. Create all documentation files, CLAUDE.md,
@@ -54,7 +54,10 @@ Phase 1.1.0 — JSON Content Schema.
 
 ## What Exists
 
-Nothing yet. This is the bootstrap phase.
+All documentation files, CLAUDE.md, README.md, Next.js project
+configuration, TypeScript content types, filesystem content loader,
+dashboard shell, and folder structure. App runs with npm install && npm run
+dev.
 
 ## Do Not Touch Without Explicit Request
 

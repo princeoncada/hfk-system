@@ -18,8 +18,5 @@ export function getWorksheets(): WorksheetContent[] {
 }
 
 export function getWorksheetById(id: string): WorksheetContent | null {
-  const file = path.join(CONTENT_DIR, 'worksheets', `${id}.json`)
-  if (!fs.existsSync(file)) return null
-  const raw = fs.readFileSync(file, 'utf-8')
-  return JSON.parse(raw) as WorksheetContent
+  return getWorksheets().find((ws) => ws.id === id) ?? null
 }

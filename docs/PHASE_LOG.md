@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 1.3.0-alpha | Phase 1.3.0 | alpha | 2026-05-21 | Preview system — /preview/[id] route + print controls + getWorksheetById fix |
 | 1.2.0-stable | Phase 1.2.0 | stable | 2026-05-21 | cozy_v1 worksheet template + print CSS |
 | 1.1.0-stable | Phase 1.1.0 | stable | 2026-05-21 | JSON Content Schema — Zod validation + 3 sample worksheets |
 | 1.0.5-stable | Patch 1.0.5 | stable | 2026-05-21 | Workflow hardening — remove Section 2, add upfront clarification step |
@@ -12,6 +13,36 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Phase 1.3.0 — Preview System
+
+Status: alpha
+
+Version: 1.3.0-alpha
+
+Date: 2026-05-21
+
+Purpose:
+Build the live preview route at /preview/[id] that renders a
+worksheet through the cozy_v1 template. Add a print controls
+toolbar (back link + print button). Fix getWorksheetById to
+search by id field rather than by filename, which would have
+caused all preview routes to 404.
+
+New files:
+- src/app/preview/[id]/page.tsx
+- src/app/preview/[id]/PreviewControls.tsx
+
+Modified files:
+- src/lib/content.ts (getWorksheetById fixed to search by id field)
+
+### Patch Notes — 1.3.0-alpha
+- /preview/[id] renders any worksheet by its JSON id field
+- notFound() called for unknown IDs
+- PreviewControls toolbar hidden on print via no-print class
+- Print button triggers window.print()
+- getWorksheetById now scans by id field, not by filename
+- Dashboard Preview links were already in place from Phase 1.0.0
 
 ## Phase 1.2.0 — cozy_v1 Worksheet Template
 

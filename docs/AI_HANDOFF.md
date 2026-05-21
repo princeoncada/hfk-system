@@ -1,11 +1,11 @@
 # AI Handoff
 
-## Current Version: 1.0.4-alpha
+## Current Version: 1.0.4-stable
 
 ## Current Phase
 
-Patch 1.0.4 [1.0.4-alpha] — Vault restructure — pre-1.1.0
-housekeeping.
+Patch 1.0.4 [1.0.4-stable] — Vault restructure — pre-1.1.0
+housekeeping — stable.
 
 ## Architecture Invariant
 
@@ -49,8 +49,8 @@ Scope:
 
 ## Recommended Next Step
 
-Vault restructure is in progress as 1.0.4-alpha. After it is committed,
-begin Phase 1.1.0 JSON Content Schema.
+Vault restructure is complete. Next action is Phase 1.1.0 — JSON Content
+Schema.
 
 ## What Exists
 

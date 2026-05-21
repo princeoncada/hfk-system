@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 1.0.5-alpha | Patch 1.0.5 | alpha | 2026-05-21 | Workflow hardening — remove Section 2, add upfront clarification step |
+| 1.0.5-stable | Patch 1.0.5 | stable | 2026-05-21 | Workflow hardening — remove Section 2, add upfront clarification step |
 | 1.0.4-stable | Patch 1.0.4 | stable | 2026-05-21 | Vault restructure — consolidate numbered root folders into vault/ |
 | 1.0.3-stable | Patch 1.0.3 | stable | 2026-05-21 | Workflow hardening — require stable-promotion prompt and commit block together |
 | 1.0.2-stable | Patch 1.0.2 | stable | 2026-05-21 | Next.js config compatibility — replace next.config.ts with next.config.mjs |
@@ -13,7 +13,7 @@
 
 ## Patch 1.0.5 — Workflow Hardening: Remove Section 2
 
-Status: alpha
+Status: stable
 
 Version: 1.0.5-alpha
 
@@ -40,6 +40,16 @@ Modified files:
 - "When To Use The 3-Section Format" renamed to 2-section format
 - Claude Code must now confirm "no questions needed" before writing
   any prompt
+
+### Validation Record — 1.0.5-stable
+
+- Date: 2026-05-21
+- "What You Need From Me" gone from CLAUDE.md: PASS
+- Upfront clarification rule present in CLAUDE.md: PASS
+- CLARIFY step present in WORKFLOW.md: PASS
+- "3-Section Format" gone from WORKFLOW.md: PASS
+- All 4 versioning locations show 1.0.5-alpha: PASS
+- Promoted to stable: 2026-05-21
 
 ## Patch 1.0.4 — Vault Restructure
 

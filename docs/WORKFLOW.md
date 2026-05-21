@@ -15,11 +15,13 @@ Claude Code:
 - Reports current state before any work begins
 - Diagnoses bugs and writes Codex fix prompts
 - Scopes new phases and writes Codex master prompts
-- Runs validation commands directly via bash after Codex finishes
+- Provides Section 2 validation commands as a PowerShell block for
+  the user to run and paste back
 - Analyzes validation output and reports pass/fail per check
 - Writes post-validation documentation Codex prompts
 - Provides 1-by-1 git commit command blocks for the user to run
-- Reminds the user to push after clean commits
+- Provides the git push origin master PowerShell block in the same
+  message as the stable-promotion commit block
 
 Claude Code does NOT (default — without Implementation Gate unlock phrase):
 - Implement code changes (writes Codex prompts instead)
@@ -51,8 +53,8 @@ CLARIFY — Ask all open questions before writing the Codex prompt.
            If none, confirm and proceed.
 PROMPT  — Write Codex master prompt (2-section format).
 BUILD   — User runs Codex. AI does not assist during this step.
-VERIFY  — AI writes validation commands (separately from Codex prompt).
-TEST    — User runs validation commands, pastes results back.
+VERIFY  — Section 2 PowerShell block is provided for the user to run.
+TEST    — User runs Section 2 commands and pastes results back.
 ANALYZE — AI reviews every check. Reports pass/fail per check.
 FIX     — If failures: AI writes targeted fix prompt. Repeat from BUILD.
 DOCUMENT — AI writes stable-promotion Codex prompt after all checks pass.
@@ -72,6 +74,9 @@ Read-first list (mandatory):
 
 Git rules (mandatory):
 - Do NOT commit, push, create branches, or run validation commands
+- Do NOT run npm commands (npm install, npm run dev,
+  npm run type-check, etc.) — these belong in Section 2
+  as USER-run validation steps
 
 Stop instruction (mandatory, always last):
 - Stop after implementation and summarize: files changed, logic added
@@ -102,20 +107,26 @@ For implementation phases:
 3. Stable-promotion Codex prompt
 4. Stable-promotion commit block (IMMEDIATELY after the Codex prompt,
    in the same message — no AI turn between them)
-5. Push reminder
+5. ```powershell git push origin master ``` block — must appear
+   in the same message as the stable-promotion commit block,
+   no separate turn
 
 For stable-promotion docs-only prompts:
 1. Stable-promotion Codex prompt
 2. Two-section response (confirmation + 1-by-1 commit block)
-3. Push reminder
+3. ```powershell git push origin master ``` block — must appear
+   in the same message as the stable-promotion commit block,
+   no separate turn
 (No validation commands required for docs-only promotion.)
 
 ## After Codex Finishes Implementation
 
-If all pass:
+If all pass, provide all of the following in one message:
 1. Validation summary
 2. Implementation commit block
 3. Stable-promotion Codex prompt
+4. Stable-promotion commit block
+5. ```powershell git push origin master ``` block
 
 The stable-promotion prompt and stable-promotion commit block MUST
 travel together in the same message, with the commit block appearing
@@ -139,6 +150,12 @@ git commit -m "docs: promote X.Y.Z to stable"
 ...
 git status --short
 ```
+
+After SECTION 2, always include:
+```powershell
+git push origin master
+```
+This must appear in the same message — no separate turn.
 
 ## Safety Rules That Never Change
 

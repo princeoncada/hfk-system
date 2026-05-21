@@ -4,8 +4,8 @@ Living backlog for HFK Publishing Engine.
 Completed items are struck through. Update this file every phase.
 
 Last updated: 2026-05-21
-Current stable version: 1.0.5-stable
-Current working version: 1.3.0-alpha
+Current stable version: 1.4.0-stable
+Current working version: none
 
 ---
 
@@ -16,6 +16,7 @@ Current working version: 1.3.0-alpha
 - ~~Phase 1.1.0 — JSON Content Schema~~ (stable 2026-05-21)
 - ~~Phase 1.2.0 — cozy_v1 Worksheet Template~~ (stable 2026-05-21)
 - ~~Phase 1.3.0 — Preview System~~ (stable 2026-05-21)
+- ~~Phase 1.4.0 — Export System~~ (stable 2026-05-21)
 
 ---
 
@@ -26,21 +27,6 @@ Current working version: 1.3.0-alpha
 ---
 
 ## Planned
-
-### Phase 1.4.0 — Export System
-
-Priority: Core feature (MVP requirement)
-
-Puppeteer-based PDF and PNG export. Outputs saved to exports/.
-
-Scope:
-- Add puppeteer dependency
-- src/lib/export.ts with exportToPDF() and exportToPNG()
-- src/app/api/export/route.ts
-- Export button on preview page
-- Output to exports/pdf/ and exports/png/
-
----
 
 ### Phase 1.5.0 — Save + Archive
 

@@ -1,6 +1,6 @@
 # AI Handoff
 
-## Current Version: 1.0.5-alpha
+## Current Version: 1.0.5-stable
 
 ## Current Phase
 

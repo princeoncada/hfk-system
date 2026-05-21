@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 1.5.0-alpha | Phase 1.5.0 | alpha | 2026-05-21 | Save + Archive — JSON editor UI, save API, archive-on-export |
+| 1.5.0-stable | Phase 1.5.0 | stable | 2026-05-21 | Save + Archive — JSON editor UI, save API, archive-on-export |
 | 1.4.1-stable | Patch 1.4.1 | stable | 2026-05-21 | Workflow hardening — Section 2 ownership, npm command rule, push block rule |
 | 1.4.0-stable | Phase 1.4.0 | stable | 2026-05-21 | Export system — Puppeteer PDF + PNG export to exports/ |
 | 1.3.0-stable | Phase 1.3.0 | stable | 2026-05-21 | Preview system — /preview/[id] route + print controls + getWorksheetById fix |
@@ -19,7 +19,7 @@
 
 ## Phase 1.5.0 — Save + Archive
 
-Status: alpha
+Status: stable
 
 Version: 1.5.0-alpha
 
@@ -56,6 +56,26 @@ Modified files:
 - /edit/new provides a prefilled blank worksheet JSON editor
 - /edit/[id] loads an existing worksheet into the shared JSON editor
 - Dashboard includes New Worksheet and per-card Edit links
+
+### Validation Record — 1.5.0-stable
+
+- Date: 2026-05-21
+- src/lib/archive.ts exists: PASS
+- src/lib/save.ts exists: PASS
+- src/app/api/save/route.ts exists: PASS
+- src/app/edit/WorksheetEditor.tsx exists: PASS
+- src/app/edit/new/page.tsx exists: PASS
+- src/app/edit/[id]/page.tsx exists: PASS
+- archiveExport + renameSync in archive.ts: PASS
+- saveWorksheet in save.ts: PASS
+- api/save imports @/lib/save: PASS
+- api/export calls archiveExport and returns archivePath: PASS
+- WorksheetEditor has /api/save fetch: PASS
+- Dashboard has /edit links: PASS
+- PreviewControls shows archivePath: PASS
+- All 4 versioning locations show 1.5.0-alpha: PASS
+- npm run type-check clean: PASS
+- Promoted to stable: 2026-05-21
 
 ## Patch 1.4.1 — Workflow Hardening
 

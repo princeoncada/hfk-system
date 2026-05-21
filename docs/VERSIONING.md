@@ -39,9 +39,9 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 1.1.0-alpha |
+| Version | 1.1.0-stable |
 | Phase | Phase 1.1.0 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-21 |
 | Summary | JSON Content Schema — Zod validation + 3 sample worksheets |
 
@@ -49,7 +49,7 @@ Every version change must be applied to all four simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 1.1.0-alpha | Phase 1.1.0 | alpha | 2026-05-21 | JSON Content Schema — Zod validation + 3 sample worksheets |
+| 1.1.0-stable | Phase 1.1.0 | stable | 2026-05-21 | JSON Content Schema — Zod validation + 3 sample worksheets |
 | 1.0.5-stable | Patch 1.0.5 | stable | 2026-05-21 | Workflow hardening — remove Section 2, add upfront clarification step |
 | 1.0.4-stable | Patch 1.0.4 | stable | 2026-05-21 | Vault restructure — consolidate numbered root folders into vault/ |
 | 1.0.3-stable | Patch 1.0.3 | stable | 2026-05-21 | Workflow hardening — require stable-promotion prompt and commit block together |
@@ -59,6 +59,6 @@ Every version change must be applied to all four simultaneously:
 
 ## Next Phase
 
-Current stable version: 1.0.5-stable
-Current working version: 1.1.0-alpha
+Current stable version: 1.1.0-stable
+Current working version: none
 Next recommended phase: Phase 1.2.0 — cozy_v1 Worksheet Template

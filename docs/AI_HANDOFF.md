@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 1.2.0-stable
+## Current Version: 1.3.0-alpha
 
 ## Current Phase
 
-Phase 1.2.0 [1.2.0-stable] — cozy_v1 Worksheet Template — stable.
+Phase 1.3.0 [1.3.0-alpha] — Preview System.
 
 ## Architecture Invariant
 
@@ -40,13 +40,12 @@ Scope:
 
 ## Future Phase Queue
 
-- Phase 1.3.0 — Preview System
 - Phase 1.4.0 — Export System (PDF + PNG)
 - Phase 1.5.0 — Save + Archive
 
 ## Recommended Next Step
 
-Phase 1.3.0 — Preview System.
+After Phase 1.3.0 is stable, begin Phase 1.4.0 — Export System.
 
 ## What Exists
 

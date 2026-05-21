@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 1.3.0-alpha | Phase 1.3.0 | alpha | 2026-05-21 | Preview system — /preview/[id] route + print controls + getWorksheetById fix |
+| 1.3.0-stable | Phase 1.3.0 | stable | 2026-05-21 | Preview system — /preview/[id] route + print controls + getWorksheetById fix |
 | 1.2.0-stable | Phase 1.2.0 | stable | 2026-05-21 | cozy_v1 worksheet template + print CSS |
 | 1.1.0-stable | Phase 1.1.0 | stable | 2026-05-21 | JSON Content Schema — Zod validation + 3 sample worksheets |
 | 1.0.5-stable | Patch 1.0.5 | stable | 2026-05-21 | Workflow hardening — remove Section 2, add upfront clarification step |
@@ -16,7 +16,7 @@
 
 ## Phase 1.3.0 — Preview System
 
-Status: alpha
+Status: stable
 
 Version: 1.3.0-alpha
 
@@ -43,6 +43,20 @@ Modified files:
 - Print button triggers window.print()
 - getWorksheetById now scans by id field, not by filename
 - Dashboard Preview links were already in place from Phase 1.0.0
+
+### Validation Record — 1.3.0-stable
+
+- Date: 2026-05-21
+- src/app/preview/[id]/page.tsx exists: PASS
+- src/app/preview/[id]/PreviewControls.tsx exists: PASS
+- PreviewControls has no-print class: PASS
+- PreviewControls has window.print() button: PASS
+- page.tsx calls notFound(): PASS
+- page.tsx imports and renders WorksheetTemplate: PASS
+- getWorksheetById searches by id field: PASS
+- npm run type-check clean: PASS
+- All 4 versioning locations show 1.3.0-alpha: PASS
+- Promoted to stable: 2026-05-21
 
 ## Phase 1.2.0 — cozy_v1 Worksheet Template
 

@@ -8,8 +8,8 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 1.0.2-alpha |
-| Status | alpha |
+| Current | 1.0.2-stable |
+| Status | stable |
 
 ## What This Is
 

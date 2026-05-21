@@ -2,12 +2,57 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 1.0.4-alpha | Patch 1.0.4 | alpha | 2026-05-21 | Vault restructure — consolidate numbered root folders into vault/ |
 | 1.0.3-stable | Patch 1.0.3 | stable | 2026-05-21 | Workflow hardening — require stable-promotion prompt and commit block together |
 | 1.0.2-stable | Patch 1.0.2 | stable | 2026-05-21 | Next.js config compatibility — replace next.config.ts with next.config.mjs |
 | 1.0.1-stable | Patch 1.0.1 | stable | 2026-05-21 | Docs hardening — chathead opener + session checkpoint workflow |
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Patch 1.0.4 — Vault Restructure
+
+Status: alpha
+
+Version: 1.0.4-alpha
+
+Date: 2026-05-21
+
+Purpose:
+Consolidate the ten numbered root folders (00_PAGE_CONSTITUTION
+through 09_REFERENCE_INSPIRATION) into a clean vault/ directory.
+Migrate session logs to docs/SESSION_LOG/, post archives to
+archives/, and delete 06_OUTPUTS/ which is superseded by exports/.
+Add vault/ to CLAUDE.md protected paths. Document two-layer
+architecture in ADR-007.
+
+Files moved into vault/:
+- vault/constitution/HFK_PAGE_CONSTITUTION.md
+- vault/brand/HFK_BRAND_STYLE_GUIDE.md
+- vault/avatars/HFK_AVATAR_INDEX.md
+- vault/calendar/HFK_2026_WEEKLY_CALENDAR.md
+- vault/prompts/ (4 prompt files)
+- vault/templates/OFFICIAL_TEMPLATE_NOTES.md
+- vault/references/ (3 empty reference subdirs)
+
+Migrated:
+- docs/SESSION_LOG/2026-05-20-session-00.md
+- archives/2026/, archives/2027/
+
+Deleted:
+- 00_PAGE_CONSTITUTION/ through 09_REFERENCE_INSPIRATION/
+- 06_OUTPUTS/ (superseded)
+
+Modified:
+- CLAUDE.md (vault/ added to protected paths)
+- docs/DECISIONS.md (ADR-007 added)
+
+### Patch Notes — 1.0.4-alpha
+- vault/ established as creative input layer (Layer 1)
+- Next.js engine remains output layer (Layer 2)
+- Repository root is now clean — no numbered legacy folders
+- Two-layer architecture documented in ADR-007
+- master_prompt.md intentionally left at repo root
 
 ## Patch 1.0.3 — Workflow Hardening
 

@@ -1,11 +1,10 @@
 # AI Handoff
 
-## Current Version: 1.0.5-stable
+## Current Version: 1.1.0-alpha
 
 ## Current Phase
 
-Patch 1.0.4 [1.0.4-stable] — Vault restructure — pre-1.1.0
-housekeeping — stable.
+Phase 1.1.0 [1.1.0-alpha] — JSON Content Schema.
 
 ## Architecture Invariant
 
@@ -41,7 +40,6 @@ Scope:
 
 ## Future Phase Queue
 
-- Phase 1.1.0 — JSON Content Schema
 - Phase 1.2.0 — cozy_v1 Worksheet Template
 - Phase 1.3.0 — Preview System
 - Phase 1.4.0 — Export System (PDF + PNG)
@@ -49,8 +47,8 @@ Scope:
 
 ## Recommended Next Step
 
-Vault restructure is complete. Next action is Phase 1.1.0 — JSON Content
-Schema.
+After Phase 1.1.0 is stable, begin Phase 1.2.0 — cozy_v1 Worksheet
+Template.
 
 ## What Exists
 

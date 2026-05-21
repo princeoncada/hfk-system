@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 1.5.0-alpha
+## Current Version: 1.5.0-stable
 
 ## Current Phase
 
-Phase 1.5.0 [1.5.0-alpha] — Save + Archive — alpha.
+Phase 1.5.0 [1.5.0-stable] — Save + Archive — stable.
 
 ## Architecture Invariant
 
@@ -67,9 +67,9 @@ Modified files:
 - docs/PHASE_LOG.md
 - README.md
 
-## Phase 1.5.0 [1.5.0-alpha]
+## Phase 1.5.0 [1.5.0-stable]
 
-Status: alpha
+Status: stable
 
 Purpose:
 Add worksheet JSON save/edit workflows and archive exported PDF/PNG

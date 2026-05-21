@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 1.4.0-alpha | Phase 1.4.0 | alpha | 2026-05-21 | Export system — Puppeteer PDF + PNG export to exports/ |
+| 1.4.0-stable | Phase 1.4.0 | stable | 2026-05-21 | Export system — Puppeteer PDF + PNG export to exports/ |
 | 1.3.0-stable | Phase 1.3.0 | stable | 2026-05-21 | Preview system — /preview/[id] route + print controls + getWorksheetById fix |
 | 1.2.0-stable | Phase 1.2.0 | stable | 2026-05-21 | cozy_v1 worksheet template + print CSS |
 | 1.1.0-stable | Phase 1.1.0 | stable | 2026-05-21 | JSON Content Schema — Zod validation + 3 sample worksheets |
@@ -17,7 +17,7 @@
 
 ## Phase 1.4.0 — Export System
 
-Status: alpha
+Status: stable
 
 Version: 1.4.0-alpha
 
@@ -48,6 +48,22 @@ Modified files:
 - Preview toolbar now includes Export PDF and Export PNG buttons
 - Export controls are hidden from print/export output via no-print
 - Export requires the local Next.js app to be running on localhost:3000
+
+### Validation Record — 1.4.0-stable
+
+- Date: 2026-05-21
+- src/lib/export.ts exists: PASS
+- src/app/api/export/route.ts exists: PASS
+- exportToPDF defined in export.ts: PASS
+- exportToPNG defined in export.ts: PASS
+- route.ts imports from @/lib/export: PASS
+- PreviewControls.tsx has /api/export fetch: PASS
+- PreviewControls.tsx accepts id prop: PASS
+- page.tsx passes id={params.id} to PreviewControls: PASS
+- puppeteer ^25.0.4 in package.json: PASS
+- All 4 versioning locations show 1.4.0-alpha: PASS
+- npm run type-check clean: PASS
+- Promoted to stable: 2026-05-21
 
 ## Phase 1.3.0 — Preview System
 

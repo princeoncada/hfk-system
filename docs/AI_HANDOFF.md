@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 1.2.0-alpha
+## Current Version: 1.2.0-stable
 
 ## Current Phase
 
-Phase 1.2.0 [1.2.0-alpha] — cozy_v1 Worksheet Template.
+Phase 1.2.0 [1.2.0-stable] — cozy_v1 Worksheet Template — stable.
 
 ## Architecture Invariant
 
@@ -46,7 +46,7 @@ Scope:
 
 ## Recommended Next Step
 
-After Phase 1.2.0 is stable, begin Phase 1.3.0 — Preview System.
+Phase 1.3.0 — Preview System.
 
 ## What Exists
 

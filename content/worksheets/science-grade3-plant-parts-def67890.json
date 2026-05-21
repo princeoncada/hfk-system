@@ -1,0 +1,55 @@
+{
+  "id": "def67890",
+  "title": "Parts of a Plant",
+  "subtitle": "Learning What Each Part Does",
+  "grade": 3,
+  "subject": "science",
+  "template": "cozy_v1",
+  "vocabulary": [
+    {
+      "word": "root",
+      "definition": "The part of the plant that grows underground and absorbs water and nutrients."
+    },
+    {
+      "word": "stem",
+      "definition": "The part that holds the plant upright and carries water from roots to leaves."
+    },
+    {
+      "word": "leaf",
+      "definition": "The flat green part that makes food for the plant using sunlight."
+    },
+    {
+      "word": "flower",
+      "definition": "The part of the plant that produces seeds so new plants can grow."
+    }
+  ],
+  "activities": [
+    {
+      "type": "matching",
+      "instruction": "Match each plant part to its job.",
+      "items": ["Root", "Stem", "Leaf", "Flower"],
+      "answers": [
+        "Absorbs water from the soil",
+        "Carries water upward",
+        "Makes food from sunlight",
+        "Produces seeds"
+      ]
+    },
+    {
+      "type": "short-answer",
+      "instruction": "Answer each question in your own words.",
+      "items": [
+        "What would happen to a plant if it had no roots?",
+        "Why do plants need leaves?"
+      ],
+      "answers": [
+        "It could not absorb water or stay anchored in the ground.",
+        "To make food using sunlight."
+      ]
+    }
+  ],
+  "parentNotes": "Try growing a bean sprout in a clear plastic bag so your child can watch the roots form. Takes about 5 to 7 days!",
+  "footerText": "Homeschooling for Kiddos — Science Grade 3",
+  "createdAt": "2026-05-21",
+  "status": "draft"
+}

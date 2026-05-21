@@ -39,9 +39,9 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 1.5.1-alpha |
+| Version | 1.5.1-stable |
 | Phase | Patch 1.5.1 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-21 |
 | Summary | Validation hardening — require -LiteralPath for bracket paths in PowerShell |
 
@@ -49,7 +49,7 @@ Every version change must be applied to all four simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 1.5.1-alpha | Patch 1.5.1 | alpha | 2026-05-21 | Validation hardening — require -LiteralPath for bracket paths in PowerShell |
+| 1.5.1-stable | Patch 1.5.1 | stable | 2026-05-21 | Validation hardening — require -LiteralPath for bracket paths in PowerShell |
 | 1.5.0-stable | Phase 1.5.0 | stable | 2026-05-21 | Save + Archive — JSON editor UI, save API, archive-on-export |
 | 1.4.1-stable | Patch 1.4.1 | stable | 2026-05-21 | Workflow hardening — Section 2 ownership, npm command rule, push block rule |
 | 1.4.0-stable | Phase 1.4.0 | stable | 2026-05-21 | Export system — Puppeteer PDF + PNG export to exports/ |
@@ -65,6 +65,6 @@ Every version change must be applied to all four simultaneously:
 
 ## Next Phase
 
-Current stable version: 1.5.0-stable
-Current working version: 1.5.1-alpha
+Current stable version: 1.5.1-stable
+Current working version: none
 Next recommended phase: Phase 2.0.0 — Facebook Post Template

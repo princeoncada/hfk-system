@@ -223,4 +223,5 @@ Never access or modify without explicit user confirmation:
 - exports/         (generated PDF/PNG outputs)
 - archives/        (permanent output history)
 - assets/avatars/  (fixed brand avatar assets)
+- vault/           (creative input layer — brand, prompts, references)
 - .env

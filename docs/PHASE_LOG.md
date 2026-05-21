@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 1.5.1-alpha | Patch 1.5.1 | alpha | 2026-05-21 | Validation hardening — require -LiteralPath for bracket paths in PowerShell |
 | 1.5.0-stable | Phase 1.5.0 | stable | 2026-05-21 | Save + Archive — JSON editor UI, save API, archive-on-export |
 | 1.4.1-stable | Patch 1.4.1 | stable | 2026-05-21 | Workflow hardening — Section 2 ownership, npm command rule, push block rule |
 | 1.4.0-stable | Phase 1.4.0 | stable | 2026-05-21 | Export system — Puppeteer PDF + PNG export to exports/ |
@@ -16,6 +17,35 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Patch 1.5.1 — Validation Hardening
+
+Status: alpha
+
+Version: 1.5.1-alpha
+
+Date: 2026-05-21
+
+Purpose:
+Harden Section 2 PowerShell validation guidance to prevent false
+negative file checks for paths containing bracket characters such as
+[id].
+
+Modified files:
+- CLAUDE.md
+- docs/WORKFLOW.md
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- README.md
+
+### Patch Notes — 1.5.1-alpha
+- Section 2 validation guidance now requires Test-Path -LiteralPath
+  for paths containing bracket characters.
+- Section 2 validation guidance now requires Select-String -LiteralPath
+  for paths containing bracket characters.
+- The rule documents the PowerShell wildcard behavior that caused a
+  false negative for src/app/edit/[id]/page.tsx.
 
 ## Phase 1.5.0 — Save + Archive
 

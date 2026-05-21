@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 1.5.1-alpha
+## Current Version: 1.5.1-stable
 
 ## Current Phase
 
-Patch 1.5.1 [1.5.1-alpha] — Validation Hardening — alpha.
+Patch 1.5.1 [1.5.1-stable] — Validation Hardening — stable.
 
 ## Architecture Invariant
 

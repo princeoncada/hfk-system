@@ -4,8 +4,8 @@ Living backlog for HFK Publishing Engine.
 Completed items are struck through. Update this file every phase.
 
 Last updated: 2026-05-21
-Current stable version: 1.0.3-stable
-Current working version: 1.0.4-alpha
+Current stable version: 1.0.5-stable
+Current working version: 1.1.0-alpha
 
 ---
 
@@ -13,6 +13,7 @@ Current working version: 1.0.4-alpha
 
 - ~~Phase 1.0.0 — Bootstrap~~ (stable 2026-05-21)
 - ~~Vault restructure (pre-1.1.0 housekeeping)~~ (committed 2026-05-21)
+- ~~Phase 1.1.0 — JSON Content Schema~~ (stable 2026-05-21)
 
 ---
 
@@ -23,21 +24,6 @@ Current working version: 1.0.4-alpha
 ---
 
 ## Planned
-
-### Phase 1.1.0 — JSON Content Schema
-
-Priority: Foundation
-
-Define and validate the complete JSON content schema for worksheets.
-Add sample content files. Add schema validation utility.
-
-Scope:
-- Define WorksheetContent JSON schema in full detail
-- Create 2-3 sample worksheet JSON files under content/worksheets/
-- Add src/lib/schema.ts with validation helpers
-- Document the schema in docs/CONTENT_PHILOSOPHY.md
-
----
 
 ### Phase 1.2.0 — cozy_v1 Worksheet Template
 

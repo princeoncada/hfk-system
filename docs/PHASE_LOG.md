@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 1.0.2-alpha | Patch 1.0.2 | alpha | 2026-05-21 | Next.js config compatibility — replace next.config.ts with next.config.mjs |
+| 1.0.2-stable | Patch 1.0.2 | stable | 2026-05-21 | Next.js config compatibility — replace next.config.ts with next.config.mjs |
 | 1.0.1-stable | Patch 1.0.1 | stable | 2026-05-21 | Docs hardening — chathead opener + session checkpoint workflow |
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
@@ -10,7 +10,7 @@
 
 ## Patch 1.0.2 — next.config.ts → next.config.mjs
 
-Status: alpha
+Status: stable
 
 Version: 1.0.2-alpha
 
@@ -27,6 +27,14 @@ Files changed:
 ### Patch Notes — 1.0.2-alpha
 - Replaced next.config.ts with next.config.mjs
 - JSDoc @type annotation preserves type safety without TypeScript import
+
+### Validation Record — 1.0.2-stable
+
+- Date: 2026-05-21
+- next.config.ts deleted: PASS
+- next.config.mjs exists with correct content: PASS
+- npm run dev starts cleanly on Next.js 14.2.3: PASS
+- Promoted to stable: 2026-05-21
 
 ## Patch 1.0.1 — Docs Hardening
 

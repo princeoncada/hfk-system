@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 1.2.0-alpha | Phase 1.2.0 | alpha | 2026-05-21 | cozy_v1 worksheet template + print CSS |
+| 1.2.0-stable | Phase 1.2.0 | stable | 2026-05-21 | cozy_v1 worksheet template + print CSS |
 | 1.1.0-stable | Phase 1.1.0 | stable | 2026-05-21 | JSON Content Schema — Zod validation + 3 sample worksheets |
 | 1.0.5-stable | Patch 1.0.5 | stable | 2026-05-21 | Workflow hardening — remove Section 2, add upfront clarification step |
 | 1.0.4-stable | Patch 1.0.4 | stable | 2026-05-21 | Vault restructure — consolidate numbered root folders into vault/ |
@@ -15,7 +15,7 @@
 
 ## Phase 1.2.0 — cozy_v1 Worksheet Template
 
-Status: alpha
+Status: stable
 
 Version: 1.2.0-alpha
 
@@ -41,6 +41,20 @@ Modified files:
 - Vocabulary, activities, parent notes sections are conditional
 - Print CSS hides app shell and preserves worksheet layout
 - US Letter page dimensions used (816x1056px at 96dpi)
+
+### Validation Record — 1.2.0-stable
+
+- Date: 2026-05-21
+- WorksheetTemplate.tsx and index.ts exist: PASS
+- src/styles/print.css exists: PASS
+- WorksheetTemplate and WorksheetTemplateProps exported: PASS
+- print.css imported in layout.tsx: PASS
+- app-shell-header class in layout.tsx: PASS
+- All 5 activity types handled in WorksheetTemplate: PASS
+- cozy_v1 marked active in TEMPLATE_GUIDE.md: PASS
+- npm run type-check clean: PASS
+- All 4 versioning locations show 1.2.0-alpha: PASS
+- Promoted to stable: 2026-05-21
 
 ## Phase 1.1.0 — JSON Content Schema
 

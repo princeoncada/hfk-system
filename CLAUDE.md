@@ -124,7 +124,13 @@ Run this at the start of every session before doing anything else:
 4. If failures exist -> diagnose, write a Codex fix prompt
 
 ### After Validation Passes
-Immediately provide both sections in the same response:
+This section describes SECTION 1 and SECTION 2 of the same message
+that contains the stable-promotion Codex prompt. All four items must
+appear in one message — no AI turn between them:
+- Validation summary
+- Implementation commit block
+- Stable-promotion Codex prompt
+- Stable-promotion commit block (SECTION 1 + SECTION 2 below)
 
 SECTION 1: Stable-Promotion Confirmation
 - Confirm what changed

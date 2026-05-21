@@ -2,11 +2,36 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 1.0.3-alpha | Patch 1.0.3 | alpha | 2026-05-21 | Workflow hardening — require stable-promotion prompt and commit block together |
 | 1.0.2-stable | Patch 1.0.2 | stable | 2026-05-21 | Next.js config compatibility — replace next.config.ts with next.config.mjs |
 | 1.0.1-stable | Patch 1.0.1 | stable | 2026-05-21 | Docs hardening — chathead opener + session checkpoint workflow |
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Patch 1.0.3 — Workflow Hardening
+
+Status: alpha
+
+Version: 1.0.3-alpha
+
+Date: 2026-05-21
+
+Purpose:
+Harden WORKFLOW.md and CLAUDE.md to prevent omission of the
+stable-promotion commit block. The rule existed but was not
+explicit enough to enforce inline structure without an extra AI turn.
+
+Modified files:
+- docs/WORKFLOW.md (inline structure requirement made explicit)
+- CLAUDE.md (After Validation Passes section rewritten)
+
+### Patch Notes — 1.0.3-alpha
+- Stable-promotion commit block now required inline in same message
+  as the stable-promotion Codex prompt — no AI turn permitted between
+- WORKFLOW.md Mandatory Workflow Artifact Enforcement updated
+- WORKFLOW.md Post-Validation Two-Section Response clarified
+- CLAUDE.md After Validation Passes section rewritten
 
 ## Patch 1.0.2 — next.config.ts → next.config.mjs
 

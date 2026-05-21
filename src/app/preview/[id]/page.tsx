@@ -13,7 +13,7 @@ export default function PreviewPage({ params }: PreviewPageProps) {
 
   return (
     <div>
-      <PreviewControls />
+      <PreviewControls id={params.id} />
       <main className="min-h-screen bg-warm-brown/5 px-4 py-8">
         <WorksheetTemplate worksheet={worksheet} />
       </main>

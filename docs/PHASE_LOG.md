@@ -2,10 +2,31 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 1.0.2-alpha | Patch 1.0.2 | alpha | 2026-05-21 | Next.js config compatibility — replace next.config.ts with next.config.mjs |
 | 1.0.1-stable | Patch 1.0.1 | stable | 2026-05-21 | Docs hardening — chathead opener + session checkpoint workflow |
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Patch 1.0.2 — next.config.ts → next.config.mjs
+
+Status: alpha
+
+Version: 1.0.2-alpha
+
+Date: 2026-05-21
+
+Purpose:
+Fix dev server crash. Next.js 14.2.3 does not support next.config.ts.
+Replace with next.config.mjs using JSDoc typing.
+
+Files changed:
+- next.config.mjs (created)
+- next.config.ts (deleted)
+
+### Patch Notes — 1.0.2-alpha
+- Replaced next.config.ts with next.config.mjs
+- JSDoc @type annotation preserves type safety without TypeScript import
 
 ## Patch 1.0.1 — Docs Hardening
 

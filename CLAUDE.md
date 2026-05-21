@@ -60,7 +60,7 @@ requests direct implementation.
 
 Without the unlock phrase:
 - Claude Code stays in the planning/reviewing role
-- Write a Codex prompt (3-section format) for the user to run
+- Write a Codex prompt (2-section format) for the user to run
 - Stop — do not use Edit, Write, or any file-modification tool on
   project files
 
@@ -102,14 +102,18 @@ Run this at the start of every session before doing anything else:
 ### Bug Found
 1. Read the relevant source files directly
 2. Diagnose root cause
-3. Write a Codex fix prompt (3-section format)
-4. Stop — do not implement the fix yourself
+3. Ask any clarifying questions upfront — wait for answers
+4. If no questions are needed, confirm that, then write the 2-section
+   fix prompt
+5. Stop — do not implement the fix yourself
 
 ### New Phase
 1. Read docs/FUTURE_PLANS.md for the next queued phase
 2. Read all relevant source files for the phase scope
-3. Write a Codex master prompt (3-section format)
-4. Stop — do not implement the phase yourself
+3. Ask all clarifying questions upfront — wait for answers
+4. If no questions are needed, confirm that, then write the 2-section
+   master prompt
+5. Stop — do not implement the phase yourself
 
 ### After Codex Finishes Implementation
 1. Run validation commands directly using bash
@@ -160,7 +164,11 @@ is present as the first line of the user's message.
 
 ## Codex Prompt Format
 
-Use 3-section format for any task where Codex writes or modifies files:
+Ask all clarifying questions BEFORE writing any prompt. If no
+questions are needed, confirm that explicitly, then proceed.
+
+Once questions are resolved, use 2-section format for any task where
+Codex writes or modifies files:
 
   SECTION 1: Codex Master Prompt
   - Full prompt in one plain txt code block
@@ -171,15 +179,12 @@ Use 3-section format for any task where Codex writes or modifies files:
   - Must tell Codex: do NOT commit, push, create branches, or run
     validation commands
 
-  SECTION 2: What You Need From Me
-  - Only missing decisions needed before implementation can proceed
-
-  SECTION 3: Validation Commands
-  - Commands you will run after Codex finishes
+  SECTION 2: Validation Commands
+  - Commands Claude Code will run after Codex finishes
 
 For post-validation documentation Codex prompts:
 - Single plain txt code block only
-- No Section 2 or Section 3
+- No Section 2
 
 ## Version Protocol (summary)
 

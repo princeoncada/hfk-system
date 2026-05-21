@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 1.4.1-alpha | Patch 1.4.1 | alpha | 2026-05-21 | Workflow hardening — Section 2 ownership, npm command rule, push block rule |
 | 1.4.0-stable | Phase 1.4.0 | stable | 2026-05-21 | Export system — Puppeteer PDF + PNG export to exports/ |
 | 1.3.0-stable | Phase 1.3.0 | stable | 2026-05-21 | Preview system — /preview/[id] route + print controls + getWorksheetById fix |
 | 1.2.0-stable | Phase 1.2.0 | stable | 2026-05-21 | cozy_v1 worksheet template + print CSS |
@@ -14,6 +15,35 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Patch 1.4.1 — Workflow Hardening
+
+Status: alpha
+
+Version: 1.4.1-alpha
+
+Date: 2026-05-21
+
+Purpose:
+Harden Claude Code and workflow documentation around validation
+ownership, npm command placement, and push-block delivery.
+
+Modified files:
+- CLAUDE.md
+- docs/WORKFLOW.md
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- docs/FUTURE_PLANS.md
+- README.md
+
+### Patch Notes — 1.4.1-alpha
+- Section 2 validation commands are now explicitly USER-run PowerShell
+  commands; Claude Code receives pasted results and reports pass/fail.
+- Codex master prompts must not instruct Codex to run npm commands;
+  npm commands belong in Section 2 as USER-run validation steps.
+- The git push block must appear in the same message as the
+  stable-promotion commit block; no separate reminder turn.
 
 ## Phase 1.4.0 — Export System
 

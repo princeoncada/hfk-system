@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 1.4.0-stable
+## Current Version: 1.4.1-alpha
 
 ## Current Phase
 
-Phase 1.4.0 [1.4.0-stable] — Export System — stable.
+Patch 1.4.1 [1.4.1-alpha] — Workflow Hardening — alpha.
 
 ## Architecture Invariant
 

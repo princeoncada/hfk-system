@@ -195,6 +195,10 @@ Codex writes or modifies files:
   - Do NOT include npm install or any npm commands inside the Codex
     master prompt (SECTION 1) — npm commands belong here in Section 2
     as USER-run validation steps
+  - Use Test-Path -LiteralPath and Select-String -LiteralPath for
+    any path containing bracket characters (e.g. [id]). Without
+    -LiteralPath, PowerShell treats brackets as wildcards and
+    returns false negatives even when the file exists.
 
 For post-validation documentation Codex prompts:
 - Single plain txt code block only

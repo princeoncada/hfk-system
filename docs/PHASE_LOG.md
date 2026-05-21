@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 1.0.4-alpha | Patch 1.0.4 | alpha | 2026-05-21 | Vault restructure — consolidate numbered root folders into vault/ |
+| 1.0.4-stable | Patch 1.0.4 | stable | 2026-05-21 | Vault restructure — consolidate numbered root folders into vault/ |
 | 1.0.3-stable | Patch 1.0.3 | stable | 2026-05-21 | Workflow hardening — require stable-promotion prompt and commit block together |
 | 1.0.2-stable | Patch 1.0.2 | stable | 2026-05-21 | Next.js config compatibility — replace next.config.ts with next.config.mjs |
 | 1.0.1-stable | Patch 1.0.1 | stable | 2026-05-21 | Docs hardening — chathead opener + session checkpoint workflow |
@@ -12,7 +12,7 @@
 
 ## Patch 1.0.4 — Vault Restructure
 
-Status: alpha
+Status: stable
 
 Version: 1.0.4-alpha
 
@@ -53,6 +53,20 @@ Modified:
 - Repository root is now clean — no numbered legacy folders
 - Two-layer architecture documented in ADR-007
 - master_prompt.md intentionally left at repo root
+
+### Validation Record — 1.0.4-stable
+
+- Date: 2026-05-21
+- vault/ structure exists (7 subdirs): PASS
+- All key vault files in place: PASS
+- All 10 numbered root folders gone: PASS
+- master_prompt.md still at root: PASS
+- Session log migrated to docs/SESSION_LOG/: PASS
+- archives/2026 and archives/2027 created: PASS
+- CLAUDE.md has vault/ in protected paths: PASS
+- DECISIONS.md has ADR-007: PASS
+- All 4 versioning locations show 1.0.4-alpha: PASS
+- Promoted to stable: 2026-05-21
 
 ## Patch 1.0.3 — Workflow Hardening
 

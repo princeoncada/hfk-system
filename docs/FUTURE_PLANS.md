@@ -4,20 +4,20 @@ Living backlog for HFK Publishing Engine.
 Completed items are struck through. Update this file every phase.
 
 Last updated: 2026-05-21
-Current stable version: none (bootstrapping)
-Current working version: 1.0.0-alpha
+Current stable version: 1.0.0-stable
+Current working version: none
 
 ---
 
 ## Completed
 
-(none yet)
+- ~~Phase 1.0.0 — Bootstrap~~ (stable 2026-05-21)
 
 ---
 
 ## In Progress
 
-- Phase 1.0.0 — Bootstrap (docs foundation + Next.js scaffold)
+(none)
 
 ---
 

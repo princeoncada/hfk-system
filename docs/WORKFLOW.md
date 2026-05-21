@@ -127,3 +127,53 @@ git status --short
 - ALWAYS preserve: content/ as source of truth
 - ALWAYS preserve: exports/ and archives/ as derived/historical data
 - ALWAYS preserve: same JSON + same template = same output
+
+## Session Checkpoint
+
+When closing a session or pausing mid-phase, follow this process.
+
+### Step 1 — AI writes a session checkpoint Codex prompt
+
+The prompt is a single plain txt code block (no 3-section format).
+It must create or update these files:
+- docs/SESSION_LOG/YYYY-MM-DD-session-NN.md (CREATE)
+- docs/AI_HANDOFF.md (UPDATE current state and next step if changed)
+
+The session log must use this exact format:
+
+# Session Log — YYYY-MM-DD Session NN
+
+## What Was Done This Session
+[bullet list of completed work]
+
+## What Is In Progress
+[in-progress items, or "Nothing."]
+
+## Current Version State
+[version — phase — state — commit status]
+
+## Open Decisions
+[open decisions, or "None."]
+
+## Known Issues
+[non-blocking issues, or "None blocking."]
+
+## Uncommitted Work
+[files pending commit, or "None. Working tree is clean."]
+
+## Next Recommended Action
+[what to do at the start of the next session]
+
+## New Chathead Opener
+See docs/NEW_CHATHEAD_OPENER.md for the current opener text.
+
+The session log MUST reference docs/NEW_CHATHEAD_OPENER.md.
+It must NOT embed the opener text inline.
+
+### Step 2 — User runs the checkpoint prompt through Codex and commits
+
+### Step 3 — New session opens with the standard opener
+
+Copy the opener from docs/NEW_CHATHEAD_OPENER.md.
+Claude Code pulls master, reads required docs, reports state.
+No other context from the prior session is needed.

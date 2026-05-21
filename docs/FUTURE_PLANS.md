@@ -5,7 +5,7 @@ Completed items are struck through. Update this file every phase.
 
 Last updated: 2026-05-21
 Current stable version: 1.4.0-stable
-Current working version: none
+Current working version: 1.4.1-alpha
 
 ---
 

@@ -5,7 +5,7 @@ Completed items are struck through. Update this file every phase.
 
 Last updated: 2026-05-21
 Current stable version: 1.0.5-stable
-Current working version: 1.2.0-alpha
+Current working version: 1.3.0-alpha
 
 ---
 
@@ -15,6 +15,7 @@ Current working version: 1.2.0-alpha
 - ~~Vault restructure (pre-1.1.0 housekeeping)~~ (committed 2026-05-21)
 - ~~Phase 1.1.0 — JSON Content Schema~~ (stable 2026-05-21)
 - ~~Phase 1.2.0 — cozy_v1 Worksheet Template~~ (stable 2026-05-21)
+- ~~Phase 1.3.0 — Preview System~~ (stable 2026-05-21)
 
 ---
 
@@ -25,20 +26,6 @@ Current working version: 1.2.0-alpha
 ---
 
 ## Planned
-
-### Phase 1.3.0 — Preview System
-
-Priority: Core feature
-
-Live preview route that renders worksheet JSON through the cozy_v1
-template. Print mode toggle.
-
-Scope:
-- src/app/preview/[id]/page.tsx
-- Print mode CSS class toggling
-- Dashboard links to preview routes
-
----
 
 ### Phase 1.4.0 — Export System
 

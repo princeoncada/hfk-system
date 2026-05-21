@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 1.0.3-alpha | Patch 1.0.3 | alpha | 2026-05-21 | Workflow hardening — require stable-promotion prompt and commit block together |
+| 1.0.3-stable | Patch 1.0.3 | stable | 2026-05-21 | Workflow hardening — require stable-promotion prompt and commit block together |
 | 1.0.2-stable | Patch 1.0.2 | stable | 2026-05-21 | Next.js config compatibility — replace next.config.ts with next.config.mjs |
 | 1.0.1-stable | Patch 1.0.1 | stable | 2026-05-21 | Docs hardening — chathead opener + session checkpoint workflow |
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
@@ -11,7 +11,7 @@
 
 ## Patch 1.0.3 — Workflow Hardening
 
-Status: alpha
+Status: stable
 
 Version: 1.0.3-alpha
 
@@ -32,6 +32,14 @@ Modified files:
 - WORKFLOW.md Mandatory Workflow Artifact Enforcement updated
 - WORKFLOW.md Post-Validation Two-Section Response clarified
 - CLAUDE.md After Validation Passes section rewritten
+
+### Validation Record — 1.0.3-stable
+
+- Date: 2026-05-21
+- WORKFLOW.md contains inline structure requirement: PASS
+- CLAUDE.md contains inline structure requirement: PASS
+- All four versioning locations show 1.0.3-alpha: PASS
+- Promoted to stable: 2026-05-21
 
 ## Patch 1.0.2 — next.config.ts → next.config.mjs
 

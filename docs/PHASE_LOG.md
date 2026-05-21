@@ -2,15 +2,15 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 1.0.0-alpha | Phase 1.0.0 | alpha | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
+| 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
 
 ## Phase 1.0.0 - Bootstrap
 
-Status: alpha
+Status: stable
 
-Version: 1.0.0-alpha
+Version: 1.0.0-stable
 
 Date: 2026-05-21
 
@@ -54,3 +54,15 @@ New files:
 - TypeScript content types defined
 - Filesystem content loader scaffolded
 - Dashboard shell created
+
+### Validation Record — 1.0.0-stable
+
+- Date: 2026-05-21
+- All docs present: PASS
+- All Next.js config files present: PASS
+- All source files present: PASS
+- Folder structure present: PASS
+- All four versioning locations show 1.0.0-alpha: PASS
+- TypeScript type-check: PASS
+- npm install: PASS
+- Promoted to stable: 2026-05-21

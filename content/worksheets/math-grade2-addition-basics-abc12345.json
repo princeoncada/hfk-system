@@ -1,0 +1,40 @@
+{
+  "id": "abc12345",
+  "title": "Addition Basics",
+  "subtitle": "Adding Numbers Up to 20",
+  "grade": 2,
+  "subject": "math",
+  "template": "cozy_v1",
+  "vocabulary": [
+    {
+      "word": "sum",
+      "definition": "The answer you get when you add two or more numbers together."
+    },
+    {
+      "word": "addend",
+      "definition": "Any number that is being added in an addition problem."
+    },
+    {
+      "word": "equals",
+      "definition": "Means the same amount as. Shown with the = sign."
+    }
+  ],
+  "activities": [
+    {
+      "type": "fill-in-the-blank",
+      "instruction": "Solve each addition problem. Write the sum in the blank.",
+      "items": ["3 + 4 = ___", "7 + 5 = ___", "9 + 8 = ___", "6 + 6 = ___", "10 + 7 = ___"],
+      "answers": ["7", "12", "17", "12", "17"]
+    },
+    {
+      "type": "matching",
+      "instruction": "Match each addition problem to its correct sum.",
+      "items": ["4 + 3", "8 + 2", "5 + 9", "6 + 7"],
+      "answers": ["7", "10", "14", "13"]
+    }
+  ],
+  "parentNotes": "Practice counting objects around the house to reinforce addition concepts. Use buttons, blocks, or snacks as counters!",
+  "footerText": "Homeschooling for Kiddos — Math Grade 2",
+  "createdAt": "2026-05-21",
+  "status": "draft"
+}

@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 1.2.0-alpha | Phase 1.2.0 | alpha | 2026-05-21 | cozy_v1 worksheet template + print CSS |
 | 1.1.0-stable | Phase 1.1.0 | stable | 2026-05-21 | JSON Content Schema — Zod validation + 3 sample worksheets |
 | 1.0.5-stable | Patch 1.0.5 | stable | 2026-05-21 | Workflow hardening — remove Section 2, add upfront clarification step |
 | 1.0.4-stable | Patch 1.0.4 | stable | 2026-05-21 | Vault restructure — consolidate numbered root folders into vault/ |
@@ -11,6 +12,35 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Phase 1.2.0 — cozy_v1 Worksheet Template
+
+Status: alpha
+
+Version: 1.2.0-alpha
+
+Date: 2026-05-21
+
+Purpose:
+Build the first React worksheet template. Warm, cozy, child-friendly
+layout. Deterministic output from WorksheetContent JSON. Covers all
+5 activity types. Add template-aware print CSS.
+
+New files:
+- src/components/templates/cozy_v1/WorksheetTemplate.tsx
+- src/components/templates/cozy_v1/index.ts
+- src/styles/print.css
+
+Modified files:
+- src/app/layout.tsx (print.css import, app-shell-header class)
+- docs/TEMPLATE_GUIDE.md (cozy_v1 status → active)
+
+### Patch Notes — 1.2.0-alpha
+- WorksheetTemplate renders all 5 activity types distinctly
+- Avatar placeholder renders when no asset is present
+- Vocabulary, activities, parent notes sections are conditional
+- Print CSS hides app shell and preserves worksheet layout
+- US Letter page dimensions used (816x1056px at 96dpi)
 
 ## Phase 1.1.0 — JSON Content Schema
 

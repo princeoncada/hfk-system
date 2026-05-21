@@ -7,9 +7,17 @@ export default function DashboardPage() {
   return (
     <div className="max-w-4xl mx-auto">
       <section className="mb-8">
-        <h2 className="text-2xl font-display font-semibold mb-1">
-          Worksheets
-        </h2>
+        <div className="mb-1 flex items-center justify-between">
+          <h2 className="text-2xl font-display font-semibold">
+            Worksheets
+          </h2>
+          <Link
+            href="/edit/new"
+            className="rounded bg-sage-green/80 px-4 py-1.5 text-sm text-white hover:bg-sage-green"
+          >
+            + New Worksheet
+          </Link>
+        </div>
         <p className="text-sm text-warm-brown/60 mb-4">
           {worksheets.length} worksheet{worksheets.length !== 1 ? 's' : ''} in content library
         </p>
@@ -37,6 +45,12 @@ export default function DashboardPage() {
                   <span className="text-xs px-2 py-0.5 rounded-full bg-soft-yellow text-warm-brown">
                     {ws.status}
                   </span>
+                  <Link
+                    href={`/edit/${ws.id}`}
+                    className="text-sm text-warm-brown/60 hover:text-warm-brown"
+                  >
+                    Edit
+                  </Link>
                   <Link
                     href={`/preview/${ws.id}`}
                     className="text-sm text-sage-green hover:underline"

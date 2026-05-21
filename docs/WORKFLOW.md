@@ -88,12 +88,12 @@ documentation-only tasks. These get a single plain txt code block.
 ## Mandatory Workflow Artifact Enforcement
 
 For implementation phases:
-1. Implementation prompt
-2. Validation commands
-3. Analysis of validation output
-4. Implementation commit block (BEFORE stable-promotion prompt)
-5. Stable-promotion Codex prompt + two-section response (same message)
-6. Push reminder
+1. Validation summary
+2. Implementation commit block (BEFORE stable-promotion prompt)
+3. Stable-promotion Codex prompt
+4. Stable-promotion commit block (IMMEDIATELY after the Codex prompt,
+   in the same message — no AI turn between them)
+5. Push reminder
 
 For stable-promotion docs-only prompts:
 1. Stable-promotion Codex prompt
@@ -101,7 +101,22 @@ For stable-promotion docs-only prompts:
 3. Push reminder
 (No validation commands required for docs-only promotion.)
 
+## After Codex Finishes Implementation
+
+If all pass:
+1. Validation summary
+2. Implementation commit block
+3. Stable-promotion Codex prompt
+
+The stable-promotion prompt and stable-promotion commit block MUST
+travel together in the same message, with the commit block appearing
+immediately below the Codex prompt block. No additional AI turn is
+required or permitted between them.
+
 ## Post-Validation Two-Section Response
+
+This two-section block must appear immediately below the
+stable-promotion Codex prompt in the same message.
 
 SECTION 1: Stable-Promotion Confirmation
 - Summarize what passed

@@ -42,6 +42,10 @@ Scope:
 
 - Phase 1.4.0 — Export System (PDF + PNG)
 - Phase 1.5.0 — Save + Archive
+- Phase 2.0.0 — Facebook Post Template
+- Phase 2.1.0 — Content Calendar
+- Phase 2.2.0 — Caption Generator
+- Phase 2.3.0 — Prompt Library
 
 ## Recommended Next Step
 

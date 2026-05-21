@@ -5,7 +5,7 @@ Completed items are struck through. Update this file every phase.
 
 Last updated: 2026-05-21
 Current stable version: 1.4.1-stable
-Current working version: none
+Current working version: 1.5.0-alpha
 
 ---
 
@@ -17,6 +17,7 @@ Current working version: none
 - ~~Phase 1.2.0 — cozy_v1 Worksheet Template~~ (stable 2026-05-21)
 - ~~Phase 1.3.0 — Preview System~~ (stable 2026-05-21)
 - ~~Phase 1.4.0 — Export System~~ (stable 2026-05-21)
+- ~~Phase 1.5.0 — Save + Archive~~ (alpha 2026-05-21)
 
 ---
 
@@ -27,21 +28,6 @@ Current working version: none
 ---
 
 ## Planned
-
-### Phase 1.5.0 — Save + Archive
-
-Priority: Core feature (MVP requirement)
-
-Save new/edited JSON content to content/. Archive export outputs to
-archives/.
-
-Scope:
-- src/lib/archive.ts
-- Save content action
-- Archive action after export
-- Move exports to archives/[date]/
-
----
 
 ## Post-MVP Planned
 

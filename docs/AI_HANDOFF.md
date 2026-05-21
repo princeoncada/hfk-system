@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 1.4.1-stable
+## Current Version: 1.5.0-alpha
 
 ## Current Phase
 
-Patch 1.4.1 [1.4.1-stable] — Workflow Hardening — stable.
+Phase 1.5.0 [1.5.0-alpha] — Save + Archive — alpha.
 
 ## Architecture Invariant
 
@@ -67,9 +67,43 @@ Modified files:
 - docs/PHASE_LOG.md
 - README.md
 
+## Phase 1.5.0 [1.5.0-alpha]
+
+Status: alpha
+
+Purpose:
+Add worksheet JSON save/edit workflows and archive exported PDF/PNG
+outputs into permanent date-based archive folders.
+
+Scope:
+- Archive export files from exports/ into archives/YYYY-MM-DD/
+- Validate and save worksheet JSON into content/worksheets/
+- Add save API route
+- Add shared worksheet JSON editor
+- Add new/edit worksheet pages
+- Add dashboard New Worksheet and Edit actions
+- Archive exports after PDF/PNG generation
+
+New files:
+- src/lib/archive.ts
+- src/lib/save.ts
+- src/app/api/save/route.ts
+- src/app/edit/WorksheetEditor.tsx
+- src/app/edit/new/page.tsx
+- src/app/edit/[id]/page.tsx
+
+Modified files:
+- src/app/api/export/route.ts
+- src/app/preview/[id]/PreviewControls.tsx
+- src/app/page.tsx
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- docs/FUTURE_PLANS.md
+- README.md
+
 ## Future Phase Queue
 
-- Phase 1.5.0 — Save + Archive
 - Phase 2.0.0 — Facebook Post Template
 - Phase 2.1.0 — Content Calendar
 - Phase 2.2.0 — Caption Generator
@@ -77,7 +111,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Phase 1.5.0 — Save + Archive.
+Phase 2.0.0 — Facebook Post Template.
 
 ## What Exists
 

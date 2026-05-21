@@ -39,16 +39,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 1.4.1-stable |
-| Phase | Patch 1.4.1 |
-| State | stable |
+| Version | 1.5.0-alpha |
+| Phase | Phase 1.5.0 |
+| State | alpha |
 | Date | 2026-05-21 |
-| Summary | Workflow hardening — Section 2 ownership, npm command rule, push block rule |
+| Summary | Save + Archive — JSON editor UI, save API, archive-on-export |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 1.5.0-alpha | Phase 1.5.0 | alpha | 2026-05-21 | Save + Archive — JSON editor UI, save API, archive-on-export |
 | 1.4.1-stable | Patch 1.4.1 | stable | 2026-05-21 | Workflow hardening — Section 2 ownership, npm command rule, push block rule |
 | 1.4.0-stable | Phase 1.4.0 | stable | 2026-05-21 | Export system — Puppeteer PDF + PNG export to exports/ |
 | 1.3.0-stable | Phase 1.3.0 | stable | 2026-05-21 | Preview system — /preview/[id] route + print controls + getWorksheetById fix |
@@ -64,5 +65,5 @@ Every version change must be applied to all four simultaneously:
 ## Next Phase
 
 Current stable version: 1.4.1-stable
-Current working version: none
-Next recommended phase: Phase 1.5.0 — Save + Archive
+Current working version: 1.5.0-alpha
+Next recommended phase: Phase 2.0.0 — Facebook Post Template

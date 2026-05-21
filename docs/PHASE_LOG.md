@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 1.5.0-alpha | Phase 1.5.0 | alpha | 2026-05-21 | Save + Archive — JSON editor UI, save API, archive-on-export |
 | 1.4.1-stable | Patch 1.4.1 | stable | 2026-05-21 | Workflow hardening — Section 2 ownership, npm command rule, push block rule |
 | 1.4.0-stable | Phase 1.4.0 | stable | 2026-05-21 | Export system — Puppeteer PDF + PNG export to exports/ |
 | 1.3.0-stable | Phase 1.3.0 | stable | 2026-05-21 | Preview system — /preview/[id] route + print controls + getWorksheetById fix |
@@ -15,6 +16,46 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Phase 1.5.0 — Save + Archive
+
+Status: alpha
+
+Version: 1.5.0-alpha
+
+Date: 2026-05-21
+
+Purpose:
+Add a local worksheet JSON editor and save API while making exports
+transient by moving generated PDF/PNG files into permanent date-based
+archives.
+
+New files:
+- src/lib/archive.ts
+- src/lib/save.ts
+- src/app/api/save/route.ts
+- src/app/edit/WorksheetEditor.tsx
+- src/app/edit/new/page.tsx
+- src/app/edit/[id]/page.tsx
+
+Modified files:
+- src/app/api/export/route.ts (archives successful exports)
+- src/app/preview/[id]/PreviewControls.tsx (reports archive path)
+- src/app/page.tsx (New Worksheet and Edit links)
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- docs/FUTURE_PLANS.md
+- README.md
+
+### Patch Notes — 1.5.0-alpha
+- archiveExport() moves exported PDF/PNG files from exports/ to archives/YYYY-MM-DD/
+- saveWorksheet() validates worksheet JSON with the existing Zod schema and writes to content/worksheets/
+- /api/save accepts worksheet JSON and returns the saved worksheet id
+- /api/export now returns archivePath after moving generated files into archives/
+- /edit/new provides a prefilled blank worksheet JSON editor
+- /edit/[id] loads an existing worksheet into the shared JSON editor
+- Dashboard includes New Worksheet and per-card Edit links
 
 ## Patch 1.4.1 — Workflow Hardening
 

@@ -28,11 +28,13 @@ You:
 - Report current state before any work begins
 - Diagnose bugs and write Codex fix prompts
 - Scope new phases and write Codex master prompts
-- Run validation commands directly using bash after Codex finishes
+- Provide Section 2 validation commands as a PowerShell block for
+  the user to run and paste back
 - Analyze validation output and report pass/fail
 - Write post-validation documentation Codex prompts
 - Provide 1-by-1 git commit command blocks for the user to run
-- Remind the user to push after clean commits
+- Provide the git push origin master PowerShell block in the same
+  message as the stable-promotion commit block
 
 You do NOT (default — without the Implementation Gate unlock phrase):
 - Implement code changes directly (write Codex prompts instead)
@@ -116,25 +118,29 @@ Run this at the start of every session before doing anything else:
 5. Stop — do not implement the phase yourself
 
 ### After Codex Finishes Implementation
-1. Run validation commands directly using bash
+1. Receive validation results pasted back by the user
 2. Report pass/fail for each check
-3. If all pass -> immediately provide all three in the same response:
+3. If all pass -> immediately provide the required post-validation
+   artifacts in the same response:
    - Validation summary (what passed, files changed, remaining work)
    - Implementation commit block (git add + git commit per file;
      git status --short; user runs this BEFORE stable-promotion prompt)
    - Stable-promotion Codex prompt (plain txt code block)
+   - Stable-promotion commit block
+   - git push origin master PowerShell block
    The stable-promotion prompt and two-section response must travel
    together in the same message.
 4. If failures exist -> diagnose, write a Codex fix prompt
 
 ### After Validation Passes
 This section describes SECTION 1 and SECTION 2 of the same message
-that contains the stable-promotion Codex prompt. All four items must
+that contains the stable-promotion Codex prompt. All five items must
 appear in one message — no AI turn between them:
 - Validation summary
 - Implementation commit block
 - Stable-promotion Codex prompt
 - Stable-promotion commit block (SECTION 1 + SECTION 2 below)
+- git push origin master PowerShell block
 
 SECTION 1: Stable-Promotion Confirmation
 - Confirm what changed
@@ -144,10 +150,14 @@ SECTION 2: Stable-Promotion Commit Block
 - One PowerShell block
 - git add + git commit per docs file changed
 - git status --short at the end
+- Followed immediately by a separate git push origin master PowerShell block
 
 ### After User Confirms Commits
-Remind the user to run:
-  git push origin master
+Provide this block in the same message as the stable-promotion
+commit block — no separate turn:
+```powershell
+git push origin master
+```
 
 ## Claude Code Fallback Implementation Workflow
 
@@ -180,7 +190,11 @@ Codex writes or modifies files:
     validation commands
 
   SECTION 2: Validation Commands
-  - Commands Claude Code will run after Codex finishes
+  - A ```powershell code block for the USER to copy, run, and paste
+    back — Claude Code does NOT run these
+  - Do NOT include npm install or any npm commands inside the Codex
+    master prompt (SECTION 1) — npm commands belong here in Section 2
+    as USER-run validation steps
 
 For post-validation documentation Codex prompts:
 - Single plain txt code block only

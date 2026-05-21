@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 1.3.0-stable
+## Current Version: 1.4.0-alpha
 
 ## Current Phase
 
-Phase 1.3.0 [1.3.0-stable] — Preview System — stable.
+Phase 1.4.0 [1.4.0-alpha] — Export System — alpha.
 
 ## Architecture Invariant
 
@@ -38,9 +38,37 @@ Scope:
 - Folder structure: content/, exports/, archives/, assets/, public/,
   src/components/templates/
 
+## Phase 1.4.0 [1.4.0-alpha]
+
+Status: alpha
+
+Purpose:
+Add a local export system that renders preview pages through Puppeteer
+and writes PDF and PNG outputs to exports/.
+
+Scope:
+- Install Puppeteer
+- Add PDF export helper
+- Add PNG export helper
+- Add API route for export requests
+- Add export buttons to the preview toolbar
+
+New files:
+- src/lib/export.ts
+- src/app/api/export/route.ts
+
+Modified files:
+- package.json
+- package-lock.json
+- src/app/preview/[id]/PreviewControls.tsx
+- src/app/preview/[id]/page.tsx
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- README.md
+
 ## Future Phase Queue
 
-- Phase 1.4.0 — Export System (PDF + PNG)
 - Phase 1.5.0 — Save + Archive
 - Phase 2.0.0 — Facebook Post Template
 - Phase 2.1.0 — Content Calendar
@@ -49,7 +77,7 @@ Scope:
 
 ## Recommended Next Step
 
-Phase 1.4.0 — Export System.
+Phase 1.5.0 — Save + Archive.
 
 ## What Exists
 

@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 1.4.0-alpha | Phase 1.4.0 | alpha | 2026-05-21 | Export system — Puppeteer PDF + PNG export to exports/ |
 | 1.3.0-stable | Phase 1.3.0 | stable | 2026-05-21 | Preview system — /preview/[id] route + print controls + getWorksheetById fix |
 | 1.2.0-stable | Phase 1.2.0 | stable | 2026-05-21 | cozy_v1 worksheet template + print CSS |
 | 1.1.0-stable | Phase 1.1.0 | stable | 2026-05-21 | JSON Content Schema — Zod validation + 3 sample worksheets |
@@ -13,6 +14,40 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Phase 1.4.0 — Export System
+
+Status: alpha
+
+Version: 1.4.0-alpha
+
+Date: 2026-05-21
+
+Purpose:
+Add Puppeteer-backed PDF and PNG export from the existing preview route.
+Exports are saved into exports/pdf/ and exports/png/ as derived output.
+
+New files:
+- src/lib/export.ts
+- src/app/api/export/route.ts
+
+Modified files:
+- package.json (puppeteer dependency added)
+- package-lock.json (puppeteer dependency tree added)
+- src/app/preview/[id]/PreviewControls.tsx (export buttons and request handling)
+- src/app/preview/[id]/page.tsx (passes id to PreviewControls)
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- README.md
+
+### Patch Notes — 1.4.0-alpha
+- exportToPDF() renders /preview/[id] with print media and writes A4 PDFs
+- exportToPNG() renders /preview/[id] at A4 viewport size and writes PNG screenshots
+- /api/export accepts POST requests for pdf or png export formats
+- Preview toolbar now includes Export PDF and Export PNG buttons
+- Export controls are hidden from print/export output via no-print
+- Export requires the local Next.js app to be running on localhost:3000
 
 ## Phase 1.3.0 — Preview System
 

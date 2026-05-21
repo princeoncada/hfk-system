@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 1.5.1-alpha | Patch 1.5.1 | alpha | 2026-05-21 | Validation hardening — require -LiteralPath for bracket paths in PowerShell |
+| 1.5.1-stable | Patch 1.5.1 | stable | 2026-05-21 | Validation hardening — require -LiteralPath for bracket paths in PowerShell |
 | 1.5.0-stable | Phase 1.5.0 | stable | 2026-05-21 | Save + Archive — JSON editor UI, save API, archive-on-export |
 | 1.4.1-stable | Patch 1.4.1 | stable | 2026-05-21 | Workflow hardening — Section 2 ownership, npm command rule, push block rule |
 | 1.4.0-stable | Phase 1.4.0 | stable | 2026-05-21 | Export system — Puppeteer PDF + PNG export to exports/ |
@@ -20,7 +20,7 @@
 
 ## Patch 1.5.1 — Validation Hardening
 
-Status: alpha
+Status: stable
 
 Version: 1.5.1-alpha
 
@@ -46,6 +46,14 @@ Modified files:
   for paths containing bracket characters.
 - The rule documents the PowerShell wildcard behavior that caused a
   false negative for src/app/edit/[id]/page.tsx.
+
+### Validation Record — 1.5.1-stable
+
+- Date: 2026-05-21
+- CLAUDE.md has -LiteralPath rule: PASS
+- WORKFLOW.md has -LiteralPath rule: PASS
+- All 4 versioning locations show 1.5.1-alpha: PASS
+- Promoted to stable: 2026-05-21
 
 ## Phase 1.5.0 — Save + Archive
 

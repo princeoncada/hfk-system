@@ -39,9 +39,9 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 1.0.1-alpha |
+| Version | 1.0.1-stable |
 | Phase | Patch 1.0.1 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-21 |
 | Summary | Docs hardening — chathead opener + session checkpoint workflow |
 
@@ -49,11 +49,11 @@ Every version change must be applied to all four simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 1.0.1-alpha | Patch 1.0.1 | alpha | 2026-05-21 | Docs hardening — chathead opener + session checkpoint workflow |
+| 1.0.1-stable | Patch 1.0.1 | stable | 2026-05-21 | Docs hardening — chathead opener + session checkpoint workflow |
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 ## Next Phase
 
-Current stable version: 1.0.0-stable
-Current working version: 1.0.1-alpha
+Current stable version: 1.0.1-stable
+Current working version: none
 Next recommended phase: Vault restructure, then Phase 1.1.0

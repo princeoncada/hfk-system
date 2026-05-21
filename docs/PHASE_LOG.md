@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 1.4.1-alpha | Patch 1.4.1 | alpha | 2026-05-21 | Workflow hardening — Section 2 ownership, npm command rule, push block rule |
+| 1.4.1-stable | Patch 1.4.1 | stable | 2026-05-21 | Workflow hardening — Section 2 ownership, npm command rule, push block rule |
 | 1.4.0-stable | Phase 1.4.0 | stable | 2026-05-21 | Export system — Puppeteer PDF + PNG export to exports/ |
 | 1.3.0-stable | Phase 1.3.0 | stable | 2026-05-21 | Preview system — /preview/[id] route + print controls + getWorksheetById fix |
 | 1.2.0-stable | Phase 1.2.0 | stable | 2026-05-21 | cozy_v1 worksheet template + print CSS |
@@ -18,7 +18,7 @@
 
 ## Patch 1.4.1 — Workflow Hardening
 
-Status: alpha
+Status: stable
 
 Version: 1.4.1-alpha
 
@@ -44,6 +44,19 @@ Modified files:
   npm commands belong in Section 2 as USER-run validation steps.
 - The git push block must appear in the same message as the
   stable-promotion commit block; no separate reminder turn.
+
+### Validation Record — 1.4.1-stable
+
+- Date: 2026-05-21
+- CLAUDE.md no longer contains "using bash": PASS
+- CLAUDE.md has PowerShell block rule in Section 2: PASS
+- CLAUDE.md has npm command restriction for Codex: PASS
+- CLAUDE.md has git push block rule: PASS
+- WORKFLOW.md no longer contains "via bash": PASS
+- WORKFLOW.md has npm command restriction for Codex: PASS
+- WORKFLOW.md has git push block rule: PASS
+- All 4 versioning locations show 1.4.1-alpha: PASS
+- Promoted to stable: 2026-05-21
 
 ## Phase 1.4.0 — Export System
 

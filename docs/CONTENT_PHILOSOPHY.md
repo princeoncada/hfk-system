@@ -83,3 +83,47 @@ AI must not:
 - Change JSON structure without documenting the schema change
 - Generate or modify avatar references
 - Set status to "posted" or "archived" without operator confirmation
+
+## Schema Validation
+
+All worksheet JSON files are validated against the WorksheetSchema
+defined in src/lib/schema.ts using Zod.
+
+### Schema Location
+
+  src/lib/schema.ts
+
+### Exported Schemas
+
+  WorksheetSchema         — full Zod schema for WorksheetContent
+  SubjectSchema           — z.enum of valid subjects
+  GradeSchema             — z.union of literals 1–6
+  ContentStatusSchema     — z.enum of valid statuses
+  VocabularyEntrySchema   — word + definition object
+  ActivitySchema          — type, instruction, items, optional answers
+  ActivityTypeSchema      — z.enum of valid activity types
+
+### Exported Helpers
+
+  validateWorksheet(data: unknown): WorksheetContent
+    Parses and returns a validated worksheet. Throws ZodError on failure.
+
+  isValidWorksheet(data: unknown): boolean
+    Returns true if data passes schema validation. Safe — never throws.
+
+### Validation Rules (enforced by Zod)
+
+  id            required, non-empty string
+  title         required, non-empty string
+  subtitle      optional string
+  grade         one of: 1, 2, 3, 4, 5, 6
+  subject       one of: math, science, reading, vocabulary, bible, values
+  template      required, non-empty string
+  vocabulary    optional array — each entry must have word and definition
+  activities    optional array — each entry must have type, instruction,
+                  items; answers is optional
+  parentNotes   optional string
+  footerText    optional string
+  references    optional array of strings
+  createdAt     required, non-empty string (ISO date format expected)
+  status        one of: draft, ready, exported, archived

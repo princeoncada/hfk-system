@@ -4,14 +4,15 @@ Living backlog for HFK Publishing Engine.
 Completed items are struck through. Update this file every phase.
 
 Last updated: 2026-05-21
-Current stable version: 1.0.1-stable
-Current working version: none
+Current stable version: 1.0.3-stable
+Current working version: 1.0.4-alpha
 
 ---
 
 ## Completed
 
 - ~~Phase 1.0.0 — Bootstrap~~ (stable 2026-05-21)
+- ~~Vault restructure (pre-1.1.0 housekeeping)~~ (committed 2026-05-21)
 
 ---
 

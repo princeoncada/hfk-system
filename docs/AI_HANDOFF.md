@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 1.1.0-alpha
+## Current Version: 1.1.0-stable
 
 ## Current Phase
 
-Phase 1.1.0 [1.1.0-alpha] — JSON Content Schema.
+Phase 1.1.0 [1.1.0-stable] — JSON Content Schema — stable.
 
 ## Architecture Invariant
 
@@ -47,8 +47,7 @@ Scope:
 
 ## Recommended Next Step
 
-After Phase 1.1.0 is stable, begin Phase 1.2.0 — cozy_v1 Worksheet
-Template.
+Phase 1.2.0 — cozy_v1 Worksheet Template.
 
 ## What Exists
 

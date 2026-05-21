@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 1.0.5-alpha | Patch 1.0.5 | alpha | 2026-05-21 | Workflow hardening — remove Section 2, add upfront clarification step |
 | 1.0.4-stable | Patch 1.0.4 | stable | 2026-05-21 | Vault restructure — consolidate numbered root folders into vault/ |
 | 1.0.3-stable | Patch 1.0.3 | stable | 2026-05-21 | Workflow hardening — require stable-promotion prompt and commit block together |
 | 1.0.2-stable | Patch 1.0.2 | stable | 2026-05-21 | Next.js config compatibility — replace next.config.ts with next.config.mjs |
@@ -9,6 +10,36 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Patch 1.0.5 — Workflow Hardening: Remove Section 2
+
+Status: alpha
+
+Version: 1.0.5-alpha
+
+Date: 2026-05-21
+
+Purpose:
+Remove Section 2 ("What You Need From Me") from the Codex prompt
+format. It created a redundancy where Claude Code would write a
+full prompt, receive an answer, then write a second full prompt.
+Replace with an upfront clarification step: Claude Code asks all
+questions before writing any prompt. If no questions, it confirms
+that and proceeds directly to the 2-section output.
+
+Modified files:
+- CLAUDE.md (Codex Prompt Format rewritten, Bug Found and New Phase
+  workflow rules updated)
+- docs/WORKFLOW.md (CLARIFY step added to phase cycle,
+  3-section format section renamed and updated)
+
+### Patch Notes — 1.0.5-alpha
+- Section 2 removed from all Codex prompt output
+- Upfront clarification step added to Bug Found and New Phase rules
+- CLARIFY step added to Standard Phase Cycle in WORKFLOW.md
+- "When To Use The 3-Section Format" renamed to 2-section format
+- Claude Code must now confirm "no questions needed" before writing
+  any prompt
 
 ## Patch 1.0.4 — Vault Restructure
 

@@ -39,9 +39,9 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 1.0.5-alpha |
+| Version | 1.0.5-stable |
 | Phase | Patch 1.0.5 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-21 |
 | Summary | Workflow hardening — remove Section 2, add upfront clarification step |
 
@@ -49,7 +49,7 @@ Every version change must be applied to all four simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 1.0.5-alpha | Patch 1.0.5 | alpha | 2026-05-21 | Workflow hardening — remove Section 2, add upfront clarification step |
+| 1.0.5-stable | Patch 1.0.5 | stable | 2026-05-21 | Workflow hardening — remove Section 2, add upfront clarification step |
 | 1.0.4-stable | Patch 1.0.4 | stable | 2026-05-21 | Vault restructure — consolidate numbered root folders into vault/ |
 | 1.0.3-stable | Patch 1.0.3 | stable | 2026-05-21 | Workflow hardening — require stable-promotion prompt and commit block together |
 | 1.0.2-stable | Patch 1.0.2 | stable | 2026-05-21 | Next.js config compatibility — replace next.config.ts with next.config.mjs |
@@ -58,6 +58,6 @@ Every version change must be applied to all four simultaneously:
 
 ## Next Phase
 
-Current stable version: 1.0.4-stable
-Current working version: 1.0.5-alpha
+Current stable version: 1.0.5-stable
+Current working version: none
 Next recommended phase: Phase 1.1.0 — JSON Content Schema

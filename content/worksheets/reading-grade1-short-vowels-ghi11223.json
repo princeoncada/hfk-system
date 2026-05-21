@@ -1,0 +1,48 @@
+{
+  "id": "ghi11223",
+  "title": "Short Vowel Sounds",
+  "subtitle": "A, E, I, O, U — Let's Practice!",
+  "grade": 1,
+  "subject": "reading",
+  "template": "cozy_v1",
+  "vocabulary": [
+    {
+      "word": "cat",
+      "definition": "A small furry animal. Has the short A sound."
+    },
+    {
+      "word": "bed",
+      "definition": "A place where you sleep. Has the short E sound."
+    },
+    {
+      "word": "pig",
+      "definition": "A farm animal. Has the short I sound."
+    },
+    {
+      "word": "fox",
+      "definition": "A wild animal with a bushy tail. Has the short O sound."
+    },
+    {
+      "word": "bug",
+      "definition": "A small insect. Has the short U sound."
+    }
+  ],
+  "activities": [
+    {
+      "type": "fill-in-the-blank",
+      "instruction": "Fill in the missing vowel to complete each word.",
+      "items": ["c_t", "b_d", "p_g", "f_x", "b_g"],
+      "answers": ["a", "e", "i", "o", "u"]
+    },
+    {
+      "type": "multiple-choice",
+      "instruction": "Circle the word that has a short vowel sound.",
+      "items": ["cake / cat", "tree / bed", "bike / pig", "rope / fox", "cube / bug"],
+      "answers": ["cat", "bed", "pig", "fox", "bug"]
+    }
+  ],
+  "parentNotes": "Say each word slowly and have your child clap once for every sound they hear. Short vowel words usually follow the consonant-vowel-consonant pattern.",
+  "footerText": "Homeschooling for Kiddos — Reading Grade 1",
+  "createdAt": "2026-05-21",
+  "status": "draft"
+}

@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 1.1.0-alpha | Phase 1.1.0 | alpha | 2026-05-21 | JSON Content Schema — Zod validation + 3 sample worksheets |
 | 1.0.5-stable | Patch 1.0.5 | stable | 2026-05-21 | Workflow hardening — remove Section 2, add upfront clarification step |
 | 1.0.4-stable | Patch 1.0.4 | stable | 2026-05-21 | Vault restructure — consolidate numbered root folders into vault/ |
 | 1.0.3-stable | Patch 1.0.3 | stable | 2026-05-21 | Workflow hardening — require stable-promotion prompt and commit block together |
@@ -10,6 +11,36 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Phase 1.1.0 — JSON Content Schema
+
+Status: alpha
+
+Version: 1.1.0-alpha
+
+Date: 2026-05-21
+
+Purpose:
+Define and validate the complete JSON content schema for worksheets
+using Zod. Create 3 sample worksheet JSON files covering Math Grade
+2, Science Grade 3, and Reading Grade 1. Document the schema and
+validation helpers in docs/CONTENT_PHILOSOPHY.md.
+
+New files:
+- src/lib/schema.ts
+- content/worksheets/math-grade2-addition-basics-abc12345.json
+- content/worksheets/science-grade3-plant-parts-def67890.json
+- content/worksheets/reading-grade1-short-vowels-ghi11223.json
+
+Modified files:
+- package.json (zod added to dependencies)
+- docs/CONTENT_PHILOSOPHY.md (Schema Validation section added)
+
+### Patch Notes — 1.1.0-alpha
+- WorksheetSchema defined with Zod, aligned with WorksheetContent type
+- validateWorksheet() and isValidWorksheet() helpers exported
+- 3 sample worksheets cover math, science, and reading subjects
+- Schema validation rules documented in CONTENT_PHILOSOPHY.md
 
 ## Patch 1.0.5 — Workflow Hardening: Remove Section 2
 

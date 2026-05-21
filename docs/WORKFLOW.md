@@ -47,7 +47,9 @@ for the user to paste validation results back.
 ## Standard Phase Cycle
 
 PLAN    — Discuss scope. Agree on what will be built.
-PROMPT  — Write Codex master prompt (3-section format).
+CLARIFY — Ask all open questions before writing the Codex prompt.
+           If none, confirm and proceed.
+PROMPT  — Write Codex master prompt (2-section format).
 BUILD   — User runs Codex. AI does not assist during this step.
 VERIFY  — AI writes validation commands (separately from Codex prompt).
 TEST    — User runs validation commands, pastes results back.
@@ -78,12 +80,19 @@ Stop instruction (mandatory, always last):
 Documentation requirement (mandatory for every phase prompt):
 - README.md, docs/PHASE_LOG.md, docs/AI_HANDOFF.md, docs/VERSIONING.md
 
-## When To Use The 3-Section Format
+## When To Use The 2-Section Format
 
-USE for: new phases, bug fixes, any task where Codex writes/modifies code.
+USE for: new phases, bug fixes, any task where Codex writes/modifies
+code or files.
 
 DO NOT USE for: post-validation docs prompts, session checkpoints,
 documentation-only tasks. These get a single plain txt code block.
+
+Pre-prompt clarification rule:
+Before writing any 2-section prompt, ask all open questions first.
+Wait for user answers. Only then write the prompt.
+If no questions are needed, state "No clarifying questions needed"
+and proceed directly to the 2-section output.
 
 ## Mandatory Workflow Artifact Enforcement
 
@@ -149,7 +158,7 @@ When closing a session or pausing mid-phase, follow this process.
 
 ### Step 1 — AI writes a session checkpoint Codex prompt
 
-The prompt is a single plain txt code block (no 3-section format).
+The prompt is a single plain txt code block (no 2-section format).
 It must create or update these files:
 - docs/SESSION_LOG/YYYY-MM-DD-session-NN.md (CREATE)
 - docs/AI_HANDOFF.md (UPDATE current state and next step if changed)

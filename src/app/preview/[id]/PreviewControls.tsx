@@ -16,7 +16,7 @@ export function PreviewControls({ id }: { id: string }) {
       })
       const data = await res.json()
       if (data.success) {
-        alert(`Saved to: ${data.path}`)
+        alert(`Archived to: ${data.archivePath}`)
       } else {
         alert(`Export failed: ${data.error}`)
       }

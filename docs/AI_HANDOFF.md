@@ -1,11 +1,11 @@
 # AI Handoff
 
-## Current Version: 1.0.3-stable
+## Current Version: 1.0.4-alpha
 
 ## Current Phase
 
-Phase 1.0.0 [1.0.0-stable] — Bootstrap — docs foundation + Next.js project
-scaffold — stable.
+Patch 1.0.4 [1.0.4-alpha] — Vault restructure — pre-1.1.0
+housekeeping.
 
 ## Architecture Invariant
 
@@ -41,7 +41,6 @@ Scope:
 
 ## Future Phase Queue
 
-- PENDING: Vault restructure (pre-1.1.0 housekeeping)
 - Phase 1.1.0 — JSON Content Schema
 - Phase 1.2.0 — cozy_v1 Worksheet Template
 - Phase 1.3.0 — Preview System
@@ -50,21 +49,8 @@ Scope:
 
 ## Recommended Next Step
 
-Vault restructure — complete before Phase 1.1.0.
-
-Scope:
-- Move 00_PAGE_CONSTITUTION through 09_REFERENCE_INSPIRATION into vault/
-- Remove numeric prefixes from subfolder names (e.g. vault/avatars/,
-  vault/prompts/, vault/references/, vault/templates/, vault/calendar/)
-- Eliminate duplicate concerns: vault brand and constitution content is
-  already covered by docs/; migrate 08_SESSION_LOGS/ content into
-  docs/SESSION_LOG/; migrate 07_POST_ARCHIVE/ content into archives/;
-  remove 06_OUTPUTS/ (superseded by exports/)
-- Update CLAUDE.md protected paths to include vault/
-- Add ADR-007 to docs/DECISIONS.md documenting the two-layer architecture
-  (vault as creative input layer, Next.js engine as output layer)
-
-After vault restructure is committed → begin Phase 1.1.0 JSON Content Schema.
+Vault restructure is in progress as 1.0.4-alpha. After it is committed,
+begin Phase 1.1.0 JSON Content Schema.
 
 ## What Exists
 

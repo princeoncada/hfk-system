@@ -127,3 +127,34 @@ Consequences:
 - exports/ and archives/ should be gitignored or selectively tracked
 - content/ should be committed (it is the source of truth)
 - Large binary assets (PNG exports) must not bloat git history
+
+---
+
+## ADR-007: Two-Layer Architecture — Vault and Engine
+
+Date: 2026-05-21
+Status: ACCEPTED
+
+Decision:
+Establish a two-layer architecture. Layer 1 (Vault): creative input
+layer at vault/. Stores brand guides, page constitution, avatar
+references, content calendar, prompt libraries, worksheet template
+notes, and reference/inspiration materials. Human-maintained,
+AI-readable, never generated into. Layer 2 (Engine): output layer — the
+Next.js publishing engine (src/, content/, exports/, archives/).
+Structured, deterministic, template-stable.
+
+Rationale:
+- Consolidates legacy numbered root folders (00–09) into a clean
+  directory hierarchy
+- Separates creative input from structured output
+- Clarifies what AI agents read (vault/) vs. what they generate (engine)
+- Eliminates 06_OUTPUTS/ which was superseded by exports/
+- Migrates session logs and post archives to their engine-layer homes
+
+Consequences:
+- vault/ added to CLAUDE.md protected paths
+- Numbered root folders eliminated from repository root
+- Session logs live in docs/SESSION_LOG/
+- Post archives live in archives/
+- exports/ is the sole derived output directory

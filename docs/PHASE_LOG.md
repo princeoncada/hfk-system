@@ -2,9 +2,42 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 1.0.1-alpha | Patch 1.0.1 | alpha | 2026-05-21 | Docs hardening — chathead opener + session checkpoint workflow |
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Patch 1.0.1 — Docs Hardening
+
+Status: alpha
+
+Version: 1.0.1-alpha
+
+Date: 2026-05-21
+
+Purpose:
+Add two workflow artifacts missing from Phase 1.0.0 bootstrap: the
+canonical chathead opener (docs/NEW_CHATHEAD_OPENER.md) and the session
+checkpoint format in docs/WORKFLOW.md. Also updates docs/AI_HANDOFF.md
+to reflect the vault restructure decision made during session 01.
+
+New files:
+- docs/NEW_CHATHEAD_OPENER.md
+
+Modified files:
+- docs/WORKFLOW.md (session checkpoint section added)
+- docs/AI_HANDOFF.md (recommended next step + future phase queue updated)
+- docs/VERSIONING.md
+- docs/PHASE_LOG.md
+- docs/FUTURE_PLANS.md
+- README.md
+
+### Patch Notes — 1.0.1-alpha
+
+- Canonical session opener created
+- Session checkpoint format and process documented in WORKFLOW.md
+- AI_HANDOFF.md updated with vault restructure scope and pending next step
+- Two-layer architecture decision captured in AI_HANDOFF.md future queue
 
 ## Phase 1.0.0 - Bootstrap
 

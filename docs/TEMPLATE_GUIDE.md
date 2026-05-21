@@ -9,7 +9,7 @@ and documented. AI must never casually modify a template.
 
 | Name | Status | Description |
 |---|---|---|
-| cozy_v1 | planned (Phase 1.2.0) | Warm, cozy worksheet for all subjects |
+| cozy_v1 | active (Phase 1.2.0) | Warm, cozy worksheet for all subjects |
 
 ## Template Naming Convention
 

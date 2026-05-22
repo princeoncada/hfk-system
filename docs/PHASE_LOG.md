@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 3.2.0-alpha | Phase 3.2.0 — Analytics + Recommendations | alpha | 2026-05-22 | Analytics + Recommendations — demo analytics screen with AI summary, post performance lists, heatmap, and recommendations |
+| 3.2.0-stable | Phase 3.2.0 — Analytics + Recommendations | stable | 2026-05-22 | Analytics + Recommendations — demo analytics screen with AI summary, post performance lists, heatmap, and recommendations |
 | 3.1.0-stable | Phase 3.1.0 — Vault Browser | stable | 2026-05-22 | Standing Vault asset library at /vault with browsing, inspection, and lifecycle mutation |
 | 3.0.0-stable | Phase 3.0.0 — Calendar Intelligence | stable | 2026-05-22 | Calendar Intelligence — bi-directional planner calendar with package status overlays |
 | 2.9.0-stable | Phase 2.9.0 — UI Design System | stable | 2026-05-22 | UI Design System — sidebar nav shell, full design token system, card-based component redesign across all screens |
@@ -34,15 +34,27 @@
 
 ## Phase 3.2.0 — Analytics + Recommendations
 
-Status: alpha
+Status: stable
 
-Version: 3.2.0-alpha
+Version: 3.2.0-stable
 
 Date: 2026-05-22
 
 Purpose: Analytics screen with AI-narrated demo summary, top and worst post
 lists, subject-grade performance heatmap, and localStorage-backed
 dismissible recommendations.
+
+Validation:
+- analytics.types.ts — PerformanceStat, HeatmapCell, RecommendationCard,
+  AnalyticsSnapshot interfaces
+- analytics.mock.ts — getMockSnapshot() returns demo snapshot with isDemo: true,
+  AI summary, 5 top posts, 5 worst posts, 36-cell heatmap, 4 recommendation cards
+- /analytics server page — calls getMockSnapshot, passes to AnalyticsDashboard
+- AnalyticsDashboard client component — AI summary card with Demo Data pill,
+  top/worst post columns, subject×grade heatmap, dismissible recommendation cards
+  persisted to localStorage
+- Analytics nav link + bar chart icon added to SidebarNav
+- All 17 checks passed, build clean, 19/19 static pages
 
 ## Phase 3.1.0 — Vault Browser
 

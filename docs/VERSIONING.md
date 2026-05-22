@@ -39,16 +39,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 2.4.0-stable |
-| Phase | Phase 2.4.0 |
-| State | stable |
+| Version | 2.5.0-alpha |
+| Phase | Phase 2.5.0 |
+| State | alpha |
 | Date | 2026-05-22 |
-| Summary | Monthly planning engine. DeepSeek + Vault RAG generates full-month content proposals with subject/grade rotation, duplicate-topic detection, and per-day confidence scoring. Plans persisted to data/plans/. |
+| Summary | Prompt Library API. List and context-assembly endpoints for Vault-stored external tool prompts. Topic + grade + brand voice → ready-to-run prompt. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 2.5.0-alpha | Phase 2.5.0 — Prompt Library API | alpha | 2026-05-22 | Prompt Library API. List and context-assembly endpoints for Vault-stored external tool prompts. Topic + grade + brand voice → ready-to-run prompt. |
 | 2.4.0-stable | Phase 2.4.0 — Planning Engine | stable | 2026-05-22 | Monthly planning engine. DeepSeek + Vault RAG generates full-month content proposals with subject/grade rotation, duplicate-topic detection, and per-day confidence scoring. Plans persisted to data/plans/. |
 | 2.3.0-stable | Phase 2.3.0 — Approval Gate API | stable | 2026-05-22 | 5-gate approval state machine. Direction → Worksheet → Template → Caption → Final Package. Vault write-back on worksheet and caption gate approval. Package state persisted to data/packages/. |
 | 2.2.0-stable | Phase 2.2.0 — DeepSeek Integration | stable | 2026-05-22 | DeepSeek integration with RAG pipeline — worksheet draft, caption draft, and daily summary endpoints |
@@ -72,5 +73,5 @@ Every version change must be applied to all four simultaneously:
 ## Next Phase
 
 Current stable version: 2.4.0-stable
-Current working version: none
+Current working version: 2.5.0-alpha
 Next recommended phase: Phase 2.5.0 — Prompt Library API

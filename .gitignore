@@ -35,3 +35,6 @@ tsconfig.tsbuildinfo
 
 # Claude Code session memory
 .claude/
+
+# ChromaDB local data
+chroma-data/

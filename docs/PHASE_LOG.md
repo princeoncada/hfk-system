@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 3.1.0-alpha | Phase 3.1.0 — Vault Browser | alpha | 2026-05-22 | Standing Vault asset library at /vault with browsing, inspection, and lifecycle mutation |
+| 3.1.0-stable | Phase 3.1.0 — Vault Browser | stable | 2026-05-22 | Standing Vault asset library at /vault with browsing, inspection, and lifecycle mutation |
 | 3.0.0-stable | Phase 3.0.0 — Calendar Intelligence | stable | 2026-05-22 | Calendar Intelligence — bi-directional planner calendar with package status overlays |
 | 2.9.0-stable | Phase 2.9.0 — UI Design System | stable | 2026-05-22 | UI Design System — sidebar nav shell, full design token system, card-based component redesign across all screens |
 | 2.8.0-stable | Phase 2.8.0 — Monthly Planner | stable | 2026-05-22 | Monthly Planner — calendar grid UI, day detail panel, lock toggle, generate/regenerate, planner navigation links from command dashboard |
@@ -33,14 +33,21 @@
 
 ## Phase 3.1.0 — Vault Browser
 
-Status: alpha
+Status: stable
 
-Version: 3.1.0-alpha
+Version: 3.1.0-stable
 
 Date: 2026-05-22
 
 Purpose: Standing Vault asset library at /vault. Browse, inspect, and
 mutate lifecycle state of all indexed Vault assets.
+
+Validation:
+- /vault page created — server component with ChromaDB asset fetch and offline fallback
+- VaultBrowser client component — type filter tabs, name/tag search, asset cards with freshness/lifecycle/usage, lifecycle mutation buttons
+- POST /api/vault/asset/[id]/lifecycle route — reads asset, updates lifecycle field, re-ingests via upsert
+- Vault nav link added to SidebarNav
+- All 15 checks passed, build clean
 
 ## Phase 3.0.0 — Calendar Intelligence
 

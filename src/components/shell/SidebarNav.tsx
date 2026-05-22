@@ -8,6 +8,7 @@ const NAV_ITEMS = [
   { label: 'Daily Review', href: '/review', icon: 'review' },
   { label: 'Planner', href: '/planner', icon: 'calendar' },
   { label: 'Vault', href: '/vault', icon: 'vault' },
+  { label: 'Analytics', href: '/analytics', icon: 'analytics' },
   { label: 'Worksheets', href: '/#worksheets', icon: 'doc' },
 ]
 
@@ -54,6 +55,23 @@ function NavIcon({ icon }: { icon: string }) {
         <ellipse cx="12" cy="7" rx="8" ry="3" />
         <path d="M4 7v5c0 1.66 3.58 3 8 3s8-1.34 8-3V7" />
         <path d="M4 12v5c0 1.66 3.58 3 8 3s8-1.34 8-3v-5" />
+      </svg>
+    )
+  }
+
+  if (icon === 'analytics') {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        className="h-3.5 w-3.5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      >
+        <rect x="3" y="12" width="4" height="9" rx="1" />
+        <rect x="10" y="7" width="4" height="14" rx="1" />
+        <rect x="17" y="3" width="4" height="18" rx="1" />
       </svg>
     )
   }

@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 2.3.0-stable
+## Current Version: 2.4.0-alpha
 
 ## Current Phase
 
-Phase 2.3.0 [2.3.0-stable] — Approval Gate API — stable.
+Phase 2.4.0 [2.4.0-alpha] — Planning Engine — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,41 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Phase 2.4.0 [2.4.0-alpha]
+
+Status: alpha
+
+Purpose:
+Generate full-month content plans using DeepSeek plus Vault RAG context.
+Each planned day includes topic, grade, subject, learning objective,
+confidence score, duplicate-risk flag, and optional notes.
+
+Scope:
+- Monthly plan type contracts
+- Filesystem plan store under data/plans/
+- Planning-specific Vault RAG context retrieval
+- DeepSeek monthly plan generation
+- Subject and grade rotation guidance
+- Duplicate-topic context from Vault worksheets and topics
+- Confidence scoring requested per day
+- Generate monthly plan API route
+- Retrieve saved monthly plan API route
+- No UI, scheduling, publishing automation, or approval mutations
+
+New files:
+- src/lib/planning.types.ts
+- src/lib/planning.store.ts
+- src/lib/planning.rag.ts
+- src/lib/planning.generate.ts
+- src/app/api/planning/generate/route.ts
+- src/app/api/planning/[month]/route.ts
+
+Modified files:
+- .gitignore
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- README.md
 
 ## Phase 2.3.0 [2.3.0-stable]
 
@@ -259,7 +294,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Phase 2.4.0 — Planning Engine.
+Phase 2.5.0 — Prompt Library API.
 
 ## What Exists
 

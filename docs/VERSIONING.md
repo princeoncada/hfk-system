@@ -39,17 +39,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 2.2.0-alpha |
+| Version | 2.2.0-stable |
 | Phase | Phase 2.2.0 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-22 |
-| Summary | DeepSeek API connected via OpenAI-compatible client. RAG pipeline retrieves Vault context before every generation call. Three generation endpoints: worksheet draft, caption draft, daily summary. |
+| Summary | DeepSeek integration with RAG pipeline — worksheet draft, caption draft, and daily summary endpoints |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 2.2.0-alpha | Phase 2.2.0 — DeepSeek Integration | alpha | 2026-05-22 | DeepSeek API connected via OpenAI-compatible client. RAG pipeline retrieves Vault context before every generation call. Three generation endpoints: worksheet draft, caption draft, daily summary. |
+| 2.2.0-stable | Phase 2.2.0 — DeepSeek Integration | stable | 2026-05-22 | DeepSeek integration with RAG pipeline — worksheet draft, caption draft, and daily summary endpoints |
 | 2.1.0-stable | Phase 2.1.0 — ChromaDB Layer | stable | 2026-05-22 | Local ChromaDB vector database integration. Ingestion, query, and seed pipelines. Three API routes: /api/vault/ingest, /api/vault/query, /api/vault/seed. Seeds from existing worksheets, templates, avatars, and vault/ contents. |
 | 2.0.0-stable | Phase 2.0.0 — Vault Schema | stable | 2026-05-22 | Vault asset type system. Defines TypeScript interfaces and Zod schemas for all Vault asset types (template, worksheet, caption, prompt, topic, avatar, brand-rule), lifecycle states, freshness model, reuse score, provenance tracking, and rejection records. |
 | 1.5.2-stable | Patch 1.5.2 | stable | 2026-05-22 | Documentation patch — v2 phase queue defined. New backend-first phase sequence (2.0.0–3.1.0) replaces old planned phases (2.0.0–2.3.0). ChromaDB and DeepSeek architecture constraints documented. |
@@ -69,6 +69,6 @@ Every version change must be applied to all four simultaneously:
 
 ## Next Phase
 
-Current stable version: 2.1.0-stable
-Current working version: 2.2.0-alpha
-Next recommended phase: Phase 2.2.0 — DeepSeek Integration
+Current stable version: 2.2.0-stable
+Current working version: none
+Next recommended phase: Phase 2.3.0 — Approval Gate API

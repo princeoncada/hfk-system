@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 2.5.0-alpha
+## Current Version: 2.5.0-stable
 
 ## Current Phase
 
-Phase 2.5.0 [2.5.0-alpha] — Prompt Library API — alpha.
+Phase 2.5.0 [2.5.0-stable] — Prompt Library API — stable.
 
 ## Architecture Invariant
 
@@ -24,9 +24,9 @@ records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Phase 2.5.0 [2.5.0-alpha]
+## Phase 2.5.0 [2.5.0-stable]
 
-Status: alpha
+Status: stable
 
 Purpose:
 Expose the Vault-stored prompt library for external tools. List all

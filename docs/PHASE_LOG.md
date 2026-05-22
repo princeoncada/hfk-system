@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 2.1.0-stable | Phase 2.1.0 — ChromaDB Layer | stable | 2026-05-22 | ChromaDB layer — ingestion, query, seed, and Vault API routes |
 | 2.0.0-stable | Phase 2.0.0 — Vault Schema | stable | 2026-05-22 | Vault type system — interfaces and Zod schemas for all seven Vault asset types |
 | 1.5.2-stable | Patch 1.5.2 | stable | 2026-05-22 | v2 Phase Planning — backend-first phase queue, ChromaDB, and DeepSeek constraints documented |
 | 1.5.1-stable | Patch 1.5.1 | stable | 2026-05-21 | Validation hardening — require -LiteralPath for bracket paths in PowerShell |
@@ -19,6 +20,45 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Phase 2.1.0 — ChromaDB Layer
+
+Status: stable
+
+Version: 2.1.0-stable
+
+Date: 2026-05-22
+
+Purpose:
+Wired local ChromaDB as the vector search layer over the Vault.
+Built ingestion pipeline, semantic query pipeline, seed pipeline,
+and three API routes (/api/vault/ingest, /api/vault/query,
+/api/vault/seed). Seeded 7 assets from existing worksheets,
+templates, and vault/ contents. Query returns semantically ranked
+VaultAsset results with provenance. Fixed webpack externalization
+for chromadb and chromadb-default-embed in next.config.mjs. Fixed
+vault/prompts/*.md routing to VaultPrompt instead of VaultBrandRule.
+
+New files:
+- src/lib/chroma.ts
+- src/lib/vault.ingest.ts
+- src/lib/vault.query.ts
+- src/lib/vault.seed.ts
+- src/app/api/vault/ingest/route.ts
+- src/app/api/vault/query/route.ts
+- src/app/api/vault/seed/route.ts
+
+Modified files:
+- next.config.mjs
+- package.json
+- package-lock.json
+- .gitignore
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- README.md
+
+Validation: Seed 7/7, zero errors. Query returns correct semantic
+ranking. TypeScript clean. ChromaDB live locally.
 
 ## Phase 2.0.0 — Vault Schema
 

@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 2.2.0-stable |
-| Status | stable |
-| Current phase | Phase 2.2.0 — DeepSeek Integration (stable) |
+| Current | 2.3.0-alpha |
+| Status | alpha |
+| Current phase | Phase 2.3.0 — Approval Gate API |
 
 ## What This Is
 

@@ -8,8 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 1.5.1-stable |
+| Current | 1.5.2-stable |
 | Status | stable |
+| Current phase | Patch 1.5.2 — v2 Phase Planning |
 
 ## What This Is
 

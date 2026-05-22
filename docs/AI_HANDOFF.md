@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.1.0-alpha
+## Current Version: 3.1.0-stable
 
 ## Current Phase
 
-Phase 3.1.0 [3.1.0-alpha] — Vault Browser — alpha.
+Phase 3.1.0 [3.1.0-stable] — Vault Browser — stable.
 
 ## Architecture Invariant
 
@@ -24,9 +24,9 @@ records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Phase 3.1.0 [3.1.0-alpha]
+## Phase 3.1.0 [3.1.0-stable]
 
-Status: alpha
+Status: stable
 
 Purpose: Vault Browser — standing UI for browsing, inspecting, and mutating
 the lifecycle of Vault assets indexed in ChromaDB.
@@ -45,6 +45,17 @@ New files:
 Modified files:
 - src/components/shell/SidebarNav.tsx
 - docs/VERSIONING.md, docs/AI_HANDOFF.md, docs/PHASE_LOG.md, README.md
+
+Validation:
+- /vault page created — server component with ChromaDB asset fetch and offline fallback
+- VaultBrowser client component — type filter tabs, name/tag search, asset cards with freshness/lifecycle/usage, lifecycle mutation buttons
+- POST /api/vault/asset/[id]/lifecycle route — reads asset, updates lifecycle field, re-ingests via upsert
+- Vault nav link added to SidebarNav
+- All 15 checks passed, build clean
+
+## Next Phase
+
+Phase 3.2.0 — Analytics + Recommendations
 
 ## Phase 3.0.0 [3.0.0-stable]
 
@@ -506,7 +517,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Phase 3.1.0 — Vault Browser.
+Phase 3.2.0 — Analytics + Recommendations.
 
 ## What Exists
 

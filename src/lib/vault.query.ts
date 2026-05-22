@@ -86,3 +86,17 @@ export async function getAssetById(id: string): Promise<VaultAsset | null> {
   const metadata = response.metadatas?.[0]
   return parseMetadataAsset(metadata)
 }
+
+export async function getAssetsByType(
+  assetType: VaultAssetType,
+): Promise<VaultAsset[]> {
+  const collection = await getChromaCollection()
+  const response = await collection.get({
+    where: { assetType: { $eq: assetType } },
+  })
+
+  const metadatas = response.metadatas ?? []
+  return metadatas
+    .map((metadata) => parseMetadataAsset(metadata))
+    .filter((asset): asset is VaultAsset => asset !== null)
+}

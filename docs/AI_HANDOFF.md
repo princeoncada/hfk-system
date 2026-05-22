@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 2.1.0-stable
+## Current Version: 2.2.0-alpha
 
 ## Current Phase
 
-Phase 2.1.0 [2.1.0-stable] — ChromaDB Layer — stable.
+Phase 2.2.0 [2.2.0-alpha] — DeepSeek Integration — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,41 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Phase 2.2.0 [2.2.0-alpha]
+
+Status: alpha
+
+Purpose:
+Connect DeepSeek as the v2 text generation layer through the OpenAI-compatible
+client. Build RAG prompt assembly on top of ChromaDB Vault retrieval and expose
+generation endpoints for worksheet drafts, caption drafts, and daily summaries.
+
+Scope:
+- DeepSeek client using model deepseek-chat
+- JSON-object generation helper with key validation
+- RAG context retrieval for brand rules, prior worksheets, topic overlap, and
+  caption patterns
+- Typed AI request/response contracts
+- Worksheet draft API route
+- Caption draft API route
+- Daily summary API route
+- No UI, approval gate, template generation, image generation, or .env changes
+
+New files:
+- src/lib/ai.types.ts
+- src/lib/deepseek.ts
+- src/lib/vault.rag.ts
+- src/app/api/ai/draft/worksheet/route.ts
+- src/app/api/ai/draft/caption/route.ts
+- src/app/api/ai/summary/route.ts
+
+Modified files:
+- package.json
+- next.config.mjs
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- README.md
 
 ## Phase 2.1.0 [2.1.0-stable]
 

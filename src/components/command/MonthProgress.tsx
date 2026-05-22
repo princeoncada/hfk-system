@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { getPlan } from '@/lib/planning.store'
 
 function currentMonth(): string {
@@ -44,9 +45,17 @@ export default async function MonthProgress() {
         <h2 className="font-display text-2xl font-semibold">
           {formatMonthLabel(month)}
         </h2>
-        <span className="text-sm text-warm-brown/60">
-          {elapsedDays} / {totalDays} days
-        </span>
+        <div className="flex items-center gap-3">
+          <span className="text-sm text-warm-brown/60">
+            {elapsedDays} / {totalDays} days
+          </span>
+          <Link
+            href={`/planner/${month}`}
+            className="text-sm text-sage-green hover:underline"
+          >
+            View Planner →
+          </Link>
+        </div>
       </div>
 
       <div className="mb-3 mt-2 h-2 w-full rounded-full bg-warm-brown/10">

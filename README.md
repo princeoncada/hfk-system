@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 2.1.0-alpha |
-| Status | alpha |
-| Current phase | Phase 2.1.0 — ChromaDB Layer |
+| Current | 2.1.0-stable |
+| Status | stable |
+| Current phase | Phase 2.1.0 — ChromaDB Layer (stable) |
 
 ## What This Is
 

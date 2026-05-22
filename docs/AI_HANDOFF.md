@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 2.7.0-alpha
+## Current Version: 2.7.0-stable
 
 ## Current Phase
 
-Phase 2.7.0 [2.7.0-alpha] — Daily Package Review — alpha.
+Phase 2.7.0 [2.7.0-stable] — Daily Package Review — stable.
 
 ## Architecture Invariant
 
@@ -24,9 +24,9 @@ records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Phase 2.7.0 [2.7.0-alpha]
+## Phase 2.7.0 [2.7.0-stable]
 
-Status: alpha
+Status: stable
 
 Purpose:
 Provide an operator-facing review screen for the daily package approval

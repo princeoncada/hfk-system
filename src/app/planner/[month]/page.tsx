@@ -24,34 +24,31 @@ export default async function PlannerMonthPage({
   })
 
   return (
-    <div className="mx-auto max-w-5xl">
-      <div className="mb-6 flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <Link
-            href="/"
-            className="text-sm text-warm-brown/60 hover:text-warm-brown"
-          >
-            ← Home
-          </Link>
-          <h1 className="font-display text-2xl font-semibold">{monthLabel}</h1>
-        </div>
-        <div className="flex items-center gap-3">
-          <Link
-            href={`/planner/${prevMonth}`}
-            className="px-2 py-1 text-sm text-warm-brown/60 hover:text-warm-brown"
-          >
-            ←
-          </Link>
-          <Link
-            href={`/planner/${nextMonth}`}
-            className="px-2 py-1 text-sm text-warm-brown/60 hover:text-warm-brown"
-          >
-            →
-          </Link>
+    <>
+      <div className="mb-8">
+        <p className="font-mono text-[11px] tracking-[0.14em] text-ink-3 uppercase mb-1">
+          Plan
+        </p>
+        <div className="flex items-end justify-between gap-4">
+          <h1 className="font-display text-[38px] leading-[1.1]">{monthLabel}</h1>
+          <div className="flex items-center gap-2 mb-1">
+            <Link
+              href={`/planner/${prevMonth}`}
+              className="w-8 h-8 grid place-items-center rounded-[8px] border border-[rgba(92,64,51,0.14)] text-ink-3 hover:text-ink hover:bg-cream-deep transition-colors text-[14px]"
+            >
+              &larr;
+            </Link>
+            <Link
+              href={`/planner/${nextMonth}`}
+              className="w-8 h-8 grid place-items-center rounded-[8px] border border-[rgba(92,64,51,0.14)] text-ink-3 hover:text-ink hover:bg-cream-deep transition-colors text-[14px]"
+            >
+              &rarr;
+            </Link>
+          </div>
         </div>
       </div>
 
       <PlannerView month={month} plan={plan} monthLabel={monthLabel} />
-    </div>
+    </>
   )
 }

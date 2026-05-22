@@ -39,16 +39,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 1.5.1-stable |
-| Phase | Patch 1.5.1 |
+| Version | 1.5.2-stable |
+| Phase | Patch 1.5.2 |
 | State | stable |
-| Date | 2026-05-21 |
-| Summary | Validation hardening — require -LiteralPath for bracket paths in PowerShell |
+| Date | 2026-05-22 |
+| Summary | Documentation patch — v2 phase queue defined. New backend-first phase sequence (2.0.0–3.1.0) replaces old planned phases (2.0.0–2.3.0). ChromaDB and DeepSeek architecture constraints documented. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 1.5.2-stable | Patch 1.5.2 | stable | 2026-05-22 | Documentation patch — v2 phase queue defined. New backend-first phase sequence (2.0.0–3.1.0) replaces old planned phases (2.0.0–2.3.0). ChromaDB and DeepSeek architecture constraints documented. |
 | 1.5.1-stable | Patch 1.5.1 | stable | 2026-05-21 | Validation hardening — require -LiteralPath for bracket paths in PowerShell |
 | 1.5.0-stable | Phase 1.5.0 | stable | 2026-05-21 | Save + Archive — JSON editor UI, save API, archive-on-export |
 | 1.4.1-stable | Patch 1.4.1 | stable | 2026-05-21 | Workflow hardening — Section 2 ownership, npm command rule, push block rule |
@@ -65,6 +66,6 @@ Every version change must be applied to all four simultaneously:
 
 ## Next Phase
 
-Current stable version: 1.5.1-stable
+Current stable version: 1.5.2-stable
 Current working version: none
-Next recommended phase: Phase 2.0.0 — Facebook Post Template
+Next recommended phase: Phase 2.0.0 — Vault Schema

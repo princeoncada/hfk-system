@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 2.9.0-alpha
+## Current Version: 2.9.0-stable
 
 ## Current Phase
 
-Phase 2.9.0 [2.9.0-alpha] — UI Design System — alpha.
+Phase 2.9.0 [2.9.0-stable] — UI Design System — stable.
 
 ## Architecture Invariant
 
@@ -24,9 +24,9 @@ records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Phase 2.9.0 [2.9.0-alpha]
+## Phase 2.9.0 [2.9.0-stable]
 
-Status: alpha
+Status: stable
 
 Purpose: Apply the HFK design system across the entire app shell and all
 existing screens. Introduce sidebar navigation, Google Fonts (Inter,
@@ -462,7 +462,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Phase 2.9.0 — UI Design System is in progress.
+Phase 3.0.0 — Vault Browser.
 
 ## What Exists
 

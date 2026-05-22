@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.2.0-alpha
+## Current Version: 3.2.0-stable
 
 ## Current Phase
 
-Phase 3.2.0 [3.2.0-alpha] — Analytics + Recommendations — alpha.
+Phase 3.2.0 [3.2.0-stable] — Analytics + Recommendations — stable.
 
 ## Architecture Invariant
 
@@ -24,9 +24,9 @@ records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Phase 3.2.0 [3.2.0-alpha]
+## Phase 3.2.0 [3.2.0-stable]
 
-Status: alpha
+Status: stable
 
 Purpose: Analytics + Recommendations — operator-facing analytics screen
 using demo data until real performance metrics exist.
@@ -47,6 +47,18 @@ New files:
 Modified files:
 - src/components/shell/SidebarNav.tsx
 - docs/VERSIONING.md, docs/AI_HANDOFF.md, docs/PHASE_LOG.md, README.md
+
+Validation:
+- analytics.types.ts — PerformanceStat, HeatmapCell, RecommendationCard,
+  AnalyticsSnapshot interfaces
+- analytics.mock.ts — getMockSnapshot() returns demo snapshot with isDemo: true,
+  AI summary, 5 top posts, 5 worst posts, 36-cell heatmap, 4 recommendation cards
+- /analytics server page — calls getMockSnapshot, passes to AnalyticsDashboard
+- AnalyticsDashboard client component — AI summary card with Demo Data pill,
+  top/worst post columns, subject×grade heatmap, dismissible recommendation cards
+  persisted to localStorage
+- Analytics nav link + bar chart icon added to SidebarNav
+- All 17 checks passed, build clean, 19/19 static pages
 
 ## Next Phase
 

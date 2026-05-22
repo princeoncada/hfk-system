@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 2.3.0-stable | Phase 2.3.0 — Approval Gate API | stable | 2026-05-22 | 5-gate approval state machine with package persistence and Vault write-back |
 | 2.2.0-stable | Phase 2.2.0 — DeepSeek Integration | stable | 2026-05-22 | DeepSeek integration with RAG pipeline — worksheet draft, caption draft, and daily summary endpoints |
 | 2.1.0-stable | Phase 2.1.0 — ChromaDB Layer | stable | 2026-05-22 | ChromaDB layer — ingestion, query, seed, and Vault API routes |
 | 2.0.0-stable | Phase 2.0.0 — Vault Schema | stable | 2026-05-22 | Vault type system — interfaces and Zod schemas for all seven Vault asset types |
@@ -21,6 +22,36 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Phase 2.3.0 — Approval Gate API
+
+Status: stable
+
+Version: 2.3.0-stable
+
+Date: 2026-05-22
+
+Purpose:
+Built the 5-gate approval state machine for daily content packages:
+direction → worksheet → template → caption → final. Gate actions approve,
+reject, and redirect package state persisted to data/packages/YYYY-MM-DD.json.
+Vault write-back on worksheet and caption approval was confirmed.
+
+Files changed:
+- src/lib/approval.types.ts (created) — GateName, GateStatus, GateState, DailyPackage
+- src/lib/approval.store.ts (created) — filesystem read/write for data/packages/
+- src/lib/approval.actions.ts (created) — approveGate, rejectGate, redirectGate with Vault write-back
+- src/app/api/approval/package/route.ts (created) — GET today's package
+- src/app/api/approval/gate/[gate]/approve/route.ts (created)
+- src/app/api/approval/gate/[gate]/reject/route.ts (created)
+- src/app/api/approval/gate/[gate]/redirect/route.ts (created)
+- .gitignore (modified) — data/packages/ excluded
+
+Validation:
+- 5-gate approval flow is live.
+- Approve, reject, and redirect actions persist correctly.
+- Package state writes to data/packages/YYYY-MM-DD.json.
+- Vault write-back confirmed for worksheet and caption approvals.
 
 ## Phase 2.2.0 — DeepSeek Integration
 

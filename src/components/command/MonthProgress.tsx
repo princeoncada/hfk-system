@@ -19,13 +19,13 @@ export default async function MonthProgress() {
 
   if (plan === null) {
     return (
-      <section>
-        <h2 className="font-display text-2xl font-semibold">Monthly Plan</h2>
-        <div className="mt-3 rounded-lg border border-warm-brown/20 p-4 text-center">
-          <p className="text-sm text-warm-brown/50">
+      <section className="rounded-[14px] bg-paper border border-[rgba(92,64,51,0.14)] shadow-card px-6 py-5">
+        <h2 className="font-display text-[24px]">Monthly Plan</h2>
+        <div className="mt-3 text-center">
+          <p className="text-[13px] text-ink-3">
             No plan for {formatMonthLabel(month)}.
           </p>
-          <p className="mt-1 text-xs text-warm-brown/30">
+          <p className="mt-1 text-[12px] text-ink-4">
             POST /api/planning/generate to create one.
           </p>
         </div>
@@ -40,41 +40,43 @@ export default async function MonthProgress() {
   const todayPlan = plan.days.find((day) => day.date === today)
 
   return (
-    <section>
+    <section className="rounded-[14px] bg-paper border border-[rgba(92,64,51,0.14)] shadow-card px-6 py-5">
       <div className="flex items-center justify-between gap-3">
-        <h2 className="font-display text-2xl font-semibold">
+        <h2 className="font-display text-[24px] leading-none">
           {formatMonthLabel(month)}
         </h2>
         <div className="flex items-center gap-3">
-          <span className="text-sm text-warm-brown/60">
+          <span className="text-[13px] text-ink-3">
             {elapsedDays} / {totalDays} days
           </span>
           <Link
             href={`/planner/${month}`}
-            className="text-sm text-sage-green hover:underline"
+            className="text-[13px] text-sage hover:underline"
           >
-            View Planner →
+            View Planner &rarr;
           </Link>
         </div>
       </div>
 
-      <div className="mb-3 mt-2 h-2 w-full rounded-full bg-warm-brown/10">
+      <div className="mt-3 mb-4 h-1.5 w-full rounded-full bg-[rgba(92,64,51,0.1)]">
         <div
-          className="h-2 rounded-full bg-sage-green"
+          className="h-1.5 rounded-full bg-sage"
           style={{ width: `${pct}%` }}
         />
       </div>
 
       {todayPlan ? (
-        <p className="text-sm">
-          <span className="text-warm-brown/50">Today: </span>
-          <span className="font-medium">{todayPlan.topic}</span>
-          <span className="text-warm-brown/50">
-            {' '}· Grade {todayPlan.grade} · {todayPlan.subject}
-          </span>
-        </p>
+        <div>
+          <p className="font-display text-[16px] text-ink">{todayPlan.topic}</p>
+          <div className="mt-2 flex items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium font-sans border bg-sage-tint text-sage-deep border-sage/20">
+              {todayPlan.subject}
+            </span>
+            <span className="text-[13px] text-ink-3">Grade {todayPlan.grade}</span>
+          </div>
+        </div>
       ) : (
-        <p className="text-sm text-warm-brown/40">
+        <p className="text-[13px] text-ink-4">
           No entry for today in this plan.
         </p>
       )}

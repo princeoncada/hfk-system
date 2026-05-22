@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 1.5.1-stable
+## Current Version: 1.5.2-stable
 
 ## Current Phase
 
-Patch 1.5.1 [1.5.1-stable] — Validation Hardening — stable.
+Patch 1.5.2 [1.5.2-stable] — v2 Phase Planning — stable.
 
 ## Architecture Invariant
 
@@ -15,6 +15,14 @@ Filesystem-first, template-stable architecture is locked.
 - archives/ is permanent output history and must never be deleted.
 - assets/avatars/ contains fixed brand assets that AI must never regenerate.
 - Templates are stable. Content is variable. They must never mix ownership.
+
+v2 introduces ChromaDB (local vector database) as a search and retrieval
+layer alongside the filesystem. Content JSON files remain the source of
+truth. ChromaDB is populated from them and re-indexed on every approval.
+Non-text assets (images, templates) are represented in ChromaDB by metadata
+records only — the actual files live on disk and are never embedded.
+DeepSeek API handles all text generation. Visuals and worksheet template
+generation go to external tools via the Prompt Library.
 
 ## Phase 1.0.0 [1.0.0-stable]
 
@@ -104,14 +112,23 @@ Modified files:
 
 ## Future Phase Queue
 
-- Phase 2.0.0 — Facebook Post Template
-- Phase 2.1.0 — Content Calendar
-- Phase 2.2.0 — Caption Generator
-- Phase 2.3.0 — Prompt Library
+- Phase 2.0.0 — Vault Schema
+- Phase 2.1.0 — ChromaDB Layer
+- Phase 2.2.0 — DeepSeek Integration
+- Phase 2.3.0 — Approval Gate API
+- Phase 2.4.0 — Planning Engine
+- Phase 2.5.0 — Prompt Library API
+- Phase 2.6.0 — AI Command Center
+- Phase 2.7.0 — Daily Package Review
+- Phase 2.8.0 — Monthly Planner
+- Phase 2.9.0 — Calendar Intelligence
+- Phase 3.0.0 — Vault Browser
+- Phase 3.1.0 — Analytics + Recommendations
 
 ## Recommended Next Step
 
-Phase 2.0.0 — Facebook Post Template.
+Phase 2.0.0 — Vault Schema. Define all asset types, metadata structure,
+lifecycle states, and freshness model before any backend implementation begins.
 
 ## What Exists
 
@@ -128,3 +145,7 @@ dev.
 - Do not add cloud infrastructure.
 - Do not add automation or scheduling.
 - Do not modify content/ files without explicit operator confirmation.
+- Do not use a relational database (Prisma, PostgreSQL). ChromaDB is the
+  only database dependency permitted, and it is local-only.
+- Do not embed actual image or template files into ChromaDB. Only metadata
+  records for non-text assets are indexed.

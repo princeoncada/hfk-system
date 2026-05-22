@@ -8,8 +8,8 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 2.6.0-alpha |
-| Status | alpha |
+| Current | 2.6.0-stable |
+| Status | stable |
 | Current phase | Phase 2.6.0 — AI Command Center |
 
 ## What This Is

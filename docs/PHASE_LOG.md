@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 2.5.0-stable | Phase 2.5.0 — Prompt Library API | stable | 2026-05-22 | Prompt listing and assembly endpoints for VaultPrompt assets |
 | 2.4.0-stable | Phase 2.4.0 — Planning Engine | stable | 2026-05-22 | Monthly planning engine with DeepSeek + Vault RAG and persisted data/plans/ output |
 | 2.3.0-stable | Phase 2.3.0 — Approval Gate API | stable | 2026-05-22 | 5-gate approval state machine with package persistence and Vault write-back |
 | 2.2.0-stable | Phase 2.2.0 — DeepSeek Integration | stable | 2026-05-22 | DeepSeek integration with RAG pipeline — worksheet draft, caption draft, and daily summary endpoints |
@@ -23,6 +24,36 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Phase 2.5.0 — Prompt Library API
+
+Status: stable
+
+Version: 2.5.0-stable
+
+Date: 2026-05-22
+
+Purpose:
+Built the Prompt Library API. GET /api/prompts lists all VaultPrompt assets
+using collection.get() through getAssetsByType(). POST /api/prompts/assemble
+returns a brand-voice-enriched, ready-to-run prompt with placeholder
+interpolation for topic, grade, subject, and objective.
+
+Files changed:
+- src/lib/prompt.types.ts (created) — PromptAssemblyRequest, AssembledPrompt
+- src/lib/prompt.assemble.ts (created) — listPrompts(), assemblePrompt()
+- src/lib/vault.query.ts (modified) — added getAssetsByType()
+- src/app/api/prompts/route.ts (created) — GET prompt list
+- src/app/api/prompts/assemble/route.ts (created) — POST prompt assembly
+- vault/prompts/canva-worksheet.md (created) — sample Canva worksheet prompt
+
+Validation:
+- GET /api/prompts lists VaultPrompt assets via collection.get().
+- POST /api/prompts/assemble returns ready-to-run external prompts.
+- Brand voice enrichment and placeholder interpolation are live.
+- Missing prompt context returns 404.
+- listPrompts was refactored from semantic search to collection.get() for
+  reliable flat listing.
 
 ## Phase 2.4.0 — Planning Engine
 

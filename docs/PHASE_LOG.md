@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.0.0-alpha | Phase 3.0.0 — Calendar Intelligence | alpha | 2026-05-22 | Calendar Intelligence — bi-directional planner calendar with package status overlays |
 | 2.9.0-stable | Phase 2.9.0 — UI Design System | stable | 2026-05-22 | UI Design System — sidebar nav shell, full design token system, card-based component redesign across all screens |
 | 2.8.0-stable | Phase 2.8.0 — Monthly Planner | stable | 2026-05-22 | Monthly Planner — calendar grid UI, day detail panel, lock toggle, generate/regenerate, planner navigation links from command dashboard |
 | 2.7.0-stable | Phase 2.7.0 — Daily Package Review | stable | 2026-05-22 | Daily Package Review screen at /review with 5-gate interactive approval flow |
@@ -28,6 +29,18 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Phase 3.0.0 — Calendar Intelligence
+
+Status: alpha
+
+Version: 3.0.0-alpha
+
+Date: 2026-05-22
+
+Purpose: Bi-directional planner calendar — past cells show package shipping
+status, future cells show plan + in-review state, day detail panel shows
+gate-by-gate package summary.
 
 ## Phase 2.9.0 — UI Design System
 

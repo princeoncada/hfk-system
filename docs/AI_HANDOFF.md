@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 2.9.0-stable
+## Current Version: 3.0.0-alpha
 
 ## Current Phase
 
-Phase 2.9.0 [2.9.0-stable] — UI Design System — stable.
+Phase 3.0.0 [3.0.0-alpha] — Calendar Intelligence — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,27 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Phase 3.0.0 [3.0.0-alpha]
+
+Status: alpha
+
+Purpose: Make the Monthly Planner bi-directional. Past calendar cells read
+existing package files and show shipped/in-review status. Future cells show
+planned content with in-review overlay when a package already exists for that
+date. The day detail panel gains a package gate summary section.
+
+Scope:
+- src/lib/calendar.ts (new) — getPackagesForMonth() read-only helper
+- src/app/planner/[month]/page.tsx — load packages, pass to PlannerView
+- src/components/planner/PlannerView.tsx — bi-directional rendering,
+  package summary in detail panel, calendar legend
+
+New files: src/lib/calendar.ts
+
+Modified files: src/app/planner/[month]/page.tsx,
+  src/components/planner/PlannerView.tsx,
+  docs/VERSIONING.md, docs/AI_HANDOFF.md, docs/PHASE_LOG.md, README.md
 
 ## Phase 2.9.0 [2.9.0-stable]
 
@@ -457,12 +478,13 @@ Modified files:
 - Phase 2.7.0 — Daily Package Review
 - Phase 2.8.0 — Monthly Planner
 - Phase 2.9.0 — UI Design System
-- Phase 3.0.0 — Vault Browser
-- Phase 3.1.0 — Analytics + Recommendations
+- Phase 3.0.0 — Calendar Intelligence
+- Phase 3.1.0 — Vault Browser
+- Phase 3.2.0 — Analytics + Recommendations
 
 ## Recommended Next Step
 
-Phase 3.0.0 — Vault Browser.
+Phase 3.1.0 — Vault Browser.
 
 ## What Exists
 

@@ -39,9 +39,9 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 2.9.0-alpha |
+| Version | 2.9.0-stable |
 | Phase | Phase 2.9.0 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-22 |
 | Summary | UI Design System — sidebar nav shell, full design token system (Inter + Instrument Serif + JetBrains Mono), card-based component redesign across all screens: Command Center, Daily Review, Monthly Planner. |
 
@@ -49,7 +49,7 @@ Every version change must be applied to all four simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 2.9.0-alpha | Phase 2.9.0 — UI Design System | alpha | 2026-05-22 | UI Design System — sidebar nav shell, full design token system (Inter + Instrument Serif + JetBrains Mono), card-based component redesign across all screens: Command Center, Daily Review, Monthly Planner. |
+| 2.9.0-stable | Phase 2.9.0 — UI Design System | stable | 2026-05-22 | UI Design System — sidebar nav shell, full design token system (Inter + Instrument Serif + JetBrains Mono), card-based component redesign across all screens: Command Center, Daily Review, Monthly Planner. |
 | 2.8.0-stable | Phase 2.8.0 — Monthly Planner | stable | 2026-05-22 | Monthly Planner — calendar grid UI, day detail panel, lock toggle, generate/regenerate, planner navigation links from command dashboard |
 | 2.7.0-stable | Phase 2.7.0 — Daily Package Review | stable | 2026-05-22 | Daily Package Review screen at /review. 5-gate interactive approval flow with inline direction form, worksheet/caption display, provenance panel, reject form, redirect modal. Review link added to Command Center. |
 | 2.6.0-stable | Phase 2.6.0 — AI Command Center | stable | 2026-05-22 | AI Command Center home screen. TodayStatus, MonthProgress, and VaultAlerts wired as async Server Components above the worksheet list. Direct filesystem reads — no API hops. |
@@ -76,6 +76,6 @@ Every version change must be applied to all four simultaneously:
 
 ## Next Phase
 
-Current stable version: 2.8.0-stable
-Current working version: 2.9.0-alpha
-Next recommended phase: Phase 2.9.0 (in progress)
+Current stable version: 2.9.0-stable
+Current working version: none
+Next recommended phase: Phase 3.0.0 — Vault Browser

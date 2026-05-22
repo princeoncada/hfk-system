@@ -39,17 +39,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 2.7.0-alpha |
+| Version | 2.7.0-stable |
 | Phase | Phase 2.7.0 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-22 |
-| Summary | Daily Package Review screen. 5-gate approval flow at /review. Inline direction form, worksheet/caption draft display, template selector, provenance panel, reject inline form, redirect modal. |
+| Summary | Daily Package Review screen at /review. 5-gate interactive approval flow with inline direction form, worksheet/caption display, provenance panel, reject form, redirect modal. Review link added to Command Center. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 2.7.0-alpha | Phase 2.7.0 — Daily Package Review | alpha | 2026-05-22 | Daily Package Review screen. 5-gate approval flow at /review. Inline direction form, worksheet/caption draft display, template selector, provenance panel, reject inline form, redirect modal. |
+| 2.7.0-stable | Phase 2.7.0 — Daily Package Review | stable | 2026-05-22 | Daily Package Review screen at /review. 5-gate interactive approval flow with inline direction form, worksheet/caption display, provenance panel, reject form, redirect modal. Review link added to Command Center. |
 | 2.6.0-stable | Phase 2.6.0 — AI Command Center | stable | 2026-05-22 | AI Command Center home screen. TodayStatus, MonthProgress, and VaultAlerts wired as async Server Components above the worksheet list. Direct filesystem reads — no API hops. |
 | 2.5.0-stable | Phase 2.5.0 — Prompt Library API | stable | 2026-05-22 | Prompt Library API. GET /api/prompts lists Vault prompts via collection.get(). POST /api/prompts/assemble returns brand-voice-enriched ready-to-run prompts with placeholder interpolation. getAssetsByType() added to vault.query.ts for reliable flat asset listing. |
 | 2.4.0-stable | Phase 2.4.0 — Planning Engine | stable | 2026-05-22 | Monthly planning engine. DeepSeek + Vault RAG generates full-month content proposals with subject/grade rotation, duplicate-topic detection, and per-day confidence scoring. Plans persisted to data/plans/. |
@@ -74,6 +74,6 @@ Every version change must be applied to all four simultaneously:
 
 ## Next Phase
 
-Current stable version: 2.6.0-stable
-Current working version: 2.7.0-alpha
-Next recommended phase: Phase 2.7.0 — Daily Package Review
+Current stable version: 2.7.0-stable
+Current working version: none
+Next recommended phase: Phase 2.8.0 — Monthly Planner

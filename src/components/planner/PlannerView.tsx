@@ -6,12 +6,12 @@ import type { MonthlyPlan, PlanDay } from '@/lib/planning.types'
 import type { Subject } from '@/lib/types'
 
 const SUBJECT_COLORS: Record<string, string> = {
-  math: 'bg-blue-100 text-blue-700',
-  science: 'bg-green-100 text-green-700',
-  reading: 'bg-purple-100 text-purple-700',
-  vocabulary: 'bg-purple-100 text-purple-700',
-  bible: 'bg-amber-100 text-amber-700',
-  values: 'bg-amber-100 text-amber-700',
+  math: 'bg-blue-50 text-blue-600 border border-blue-100',
+  science: 'bg-sage-tint text-sage-deep border border-sage/20',
+  reading: 'bg-[#F3F0FF] text-[#5B4FCF] border border-[#C9C3F5]',
+  vocabulary: 'bg-[#F3F0FF] text-[#5B4FCF] border border-[#C9C3F5]',
+  bible: 'bg-yellow-tint text-[#7A5A11] border border-yellow/40',
+  values: 'bg-yellow-tint text-[#7A5A11] border border-yellow/40',
 }
 
 const SUBJECT_LABELS: Record<Subject, string> = {
@@ -50,9 +50,9 @@ function getCalendarWeeks(month: string): Array<Array<string | null>> {
 }
 
 function confidenceColor(confidence: number): string {
-  if (confidence >= 0.8) return 'bg-sage-green'
-  if (confidence >= 0.6) return 'bg-soft-yellow'
-  return 'bg-red-200'
+  if (confidence >= 0.8) return 'bg-sage'
+  if (confidence >= 0.6) return 'bg-yellow'
+  return 'bg-rose'
 }
 
 function confidenceLabel(confidence: number): string {
@@ -119,13 +119,13 @@ export default function PlannerView({
   return (
     <>
       <div className="mb-4 flex items-center justify-between">
-        <p className="text-sm text-warm-brown/60">
+        <p className="text-[13px] text-ink-3">
           {plan ? `${plan.days.length} days planned` : 'No plan generated yet.'}
         </p>
         <button
           onClick={handleGenerate}
           disabled={generating}
-          className="rounded bg-sage-green/80 px-4 py-1.5 text-sm text-white hover:bg-sage-green disabled:opacity-50"
+          className="bg-ink text-cream rounded-[10px] px-4 py-2.5 text-sm font-medium font-sans hover:bg-[#1a120e] transition-colors disabled:opacity-40"
         >
           {generating ? 'Generating...' : plan ? 'Regenerate' : 'Generate Plan'}
         </button>
@@ -135,7 +135,7 @@ export default function PlannerView({
         {DAY_HEADERS.map((header) => (
           <div
             key={header}
-            className="py-1 text-center text-xs font-medium text-warm-brown/40"
+            className="py-1 text-center font-mono text-[10px] tracking-[0.1em] text-ink-3 uppercase"
           >
             {header}
           </div>
@@ -154,24 +154,35 @@ export default function PlannerView({
               key={date}
               onClick={() => setSelectedDate(date === selectedDate ? null : date)}
               className={[
-                'min-h-[90px] cursor-pointer rounded-lg border p-2 transition-colors',
-                isSelected
-                  ? 'border-sage-green bg-sage-green/5'
-                  : day?.duplicateRisk
-                    ? 'border-amber-300 hover:bg-amber-50/50'
-                    : 'border-warm-brown/20 hover:bg-warm-brown/5',
-                isToday ? 'ring-2 ring-sage-green ring-offset-1' : '',
+                'bg-paper border border-[rgba(92,64,51,0.14)] rounded-[10px] p-2 cursor-pointer min-h-[90px] transition-colors hover:bg-cream-deep',
+                isSelected ? '!bg-ink !border-ink text-cream hover:!bg-ink' : '',
+                isToday && !isSelected ? 'ring-2 ring-sage ring-offset-1' : '',
+                day?.duplicateRisk && !isSelected
+                  ? 'border-rose/40 hover:bg-rose-tint/30'
+                  : '',
               ].join(' ')}
             >
               <div className="flex items-start justify-between gap-1">
                 {day?.locked ? (
-                  <span className="rounded-full bg-warm-brown/10 px-1.5 py-0.5 text-[10px] text-warm-brown/50">
+                  <span
+                    className={
+                      isSelected
+                        ? 'bg-cream-deep/20 text-cream/50 rounded-full px-1.5 py-0.5 text-[9px]'
+                        : 'bg-cream-deep text-ink-3 rounded-full px-1.5 py-0.5 text-[9px]'
+                    }
+                  >
                     locked
                   </span>
                 ) : (
                   <span />
                 )}
-                <span className="text-xs text-warm-brown/40">
+                <span
+                  className={
+                    isSelected
+                      ? 'text-[12px] text-cream/60'
+                      : 'text-[12px] text-ink-3'
+                  }
+                >
                   {date.slice(-2).replace(/^0/, '')}
                 </span>
               </div>
@@ -179,17 +190,34 @@ export default function PlannerView({
               {day ? (
                 <>
                   <span
-                    className={`mt-1 inline-flex rounded-full px-1.5 py-0.5 text-xs ${
-                      SUBJECT_COLORS[day.subject] ?? 'bg-warm-brown/10 text-warm-brown/60'
+                    className={`rounded-full px-1.5 py-0.5 text-[10px] font-medium font-sans inline-flex mt-1 ${
+                      isSelected
+                        ? 'bg-cream/10 text-cream/80 border border-cream/15'
+                        : SUBJECT_COLORS[day.subject] ??
+                          'bg-paper text-ink-2 border border-[rgba(92,64,51,0.14)]'
                     }`}
                   >
                     {subjectLabel(day.subject)}
                   </span>
-                  <p className="mt-1 line-clamp-2 text-xs font-medium leading-tight text-warm-brown">
+                  <p
+                    className={
+                      isSelected
+                        ? 'text-[11px] font-medium text-cream/90 leading-tight line-clamp-2 mt-0.5'
+                        : 'text-[11px] font-medium text-ink leading-tight line-clamp-2 mt-0.5'
+                    }
+                  >
                     {day.topic}
                   </p>
-                  <p className="text-xs text-warm-brown/40">Grade {day.grade}</p>
-                  <div className="mt-1 h-1 w-full rounded-full bg-warm-brown/10">
+                  <p
+                    className={
+                      isSelected
+                        ? 'text-[10px] text-cream/50'
+                        : 'text-[10px] text-ink-3'
+                    }
+                  >
+                    Grade {day.grade}
+                  </p>
+                  <div className="h-1 rounded-full bg-[rgba(92,64,51,0.08)] mt-1">
                     <div
                       className={`h-1 rounded-full ${confidenceColor(
                         day.confidence,
@@ -199,7 +227,15 @@ export default function PlannerView({
                   </div>
                 </>
               ) : (
-                <p className="mt-2 text-center text-xs text-warm-brown/20">—</p>
+                <p
+                  className={
+                    isSelected
+                      ? 'mt-2 text-center text-[11px] text-cream/50'
+                      : 'mt-2 text-center text-[11px] text-ink-4'
+                  }
+                >
+                  &mdash;
+                </p>
               )}
             </div>
           )
@@ -207,40 +243,44 @@ export default function PlannerView({
       </div>
 
       {selectedDay ? (
-        <div className="mt-6 rounded-lg border border-warm-brown/20 p-5">
-          <div className="mb-4 flex items-start justify-between">
+        <div className="bg-paper border border-[rgba(92,64,51,0.14)] rounded-[14px] shadow-card px-6 py-5 mt-6">
+          <div className="flex items-start justify-between">
             <div>
-              <p className="mb-0.5 text-xs text-warm-brown/40">
+              <p className="font-mono text-[11px] tracking-[0.1em] text-ink-3 uppercase mb-0.5">
                 {selectedDay.date}
               </p>
-              <h2 className="font-display text-xl font-semibold">
+              <h2 className="font-display text-[26px] text-ink">
                 {selectedDay.topic}
               </h2>
             </div>
             <button
               onClick={() => setSelectedDate(null)}
-              className="text-sm text-warm-brown/40 hover:text-warm-brown"
+              className="text-ink-3 hover:text-ink text-[14px]"
             >
-              ✕
+              &times;
             </button>
           </div>
 
-          <dl className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-2">
+          <dl className="grid grid-cols-1 gap-4 mt-4 text-[14px] sm:grid-cols-2">
             <div>
-              <dt className="text-warm-brown/50">Grade</dt>
-              <dd>Grade {selectedDay.grade}</dd>
+              <dt className="text-ink-3 text-[12px] font-medium mb-0.5">Grade</dt>
+              <dd className="text-ink">Grade {selectedDay.grade}</dd>
             </div>
             <div>
-              <dt className="text-warm-brown/50">Subject</dt>
-              <dd>{subjectLabel(selectedDay.subject)}</dd>
+              <dt className="text-ink-3 text-[12px] font-medium mb-0.5">Subject</dt>
+              <dd className="text-ink">{subjectLabel(selectedDay.subject)}</dd>
             </div>
             <div className="sm:col-span-2">
-              <dt className="text-warm-brown/50">Objective</dt>
-              <dd>{selectedDay.objective ?? '—'}</dd>
+              <dt className="text-ink-3 text-[12px] font-medium mb-0.5">
+                Objective
+              </dt>
+              <dd className="text-ink">{selectedDay.objective ?? '-'}</dd>
             </div>
             <div>
-              <dt className="text-warm-brown/50">Confidence</dt>
-              <dd className="mt-1 flex items-center gap-2">
+              <dt className="text-ink-3 text-[12px] font-medium mb-0.5">
+                Confidence
+              </dt>
+              <dd className="mt-1 flex items-center gap-2 text-ink">
                 <span>{confidenceLabel(selectedDay.confidence)}</span>
                 <span
                   className={`h-2 w-10 rounded-full ${confidenceColor(
@@ -250,31 +290,37 @@ export default function PlannerView({
               </dd>
             </div>
             <div>
-              <dt className="text-warm-brown/50">Duplicate Risk</dt>
-              <dd
-                className={
-                  selectedDay.duplicateRisk ? 'text-amber-600' : undefined
-                }
-              >
-                {selectedDay.duplicateRisk
-                  ? 'Yes — topic recently covered'
-                  : 'No'}
+              <dt className="text-ink-3 text-[12px] font-medium mb-0.5">
+                Duplicate Risk
+              </dt>
+              <dd className={selectedDay.duplicateRisk ? 'text-[#8C3D31]' : 'text-ink'}>
+                {selectedDay.duplicateRisk ? 'Yes - topic recently covered' : 'No'}
               </dd>
             </div>
             <div className="sm:col-span-2">
-              <dt className="text-warm-brown/50">Notes</dt>
-              <dd>{selectedDay.notes || '—'}</dd>
+              <dt className="text-ink-3 text-[12px] font-medium mb-0.5">Notes</dt>
+              <dd className="text-ink">{selectedDay.notes || '-'}</dd>
             </div>
           </dl>
 
           <button
             onClick={() => void handleLockToggle(selectedDay.date)}
             disabled={locking === selectedDay.date}
-            className="mt-4 flex items-center gap-1.5 text-sm text-warm-brown/60 hover:text-warm-brown disabled:opacity-40"
+            className="mt-5 flex items-center gap-1.5 text-[13px] text-ink-3 hover:text-ink transition-colors disabled:opacity-40"
           >
+            <svg
+              viewBox="0 0 24 24"
+              className="h-3.5 w-3.5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            >
+              <rect x="5" y="10" width="14" height="10" rx="2" />
+              <path d="M8 10V7a4 4 0 018 0v3" />
+            </svg>
             {selectedDay.locked
-              ? 'Locked — click to unlock'
-              : 'Unlocked — click to lock'}
+              ? 'Locked - click to unlock'
+              : 'Unlocked - click to lock'}
           </button>
         </div>
       ) : null}

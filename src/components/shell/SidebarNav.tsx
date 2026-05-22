@@ -7,6 +7,7 @@ const NAV_ITEMS = [
   { label: 'Command Center', href: '/', icon: 'home' },
   { label: 'Daily Review', href: '/review', icon: 'review' },
   { label: 'Planner', href: '/planner', icon: 'calendar' },
+  { label: 'Vault', href: '/vault', icon: 'vault' },
   { label: 'Worksheets', href: '/#worksheets', icon: 'doc' },
 ]
 
@@ -34,6 +35,25 @@ function NavIcon({ icon }: { icon: string }) {
       <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="3" y="4" width="18" height="18" rx="2" />
         <path d="M16 2v4M8 2v4M3 10h18" />
+      </svg>
+    )
+  }
+
+  if (icon === 'vault') {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={14}
+        height={14}
+      >
+        <ellipse cx="12" cy="7" rx="8" ry="3" />
+        <path d="M4 7v5c0 1.66 3.58 3 8 3s8-1.34 8-3V7" />
+        <path d="M4 12v5c0 1.66 3.58 3 8 3s8-1.34 8-3v-5" />
       </svg>
     )
   }

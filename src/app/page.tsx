@@ -1,16 +1,24 @@
-import { getWorksheets } from '@/lib/content'
 import Link from 'next/link'
+import MonthProgress from '@/components/command/MonthProgress'
+import TodayStatus from '@/components/command/TodayStatus'
+import VaultAlerts from '@/components/command/VaultAlerts'
+import { getWorksheets } from '@/lib/content'
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
   const worksheets = getWorksheets()
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <section className="mb-8">
+    <div className="mx-auto max-w-4xl space-y-8">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <TodayStatus />
+        <MonthProgress />
+      </div>
+
+      <VaultAlerts />
+
+      <section>
         <div className="mb-1 flex items-center justify-between">
-          <h2 className="text-2xl font-display font-semibold">
-            Worksheets
-          </h2>
+          <h2 className="font-display text-2xl font-semibold">Worksheets</h2>
           <Link
             href="/edit/new"
             className="rounded bg-sage-green/80 px-4 py-1.5 text-sm text-white hover:bg-sage-green"
@@ -18,14 +26,15 @@ export default function DashboardPage() {
             + New Worksheet
           </Link>
         </div>
-        <p className="text-sm text-warm-brown/60 mb-4">
-          {worksheets.length} worksheet{worksheets.length !== 1 ? 's' : ''} in content library
+        <p className="mb-4 text-sm text-warm-brown/60">
+          {worksheets.length} worksheet{worksheets.length !== 1 ? 's' : ''} in
+          content library
         </p>
-
         {worksheets.length === 0 ? (
-          <div className="border border-warm-brown/20 rounded-lg p-8 text-center">
-            <p className="text-warm-brown/50 text-sm">
-              No worksheets yet. Add JSON files to content/worksheets/ to get started.
+          <div className="rounded-lg border border-warm-brown/20 p-8 text-center">
+            <p className="text-sm text-warm-brown/50">
+              No worksheets yet. Add JSON files to content/worksheets/ to get
+              started.
             </p>
           </div>
         ) : (
@@ -33,7 +42,7 @@ export default function DashboardPage() {
             {worksheets.map((ws) => (
               <div
                 key={ws.id}
-                className="border border-warm-brown/20 rounded-lg px-4 py-3 flex items-center justify-between"
+                className="flex items-center justify-between rounded-lg border border-warm-brown/20 px-4 py-3"
               >
                 <div>
                   <p className="font-medium">{ws.title}</p>
@@ -42,7 +51,7 @@ export default function DashboardPage() {
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-soft-yellow text-warm-brown">
+                  <span className="rounded-full bg-soft-yellow px-2 py-0.5 text-xs text-warm-brown">
                     {ws.status}
                   </span>
                   <Link

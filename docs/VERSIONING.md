@@ -39,16 +39,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.0.0-stable |
-| Phase | Phase 3.0.0 |
-| State | stable |
+| Version | 3.1.0-alpha |
+| Phase | Phase 3.1.0 |
+| State | alpha |
 | Date | 2026-05-22 |
-| Summary | Calendar Intelligence — bi-directional planner. Past cells show shipped/in-review status from package data. Future cells show plan + in-review state. Day detail panel includes gate-by-gate package summary. |
+| Summary | Vault Browser — /vault standing asset library. 7 asset types, type filter tabs, name search, asset cards with freshness/lifecycle/usage data, lifecycle mutation actions (approve, archive, retire, resurrect). Vault nav link added to sidebar. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.1.0-alpha | Phase 3.1.0 — Vault Browser | alpha | 2026-05-22 | Vault Browser — /vault standing asset library. 7 asset types, type filter tabs, name search, asset cards with freshness/lifecycle/usage data, lifecycle mutation actions (approve, archive, retire, resurrect). Vault nav link added to sidebar. |
 | 3.0.0-stable | Phase 3.0.0 — Calendar Intelligence | stable | 2026-05-22 | Calendar Intelligence — bi-directional planner. Past cells show shipped/in-review status from package data. Future cells show plan + in-review state. Day detail panel includes gate-by-gate package summary. |
 | 2.9.0-stable | Phase 2.9.0 — UI Design System | stable | 2026-05-22 | UI Design System — sidebar nav shell, full design token system (Inter + Instrument Serif + JetBrains Mono), card-based component redesign across all screens: Command Center, Daily Review, Monthly Planner. |
 | 2.8.0-stable | Phase 2.8.0 — Monthly Planner | stable | 2026-05-22 | Monthly Planner — calendar grid UI, day detail panel, lock toggle, generate/regenerate, planner navigation links from command dashboard |
@@ -78,5 +79,5 @@ Every version change must be applied to all four simultaneously:
 ## Next Phase
 
 Current stable version: 3.0.0-stable
-Current working version: none
-Next recommended phase: Phase 3.1.0 — Vault Browser
+Current working version: 3.1.0-alpha
+Next recommended phase: Phase 3.2.0 — Analytics + Recommendations

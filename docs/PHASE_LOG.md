@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.1.0-alpha | Phase 3.1.0 — Vault Browser | alpha | 2026-05-22 | Standing Vault asset library at /vault with browsing, inspection, and lifecycle mutation |
 | 3.0.0-stable | Phase 3.0.0 — Calendar Intelligence | stable | 2026-05-22 | Calendar Intelligence — bi-directional planner calendar with package status overlays |
 | 2.9.0-stable | Phase 2.9.0 — UI Design System | stable | 2026-05-22 | UI Design System — sidebar nav shell, full design token system, card-based component redesign across all screens |
 | 2.8.0-stable | Phase 2.8.0 — Monthly Planner | stable | 2026-05-22 | Monthly Planner — calendar grid UI, day detail panel, lock toggle, generate/regenerate, planner navigation links from command dashboard |
@@ -29,6 +30,17 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Phase 3.1.0 — Vault Browser
+
+Status: alpha
+
+Version: 3.1.0-alpha
+
+Date: 2026-05-22
+
+Purpose: Standing Vault asset library at /vault. Browse, inspect, and
+mutate lifecycle state of all indexed Vault assets.
 
 ## Phase 3.0.0 — Calendar Intelligence
 

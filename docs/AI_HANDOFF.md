@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.0.0-stable
+## Current Version: 3.1.0-alpha
 
 ## Current Phase
 
-Phase 3.0.0 [3.0.0-stable] — Calendar Intelligence — stable.
+Phase 3.1.0 [3.1.0-alpha] — Vault Browser — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,28 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Phase 3.1.0 [3.1.0-alpha]
+
+Status: alpha
+
+Purpose: Vault Browser — standing UI for browsing, inspecting, and mutating
+the lifecycle of Vault assets indexed in ChromaDB.
+
+Scope:
+- /vault route — Server Component loads all 7 asset types
+- VaultBrowser client component — tabs, search, asset grid, lifecycle actions
+- POST /api/vault/asset/[id]/lifecycle — lifecycle mutation via re-ingest
+- SidebarNav — Vault link added
+
+New files:
+- src/app/vault/page.tsx
+- src/components/vault/VaultBrowser.tsx
+- src/app/api/vault/asset/[id]/lifecycle/route.ts
+
+Modified files:
+- src/components/shell/SidebarNav.tsx
+- docs/VERSIONING.md, docs/AI_HANDOFF.md, docs/PHASE_LOG.md, README.md
 
 ## Phase 3.0.0 [3.0.0-stable]
 

@@ -9,6 +9,7 @@ export interface PlanDay {
   objective?: string
   confidence: number
   duplicateRisk: boolean
+  locked?: boolean
   notes?: string
 }
 

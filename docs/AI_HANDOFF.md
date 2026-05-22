@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 2.0.0-alpha
+## Current Version: 2.0.0-stable
 
 ## Current Phase
 
-Phase 2.0.0 [2.0.0-alpha] — Vault Schema — alpha.
+Phase 2.0.0 [2.0.0-stable] — Vault Schema — stable.
 
 ## Architecture Invariant
 
@@ -24,9 +24,9 @@ records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Phase 2.0.0 [2.0.0-alpha]
+## Phase 2.0.0 [2.0.0-stable]
 
-Status: alpha
+Status: stable
 
 Purpose:
 Define the Vault knowledge base schema layer for v2. Establish all Vault

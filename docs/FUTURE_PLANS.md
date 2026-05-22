@@ -4,7 +4,7 @@ Living backlog for HFK Publishing Engine.
 Completed items are struck through. Update this file every phase.
 
 Last updated: 2026-05-22
-Current stable version: 3.1.0-stable
+Current stable version: 3.2.0-stable
 Current working version: none
 
 ---
@@ -30,6 +30,7 @@ Current working version: none
 - ~~Phase 2.9.0 — UI Design System~~ (stable 2026-05-22)
 - ~~Phase 3.0.0 — Calendar Intelligence~~ (stable 2026-05-22)
 - ~~Phase 3.1.0 — Vault Browser~~ (stable 2026-05-22)
+- ~~Phase 3.2.0 — Analytics + Recommendations~~ (stable 2026-05-22)
 
 ---
 
@@ -40,13 +41,6 @@ Current working version: none
 ---
 
 ## Planned
-
-### Phase 3.2.0 — Analytics + Recommendations
-
-AI-narrated insight screen and recommendation card surface. Wire: AI summary
-paragraph grounded in analytics history, top/worst post lists, best subject ×
-grade heatmap, recommendation cards (headline + rationale + action + dismiss).
-Build after sufficient usage data has accumulated; use mock data until then.
 
 ### Phase 3.3.0 — UI Animations + Onboarding
 

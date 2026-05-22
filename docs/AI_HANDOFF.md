@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 2.2.0-alpha
+## Current Version: 2.2.0-stable
 
 ## Current Phase
 
-Phase 2.2.0 [2.2.0-alpha] — DeepSeek Integration — alpha.
+Phase 2.2.0 [2.2.0-stable] — DeepSeek Integration — stable.
 
 ## Architecture Invariant
 
@@ -24,9 +24,9 @@ records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Phase 2.2.0 [2.2.0-alpha]
+## Phase 2.2.0 [2.2.0-stable]
 
-Status: alpha
+Status: stable
 
 Purpose:
 Connect DeepSeek as the v2 text generation layer through the OpenAI-compatible
@@ -225,8 +225,8 @@ Modified files:
 
 ## Recommended Next Step
 
-Phase 2.0.0 — Vault Schema. Define all asset types, metadata structure,
-lifecycle states, and freshness model before any backend implementation begins.
+Phase 2.3.0 — Approval Gate API. Build the 5-gate state machine for
+Direction → Worksheet → Template → Caption → Final Package.
 
 ## What Exists
 

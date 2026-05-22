@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import PlannerView from '@/components/planner/PlannerView'
+import { getPackagesForMonth } from '@/lib/calendar'
+import type { DailyPackage } from '@/lib/approval.types'
 import { getPlan } from '@/lib/planning.store'
 
 export default async function PlannerMonthPage({
@@ -9,6 +11,7 @@ export default async function PlannerMonthPage({
 }) {
   const { month } = params
   const plan = getPlan(month)
+  const packages: Record<string, DailyPackage> = getPackagesForMonth(month)
   const [year, m] = month.split('-').map(Number)
   const prevDate = new Date(year, m - 2, 1)
   const nextDate = new Date(year, m, 1)
@@ -48,7 +51,12 @@ export default async function PlannerMonthPage({
         </div>
       </div>
 
-      <PlannerView month={month} plan={plan} monthLabel={monthLabel} />
+      <PlannerView
+        month={month}
+        plan={plan}
+        monthLabel={monthLabel}
+        packages={packages}
+      />
     </>
   )
 }

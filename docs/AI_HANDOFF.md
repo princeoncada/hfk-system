@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 2.2.0-stable
+## Current Version: 2.3.0-alpha
 
 ## Current Phase
 
-Phase 2.2.0 [2.2.0-stable] — DeepSeek Integration — stable.
+Phase 2.3.0 [2.3.0-alpha] — Approval Gate API — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,40 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Phase 2.3.0 [2.3.0-alpha]
+
+Status: alpha
+
+Purpose:
+Build the 5-gate approval state machine for daily content packages:
+Direction → Worksheet → Template → Caption → Final Package. Persist package
+state as JSON and write approved worksheet/caption outputs back into the Vault.
+
+Scope:
+- Approval type contracts for gates, payloads, and daily packages
+- Filesystem package store under data/packages/
+- Approve, reject, and redirect gate actions
+- Vault write-back for approved worksheet and caption gates
+- Current-day package GET route
+- Gate approve/reject/redirect API routes
+- Redirect does not reset prior approved gates
+- No UI, scheduling, publishing automation, or relational database
+
+New files:
+- src/lib/approval.types.ts
+- src/lib/approval.store.ts
+- src/lib/approval.actions.ts
+- src/app/api/approval/package/route.ts
+- src/app/api/approval/gate/[gate]/approve/route.ts
+- src/app/api/approval/gate/[gate]/reject/route.ts
+- src/app/api/approval/gate/[gate]/redirect/route.ts
+
+Modified files:
+- .gitignore
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- README.md
 
 ## Phase 2.2.0 [2.2.0-stable]
 
@@ -225,8 +259,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Phase 2.3.0 — Approval Gate API. Build the 5-gate state machine for
-Direction → Worksheet → Template → Caption → Final Package.
+Phase 2.4.0 — Planning Engine.
 
 ## What Exists
 

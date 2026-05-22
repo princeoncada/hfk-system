@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 2.4.0-stable |
-| Status | stable |
-| Current phase | Phase 2.4.0 — Planning Engine |
+| Current | 2.5.0-alpha |
+| Status | alpha |
+| Current phase | Phase 2.5.0 — Prompt Library API |
 
 ## What This Is
 

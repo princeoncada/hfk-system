@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.0.0-alpha
+## Current Version: 3.0.0-stable
 
 ## Current Phase
 
-Phase 3.0.0 [3.0.0-alpha] — Calendar Intelligence — alpha.
+Phase 3.0.0 [3.0.0-stable] — Calendar Intelligence — stable.
 
 ## Architecture Invariant
 
@@ -24,9 +24,9 @@ records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Phase 3.0.0 [3.0.0-alpha]
+## Phase 3.0.0 [3.0.0-stable]
 
-Status: alpha
+Status: stable
 
 Purpose: Make the Monthly Planner bi-directional. Past calendar cells read
 existing package files and show shipped/in-review status. Future cells show

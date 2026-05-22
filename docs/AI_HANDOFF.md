@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 1.5.2-stable
+## Current Version: 2.0.0-alpha
 
 ## Current Phase
 
-Patch 1.5.2 [1.5.2-stable] — v2 Phase Planning — stable.
+Phase 2.0.0 [2.0.0-alpha] — Vault Schema — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,35 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Phase 2.0.0 [2.0.0-alpha]
+
+Status: alpha
+
+Purpose:
+Define the Vault knowledge base schema layer for v2. Establish all Vault
+asset types, shared lifecycle states, freshness model, reuse score,
+provenance tracking, rejection records, and ChromaDB query result shape
+before backend implementation begins.
+
+Scope:
+- TypeScript interfaces for template, worksheet, caption, prompt, topic,
+  avatar, and brand-rule Vault assets
+- Zod schemas for every Vault asset type
+- Shared constants for freshness thresholds, reuse cooldown, default reuse
+  score, and rejection reasons
+- Validation helpers for Vault assets
+- No UI, API routes, database connections, ChromaDB setup, or data writes
+
+New files:
+- src/lib/vault.types.ts
+- src/lib/vault.schema.ts
+- src/lib/vault.constants.ts
+
+Modified files:
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- README.md
 
 ## Phase 1.0.0 [1.0.0-stable]
 

@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 1.5.2-stable | Patch 1.5.2 | stable | 2026-05-22 | v2 Phase Planning — backend-first phase queue, ChromaDB, and DeepSeek constraints documented |
 | 1.5.1-stable | Patch 1.5.1 | stable | 2026-05-21 | Validation hardening — require -LiteralPath for bracket paths in PowerShell |
 | 1.5.0-stable | Phase 1.5.0 | stable | 2026-05-21 | Save + Archive — JSON editor UI, save API, archive-on-export |
 | 1.4.1-stable | Patch 1.4.1 | stable | 2026-05-21 | Workflow hardening — Section 2 ownership, npm command rule, push block rule |
@@ -17,6 +18,27 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Patch 1.5.2 — v2 Phase Planning
+
+Status: stable
+
+Version: 1.5.2-stable
+
+Date: 2026-05-22
+
+Purpose:
+Documentation-only patch. Replaced the old planned phase queue
+(2.0.0–2.3.0) with the full v2 phase sequence (2.0.0–3.1.0).
+Documented ChromaDB (local vector DB) and DeepSeek API as the v2
+backend stack. Established that non-text assets are represented
+in ChromaDB by metadata only. Confirmed backend-first build order.
+
+Files changed:
+- docs/FUTURE_PLANS.md
+- docs/AI_HANDOFF.md
+- docs/VERSIONING.md
+- README.md
 
 ## Patch 1.5.1 — Validation Hardening
 

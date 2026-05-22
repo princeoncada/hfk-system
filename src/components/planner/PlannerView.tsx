@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import type { DailyPackage } from '@/lib/approval.types'
 import type { MonthlyPlan, PlanDay } from '@/lib/planning.types'
 import type { Subject } from '@/lib/types'
 
@@ -63,16 +64,44 @@ function subjectLabel(subject: PlanDay['subject']): string {
   return SUBJECT_LABELS[subject] ?? subject
 }
 
+/*
+ * Returns a summary of the package state for a given day.
+ * null = no package file exists for this date.
+ */
+function getPackageSummary(pkg: DailyPackage | undefined): {
+  approvedCount: number
+  isShipped: boolean
+  hasPackage: boolean
+} | null {
+  if (!pkg) return null
+  const gates = Object.values(pkg.gates)
+  const approvedCount = gates.filter((g) => g.status === 'approved').length
+  return {
+    approvedCount,
+    isShipped: pkg.gates.final.status === 'approved',
+    hasPackage: true,
+  }
+}
+
+/*
+ * A date string (YYYY-MM-DD) is "past" if it is strictly before today.
+ */
+function isPastDate(date: string, today: string): boolean {
+  return date < today
+}
+
 interface PlannerViewProps {
   month: string
   plan: MonthlyPlan | null
   monthLabel: string
+  packages: Record<string, DailyPackage>
 }
 
 export default function PlannerView({
   month,
   plan,
   monthLabel,
+  packages,
 }: PlannerViewProps) {
   const router = useRouter()
   const [selectedDate, setSelectedDate] = useState<string | null>(null)
@@ -146,20 +175,39 @@ export default function PlannerView({
           if (!date) return <div key={index} className="min-h-[90px]" />
 
           const day = dayMap.get(date)
+          const pkg = packages[date]
+          const summary = getPackageSummary(pkg)
+          const isPast = isPastDate(date, today)
           const isToday = date === today
           const isSelected = date === selectedDate
+          const subjectChipClass = `rounded-full px-1.5 py-0.5 text-[10px] font-medium font-sans inline-flex mt-1 ${
+            isSelected
+              ? 'bg-cream/10 text-cream/80 border border-cream/15'
+              : day
+                ? SUBJECT_COLORS[day.subject] ??
+                  'bg-paper text-ink-2 border border-[rgba(92,64,51,0.14)]'
+                : ''
+          }`
+          const topicClass = isSelected
+            ? 'text-[11px] font-medium text-cream/90 leading-tight line-clamp-2 mt-0.5'
+            : 'text-[11px] font-medium text-ink leading-tight line-clamp-2 mt-0.5'
 
           return (
             <div
               key={date}
               onClick={() => setSelectedDate(date === selectedDate ? null : date)}
               className={[
-                'bg-paper border border-[rgba(92,64,51,0.14)] rounded-[10px] p-2 cursor-pointer min-h-[90px] transition-colors hover:bg-cream-deep',
-                isSelected ? '!bg-ink !border-ink text-cream hover:!bg-ink' : '',
+                'bg-paper border rounded-[10px] p-2 cursor-pointer min-h-[90px] transition-colors',
+                isSelected
+                  ? '!bg-ink !border-ink text-cream hover:!bg-ink'
+                  : isPast && summary?.isShipped
+                    ? 'border-sage/40 bg-sage-tint/40'
+                    : isPast && summary?.hasPackage && !summary.isShipped
+                      ? 'border-yellow/40 bg-yellow-tint/30'
+                      : day?.duplicateRisk && !isPast
+                        ? 'border-rose/40 hover:bg-rose-tint/20'
+                        : 'border-[rgba(92,64,51,0.14)] hover:bg-cream-deep',
                 isToday && !isSelected ? 'ring-2 ring-sage ring-offset-1' : '',
-                day?.duplicateRisk && !isSelected
-                  ? 'border-rose/40 hover:bg-rose-tint/30'
-                  : '',
               ].join(' ')}
             >
               <div className="flex items-start justify-between gap-1">
@@ -180,34 +228,64 @@ export default function PlannerView({
                   className={
                     isSelected
                       ? 'text-[12px] text-cream/60'
-                      : 'text-[12px] text-ink-3'
+                      : isPast && !day
+                        ? 'text-[12px] text-ink-4'
+                        : 'text-[12px] text-ink-3'
                   }
                 >
                   {date.slice(-2).replace(/^0/, '')}
                 </span>
               </div>
 
-              {day ? (
-                <>
-                  <span
-                    className={`rounded-full px-1.5 py-0.5 text-[10px] font-medium font-sans inline-flex mt-1 ${
-                      isSelected
-                        ? 'bg-cream/10 text-cream/80 border border-cream/15'
-                        : SUBJECT_COLORS[day.subject] ??
-                          'bg-paper text-ink-2 border border-[rgba(92,64,51,0.14)]'
-                    }`}
-                  >
-                    {subjectLabel(day.subject)}
-                  </span>
-                  <p
-                    className={
-                      isSelected
-                        ? 'text-[11px] font-medium text-cream/90 leading-tight line-clamp-2 mt-0.5'
-                        : 'text-[11px] font-medium text-ink leading-tight line-clamp-2 mt-0.5'
-                    }
-                  >
-                    {day.topic}
+              {isPast ? (
+                summary?.isShipped ? (
+                  <>
+                    {day ? (
+                      <span className={subjectChipClass}>{subjectLabel(day.subject)}</span>
+                    ) : null}
+                    <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-sage text-white px-1.5 py-0.5 text-[9px] font-medium">
+                      &#10003; Shipped
+                    </span>
+                    {day ? <p className={topicClass}>{day.topic}</p> : null}
+                  </>
+                ) : summary?.hasPackage ? (
+                  <>
+                    {day ? (
+                      <span className={subjectChipClass}>{subjectLabel(day.subject)}</span>
+                    ) : null}
+                    <span className="mt-1 inline-flex items-center rounded-full bg-yellow-tint text-[#7A5A11] border border-yellow/40 px-1.5 py-0.5 text-[9px] font-medium">
+                      {summary.approvedCount}/5
+                    </span>
+                    {day ? <p className={topicClass}>{day.topic}</p> : null}
+                  </>
+                ) : day ? (
+                  <>
+                    <span className={subjectChipClass}>{subjectLabel(day.subject)}</span>
+                    <p className={`${topicClass} opacity-50`}>{day.topic}</p>
+                    <p
+                      className={
+                        isSelected
+                          ? 'text-[10px] text-cream/50 opacity-40'
+                          : 'text-[10px] text-ink-3 opacity-40'
+                      }
+                    >
+                      Grade {day.grade}
+                    </p>
+                  </>
+                ) : (
+                  <p className="mt-2 text-center text-[10px] text-ink-4">
+                    &mdash;
                   </p>
+                )
+              ) : day ? (
+                <>
+                  <span className={subjectChipClass}>{subjectLabel(day.subject)}</span>
+                  {pkg ? (
+                    <span className="mt-0.5 inline-flex items-center rounded-full bg-yellow-tint text-[#7A5A11] border border-yellow/40 px-1.5 py-0.5 text-[9px] font-medium">
+                      In Review
+                    </span>
+                  ) : null}
+                  <p className={topicClass}>{day.topic}</p>
                   <p
                     className={
                       isSelected
@@ -240,6 +318,25 @@ export default function PlannerView({
             </div>
           )
         })}
+      </div>
+
+      <div className="mt-4 flex flex-wrap gap-4 text-[11px] text-ink-3">
+        <span className="flex items-center gap-1.5">
+          <span className="w-3 h-3 rounded-[3px] bg-sage-tint border border-sage/30 inline-block" />
+          Shipped
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="w-3 h-3 rounded-[3px] bg-yellow-tint border border-yellow/40 inline-block" />
+          In review
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="w-3 h-3 rounded-[3px] bg-rose-tint/50 border border-rose/35 inline-block" />
+          Duplicate risk
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="w-3 h-3 rounded-[3px] ring-2 ring-sage ring-offset-1 bg-paper inline-block" />
+          Today
+        </span>
       </div>
 
       {selectedDay ? (
@@ -302,6 +399,67 @@ export default function PlannerView({
               <dd className="text-ink">{selectedDay.notes || '-'}</dd>
             </div>
           </dl>
+
+          {packages[selectedDay.date] ? (
+            <div className="mt-5 pt-5 border-t border-[rgba(92,64,51,0.08)]">
+              <p className="font-mono text-[10px] tracking-[0.12em] text-ink-3 uppercase mb-3">
+                Package Status
+              </p>
+              <div className="grid grid-cols-5 gap-1.5">
+                {(['direction', 'worksheet', 'template', 'caption', 'final'] as const).map(
+                  (gate) => {
+                    const gateState = packages[selectedDay.date].gates[gate]
+                    const statusClasses = {
+                      approved: 'bg-sage-tint text-sage-deep border-sage/20',
+                      pending: 'bg-cream text-ink-4 border-[rgba(92,64,51,0.1)]',
+                      rejected: 'bg-rose-tint text-rose border-rose/25',
+                      redirecting:
+                        'bg-yellow-tint text-[#7A5A11] border-yellow/35',
+                    }
+                    const statusLabels = {
+                      approved: '✓',
+                      pending: '–',
+                      rejected: '✕',
+                      redirecting: '!',
+                    }
+                    return (
+                      <div
+                        key={gate}
+                        className={`flex flex-col gap-1 rounded-[8px] border p-2 text-center ${statusClasses[gateState.status]}`}
+                      >
+                        <p className="text-[9px] font-mono uppercase tracking-wide leading-none opacity-70">
+                          {gate === 'final' ? 'Pkg' : gate.slice(0, 3)}
+                        </p>
+                        <p className="text-[13px] font-medium leading-none">
+                          {statusLabels[gateState.status]}
+                        </p>
+                      </div>
+                    )
+                  },
+                )}
+              </div>
+              {packages[selectedDay.date].gates.final.status === 'approved' ? (
+                <p className="mt-3 text-[12px] text-sage-deep font-medium">
+                  Package shipped for this day.
+                </p>
+              ) : (
+                <p className="mt-3 text-[12px] text-ink-3">
+                  {
+                    Object.values(packages[selectedDay.date].gates).filter(
+                      (g) => g.status === 'approved',
+                    ).length
+                  }{' '}
+                  of 5 gates approved.
+                </p>
+              )}
+            </div>
+          ) : isPastDate(selectedDay.date, today) ? (
+            <div className="mt-5 pt-5 border-t border-[rgba(92,64,51,0.08)]">
+              <p className="text-[12px] text-ink-4">
+                No package on record for this day.
+              </p>
+            </div>
+          ) : null}
 
           <button
             onClick={() => void handleLockToggle(selectedDay.date)}

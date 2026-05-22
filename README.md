@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 2.3.0-stable |
-| Status | stable |
-| Current phase | Phase 2.3.0 — Approval Gate API |
+| Current | 2.4.0-alpha |
+| Status | alpha |
+| Current phase | Phase 2.4.0 — Planning Engine |
 
 ## What This Is
 

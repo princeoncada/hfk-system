@@ -42,10 +42,10 @@ const GATE_DESCRIPTIONS: Record<GateName, string> = {
 }
 
 const STATUS_BADGE: Record<GateStatus, string> = {
-  pending: 'bg-warm-brown/10 text-warm-brown/50',
-  approved: 'bg-sage-green/20 text-sage-green',
-  rejected: 'bg-red-100 text-red-500',
-  redirecting: 'bg-soft-yellow text-warm-brown',
+  pending: 'bg-paper text-ink-2 border-[rgba(92,64,51,0.14)]',
+  approved: 'bg-sage-tint text-sage-deep border-sage/20',
+  rejected: 'bg-rose-tint text-[#8C3D31] border-rose/30',
+  redirecting: 'bg-yellow-tint text-[#7A5A11] border-yellow/40',
 }
 
 const SUBJECTS: Subject[] = [
@@ -67,6 +67,18 @@ const SUBJECT_LABELS: Record<Subject, string> = {
   bible: 'Bible',
   values: 'Values',
 }
+
+const inputClass =
+  'border border-[rgba(92,64,51,0.14)] rounded-[10px] px-3 py-2 text-[14px] text-ink bg-paper focus:outline-none focus:ring-2 focus:ring-sage/30 focus:border-sage/50 w-full'
+const selectClass = `${inputClass} appearance-none`
+const primaryButtonClass =
+  'bg-ink text-cream rounded-[10px] px-4 py-2.5 text-sm font-medium font-sans hover:bg-[#1a120e] transition-colors disabled:opacity-40'
+const rejectButtonClass =
+  'bg-rose-tint text-[#8C3D31] border border-rose/30 rounded-[10px] px-4 py-2 text-[13px] font-medium hover:bg-rose/10 disabled:opacity-40'
+const redirectButtonClass =
+  'bg-yellow-tint text-[#7A5A11] border border-yellow/40 rounded-[10px] px-4 py-2 text-[13px] font-medium hover:bg-yellow/20'
+const textButtonClass =
+  'bg-transparent text-ink-3 px-2.5 py-2 text-sm font-sans hover:text-ink transition-colors'
 
 function isDirection(p: GatePayload): p is DirectionPayload {
   return p !== null && typeof p === 'object' && 'topic' in p && 'grade' in p
@@ -91,8 +103,9 @@ interface ReviewFlowProps {
 function StatusLabel({ status }: { status: GateStatus }) {
   return (
     <span
-      className={`rounded-full px-2 py-0.5 text-xs font-medium ${STATUS_BADGE[status]}`}
+      className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium font-sans border ${STATUS_BADGE[status]}`}
     >
+      <span className="w-1.5 h-1.5 rounded-full bg-current opacity-80" />
       {status === 'redirecting' ? 'needs attention' : status}
     </span>
   )
@@ -101,22 +114,22 @@ function StatusLabel({ status }: { status: GateStatus }) {
 function StepCircle({ status }: { status: GateStatus }) {
   if (status === 'approved') {
     return (
-      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-sage-green text-sm font-semibold text-white">
-        ✓
+      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-sage text-sm font-semibold text-white">
+        &#10003;
       </span>
     )
   }
 
   if (status === 'redirecting' || status === 'rejected') {
     return (
-      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-sm font-semibold text-white">
+      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow text-sm font-semibold text-ink">
         !
       </span>
     )
   }
 
   return (
-    <span className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-warm-brown/20 bg-white text-sm font-semibold text-warm-brown/40" />
+    <span className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[rgba(92,64,51,0.2)] bg-paper text-sm font-semibold text-ink-4" />
   )
 }
 
@@ -127,7 +140,7 @@ function ProvenancePanel({
 }) {
   return (
     <details className="mt-3">
-      <summary className="cursor-pointer text-xs text-warm-brown/40 hover:text-warm-brown/60">
+      <summary className="cursor-pointer text-[12px] text-ink-3 hover:text-ink-2">
         Grounded by {provenance.length} Vault asset
         {provenance.length !== 1 ? 's' : ''}
       </summary>
@@ -135,11 +148,11 @@ function ProvenancePanel({
         {provenance.map((item) => (
           <li
             key={item.vaultId}
-            className="flex justify-between gap-4 text-xs text-warm-brown/50"
+            className="flex justify-between gap-4 text-[12px] text-ink-3"
           >
             <span>{item.vaultId}</span>
-            <span className="text-warm-brown/30">
-              {item.assetType} · {(item.confidence * 100).toFixed(0)}%
+            <span className="text-ink-4">
+              {item.assetType} &middot; {(item.confidence * 100).toFixed(0)}%
             </span>
           </li>
         ))}
@@ -203,23 +216,23 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
   function renderDirectionBody(payload: GatePayload, status: GateStatus) {
     if (status === 'approved' && isDirection(payload)) {
       return (
-        <dl className="grid gap-2 text-sm">
+        <dl className="grid gap-2 text-[14px]">
           <div className="flex justify-between gap-4">
-            <dt className="text-warm-brown/50">Topic</dt>
-            <dd className="font-medium">{payload.topic}</dd>
+            <dt className="text-ink-3">Topic</dt>
+            <dd className="font-medium text-ink">{payload.topic}</dd>
           </div>
           <div className="flex justify-between gap-4">
-            <dt className="text-warm-brown/50">Grade</dt>
-            <dd>Grade {payload.grade}</dd>
+            <dt className="text-ink-3">Grade</dt>
+            <dd className="text-ink">Grade {payload.grade}</dd>
           </div>
           <div className="flex justify-between gap-4">
-            <dt className="text-warm-brown/50">Subject</dt>
-            <dd>{SUBJECT_LABELS[payload.subject]}</dd>
+            <dt className="text-ink-3">Subject</dt>
+            <dd className="text-ink">{SUBJECT_LABELS[payload.subject]}</dd>
           </div>
           {payload.objective ? (
             <div className="flex justify-between gap-4">
-              <dt className="text-warm-brown/50">Objective</dt>
-              <dd className="max-w-md text-right">{payload.objective}</dd>
+              <dt className="text-ink-3">Objective</dt>
+              <dd className="max-w-md text-right text-ink">{payload.objective}</dd>
             </div>
           ) : null}
         </dl>
@@ -229,7 +242,7 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
     return (
       <div className="space-y-3">
         {status === 'redirecting' ? (
-          <p className="text-sm text-amber-700">
+          <p className="text-[13px] text-[#7A5A11]">
             {pkg.gates.direction.redirectNote}
           </p>
         ) : null}
@@ -240,7 +253,7 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
           onChange={(event) =>
             setDirForm((current) => ({ ...current, topic: event.target.value }))
           }
-          className="w-full rounded border border-warm-brown/20 px-3 py-2 text-sm"
+          className={inputClass}
         />
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <select
@@ -251,7 +264,7 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
                 grade: Number(event.target.value) as Grade,
               }))
             }
-            className="rounded border border-warm-brown/20 px-3 py-2 text-sm"
+            className={selectClass}
           >
             {GRADES.map((grade) => (
               <option key={grade} value={grade}>
@@ -267,7 +280,7 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
                 subject: event.target.value as Subject,
               }))
             }
-            className="rounded border border-warm-brown/20 px-3 py-2 text-sm"
+            className={selectClass}
           >
             {SUBJECTS.map((subject) => (
               <option key={subject} value={subject}>
@@ -286,7 +299,7 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
               objective: event.target.value,
             }))
           }
-          className="w-full rounded border border-warm-brown/20 px-3 py-2 text-sm"
+          className={inputClass}
         />
         <button
           onClick={() =>
@@ -298,7 +311,7 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
             })
           }
           disabled={!dirForm.topic.trim() || loading === 'direction'}
-          className="rounded bg-sage-green px-4 py-2 text-sm font-medium text-white disabled:opacity-40"
+          className={primaryButtonClass}
         >
           {loading === 'direction' ? '...' : 'Set Direction & Approve'}
         </button>
@@ -310,10 +323,10 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
     if (status === 'redirecting') {
       return (
         <div className="space-y-2">
-          <p className="text-sm italic text-amber-700">
+          <p className="text-[14px] italic text-[#7A5A11]">
             {pkg.gates.worksheet.redirectNote}
           </p>
-          <p className="text-sm text-warm-brown/50">
+          <p className="text-[13px] text-ink-3">
             Draft will be regenerated with this guidance.
           </p>
         </div>
@@ -324,15 +337,15 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
       return (
         <div className="space-y-3">
           {payload.draft.subtitle ? (
-            <p className="font-medium">{payload.draft.subtitle}</p>
+            <p className="font-medium text-ink">{payload.draft.subtitle}</p>
           ) : null}
           <div>
-            <p className="text-sm text-warm-brown/50">
+            <p className="text-[13px] text-ink-3">
               Vocabulary: {payload.draft.vocabulary.length} terms
             </p>
             <ul className="mt-1 space-y-1">
               {payload.draft.vocabulary.slice(0, 3).map((entry) => (
-                <li key={entry.word} className="text-sm">
+                <li key={entry.word} className="text-[14px] text-ink">
                   <span className="font-medium">{entry.word}:</span>{' '}
                   {entry.definition}
                 </li>
@@ -340,8 +353,8 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
             </ul>
           </div>
           <div>
-            <p className="text-sm text-warm-brown/50">Activities</p>
-            <ul className="mt-1 list-inside list-disc text-sm">
+            <p className="text-[13px] text-ink-3">Activities</p>
+            <ul className="mt-1 list-inside list-disc text-[14px] text-ink">
               {payload.draft.activities.map((activity, index) => (
                 <li key={`${activity.type}-${index}`}>{activity.type}</li>
               ))}
@@ -355,7 +368,7 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
     }
 
     return (
-      <p className="text-sm italic text-warm-brown/50">
+      <p className="text-[14px] italic text-ink-3">
         No worksheet draft yet. Generate one via POST /api/ai/draft/worksheet.
       </p>
     )
@@ -363,7 +376,7 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
 
   function renderTemplateBody(payload: GatePayload, status: GateStatus) {
     if (status === 'approved' && isTemplate(payload)) {
-      return <p className="text-sm">Template: {payload.templateId}</p>
+      return <p className="text-[14px] text-ink">Template: {payload.templateId}</p>
     }
 
     return (
@@ -373,12 +386,12 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
           placeholder="e.g. template/cozy_v1"
           value={templateId}
           onChange={(event) => setTemplateId(event.target.value)}
-          className="flex-1 rounded border border-warm-brown/20 px-3 py-2 text-sm"
+          className={inputClass}
         />
         <button
           onClick={() => approve('template', { templateId })}
           disabled={!templateId.trim() || loading === 'template'}
-          className="rounded bg-sage-green px-4 py-2 text-sm font-medium text-white disabled:opacity-40"
+          className={primaryButtonClass}
         >
           {loading === 'template' ? '...' : 'Approve Template'}
         </button>
@@ -389,7 +402,7 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
   function renderCaptionBody(payload: GatePayload, status: GateStatus) {
     if (status === 'redirecting') {
       return (
-        <p className="text-sm italic text-amber-700">
+        <p className="text-[14px] italic text-[#7A5A11]">
           {pkg.gates.caption.redirectNote}
         </p>
       )
@@ -398,14 +411,14 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
     if (isCaption(payload)) {
       return (
         <div>
-          <blockquote className="border-l-4 border-sage-green pl-4 text-sm italic">
+          <blockquote className="border-l-2 border-sage pl-4 text-[14px] text-ink-2 italic">
             {payload.caption}
           </blockquote>
           <div className="mt-3 flex flex-wrap gap-2">
             {payload.hashtags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-warm-brown/10 px-2 py-0.5 text-xs text-warm-brown/60"
+                className="bg-cream text-ink-3 border border-[rgba(92,64,51,0.1)] rounded-full px-2.5 py-0.5 text-[11px]"
               >
                 #{tag}
               </span>
@@ -419,7 +432,7 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
     }
 
     return (
-      <p className="text-sm italic text-warm-brown/50">
+      <p className="text-[14px] italic text-ink-3">
         No caption draft yet. Generate one via POST /api/ai/draft/caption.
       </p>
     )
@@ -432,23 +445,21 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
           {GATE_ORDER.map((gateName) => (
             <li
               key={gateName}
-              className="flex items-center justify-between text-sm"
+              className="flex items-center justify-between text-[14px]"
             >
-              <span>{GATE_LABELS[gateName]}</span>
-              <span className="text-warm-brown/50">
-                {pkg.gates[gateName].status}
-              </span>
+              <span className="text-ink">{GATE_LABELS[gateName]}</span>
+              <span className="text-ink-3">{pkg.gates[gateName].status}</span>
             </li>
           ))}
         </ul>
         {status === 'approved' ? (
-          <p className="text-sm text-sage-green">Package complete!</p>
+          <p className="text-[13px] text-sage-deep">Package complete!</p>
         ) : allPriorApproved ? (
-          <p className="text-sm text-sage-green">
+          <p className="text-[13px] text-sage-deep">
             All gates approved. Ready to finalize.
           </p>
         ) : (
-          <p className="text-sm text-warm-brown/50">
+          <p className="text-[13px] text-ink-3">
             Complete all gates before finalizing.
           </p>
         )}
@@ -473,18 +484,18 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
             placeholder="Rejection reason"
             value={rejectReason}
             onChange={(event) => setRejectReason(event.target.value)}
-            className="flex-1 rounded border border-warm-brown/20 px-3 py-1.5 text-sm"
+            className={inputClass}
           />
           <button
             onClick={() => reject(gate)}
             disabled={!rejectReason.trim()}
-            className="rounded bg-red-100 px-3 py-1.5 text-sm font-medium text-red-500 disabled:opacity-40"
+            className={rejectButtonClass}
           >
             Confirm
           </button>
           <button
             onClick={() => setRejectTarget(null)}
-            className="px-3 py-1.5 text-sm text-warm-brown/50 hover:text-warm-brown"
+            className={textButtonClass}
           >
             Cancel
           </button>
@@ -495,7 +506,7 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
     return (
       <button
         onClick={() => setRejectTarget(gate)}
-        className="rounded bg-red-100 px-4 py-2 text-sm font-medium text-red-500"
+        className={rejectButtonClass}
       >
         Reject
       </button>
@@ -518,12 +529,12 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
     const canApprove = canApproveWorksheet || canApproveCaption || canApproveFinal
 
     return (
-      <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-warm-brown/10 pt-4">
+      <div className="border-t border-[rgba(92,64,51,0.08)] mt-4 pt-4 flex flex-wrap items-center gap-2.5">
         {canApprove ? (
           <button
             onClick={() => approve(gate)}
             disabled={loading === gate}
-            className="rounded bg-sage-green px-4 py-2 text-sm font-medium text-white disabled:opacity-40"
+            className={primaryButtonClass}
           >
             {loading === gate
               ? '...'
@@ -538,7 +549,7 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
         {status !== 'redirecting' ? (
           <button
             onClick={() => setRedirectTarget(gate)}
-            className="rounded bg-soft-yellow px-4 py-2 text-sm font-medium text-warm-brown"
+            className={redirectButtonClass}
           >
             Redirect
           </button>
@@ -557,10 +568,12 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
             <div key={gateName} className="flex flex-1 items-start">
               <div className="flex flex-1 flex-col items-center text-center">
                 <StepCircle status={gate.status} />
-                <p className="mt-2 text-xs font-medium">{GATE_LABELS[gateName]}</p>
+                <p className="mt-2 text-[12px] font-medium text-ink-3">
+                  {GATE_LABELS[gateName]}
+                </p>
               </div>
               {index < GATE_ORDER.length - 1 ? (
-                <div className="mt-4 h-px flex-1 bg-warm-brown/20" />
+                <div className="bg-[rgba(92,64,51,0.14)] h-px flex-1 mt-4" />
               ) : null}
             </div>
           )
@@ -573,18 +586,20 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
         return (
           <div
             key={gateName}
-            className="mb-4 overflow-hidden rounded-lg border border-warm-brown/20"
+            className="bg-paper border border-[rgba(92,64,51,0.14)] rounded-[14px] overflow-hidden mb-4 shadow-card"
           >
-            <div className="flex items-center justify-between bg-warm-brown/5 px-4 py-3">
+            <div className="bg-cream-deep px-5 py-3.5 border-b border-[rgba(92,64,51,0.08)] flex items-center justify-between gap-4">
               <div>
-                <h2 className="font-medium">{GATE_LABELS[gateName]}</h2>
-                <p className="mt-0.5 text-xs text-warm-brown/50">
+                <h2 className="font-medium text-ink text-[14px]">
+                  {GATE_LABELS[gateName]}
+                </h2>
+                <p className="text-[12px] text-ink-3 mt-0.5">
                   {GATE_DESCRIPTIONS[gateName]}
                 </p>
               </div>
               <StatusLabel status={gate.status} />
             </div>
-            <div className="px-4 py-4">
+            <div className="px-5 py-4">
               {renderGateBody(gateName, gate.payload, gate.status)}
               {renderActionRow(gateName, gate.payload, gate.status)}
             </div>

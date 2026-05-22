@@ -38,3 +38,6 @@ tsconfig.tsbuildinfo
 
 # ChromaDB local data
 chroma-data/
+
+# Daily package approval state
+data/packages/

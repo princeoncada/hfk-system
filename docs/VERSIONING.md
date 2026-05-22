@@ -39,17 +39,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 2.5.0-alpha |
+| Version | 2.5.0-stable |
 | Phase | Phase 2.5.0 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-22 |
-| Summary | Prompt Library API. List and context-assembly endpoints for Vault-stored external tool prompts. Topic + grade + brand voice → ready-to-run prompt. |
+| Summary | Prompt Library API. GET /api/prompts lists Vault prompts via collection.get(). POST /api/prompts/assemble returns brand-voice-enriched ready-to-run prompts with placeholder interpolation. getAssetsByType() added to vault.query.ts for reliable flat asset listing. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 2.5.0-alpha | Phase 2.5.0 — Prompt Library API | alpha | 2026-05-22 | Prompt Library API. List and context-assembly endpoints for Vault-stored external tool prompts. Topic + grade + brand voice → ready-to-run prompt. |
+| 2.5.0-stable | Phase 2.5.0 — Prompt Library API | stable | 2026-05-22 | Prompt Library API. GET /api/prompts lists Vault prompts via collection.get(). POST /api/prompts/assemble returns brand-voice-enriched ready-to-run prompts with placeholder interpolation. getAssetsByType() added to vault.query.ts for reliable flat asset listing. |
 | 2.4.0-stable | Phase 2.4.0 — Planning Engine | stable | 2026-05-22 | Monthly planning engine. DeepSeek + Vault RAG generates full-month content proposals with subject/grade rotation, duplicate-topic detection, and per-day confidence scoring. Plans persisted to data/plans/. |
 | 2.3.0-stable | Phase 2.3.0 — Approval Gate API | stable | 2026-05-22 | 5-gate approval state machine. Direction → Worksheet → Template → Caption → Final Package. Vault write-back on worksheet and caption gate approval. Package state persisted to data/packages/. |
 | 2.2.0-stable | Phase 2.2.0 — DeepSeek Integration | stable | 2026-05-22 | DeepSeek integration with RAG pipeline — worksheet draft, caption draft, and daily summary endpoints |
@@ -72,6 +72,6 @@ Every version change must be applied to all four simultaneously:
 
 ## Next Phase
 
-Current stable version: 2.4.0-stable
-Current working version: 2.5.0-alpha
-Next recommended phase: Phase 2.5.0 — Prompt Library API
+Current stable version: 2.5.0-stable
+Current working version: none
+Next recommended phase: Phase 2.6.0 — AI Command Center

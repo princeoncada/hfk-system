@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 2.6.0-stable
+## Current Version: 2.7.0-alpha
 
 ## Current Phase
 
-Phase 2.6.0 [2.6.0-stable] — AI Command Center — stable.
+Phase 2.7.0 [2.7.0-alpha] — Daily Package Review — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,38 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Phase 2.7.0 [2.7.0-alpha]
+
+Status: alpha
+
+Purpose:
+Provide an operator-facing review screen for the daily package approval
+workflow. Operators can review each gate, approve generated content, reject
+with a reason, or redirect a gate with guidance.
+
+Scope:
+- /review page for today's package
+- Interactive 5-gate review flow client component
+- Direction gate inline topic/grade/subject/objective form
+- Worksheet and caption draft display
+- Template selector and final package approval state
+- Provenance panels for generated worksheet and caption content
+- Inline rejection form
+- Redirect modal
+- Command Center Review link
+- No new API routes, lib changes, package installs, or data model changes
+
+New files:
+- src/app/review/page.tsx
+- src/components/review/ReviewFlow.tsx
+- src/components/review/RedirectModal.tsx
+
+Modified files:
+- src/components/command/TodayStatus.tsx
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- README.md
 
 ## Phase 2.6.0 [2.6.0-stable]
 
@@ -352,7 +384,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Phase 2.7.0 — Daily Package Review.
+Phase 2.8.0 — Monthly Planner.
 
 ## What Exists
 

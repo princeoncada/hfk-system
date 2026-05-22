@@ -8,8 +8,8 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 3.0.0-alpha |
-| Status | alpha |
+| Current | 3.0.0-stable |
+| Status | stable |
 | Current phase | Phase 3.0.0 — Calendar Intelligence |
 
 ## What This Is

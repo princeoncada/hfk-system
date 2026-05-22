@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 2.4.0-stable | Phase 2.4.0 — Planning Engine | stable | 2026-05-22 | Monthly planning engine with DeepSeek + Vault RAG and persisted data/plans/ output |
 | 2.3.0-stable | Phase 2.3.0 — Approval Gate API | stable | 2026-05-22 | 5-gate approval state machine with package persistence and Vault write-back |
 | 2.2.0-stable | Phase 2.2.0 — DeepSeek Integration | stable | 2026-05-22 | DeepSeek integration with RAG pipeline — worksheet draft, caption draft, and daily summary endpoints |
 | 2.1.0-stable | Phase 2.1.0 — ChromaDB Layer | stable | 2026-05-22 | ChromaDB layer — ingestion, query, seed, and Vault API routes |
@@ -22,6 +23,39 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Phase 2.4.0 — Planning Engine
+
+Status: stable
+
+Version: 2.4.0-stable
+
+Date: 2026-05-22
+
+Purpose:
+Built the monthly planning engine. DeepSeek + Vault RAG generates full-month
+content proposals with subject/grade rotation, duplicate-topic detection, and
+per-day confidence scoring. Plans persist to data/plans/YYYY-MM.json.
+
+Files changed:
+- src/lib/planning.types.ts (created) — PlanDay, MonthlyPlan, PlanRequest, PlanResponse
+- src/lib/planning.store.ts (created) — filesystem read/write for data/plans/
+- src/lib/planning.rag.ts (created) — RAG context for brand rules, recent worksheets, topics
+- src/lib/planning.generate.ts (created) — DeepSeek plan generation with 4000 token budget
+- src/app/api/planning/generate/route.ts (created) — POST generate monthly plan
+- src/app/api/planning/[month]/route.ts (created) — GET plan by month
+- .gitignore (modified) — data/plans/ excluded
+
+Validation:
+- Full 31-day content plan generation validated.
+- Subject/grade rotation is live.
+- Duplicate-topic detection is live.
+- Per-day confidence scoring is live.
+- Plans persist to data/plans/YYYY-MM.json.
+
+Known issue:
+- DeepSeek returns lowercase subjects and numeric grades. This is a data
+  quality issue to be addressed in a separate patch.
 
 ## Phase 2.3.0 — Approval Gate API
 

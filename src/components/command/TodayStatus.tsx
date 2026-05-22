@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { getPackage } from '@/lib/approval.store'
 import type { GateName, GateStatus } from '@/lib/approval.types'
 
@@ -43,15 +44,22 @@ export default async function TodayStatus() {
     <section>
       <div className="flex items-center justify-between gap-3">
         <h2 className="font-display text-2xl font-semibold">Today's Package</h2>
-        <span
-          className={
-            approvedCount === 5
-              ? 'rounded-full bg-sage-green/20 px-3 py-1 text-xs font-medium text-sage-green'
-              : 'rounded-full bg-warm-brown/10 px-3 py-1 text-xs font-medium text-warm-brown/60'
-          }
-        >
-          {approvedCount === 5 ? 'Package ready' : `${approvedCount} / 5 approved`}
-        </span>
+        <div className="flex items-center gap-3">
+          <span
+            className={
+              approvedCount === 5
+                ? 'rounded-full bg-sage-green/20 px-3 py-1 text-xs font-medium text-sage-green'
+                : 'rounded-full bg-warm-brown/10 px-3 py-1 text-xs font-medium text-warm-brown/60'
+            }
+          >
+            {approvedCount === 5
+              ? 'Package ready'
+              : `${approvedCount} / 5 approved`}
+          </span>
+          <Link href="/review" className="text-sm text-sage-green hover:underline">
+            Review →
+          </Link>
+        </div>
       </div>
 
       {attentionCount > 0 ? (

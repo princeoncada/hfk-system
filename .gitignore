@@ -41,3 +41,6 @@ chroma-data/
 
 # Daily package approval state
 data/packages/
+
+# Monthly content plans
+data/plans/

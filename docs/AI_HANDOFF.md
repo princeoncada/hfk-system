@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 2.5.0-stable
+## Current Version: 2.6.0-alpha
 
 ## Current Phase
 
-Phase 2.5.0 [2.5.0-stable] — Prompt Library API — stable.
+Phase 2.6.0 [2.6.0-alpha] — AI Command Center — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,34 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Phase 2.6.0 [2.6.0-alpha]
+
+Status: alpha
+
+Purpose:
+Wire the completed v2 backend phases into the home dashboard. The Command
+Center surfaces today's package gate status, monthly plan progress, Vault
+health alerts, and the existing worksheet list.
+
+Scope:
+- Today's package status Server Component
+- Monthly plan progress Server Component
+- Vault health and duplicate-risk alert Server Component
+- Home page Command Center layout
+- Existing worksheet library preserved below the command sections
+- No new API routes, backend mutations, package installs, or validation changes
+
+New files:
+- src/components/command/TodayStatus.tsx
+- src/components/command/MonthProgress.tsx
+- src/components/command/VaultAlerts.tsx
+
+Modified files:
+- src/app/page.tsx
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- README.md
 
 ## Phase 2.5.0 [2.5.0-stable]
 
@@ -324,7 +352,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Phase 2.6.0 — AI Command Center.
+Phase 2.7.0 — Daily Package Review.
 
 ## What Exists
 

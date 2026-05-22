@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 3.0.0-alpha | Phase 3.0.0 — Calendar Intelligence | alpha | 2026-05-22 | Calendar Intelligence — bi-directional planner calendar with package status overlays |
+| 3.0.0-stable | Phase 3.0.0 — Calendar Intelligence | stable | 2026-05-22 | Calendar Intelligence — bi-directional planner calendar with package status overlays |
 | 2.9.0-stable | Phase 2.9.0 — UI Design System | stable | 2026-05-22 | UI Design System — sidebar nav shell, full design token system, card-based component redesign across all screens |
 | 2.8.0-stable | Phase 2.8.0 — Monthly Planner | stable | 2026-05-22 | Monthly Planner — calendar grid UI, day detail panel, lock toggle, generate/regenerate, planner navigation links from command dashboard |
 | 2.7.0-stable | Phase 2.7.0 — Daily Package Review | stable | 2026-05-22 | Daily Package Review screen at /review with 5-gate interactive approval flow |
@@ -32,15 +32,26 @@
 
 ## Phase 3.0.0 — Calendar Intelligence
 
-Status: alpha
+Status: stable
 
-Version: 3.0.0-alpha
+Version: 3.0.0-stable
 
 Date: 2026-05-22
 
 Purpose: Bi-directional planner calendar — past cells show package shipping
 status, future cells show plan + in-review state, day detail panel shows
 gate-by-gate package summary.
+
+Validation:
+- calendar.ts created with getPackagesForMonth read-only helper
+- approval.store.ts not modified
+- Planner page loads packages server-side and passes to PlannerView
+- PlannerView renders past cells with Shipped/In Review/no-package states
+- isPastDate and getPackageSummary helpers added
+- Day detail panel shows gate-by-gate package status when package exists
+- Calendar legend added for shipped/in-review/duplicate-risk/today states
+- No other lib or template files modified
+- npm run build passes clean
 
 ## Phase 2.9.0 — UI Design System
 

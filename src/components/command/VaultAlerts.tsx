@@ -28,44 +28,59 @@ export default async function VaultAlerts() {
       ).reduce((sum, assets) => sum + assets.length, 0) + allTopics.length
 
     return (
-      <section>
-        <div className="flex items-center justify-between gap-3">
-          <h2 className="font-display text-2xl font-semibold">Vault</h2>
-          <span className="text-sm text-warm-brown/60">
-            {totalVaultCount} assets
-          </span>
-        </div>
-
+      <section
+        className={
+          dupRiskTopics.length > 0
+            ? 'bg-rose-tint border border-rose/20 rounded-[14px] px-6 py-5 shadow-card'
+            : 'bg-sage-tint border border-sage/20 rounded-[14px] px-6 py-5 shadow-card'
+        }
+      >
+        <p
+          className={
+            dupRiskTopics.length > 0
+              ? 'font-mono text-[11px] tracking-[0.14em] uppercase mb-1 text-rose/70'
+              : 'font-mono text-[11px] tracking-[0.14em] uppercase mb-1 text-sage-deep/70'
+          }
+        >
+          Vault
+        </p>
         {dupRiskTopics.length > 0 ? (
-          <div className="mt-2 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3">
-            <p className="text-sm font-medium text-amber-700">
-              {dupRiskTopics.length} topic
-              {dupRiskTopics.length > 1 ? 's' : ''} flagged as duplicate risk
-            </p>
-            <ul className="mt-1 space-y-0.5">
+          <>
+            <h2 className="font-display text-[20px] text-[#8C3D31]">
+              {dupRiskTopics.length} duplicate risk
+            </h2>
+            <p className="text-[13px] text-ink-3 mt-1">{totalVaultCount} assets</p>
+            <ul className="mt-2 space-y-0.5">
               {dupRiskTopics.map((topic) => (
-                <li key={topic.id} className="text-xs text-amber-600">
-                  {topic.topicName} — Grade {topic.grade} {topic.subject}
+                <li key={topic.id} className="text-[12px] text-[#8C3D31]">
+                  {topic.topicName} - Grade {topic.grade} {topic.subject}
                 </li>
               ))}
             </ul>
-          </div>
+          </>
         ) : (
-          <p className="mt-2 text-sm text-warm-brown/50">
-            No duplicate risk topics flagged.
-          </p>
+          <>
+            <h2 className="font-display text-[20px] text-sage-deep">
+              Vault clear
+            </h2>
+            <p className="text-[13px] text-ink-3 mt-1">{totalVaultCount} assets</p>
+            <p className="text-[13px] text-sage-deep mt-1">
+              No duplicate risk topics flagged.
+            </p>
+          </>
         )}
       </section>
     )
   } catch {
     return (
-      <section>
-        <h2 className="font-display text-2xl font-semibold">Vault</h2>
-        <div className="mt-2 rounded-lg border border-warm-brown/20 px-4 py-3">
-          <p className="text-sm text-warm-brown/40">
-            Vault offline — start ChromaDB to see alerts.
-          </p>
-        </div>
+      <section className="bg-paper border border-[rgba(92,64,51,0.14)] rounded-[14px] px-6 py-5 shadow-card">
+        <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-1 text-ink-3">
+          Vault
+        </p>
+        <h2 className="font-display text-[20px] text-ink">Vault offline</h2>
+        <p className="text-[13px] text-ink-3 mt-1">
+          Start ChromaDB to see alerts.
+        </p>
       </section>
     )
   }

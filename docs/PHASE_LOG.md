@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 2.9.0-alpha | Phase 2.9.0 — UI Design System | alpha | 2026-05-22 | UI Design System — sidebar nav shell, full design token system, card-based component redesign across all screens |
 | 2.8.0-stable | Phase 2.8.0 — Monthly Planner | stable | 2026-05-22 | Monthly Planner — calendar grid UI, day detail panel, lock toggle, generate/regenerate, planner navigation links from command dashboard |
 | 2.7.0-stable | Phase 2.7.0 — Daily Package Review | stable | 2026-05-22 | Daily Package Review screen at /review with 5-gate interactive approval flow |
 | 2.6.0-stable | Phase 2.6.0 — AI Command Center | stable | 2026-05-22 | AI Command Center home screen with async Server Components |
@@ -27,6 +28,18 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Phase 2.9.0 — UI Design System
+
+Status: alpha
+
+Version: 2.9.0-alpha
+
+Date: 2026-05-22
+
+Purpose: Applied the HFK design language across the app shell and all
+existing screens. Sidebar navigation, Google Fonts, design token extension,
+card-based components.
 
 ## Phase 2.7.0 — Daily Package Review
 

@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 2.8.0-stable |
-| Status | stable |
-| Current phase | Phase 2.8.0 — Monthly Planner |
+| Current | 2.9.0-alpha |
+| Status | alpha |
+| Current phase | Phase 2.9.0 — UI Design System |
 
 ## What This Is
 

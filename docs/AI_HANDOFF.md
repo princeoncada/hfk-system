@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 2.8.0-stable
+## Current Version: 2.9.0-alpha
 
 ## Current Phase
 
-Phase 2.8.0 [2.8.0-stable] — Monthly Planner — stable.
+Phase 2.9.0 [2.9.0-alpha] — UI Design System — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,49 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Phase 2.9.0 [2.9.0-alpha]
+
+Status: alpha
+
+Purpose: Apply the HFK design system across the entire app shell and all
+existing screens. Introduce sidebar navigation, Google Fonts (Inter,
+Instrument Serif, JetBrains Mono), design token extension in Tailwind,
+and card-based component redesign.
+
+Scope:
+- tailwind.config.ts — design tokens + font families
+- globals.css — CSS custom properties
+- layout.tsx — sidebar shell with SidebarNav client component
+- SidebarNav.tsx (new) — active-state nav with usePathname
+- page.tsx — Command Center redesign
+- TodayStatus.tsx — dark banner card
+- MonthProgress.tsx — card redesign
+- VaultAlerts.tsx — tinted card redesign
+- review/page.tsx — page heading
+- planner/[month]/page.tsx — page heading + month nav
+- ReviewFlow.tsx — design system applied
+- PlannerView.tsx — design system applied
+
+New files:
+- src/components/shell/SidebarNav.tsx
+
+Modified files:
+- tailwind.config.ts
+- src/app/globals.css
+- src/app/layout.tsx
+- src/app/page.tsx
+- src/components/command/TodayStatus.tsx
+- src/components/command/MonthProgress.tsx
+- src/components/command/VaultAlerts.tsx
+- src/components/review/ReviewFlow.tsx
+- src/components/planner/PlannerView.tsx
+- src/app/review/page.tsx
+- src/app/planner/[month]/page.tsx
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- README.md
 
 ## Phase 2.8.0 [2.8.0-stable]
 
@@ -413,13 +456,13 @@ Modified files:
 - Phase 2.6.0 — AI Command Center
 - Phase 2.7.0 — Daily Package Review
 - Phase 2.8.0 — Monthly Planner
-- Phase 2.9.0 — Calendar Intelligence
+- Phase 2.9.0 — UI Design System
 - Phase 3.0.0 — Vault Browser
 - Phase 3.1.0 — Analytics + Recommendations
 
 ## Recommended Next Step
 
-Phase 2.9.0 — Calendar Intelligence.
+Phase 2.9.0 — UI Design System is in progress.
 
 ## What Exists
 

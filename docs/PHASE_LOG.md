@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 2.2.0-stable | Phase 2.2.0 — DeepSeek Integration | stable | 2026-05-22 | DeepSeek integration with RAG pipeline — worksheet draft, caption draft, and daily summary endpoints |
 | 2.1.0-stable | Phase 2.1.0 — ChromaDB Layer | stable | 2026-05-22 | ChromaDB layer — ingestion, query, seed, and Vault API routes |
 | 2.0.0-stable | Phase 2.0.0 — Vault Schema | stable | 2026-05-22 | Vault type system — interfaces and Zod schemas for all seven Vault asset types |
 | 1.5.2-stable | Patch 1.5.2 | stable | 2026-05-22 | v2 Phase Planning — backend-first phase queue, ChromaDB, and DeepSeek constraints documented |
@@ -20,6 +21,38 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Phase 2.2.0 — DeepSeek Integration
+
+Status: stable
+
+Version: 2.2.0-stable
+
+Date: 2026-05-22
+
+Purpose:
+Connected DeepSeek as the text generation layer using the OpenAI-compatible
+client and model deepseek-chat in JSON mode. Built the RAG pipeline on top of
+ChromaDB Vault retrieval so worksheet drafts and caption drafts are grounded
+in brand rules, prior assets, and relevant context. Delivered the worksheet
+draft, caption draft, and daily summary generation endpoints.
+
+Files changed:
+- src/lib/ai.types.ts (created) — AI request/response types with VaultProvenance
+- src/lib/deepseek.ts (created) — DeepSeek client, model deepseek-chat, JSON mode
+- src/lib/vault.rag.ts (created) — RAG retrieval for worksheet and caption contexts
+- src/app/api/ai/draft/worksheet/route.ts (created) — POST /api/ai/draft/worksheet
+- src/app/api/ai/draft/caption/route.ts (created) — POST /api/ai/draft/caption
+- src/app/api/ai/summary/route.ts (created) — POST /api/ai/summary
+- next.config.mjs (modified) — added openai to serverComponentsExternalPackages
+
+Validation:
+- TypeScript compiles clean.
+- Worksheet draft endpoint works correctly.
+- Caption draft endpoint works correctly.
+- Daily summary endpoint works correctly.
+- RAG pipeline retrieves Vault context and passes it to DeepSeek for grounded generation.
+- All 8 TypeScript errors in vault.rag.ts resolved via flatMap type narrowing.
 
 ## Phase 2.1.0 — ChromaDB Layer
 

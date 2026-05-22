@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 2.8.0-alpha
+## Current Version: 2.8.0-stable
 
 ## Current Phase
 
-Phase 2.8.0 [2.8.0-alpha] — Monthly Planner — alpha.
+Phase 2.8.0 [2.8.0-stable] — Monthly Planner — stable.
 
 ## Architecture Invariant
 
@@ -24,9 +24,9 @@ records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Phase 2.8.0 [2.8.0-alpha]
+## Phase 2.8.0 [2.8.0-stable]
 
-Status: alpha
+Status: stable
 
 Purpose:
 Provide a monthly planner UI for browsing generated plans, inspecting daily

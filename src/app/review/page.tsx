@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import ReviewFlow from '@/components/review/ReviewFlow'
 import { getPackage } from '@/lib/approval.store'
 
@@ -6,22 +5,19 @@ export default async function ReviewPage() {
   const pkg = getPackage()
 
   return (
-    <div className="mx-auto max-w-3xl">
-      <div className="mb-6 flex items-center justify-between">
-        <div>
-          <h1 className="font-display text-2xl font-semibold">
+    <>
+      <div className="mb-8">
+        <p className="font-mono text-[11px] tracking-[0.14em] text-ink-3 uppercase mb-1">
+          Today &middot; Review
+        </p>
+        <div className="flex items-end justify-between">
+          <h1 className="font-display text-[38px] leading-[1.1]">
             Daily Package Review
           </h1>
-          <p className="mt-0.5 text-sm text-warm-brown/60">{pkg.date}</p>
+          <p className="text-[13px] text-ink-3 mb-1">{pkg.date}</p>
         </div>
-        <Link
-          href="/"
-          className="text-sm text-warm-brown/60 hover:text-warm-brown"
-        >
-          ← Home
-        </Link>
       </div>
       <ReviewFlow pkg={pkg} />
-    </div>
+    </>
   )
 }

@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 2.4.0-stable
+## Current Version: 2.5.0-alpha
 
 ## Current Phase
 
-Phase 2.4.0 [2.4.0-stable] — Planning Engine — stable.
+Phase 2.5.0 [2.5.0-alpha] — Prompt Library API — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,36 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Phase 2.5.0 [2.5.0-alpha]
+
+Status: alpha
+
+Purpose:
+Expose the Vault-stored prompt library for external tools. List all
+VaultPrompt assets and assemble a ready-to-run prompt from topic, grade,
+subject, optional objective, and HFK brand voice context.
+
+Scope:
+- Prompt assembly request/response types
+- VaultPrompt listing helper
+- Prompt interpolation for topic, grade, grade label, subject, and objective
+- Brand voice retrieval from Vault brand-rule assets
+- Context append behavior for prompts without placeholders
+- Prompt list API route
+- Prompt assembly API route
+- No DeepSeek generation, image generation, UI, or data writes
+
+New files:
+- src/lib/prompt.types.ts
+- src/lib/prompt.assemble.ts
+- src/app/api/prompts/route.ts
+- src/app/api/prompts/assemble/route.ts
+
+Modified files:
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- README.md
 
 ## Phase 2.4.0 [2.4.0-stable]
 
@@ -294,7 +324,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Phase 2.5.0 — Prompt Library API.
+Phase 2.6.0 — AI Command Center.
 
 ## What Exists
 

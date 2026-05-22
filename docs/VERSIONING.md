@@ -39,16 +39,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 2.7.0-stable |
-| Phase | Phase 2.7.0 |
-| State | stable |
+| Version | 2.8.0-alpha |
+| Phase | Phase 2.8.0 |
+| State | alpha |
 | Date | 2026-05-22 |
-| Summary | Daily Package Review screen at /review. 5-gate interactive approval flow with inline direction form, worksheet/caption display, provenance panel, reject form, redirect modal. Review link added to Command Center. |
+| Summary | Monthly Planner at /planner/[month]. Calendar grid, day detail panel, confidence indicators, duplicate risk flags, lock toggle, generate and regenerate controls. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 2.8.0-alpha | Phase 2.8.0 — Monthly Planner | alpha | 2026-05-22 | Monthly Planner at /planner/[month]. Calendar grid, day detail panel, confidence indicators, duplicate risk flags, lock toggle, generate and regenerate controls. |
 | 2.7.0-stable | Phase 2.7.0 — Daily Package Review | stable | 2026-05-22 | Daily Package Review screen at /review. 5-gate interactive approval flow with inline direction form, worksheet/caption display, provenance panel, reject form, redirect modal. Review link added to Command Center. |
 | 2.6.0-stable | Phase 2.6.0 — AI Command Center | stable | 2026-05-22 | AI Command Center home screen. TodayStatus, MonthProgress, and VaultAlerts wired as async Server Components above the worksheet list. Direct filesystem reads — no API hops. |
 | 2.5.0-stable | Phase 2.5.0 — Prompt Library API | stable | 2026-05-22 | Prompt Library API. GET /api/prompts lists Vault prompts via collection.get(). POST /api/prompts/assemble returns brand-voice-enriched ready-to-run prompts with placeholder interpolation. getAssetsByType() added to vault.query.ts for reliable flat asset listing. |
@@ -75,5 +76,5 @@ Every version change must be applied to all four simultaneously:
 ## Next Phase
 
 Current stable version: 2.7.0-stable
-Current working version: none
+Current working version: 2.8.0-alpha
 Next recommended phase: Phase 2.8.0 — Monthly Planner

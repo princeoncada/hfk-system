@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 2.7.0-stable
+## Current Version: 2.8.0-alpha
 
 ## Current Phase
 
-Phase 2.7.0 [2.7.0-stable] — Daily Package Review — stable.
+Phase 2.8.0 [2.8.0-alpha] — Monthly Planner — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,41 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Phase 2.8.0 [2.8.0-alpha]
+
+Status: alpha
+
+Purpose:
+Provide a monthly planner UI for browsing generated plans, inspecting daily
+plan details, locking days, and generating or regenerating monthly content
+plans from the planning backend.
+
+Scope:
+- /planner redirect to the current month
+- /planner/[month] monthly calendar page
+- Interactive PlannerView client component
+- Calendar grid with subject chips, confidence indicators, duplicate-risk
+  highlighting, today highlight, and selected-day state
+- Day detail panel with objective, confidence, duplicate risk, notes, and lock
+  toggle
+- Lock API route for toggling PlanDay.locked
+- MonthProgress View Planner link
+- Backward-compatible locked field on PlanDay
+- No changes to existing planning GET route, content files, or generation logic
+
+New files:
+- src/app/api/planning/[month]/lock/[date]/route.ts
+- src/app/planner/page.tsx
+- src/app/planner/[month]/page.tsx
+- src/components/planner/PlannerView.tsx
+
+Modified files:
+- src/lib/planning.types.ts
+- src/components/command/MonthProgress.tsx
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- README.md
 
 ## Phase 2.7.0 [2.7.0-stable]
 
@@ -384,7 +419,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Phase 2.8.0 — Monthly Planner.
+Phase 2.9.0 — Calendar Intelligence.
 
 ## What Exists
 

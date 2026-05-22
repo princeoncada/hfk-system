@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 1.5.2-stable |
-| Status | stable |
-| Current phase | Patch 1.5.2 — v2 Phase Planning |
+| Current | 2.0.0-alpha |
+| Status | alpha |
+| Current phase | Phase 2.0.0 — Vault Schema |
 
 ## What This Is
 

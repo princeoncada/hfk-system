@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 2.0.0-stable | Phase 2.0.0 — Vault Schema | stable | 2026-05-22 | Vault type system — interfaces and Zod schemas for all seven Vault asset types |
 | 1.5.2-stable | Patch 1.5.2 | stable | 2026-05-22 | v2 Phase Planning — backend-first phase queue, ChromaDB, and DeepSeek constraints documented |
 | 1.5.1-stable | Patch 1.5.1 | stable | 2026-05-21 | Validation hardening — require -LiteralPath for bracket paths in PowerShell |
 | 1.5.0-stable | Phase 1.5.0 | stable | 2026-05-21 | Save + Archive — JSON editor UI, save API, archive-on-export |
@@ -18,6 +19,34 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Phase 2.0.0 — Vault Schema
+
+Status: stable
+
+Version: 2.0.0-stable
+
+Date: 2026-05-22
+
+Purpose:
+Introduced the Vault type system for v2. Defined TypeScript interfaces
+and Zod schemas for all seven Vault asset types (template, worksheet,
+caption, prompt, topic, avatar, brand-rule). Established lifecycle
+states (draft → approved → archived → retired), freshness model
+(fresh / healthy / stale_ish / stale / retired), reuse score (0.0–1.0),
+provenance tracking, and rejection records.
+
+New files:
+- src/lib/vault.types.ts
+- src/lib/vault.schema.ts
+- src/lib/vault.constants.ts
+
+Modified files:
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- README.md
+
+Validation: All 26 checks passed. TypeScript compiled clean.
 
 ## Patch 1.5.2 — v2 Phase Planning
 

@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 2.4.0-alpha
+## Current Version: 2.4.0-stable
 
 ## Current Phase
 
-Phase 2.4.0 [2.4.0-alpha] — Planning Engine — alpha.
+Phase 2.4.0 [2.4.0-stable] — Planning Engine — stable.
 
 ## Architecture Invariant
 
@@ -24,9 +24,9 @@ records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Phase 2.4.0 [2.4.0-alpha]
+## Phase 2.4.0 [2.4.0-stable]
 
-Status: alpha
+Status: stable
 
 Purpose:
 Generate full-month content plans using DeepSeek plus Vault RAG context.

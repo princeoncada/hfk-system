@@ -19,10 +19,10 @@ const GATE_LABELS: Record<GateName, string> = {
 }
 
 const STATUS_BADGE: Record<GateStatus, string> = {
-  pending: 'bg-warm-brown/10 text-warm-brown/50',
-  approved: 'bg-sage-green/20 text-sage-green',
-  rejected: 'bg-red-100 text-red-500',
-  redirecting: 'bg-soft-yellow text-warm-brown',
+  pending: 'bg-[rgba(247,242,232,0.1)] text-ink-4 border-[rgba(247,242,232,0.15)]',
+  approved: 'bg-sage-tint text-sage-deep border-sage/25',
+  rejected: 'bg-rose-tint text-rose border-rose/30',
+  redirecting: 'bg-yellow-tint text-[#7A5A11] border-yellow/40',
 }
 
 const STATUS_LABEL: Record<GateStatus, string> = {
@@ -41,50 +41,60 @@ export default async function TodayStatus() {
   ).length
 
   return (
-    <section>
-      <div className="flex items-center justify-between gap-3">
-        <h2 className="font-display text-2xl font-semibold">Today's Package</h2>
+    <section className="rounded-[14px] bg-ink text-cream overflow-hidden shadow-lift">
+      <div className="flex items-start justify-between gap-3 px-6 py-5">
+        <div>
+          <p className="font-mono text-[11px] tracking-[0.14em] text-ink-4 uppercase">
+            Today's Package
+          </p>
+          <h2 className="font-display text-[26px] text-cream leading-tight">
+            Daily approval gates
+          </h2>
+        </div>
         <div className="flex items-center gap-3">
           <span
             className={
               approvedCount === 5
-                ? 'rounded-full bg-sage-green/20 px-3 py-1 text-xs font-medium text-sage-green'
-                : 'rounded-full bg-warm-brown/10 px-3 py-1 text-xs font-medium text-warm-brown/60'
+                ? 'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium font-sans border bg-sage-tint text-sage-deep border-sage/20'
+                : 'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium font-sans border bg-[rgba(247,242,232,0.12)] text-cream border-[rgba(247,242,232,0.18)]'
             }
           >
             {approvedCount === 5
               ? 'Package ready'
               : `${approvedCount} / 5 approved`}
           </span>
-          <Link href="/review" className="text-sm text-sage-green hover:underline">
-            Review →
+          <Link
+            href="/review"
+            className="text-[13px] text-cream/60 hover:text-cream transition-colors"
+          >
+            Review &rarr;
           </Link>
         </div>
       </div>
 
       {attentionCount > 0 ? (
-        <p className="mt-1 text-sm text-amber-600">
+        <p className="px-6 pb-1 text-[12px] text-yellow">
           {attentionCount} gate{attentionCount > 1 ? 's' : ''} need
           {attentionCount === 1 ? 's' : ''} attention
         </p>
       ) : null}
 
-      <div className="mt-3 grid grid-cols-5 gap-2">
+      <div className="grid grid-cols-5 gap-2 px-6 pb-5">
         {gates.map((gate) => (
           <div
             key={gate.name}
-            className="flex flex-col gap-1 rounded-lg border border-warm-brown/20 p-3"
+            className="flex flex-col gap-1 rounded-[10px] bg-[rgba(247,242,232,0.08)] border border-[rgba(247,242,232,0.12)] p-3"
           >
-            <p className="text-xs uppercase tracking-wide text-warm-brown/50">
+            <p className="font-mono text-[10px] tracking-[0.1em] uppercase text-ink-4">
               {GATE_LABELS[gate.name]}
             </p>
             <span
-              className={`w-fit rounded-full px-2 py-0.5 text-xs font-medium ${STATUS_BADGE[gate.status]}`}
+              className={`w-fit inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium font-sans border ${STATUS_BADGE[gate.status]}`}
             >
               {STATUS_LABEL[gate.status]}
             </span>
             {gate.approvedAt ? (
-              <p className="text-xs text-warm-brown/30">
+              <p className="text-[10px] text-ink-4 mt-0.5">
                 {new Date(gate.approvedAt).toLocaleTimeString('en-US', {
                   hour: '2-digit',
                   minute: '2-digit',

@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 2.0.0-stable
+## Current Version: 2.1.0-alpha
 
 ## Current Phase
 
-Phase 2.0.0 [2.0.0-stable] — Vault Schema — stable.
+Phase 2.1.0 [2.1.0-alpha] — ChromaDB Layer — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,40 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Phase 2.1.0 [2.1.0-alpha]
+
+Status: alpha
+
+Purpose:
+Wire the Vault layer to a local ChromaDB vector database for semantic
+search over Vault assets. Add client access, asset ingestion, natural
+language query, project seeding, and development API endpoints.
+
+Scope:
+- Local ChromaDB HTTP client and vault_assets collection accessor
+- Asset-to-document text conversion and flat metadata serialization
+- Query filtering by asset type, lifecycle, subject, and grade
+- Result reconstruction from raw_json metadata through Vault validation
+- Seed logic for worksheets, templates, avatar images, and vault/ files
+- API routes for ingest, query, and seed
+- No UI, DeepSeek integration, approval gate, or production database
+
+New files:
+- src/lib/chroma.ts
+- src/lib/vault.ingest.ts
+- src/lib/vault.query.ts
+- src/lib/vault.seed.ts
+- src/app/api/vault/ingest/route.ts
+- src/app/api/vault/query/route.ts
+- src/app/api/vault/seed/route.ts
+
+Modified files:
+- package.json
+- .gitignore
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- README.md
 
 ## Phase 2.0.0 [2.0.0-stable]
 

@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 2.7.0-stable | Phase 2.7.0 — Daily Package Review | stable | 2026-05-22 | Daily Package Review screen at /review with 5-gate interactive approval flow |
 | 2.6.0-stable | Phase 2.6.0 — AI Command Center | stable | 2026-05-22 | AI Command Center home screen with async Server Components |
 | 2.5.0-stable | Phase 2.5.0 — Prompt Library API | stable | 2026-05-22 | Prompt listing and assembly endpoints for VaultPrompt assets |
 | 2.4.0-stable | Phase 2.4.0 — Planning Engine | stable | 2026-05-22 | Monthly planning engine with DeepSeek + Vault RAG and persisted data/plans/ output |
@@ -25,6 +26,35 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Phase 2.7.0 — Daily Package Review
+
+Status: stable
+
+Version: 2.7.0-stable
+
+Date: 2026-05-22
+
+Purpose:
+Built the Daily Package Review screen at /review. ReviewFlow handles all 5
+gate interactions: inline direction form, worksheet/caption draft display with
+provenance panel, template selector, reject inline form, and redirect modal.
+All actions call existing approval API routes and trigger router.refresh().
+
+Files changed:
+- src/app/review/page.tsx (created) — Server Component, loads today's package
+- src/components/review/ReviewFlow.tsx (created) — interactive gate approval flow
+- src/components/review/RedirectModal.tsx (created) — redirect note modal
+- src/components/command/TodayStatus.tsx (modified) — Review link added
+
+Validation:
+- /review screen is live.
+- ReviewFlow handles all 5 gate interactions.
+- Direction approval uses inline form.
+- Worksheet and caption drafts display with provenance panels.
+- Template selector, reject form, and redirect modal are live.
+- Gate actions call existing API routes and refresh package state.
+- Review link appears in TodayStatus on the home screen.
 
 ## Phase 2.6.0 — AI Command Center
 

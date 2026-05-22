@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.1.0-stable
+## Current Version: 3.2.0-alpha
 
 ## Current Phase
 
-Phase 3.1.0 [3.1.0-stable] — Vault Browser — stable.
+Phase 3.2.0 [3.2.0-alpha] — Analytics + Recommendations — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,34 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Phase 3.2.0 [3.2.0-alpha]
+
+Status: alpha
+
+Purpose: Analytics + Recommendations — operator-facing analytics screen
+using demo data until real performance metrics exist.
+
+Scope:
+- /analytics route — Server Component loads mock analytics snapshot
+- AnalyticsDashboard client component — AI summary, top/worst post cards,
+  subject-grade heatmap, localStorage-backed dismissible recommendations
+- analytics types and mock snapshot provider
+- SidebarNav — Analytics link added
+
+New files:
+- src/lib/analytics.types.ts
+- src/lib/analytics.mock.ts
+- src/app/analytics/page.tsx
+- src/components/analytics/AnalyticsDashboard.tsx
+
+Modified files:
+- src/components/shell/SidebarNav.tsx
+- docs/VERSIONING.md, docs/AI_HANDOFF.md, docs/PHASE_LOG.md, README.md
+
+## Next Phase
+
+Phase 3.3.0 — UI Animations + Onboarding
 
 ## Phase 3.1.0 [3.1.0-stable]
 
@@ -52,10 +80,6 @@ Validation:
 - POST /api/vault/asset/[id]/lifecycle route — reads asset, updates lifecycle field, re-ingests via upsert
 - Vault nav link added to SidebarNav
 - All 15 checks passed, build clean
-
-## Next Phase
-
-Phase 3.2.0 — Analytics + Recommendations
 
 ## Phase 3.0.0 [3.0.0-stable]
 
@@ -513,11 +537,11 @@ Modified files:
 - Phase 2.9.0 — UI Design System
 - Phase 3.0.0 — Calendar Intelligence
 - Phase 3.1.0 — Vault Browser
-- Phase 3.2.0 — Analytics + Recommendations
+- Phase 3.3.0 — UI Animations + Onboarding
 
 ## Recommended Next Step
 
-Phase 3.2.0 — Analytics + Recommendations.
+Phase 3.3.0 — UI Animations + Onboarding.
 
 ## What Exists
 

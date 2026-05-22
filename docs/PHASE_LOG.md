@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.2.0-alpha | Phase 3.2.0 — Analytics + Recommendations | alpha | 2026-05-22 | Analytics + Recommendations — demo analytics screen with AI summary, post performance lists, heatmap, and recommendations |
 | 3.1.0-stable | Phase 3.1.0 — Vault Browser | stable | 2026-05-22 | Standing Vault asset library at /vault with browsing, inspection, and lifecycle mutation |
 | 3.0.0-stable | Phase 3.0.0 — Calendar Intelligence | stable | 2026-05-22 | Calendar Intelligence — bi-directional planner calendar with package status overlays |
 | 2.9.0-stable | Phase 2.9.0 — UI Design System | stable | 2026-05-22 | UI Design System — sidebar nav shell, full design token system, card-based component redesign across all screens |
@@ -30,6 +31,18 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Phase 3.2.0 — Analytics + Recommendations
+
+Status: alpha
+
+Version: 3.2.0-alpha
+
+Date: 2026-05-22
+
+Purpose: Analytics screen with AI-narrated demo summary, top and worst post
+lists, subject-grade performance heatmap, and localStorage-backed
+dismissible recommendations.
 
 ## Phase 3.1.0 — Vault Browser
 

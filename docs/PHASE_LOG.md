@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 2.9.0-alpha | Phase 2.9.0 — UI Design System | alpha | 2026-05-22 | UI Design System — sidebar nav shell, full design token system, card-based component redesign across all screens |
+| 2.9.0-stable | Phase 2.9.0 — UI Design System | stable | 2026-05-22 | UI Design System — sidebar nav shell, full design token system, card-based component redesign across all screens |
 | 2.8.0-stable | Phase 2.8.0 — Monthly Planner | stable | 2026-05-22 | Monthly Planner — calendar grid UI, day detail panel, lock toggle, generate/regenerate, planner navigation links from command dashboard |
 | 2.7.0-stable | Phase 2.7.0 — Daily Package Review | stable | 2026-05-22 | Daily Package Review screen at /review with 5-gate interactive approval flow |
 | 2.6.0-stable | Phase 2.6.0 — AI Command Center | stable | 2026-05-22 | AI Command Center home screen with async Server Components |
@@ -31,15 +31,25 @@
 
 ## Phase 2.9.0 — UI Design System
 
-Status: alpha
+Status: stable
 
-Version: 2.9.0-alpha
+Version: 2.9.0-stable
 
 Date: 2026-05-22
 
 Purpose: Applied the HFK design language across the app shell and all
 existing screens. Sidebar navigation, Google Fonts, design token extension,
 card-based components.
+
+Validation:
+- SidebarNav.tsx created and wired in layout.tsx
+- Fonts loaded via next/font/google (Inter, Instrument Serif, JetBrains Mono)
+- All new design tokens present in tailwind.config.ts
+- Old tokens (warm-brown, sage-green) preserved for backward compat
+- TodayStatus renders as dark ink banner card
+- font-display applied on home, review, and planner pages
+- No lib or template files modified
+- npm run build passes clean
 
 ## Phase 2.7.0 — Daily Package Review
 

@@ -8,8 +8,8 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 2.8.0-alpha |
-| Status | alpha |
+| Current | 2.8.0-stable |
+| Status | stable |
 | Current phase | Phase 2.8.0 — Monthly Planner |
 
 ## What This Is

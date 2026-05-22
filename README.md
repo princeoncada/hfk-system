@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 3.1.0-alpha |
-| Status | alpha |
-| Current phase | Phase 3.1.0 — Vault Browser |
+| Current | 3.1.0-stable |
+| Status | stable |
+| Current phase | Phase 3.1.0 — Vault Browser (stable) |
 
 ## What This Is
 

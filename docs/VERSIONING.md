@@ -39,9 +39,9 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 2.3.0-alpha |
+| Version | 2.3.0-stable |
 | Phase | Phase 2.3.0 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-22 |
 | Summary | 5-gate approval state machine. Direction → Worksheet → Template → Caption → Final Package. Vault write-back on worksheet and caption gate approval. Package state persisted to data/packages/. |
 
@@ -49,7 +49,7 @@ Every version change must be applied to all four simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 2.3.0-alpha | Phase 2.3.0 — Approval Gate API | alpha | 2026-05-22 | 5-gate approval state machine. Direction → Worksheet → Template → Caption → Final Package. Vault write-back on worksheet and caption gate approval. Package state persisted to data/packages/. |
+| 2.3.0-stable | Phase 2.3.0 — Approval Gate API | stable | 2026-05-22 | 5-gate approval state machine. Direction → Worksheet → Template → Caption → Final Package. Vault write-back on worksheet and caption gate approval. Package state persisted to data/packages/. |
 | 2.2.0-stable | Phase 2.2.0 — DeepSeek Integration | stable | 2026-05-22 | DeepSeek integration with RAG pipeline — worksheet draft, caption draft, and daily summary endpoints |
 | 2.1.0-stable | Phase 2.1.0 — ChromaDB Layer | stable | 2026-05-22 | Local ChromaDB vector database integration. Ingestion, query, and seed pipelines. Three API routes: /api/vault/ingest, /api/vault/query, /api/vault/seed. Seeds from existing worksheets, templates, avatars, and vault/ contents. |
 | 2.0.0-stable | Phase 2.0.0 — Vault Schema | stable | 2026-05-22 | Vault asset type system. Defines TypeScript interfaces and Zod schemas for all Vault asset types (template, worksheet, caption, prompt, topic, avatar, brand-rule), lifecycle states, freshness model, reuse score, provenance tracking, and rejection records. |
@@ -70,6 +70,6 @@ Every version change must be applied to all four simultaneously:
 
 ## Next Phase
 
-Current stable version: 2.2.0-stable
-Current working version: 2.3.0-alpha
-Next recommended phase: Phase 2.3.0 — Approval Gate API
+Current stable version: 2.3.0-stable
+Current working version: none
+Next recommended phase: Phase 2.4.0 — Planning Engine

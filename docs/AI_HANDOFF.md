@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 2.1.0-alpha
+## Current Version: 2.1.0-stable
 
 ## Current Phase
 
-Phase 2.1.0 [2.1.0-alpha] — ChromaDB Layer — alpha.
+Phase 2.1.0 [2.1.0-stable] — ChromaDB Layer — stable.
 
 ## Architecture Invariant
 
@@ -24,9 +24,9 @@ records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Phase 2.1.0 [2.1.0-alpha]
+## Phase 2.1.0 [2.1.0-stable]
 
-Status: alpha
+Status: stable
 
 Purpose:
 Wire the Vault layer to a local ChromaDB vector database for semantic

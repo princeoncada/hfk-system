@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 2.6.0-stable | Phase 2.6.0 — AI Command Center | stable | 2026-05-22 | AI Command Center home screen with async Server Components |
 | 2.5.0-stable | Phase 2.5.0 — Prompt Library API | stable | 2026-05-22 | Prompt listing and assembly endpoints for VaultPrompt assets |
 | 2.4.0-stable | Phase 2.4.0 — Planning Engine | stable | 2026-05-22 | Monthly planning engine with DeepSeek + Vault RAG and persisted data/plans/ output |
 | 2.3.0-stable | Phase 2.3.0 — Approval Gate API | stable | 2026-05-22 | 5-gate approval state machine with package persistence and Vault write-back |
@@ -24,6 +25,34 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Phase 2.6.0 — AI Command Center
+
+Status: stable
+
+Version: 2.6.0-stable
+
+Date: 2026-05-22
+
+Purpose:
+Built the AI Command Center home screen. Three async Server Components render
+above the existing worksheet list: TodayStatus shows the 5-gate approval grid,
+MonthProgress shows plan progress and today's topic, and VaultAlerts shows
+duplicate-risk topics, asset count, and an offline fallback.
+
+Files changed:
+- src/components/command/TodayStatus.tsx (created)
+- src/components/command/MonthProgress.tsx (created)
+- src/components/command/VaultAlerts.tsx (created)
+- src/app/page.tsx (modified) — async, imports command components
+
+Validation:
+- Home page loads 200.
+- TypeScript compiles clean.
+- TodayStatus renders the 5-gate approval grid.
+- MonthProgress renders the plan progress bar and today's topic.
+- VaultAlerts renders duplicate risk topics, asset count, and offline fallback.
+- Existing worksheet list remains available below the Command Center.
 
 ## Phase 2.5.0 — Prompt Library API
 

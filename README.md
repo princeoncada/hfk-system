@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 3.2.0-alpha |
-| Status | alpha |
-| Current phase | Phase 3.2.0 — Analytics + Recommendations |
+| Current | 3.2.0-stable |
+| Status | stable |
+| Current phase | Phase 3.2.0 — Analytics + Recommendations (stable) |
 
 ## What This Is
 

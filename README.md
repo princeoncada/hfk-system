@@ -8,9 +8,9 @@ Grades 1â€“6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 3.5.6-stable |
-| Status | stable |
-| Current phase | Patch 3.5.6 — Generate Caption Crash Fix (stable) |
+| Current | 3.6.0-alpha |
+| Status | alpha |
+| Current phase | Phase 3.6.0 — Instructions Flow (alpha) |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

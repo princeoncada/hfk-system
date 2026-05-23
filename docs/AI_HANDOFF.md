@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-## Current Version: 3.5.1-stable
+## Current Version: 3.5.2-alpha
 
 ## Current Phase
 
-Patch 3.5.1 [3.5.1-stable] — Generate Worksheet Crash Fix — stable.
+Patch 3.5.2 [3.5.2-alpha] — Post-Stable Bug Versioning Rule — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,23 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only â€” the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Patch 3.5.2 [3.5.2-alpha] — Post-Stable Bug Versioning Rule
+
+Status: alpha
+
+Version: 3.5.2-alpha
+
+Scope: Docs hardening — post-stable bug versioning rule.
+
+Files:
+- CLAUDE.md
+- docs/WORKFLOW.md
+- docs/VERSIONING.md
+
+Purpose: Encode that any bug discovered after a stable release always opens
+a new Z+1 patch version and must include version bumps to X.Y.(Z+1)-alpha in
+all four versioning files as part of the implementation prompt.
 
 ## Patch 3.5.1 [3.5.1-stable] — Generate Worksheet Crash Fix
 

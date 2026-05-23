@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-## Current Version: 3.5.3-alpha
+## Current Version: 3.5.3-stable
 
 ## Current Phase
 
-Patch 3.5.3 [3.5.3-alpha] — 1-by-1 Commit Rule Hardening — alpha.
+Patch 3.5.3 [3.5.3-stable] — 1-by-1 Commit Rule Hardening — stable.
 
 ## Architecture Invariant
 
@@ -24,11 +24,11 @@ records only â€” the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Patch 3.5.3 [3.5.3-alpha] — 1-by-1 Commit Rule Hardening
+## Patch 3.5.3 [3.5.3-stable] — 1-by-1 Commit Rule Hardening
 
-Status: alpha
+Status: stable
 
-Version: 3.5.3-alpha
+Version: 3.5.3-stable
 
 Scope: Docs hardening — one git add + one git commit per file rule.
 
@@ -40,6 +40,16 @@ Purpose: Make the 1-by-1 commit rule unambiguous for implementation commit
 blocks and stable-promotion commit blocks. Each file must receive exactly one
 git add and one git commit; grouping multiple files into one commit is never
 allowed.
+
+Validation:
+- All 5 grep checks passed
+- Rule present in CLAUDE.md and WORKFLOW.md in three locations
+- Version bump confirmed in all four versioning files
+
+Next recommended work:
+- Real analytics pipeline
+- Export from builder
+- Additional worksheet templates
 
 ## Patch 3.5.2 [3.5.2-stable] — Post-Stable Bug Versioning Rule
 

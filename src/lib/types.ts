@@ -36,6 +36,7 @@ export interface WorksheetContent {
   grade: Grade
   subject: Subject
   template: string
+  sectionOrder?: Array<'vocabulary' | 'activities' | 'parentNotes'>
   vocabulary?: VocabularyEntry[]
   activities?: Activity[]
   parentNotes?: string

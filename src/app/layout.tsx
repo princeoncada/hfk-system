@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
 import SidebarNav from '@/components/shell/SidebarNav'
+import PageTransition from '@/components/shell/PageTransition'
+import OnboardingOverlay from '@/components/onboarding/OnboardingOverlay'
 import './globals.css'
 import '@/styles/print.css'
 
@@ -69,9 +71,12 @@ export default function RootLayout({
           </aside>
 
           <main className="flex-1 min-w-0 overflow-y-auto">
-            <div className="px-8 py-8 max-w-5xl">{children}</div>
+            <PageTransition>
+              <div className="px-8 py-8 max-w-5xl">{children}</div>
+            </PageTransition>
           </main>
         </div>
+        <OnboardingOverlay />
       </body>
     </html>
   )

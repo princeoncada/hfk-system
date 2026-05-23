@@ -60,6 +60,16 @@ FIX     — If failures: AI writes targeted fix prompt. Repeat from BUILD.
 DOCUMENT — AI writes stable-promotion Codex prompt after all checks pass.
 COMMIT  — User commits manually. AI never commits or pushes.
 
+## Bug Fix Versioning Rule
+
+Any bug discovered after a stable release always triggers a Z+1 patch.
+Never modify a stable release in place.
+
+The fix implementation prompt must:
+1. Bump all four versioning files to X.Y.(Z+1)-alpha
+2. Open the new patch in alpha state
+3. Follow the standard stable-promotion cycle after validation passes
+
 ## Codex Prompt Standards
 
 Every Codex prompt must include:
@@ -88,6 +98,10 @@ Stop instruction (mandatory, always last):
 
 Documentation requirement (mandatory for every phase prompt):
 - README.md, docs/PHASE_LOG.md, docs/AI_HANDOFF.md, docs/VERSIONING.md
+
+Post-stable bug fix: always include the version bump to X.Y.(Z+1)-alpha
+in all four versioning files as an implementation requirement — not as a
+separate step.
 
 ## When To Use The 2-Section Format
 

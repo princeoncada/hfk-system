@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 3.5.5-alpha | Patch 3.5.5 — Mojibake + Missed Version Label Fix | alpha | 2026-05-23 | Docs hardening — mojibake fix across all docs plus missed version label fix in AI_HANDOFF.md. Files: docs/PHASE_LOG.md, docs/VERSIONING.md, docs/AI_HANDOFF.md, README.md. |
+| 3.5.5-stable | Patch 3.5.5 — Mojibake + Missed Version Label Fix | stable | 2026-05-23 | Docs hardening — mojibake fix across all docs plus missed version label fix in AI_HANDOFF.md. Files: docs/PHASE_LOG.md, docs/VERSIONING.md, docs/AI_HANDOFF.md, README.md. |
 | 3.5.4-stable | Patch 3.5.4 — Version Ordering Fix | stable | 2026-05-23 | Docs hardening — version ordering fix and ordering rule. Files: docs/PHASE_LOG.md, docs/VERSIONING.md, CLAUDE.md, docs/WORKFLOW.md. |
 | 3.5.3-stable | Patch 3.5.3 — 1-by-1 Commit Rule Hardening | stable | 2026-05-23 | Docs hardening — explicit one git add + one git commit per file rule for implementation and stable-promotion commit blocks. |
 | 3.5.2-stable | Patch 3.5.2 — Post-Stable Bug Versioning Rule | stable | 2026-05-23 | Docs hardening — post-stable bug versioning rule. Files: CLAUDE.md, docs/WORKFLOW.md, docs/VERSIONING.md. |
@@ -43,9 +43,9 @@
 
 ## Patch 3.5.5 — Mojibake + Missed Version Label Fix
 
-Status: alpha
+Status: stable
 
-Version: 3.5.5-alpha
+Version: 3.5.5-stable
 
 Date: 2026-05-23
 
@@ -61,6 +61,12 @@ Purpose: Replace UTF-8 mojibake sequences for em dash, right arrow, and
 multiplication sign across the four versioning docs. Correct missed
 3.4.0/3.4.1 labels in AI_HANDOFF.md for Worksheet Builder and Export
 Overhaul.
+Validation:
+- Date: 2026-05-23
+- Scope: mojibake fix and missed version label fix
+- Files: docs/PHASE_LOG.md, docs/VERSIONING.md, docs/AI_HANDOFF.md, README.md
+- Version label fixes confirmed
+- Version bump confirmed
 
 ## Patch 3.5.4 — Version Ordering Fix
 

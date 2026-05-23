@@ -4,7 +4,7 @@ Living backlog for HFK Publishing Engine.
 Completed items are struck through. Update this file every phase.
 
 Last updated: 2026-05-23
-Current stable version: 3.4.0-stable
+Current stable version: 3.4.1-stable
 Current working version: none
 
 ---
@@ -33,6 +33,7 @@ Current working version: none
 - ~~Phase 3.2.0 — Analytics + Recommendations~~ (stable 2026-05-22)
 
 - ~~Phase 3.4.0 — Worksheet Builder~~ (stable 2026-05-23)
+- ~~Patch 3.4.1 — Export Overhaul~~ (stable 2026-05-23)
 
 ---
 
@@ -43,14 +44,6 @@ Current working version: none
 ---
 
 ## Planned
-
-### Phase 3.4.1 — Export Overhaul
-
-Remove PDF export button (use browser print instead). Fix PNG image export -
-clip to the worksheet element instead of full page to eliminate padding/border
-artifact. Add Save As dialog using the File System Access API
-(showSaveFilePicker) with a download-attribute fallback for unsupported
-browsers.
 
 ### Phase 3.3.0 — UI Animations + Onboarding
 

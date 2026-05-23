@@ -248,15 +248,14 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
       }
 
       if (gate === 'caption') {
-        const wsPayload = pkg.gates.worksheet.payload
         const res = await fetch('/api/ai/draft/caption', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            topic: dirPayload.topic,
+            worksheetTitle: dirPayload.topic,
             grade: dirPayload.grade,
             subject: dirPayload.subject,
-            worksheetContent: isWorksheet(wsPayload) ? wsPayload.draft : null,
+            topic: dirPayload.topic,
           }),
         })
         if (!res.ok) {

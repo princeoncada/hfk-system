@@ -104,10 +104,13 @@ Run this at the start of every session before doing anything else:
 ### Bug Found
 1. Read the relevant source files directly
 2. Diagnose root cause
-3. Ask any clarifying questions upfront — wait for answers
-4. If no questions are needed, confirm that, then write the 2-section
+3. If the bug was discovered after a stable release, it is always a Z+1
+   patch. The fix prompt must include version bumps from X.Y.Z-stable to
+   X.Y.(Z+1)-alpha in all four versioning locations.
+4. Ask any clarifying questions upfront — wait for answers
+5. If no questions are needed, confirm that, then write the 2-section
    fix prompt
-5. Stop — do not implement the fix yourself
+6. Stop — do not implement the fix yourself
 
 ### New Phase
 1. Read docs/FUTURE_PLANS.md for the next queued phase
@@ -208,6 +211,8 @@ For post-validation documentation Codex prompts:
 
 X.Y.Z semantic versioning.
 Z = patch (bug fix, doc fix, single file)
+Post-stable bugs always trigger Z+1. Never fix a stable release in
+place — always open a new patch version.
 Y = minor (new feature or capability)
 X = major (architectural shift or production milestone)
 

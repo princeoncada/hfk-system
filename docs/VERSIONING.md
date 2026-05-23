@@ -42,9 +42,9 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.5.2-alpha |
+| Version | 3.5.2-stable |
 | Phase | Patch 3.5.2 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-23 |
 | Summary | Docs hardening — encode post-stable bug = Z+1 rule in CLAUDE.md, WORKFLOW.md, and VERSIONING.md |
 
@@ -52,7 +52,7 @@ Every version change must be applied to all four simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 3.5.2-alpha | Patch 3.5.2 — Post-Stable Bug Versioning Rule | alpha | 2026-05-23 | Docs hardening — encode post-stable bug = Z+1 rule in CLAUDE.md, WORKFLOW.md, and VERSIONING.md. |
+| 3.5.2-stable | Patch 3.5.2 — Post-Stable Bug Versioning Rule | stable | 2026-05-23 | Docs hardening — encode post-stable bug = Z+1 rule in CLAUDE.md, WORKFLOW.md, and VERSIONING.md. |
 | 3.5.1-stable | Patch 3.5.1 — Generate Worksheet Crash Fix | stable | 2026-05-23 | Fix Generate Worksheet crash: add missing template field to worksheet generation POST body and res.ok guards for worksheet/caption generation errors. |
 | 3.5.0-stable | Patch 3.5.0 — Daily Review Fix | stable | 2026-05-23 | Direction pre-populated from today's Planner data. Generate Worksheet and Generate Caption buttons added. Template gate replaced with visual card selector. |
 | 3.3.0-stable | Phase 3.3.0 â€” UI Animations + Onboarding | stable | 2026-05-23 | 4-step onboarding overlay (first-run + re-openable via Help button in sidebar). Framer Motion page transitions and sidebar nav micro-interactions. |
@@ -105,11 +105,19 @@ Date: 2026-05-23
 - Generate Worksheet no longer crashes
 - Error display confirmed
 
+## Validation Record — 3.5.2-stable
+
+Date: 2026-05-23
+
+- All 6 grep checks passed
+- Rule present in CLAUDE.md, WORKFLOW.md, and VERSIONING.md
+- Version bump confirmed in all four versioning files
+
 
 ## Next Phase
 
-Current stable version: 3.5.1-stable
-Current working version: 3.5.2-alpha
+Current stable version: 3.5.2-stable
+Current working version: none
 Next recommended phase: (none — full planned roadmap complete as of 3.3.0-stable)
 
 

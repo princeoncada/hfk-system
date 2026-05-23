@@ -21,6 +21,7 @@ const WorksheetDraftRequestSchema = z.object({
   subject: SubjectSchema,
   template: z.string().min(1),
   objective: z.string().optional(),
+  instruction: z.string().optional(),
 })
 
 const WorksheetDraftSchema = WorksheetSchema.pick({
@@ -73,7 +74,8 @@ Topic: ${input.topic}
 Grade: ${input.grade}
 Subject: ${input.subject}
 Template: ${input.template}
-${input.objective ? `Objective: ${input.objective}` : ''}`
+${input.objective ? `Objective: ${input.objective}` : ''}
+${input.instruction ? `\n\nAdditional instructions: ${input.instruction}` : ''}`
 
     const rawDraft = await generate({
       systemPrompt,

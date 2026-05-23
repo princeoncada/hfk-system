@@ -71,6 +71,19 @@ The fix implementation prompt must:
 2. Open the new patch in alpha state
 3. Follow the standard stable-promotion cycle after validation passes
 
+## Version Ordering Rule
+
+Version numbers must always be monotonically increasing and reflect
+the order phases were actually implemented, not the order they were
+originally planned.
+
+If a phase is built out of its planned sequence:
+1. Discard the originally planned phase number
+2. Assign the next available Y.Z version after the last stable release
+3. All four versioning files must use the new number
+4. The PHASE_LOG.md history table must remain in implementation order
+   with the corrected version numbers
+
 ## Codex Prompt Standards
 
 Every Codex prompt must include:

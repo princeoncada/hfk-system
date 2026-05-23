@@ -1,5 +1,6 @@
 'use client'
 
+import { Fragment } from 'react'
 import type { WorksheetContent, Activity } from '@/lib/types'
 
 export interface WorksheetTemplateProps {
@@ -87,6 +88,53 @@ function renderActivityItems(activity: Activity) {
 }
 
 export function WorksheetTemplate({ worksheet }: WorksheetTemplateProps) {
+  const sections = {
+    vocabulary:
+      worksheet.vocabulary && worksheet.vocabulary.length > 0 ? (
+        <section>
+          <h2 className="mb-3 border-b border-warm-brown/20 pb-1 font-display text-lg font-semibold text-warm-brown">
+            Vocabulary
+          </h2>
+          <div>
+            {worksheet.vocabulary.map((entry) => (
+              <div
+                key={entry.word}
+                className="vocab-row flex gap-4 border-b border-warm-brown/10 py-2"
+              >
+                <div className="min-w-[120px] font-semibold text-warm-brown">
+                  {entry.word}
+                </div>
+                <div className="text-warm-brown/80">{entry.definition}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null,
+    activities:
+      worksheet.activities && worksheet.activities.length > 0 ? (
+        <section className="space-y-5">
+          {worksheet.activities.map((activity, index) => (
+            <div key={`${activity.type}-${index}`} className="activity-block">
+              <h2 className="font-display text-lg font-semibold text-warm-brown">
+                Activity {index + 1}: {activityLabels[activity.type]}
+              </h2>
+              <p className="mb-2 italic text-warm-brown/80">{activity.instruction}</p>
+              {renderActivityItems(activity)}
+            </div>
+          ))}
+        </section>
+      ) : null,
+    parentNotes: worksheet.parentNotes ? (
+      <section className="rounded-lg border border-soft-yellow bg-soft-yellow/30 p-4">
+        <h2 className="mb-1 font-display text-sm font-semibold text-warm-brown">
+          Parent Notes
+        </h2>
+        <p className="text-sm text-warm-brown/80">{worksheet.parentNotes}</p>
+      </section>
+    ) : null,
+  }
+  const order = worksheet.sectionOrder ?? ['vocabulary', 'activities', 'parentNotes']
+
   return (
     <div className="worksheet mx-auto flex min-h-[1056px] max-w-[816px] flex-col gap-6 bg-cream p-8 font-body text-warm-brown">
       <header className="grid grid-cols-[48px_1fr_auto] items-start gap-4 border-b border-warm-brown pb-4">
@@ -111,49 +159,9 @@ export function WorksheetTemplate({ worksheet }: WorksheetTemplateProps) {
         </div>
       </header>
 
-      {worksheet.vocabulary && worksheet.vocabulary.length > 0 ? (
-        <section>
-          <h2 className="mb-3 border-b border-warm-brown/20 pb-1 font-display text-lg font-semibold text-warm-brown">
-            Vocabulary
-          </h2>
-          <div>
-            {worksheet.vocabulary.map((entry) => (
-              <div
-                key={entry.word}
-                className="vocab-row flex gap-4 border-b border-warm-brown/10 py-2"
-              >
-                <div className="min-w-[120px] font-semibold text-warm-brown">
-                  {entry.word}
-                </div>
-                <div className="text-warm-brown/80">{entry.definition}</div>
-              </div>
-            ))}
-          </div>
-        </section>
-      ) : null}
-
-      {worksheet.activities && worksheet.activities.length > 0 ? (
-        <section className="space-y-5">
-          {worksheet.activities.map((activity, index) => (
-            <div key={`${activity.type}-${index}`} className="activity-block">
-              <h2 className="font-display text-lg font-semibold text-warm-brown">
-                Activity {index + 1}: {activityLabels[activity.type]}
-              </h2>
-              <p className="mb-2 italic text-warm-brown/80">{activity.instruction}</p>
-              {renderActivityItems(activity)}
-            </div>
-          ))}
-        </section>
-      ) : null}
-
-      {worksheet.parentNotes ? (
-        <section className="rounded-lg border border-soft-yellow bg-soft-yellow/30 p-4">
-          <h2 className="mb-1 font-display text-sm font-semibold text-warm-brown">
-            Parent Notes
-          </h2>
-          <p className="text-sm text-warm-brown/80">{worksheet.parentNotes}</p>
-        </section>
-      ) : null}
+      {order.map((section) => (
+        <Fragment key={section}>{sections[section]}</Fragment>
+      ))}
 
       <footer className="mt-auto flex justify-between border-t border-warm-brown/20 pt-3">
         <div className="text-xs text-warm-brown/50">

@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-## Current Version: 3.5.2-alpha
+## Current Version: 3.5.2-stable
 
 ## Current Phase
 
-Patch 3.5.2 [3.5.2-alpha] — Post-Stable Bug Versioning Rule — alpha.
+Patch 3.5.2 [3.5.2-stable] — Post-Stable Bug Versioning Rule — stable.
 
 ## Architecture Invariant
 
@@ -24,11 +24,11 @@ records only â€” the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Patch 3.5.2 [3.5.2-alpha] — Post-Stable Bug Versioning Rule
+## Patch 3.5.2 [3.5.2-stable] — Post-Stable Bug Versioning Rule
 
-Status: alpha
+Status: stable
 
-Version: 3.5.2-alpha
+Version: 3.5.2-stable
 
 Scope: Docs hardening — post-stable bug versioning rule.
 
@@ -40,6 +40,16 @@ Files:
 Purpose: Encode that any bug discovered after a stable release always opens
 a new Z+1 patch version and must include version bumps to X.Y.(Z+1)-alpha in
 all four versioning files as part of the implementation prompt.
+
+Validation:
+- All 6 grep checks passed
+- Rule present in CLAUDE.md, WORKFLOW.md, and VERSIONING.md
+- Version bump confirmed in all four versioning files
+
+Next recommended work:
+- Real analytics pipeline
+- Export from builder
+- Additional worksheet templates
 
 ## Patch 3.5.1 [3.5.1-stable] — Generate Worksheet Crash Fix
 

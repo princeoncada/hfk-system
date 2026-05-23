@@ -39,16 +39,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.3.0-stable |
-| Phase | Phase 3.3.0 |
-| State | stable |
+| Version | 3.5.0-alpha |
+| Phase | Patch 3.5.0 |
+| State | alpha |
 | Date | 2026-05-23 |
-| Summary | Phase 3.3.0 â€” UI Animations + Onboarding. 4-step onboarding overlay (first-run + re-openable via Help button in sidebar). Framer Motion page transitions and sidebar nav micro-interactions. |
+| Summary | Patch 3.5.0 — Daily Review Fix. Direction pre-populated from today's Planner data. Generate Worksheet and Generate Caption buttons added. Template gate replaced with visual card selector. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.5.0-alpha | Patch 3.5.0 — Daily Review Fix | alpha | 2026-05-23 | Direction pre-populated from today's Planner data. Generate Worksheet and Generate Caption buttons added. Template gate replaced with visual card selector. |
 | 3.3.0-stable | Phase 3.3.0 â€” UI Animations + Onboarding | stable | 2026-05-23 | 4-step onboarding overlay (first-run + re-openable via Help button in sidebar). Framer Motion page transitions and sidebar nav micro-interactions. |
 | 3.4.1-stable | Patch 3.4.1 â€” Export Overhaul | stable | 2026-05-23 | Removed PDF export. PNG export now client-side via html-to-image targeting the .worksheet element at 2x. Save As dialog via showSaveFilePicker with download fallback. No more server-side archiving on export. |
 | 3.4.0-stable | Phase 3.4.0 - Worksheet Builder | stable | 2026-05-23 | Block-based worksheet builder. /worksheets route, drag-to-reorder sections, live preview, form editor, delete, AI regeneration modal. |
@@ -85,5 +86,6 @@ Every version change must be applied to all four simultaneously:
 Current stable version: 3.3.0-stable
 Current working version: none
 Next recommended phase: (none — full planned roadmap complete as of 3.3.0-stable)
+
 
 

@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-## Current Version: 3.3.0-stable
+## Current Version: 3.5.0-alpha
 
 ## Current Phase
 
-Phase 3.3.0 [3.3.0-stable] — UI Animations + Onboarding — stable.
+Patch 3.5.0 [3.5.0-alpha] — Daily Review Fix — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,16 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only â€” the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Patch 3.5.0 [3.5.0-alpha] — Daily Review Fix
+
+Status: alpha
+
+Version: 3.5.0-alpha
+
+Purpose: Daily Review Fix — Direction pre-populated from today's Planner data.
+Generate Worksheet and Generate Caption buttons added. Template gate replaced
+with visual card selector.
 
 ## Patch 3.4.1 [3.4.1-stable] â€” Export Overhaul
 
@@ -644,5 +654,8 @@ dev.
   only database dependency permitted, and it is local-only.
 - Do not embed actual image or template files into ChromaDB. Only metadata
   records for non-text assets are indexed.
+
+
+
 
 

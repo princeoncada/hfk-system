@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 3.4.0-alpha |
-| Status | alpha |
-| Current phase | Phase 3.4.0 - Worksheet Builder (alpha) |
+| Current | 3.4.0-stable |
+| Status | stable |
+| Current phase | Phase 3.4.0 — Worksheet Builder (stable) |
 
 ## What This Is
 

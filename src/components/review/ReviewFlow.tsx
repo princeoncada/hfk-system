@@ -83,10 +83,6 @@ const inputClass =
 const selectClass = `${inputClass} appearance-none`
 const primaryButtonClass =
   'bg-ink text-cream rounded-[10px] px-4 py-2.5 text-sm font-medium font-sans hover:bg-[#1a120e] transition-colors disabled:opacity-40'
-const rejectButtonClass =
-  'bg-rose-tint text-[#8C3D31] border border-rose/30 rounded-[10px] px-4 py-2 text-[13px] font-medium hover:bg-rose/10 disabled:opacity-40'
-const redirectButtonClass =
-  'bg-yellow-tint text-[#7A5A11] border border-yellow/40 rounded-[10px] px-4 py-2 text-[13px] font-medium hover:bg-yellow/20'
 const textButtonClass =
   'bg-transparent text-ink-3 px-2.5 py-2 text-sm font-sans hover:text-ink transition-colors'
 
@@ -176,8 +172,6 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
   const router = useRouter()
   const [loading, setLoading] = useState<GateName | null>(null)
   const [redirectTarget, setRedirectTarget] = useState<GateName | null>(null)
-  const [rejectTarget, setRejectTarget] = useState<GateName | null>(null)
-  const [rejectReason, setRejectReason] = useState('')
   const [dirForm, setDirForm] = useState({
     topic: planDay?.topic ?? '',
     grade: (planDay?.grade ?? 1) as Grade,
@@ -189,6 +183,8 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
     useState<WorksheetDraftResponse | null>(null)
   const [captionDraft, setCaptionDraft] =
     useState<CaptionDraftResponse | null>(null)
+  const [worksheetInstruction, setWorksheetInstruction] = useState('')
+  const [captionInstruction, setCaptionInstruction] = useState('')
   const [generating, setGenerating] = useState<'worksheet' | 'caption' | null>(
     null,
   )
@@ -200,7 +196,7 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
 
   async function callGateApi(
     gate: GateName,
-    action: 'approve' | 'reject' | 'redirect',
+    action: 'approve',
     body: object,
   ) {
     setLoading(gate)
@@ -237,6 +233,7 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
             subject: dirPayload.subject,
             objective: dirPayload.objective,
             template: templateId || 'cozy_v1',
+            instruction: worksheetInstruction || undefined,
           }),
         })
         if (!res.ok) {
@@ -256,6 +253,7 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
             grade: dirPayload.grade,
             subject: dirPayload.subject,
             topic: dirPayload.topic,
+            instruction: captionInstruction || undefined,
           }),
         })
         if (!res.ok) {
@@ -272,18 +270,6 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
     } finally {
       setGenerating(null)
     }
-  }
-
-  function reject(gate: GateName) {
-    if (!rejectReason.trim()) return
-    void callGateApi(gate, 'reject', { reason: rejectReason })
-    setRejectTarget(null)
-    setRejectReason('')
-  }
-
-  function redirect(gate: GateName, note: string) {
-    void callGateApi(gate, 'redirect', { note })
-    setRedirectTarget(null)
   }
 
   function renderDirectionBody(payload: GatePayload, status: GateStatus) {
@@ -461,6 +447,11 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
           {generateError && generating !== 'worksheet' ? (
             <p className="text-[12px] text-rose mt-1">{generateError}</p>
           ) : null}
+          {worksheetInstruction ? (
+            <p className="text-[11px] text-ink-3 mt-1 truncate max-w-[280px]">
+              Instructions: {worksheetInstruction}
+            </p>
+          ) : null}
           <p className="text-[12px] text-ink-3 mt-2">
             AI will draft a worksheet based on the approved direction.
           </p>
@@ -574,6 +565,11 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
           {generateError && generating !== 'caption' ? (
             <p className="text-[12px] text-rose mt-1">{generateError}</p>
           ) : null}
+          {captionInstruction ? (
+            <p className="text-[11px] text-ink-3 mt-1 truncate max-w-[280px]">
+              Instructions: {captionInstruction}
+            </p>
+          ) : null}
           <p className="text-[12px] text-ink-3 mt-2">
             AI will draft a Facebook caption based on the worksheet.
           </p>
@@ -625,44 +621,6 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
     return renderFinalBody(status)
   }
 
-  function renderRejectControl(gate: GateName) {
-    if (rejectTarget === gate) {
-      return (
-        <div className="flex flex-1 items-center gap-2">
-          <input
-            type="text"
-            placeholder="Rejection reason"
-            value={rejectReason}
-            onChange={(event) => setRejectReason(event.target.value)}
-            className={inputClass}
-          />
-          <button
-            onClick={() => reject(gate)}
-            disabled={!rejectReason.trim()}
-            className={rejectButtonClass}
-          >
-            Confirm
-          </button>
-          <button
-            onClick={() => setRejectTarget(null)}
-            className={textButtonClass}
-          >
-            Cancel
-          </button>
-        </div>
-      )
-    }
-
-    return (
-      <button
-        onClick={() => setRejectTarget(gate)}
-        className={rejectButtonClass}
-      >
-        Reject
-      </button>
-    )
-  }
-
   function renderActionRow(gate: GateName, payload: GatePayload, status: GateStatus) {
     if (
       gate === 'direction' ||
@@ -681,10 +639,7 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
     const canApproveFinal = gate === 'final' && allPriorApproved
     const canApprove = canApproveWorksheet || canApproveCaption || canApproveFinal
 
-    if (
-      (gate === 'worksheet' && !canApproveWorksheet) ||
-      (gate === 'caption' && !canApproveCaption)
-    ) {
+    if (gate === 'final' && !canApproveFinal) {
       return null
     }
 
@@ -733,13 +688,12 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
             Regenerate
           </button>
         ) : null}
-        {renderRejectControl(gate)}
-        {status === 'pending' ? (
+        {gate === 'worksheet' || gate === 'caption' ? (
           <button
             onClick={() => setRedirectTarget(gate)}
-            className={redirectButtonClass}
+            className={textButtonClass}
           >
-            Redirect
+            Instructions
           </button>
         ) : null}
       </div>
@@ -802,7 +756,16 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
       {redirectTarget ? (
         <RedirectModal
           gate={GATE_LABELS[redirectTarget]}
-          onConfirm={(note) => redirect(redirectTarget, note)}
+          initialValue={
+            redirectTarget === 'worksheet'
+              ? worksheetInstruction
+              : captionInstruction
+          }
+          onConfirm={(note) => {
+            if (redirectTarget === 'worksheet') setWorksheetInstruction(note)
+            if (redirectTarget === 'caption') setCaptionInstruction(note)
+            setRedirectTarget(null)
+          }}
           onCancel={() => setRedirectTarget(null)}
         />
       ) : null}

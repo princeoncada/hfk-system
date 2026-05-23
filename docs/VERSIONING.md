@@ -42,9 +42,9 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.5.4-alpha |
+| Version | 3.5.4-stable |
 | Phase | Patch 3.5.4 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-23 |
 | Summary | Docs hardening — fix out-of-order version numbers (3.4→3.3.0, 3.4.1→3.3.1, 3.3→3.4.0) and add Version Ordering Rule to CLAUDE.md and WORKFLOW.md |
 
@@ -52,7 +52,7 @@ Every version change must be applied to all four simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 3.5.4-alpha | Patch 3.5.4 — Version Ordering Fix | alpha | 2026-05-23 | Docs hardening — fix out-of-order version numbers (3.4→3.3.0, 3.4.1→3.3.1, 3.3→3.4.0) and add Version Ordering Rule to CLAUDE.md and WORKFLOW.md. |
+| 3.5.4-stable | Patch 3.5.4 — Version Ordering Fix | stable | 2026-05-23 | Docs hardening — fix out-of-order version numbers (3.4→3.3.0, 3.4.1→3.3.1, 3.3→3.4.0) and add Version Ordering Rule to CLAUDE.md and WORKFLOW.md. |
 | 3.5.3-stable | Patch 3.5.3 — 1-by-1 Commit Rule Hardening | stable | 2026-05-23 | Docs hardening — make implementation and stable-promotion commit blocks require one git add + one git commit per file, no exceptions and no grouping. |
 | 3.5.2-stable | Patch 3.5.2 — Post-Stable Bug Versioning Rule | stable | 2026-05-23 | Docs hardening — encode post-stable bug = Z+1 rule in CLAUDE.md, WORKFLOW.md, and VERSIONING.md. |
 | 3.5.1-stable | Patch 3.5.1 — Generate Worksheet Crash Fix | stable | 2026-05-23 | Fix Generate Worksheet crash: add missing template field to worksheet generation POST body and res.ok guards for worksheet/caption generation errors. |
@@ -123,11 +123,19 @@ Date: 2026-05-23
 - Rule present in CLAUDE.md and WORKFLOW.md in three locations
 - Version bump confirmed in all four versioning files
 
+## Validation Record — 3.5.4-stable
+
+Date: 2026-05-23
+
+- All 10 grep checks passed
+- Version history ordering corrected in PHASE_LOG.md and VERSIONING.md
+- Ordering rule confirmed in CLAUDE.md and WORKFLOW.md
+
 
 ## Next Phase
 
-Current stable version: 3.5.3-stable
-Current working version: 3.5.4-alpha
+Current stable version: 3.5.4-stable
+Current working version: none
 Next recommended phase: (none — full planned roadmap complete as of 3.3.0-stable)
 
 

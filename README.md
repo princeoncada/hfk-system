@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 3.4.1-alpha |
-| Status | alpha |
-| Current phase | Patch 3.4.1 — Export Overhaul (alpha) |
+| Current | 3.4.1-stable |
+| Status | stable |
+| Current phase | Patch 3.4.1 — Export Overhaul (stable) |
 
 ## What This Is
 

@@ -16,6 +16,7 @@
     "@dnd-kit/utilities": "^3.2.2",
     "chromadb": "^1.8.1",
     "chromadb-default-embed": "^2.14.0",
+    "html-to-image": "^1.11.13",
     "next": "14.2.3",
     "openai": "^4.52.0",
     "puppeteer": "^25.0.4",

@@ -12,6 +12,7 @@ export interface WorksheetDraftRequest {
   subject: Subject
   template: string
   objective?: string
+  instruction?: string
 }
 
 export interface WorksheetDraft {
@@ -31,6 +32,7 @@ export interface CaptionDraftRequest {
   grade: Grade
   subject: Subject
   topic: string
+  instruction?: string
 }
 
 export interface CaptionDraftResponse {

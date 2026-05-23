@@ -1,4 +1,4 @@
-﻿# HFK Publishing Engine
+# HFK Publishing Engine
 
 Internal content publishing studio for **Homeschooling for Kiddos (HFK)**,
 a Facebook educational page serving homeschool families and parents of
@@ -8,9 +8,9 @@ Grades 1â€“6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 3.5.4-stable |
-| Status | stable |
-| Current phase | Patch 3.5.4 — Version Ordering Fix (stable) |
+| Current | 3.5.5-alpha |
+| Status | alpha |
+| Current phase | Patch 3.5.5 — Mojibake + Missed Version Label Fix (alpha) |
 
 Full planned roadmap complete as of 3.3.0-stable.
 
@@ -32,10 +32,10 @@ from structured JSON content files and stable React templates.
 
 ```
 content/ (JSON source of truth)
-â†’ React Template (cozy_v1, etc.)
-â†’ Live Preview (Next.js)
-â†’ PDF Export / PNG Export (Puppeteer)
-â†’ Archives
+→ React Template (cozy_v1, etc.)
+→ Live Preview (Next.js)
+→ PDF Export / PNG Export (Puppeteer)
+→ Archives
 ```
 
 Same JSON + same template = same output, every time.

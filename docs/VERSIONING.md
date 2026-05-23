@@ -42,16 +42,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.5.2-stable |
-| Phase | Patch 3.5.2 |
-| State | stable |
+| Version | 3.5.3-alpha |
+| Phase | Patch 3.5.3 |
+| State | alpha |
 | Date | 2026-05-23 |
-| Summary | Docs hardening — encode post-stable bug = Z+1 rule in CLAUDE.md, WORKFLOW.md, and VERSIONING.md |
+| Summary | Docs hardening — make 1-by-1 commit rule explicit: one git add + one git commit per file, no grouping. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.5.3-alpha | Patch 3.5.3 — 1-by-1 Commit Rule Hardening | alpha | 2026-05-23 | Docs hardening — make implementation and stable-promotion commit blocks require one git add + one git commit per file, no exceptions and no grouping. |
 | 3.5.2-stable | Patch 3.5.2 — Post-Stable Bug Versioning Rule | stable | 2026-05-23 | Docs hardening — encode post-stable bug = Z+1 rule in CLAUDE.md, WORKFLOW.md, and VERSIONING.md. |
 | 3.5.1-stable | Patch 3.5.1 — Generate Worksheet Crash Fix | stable | 2026-05-23 | Fix Generate Worksheet crash: add missing template field to worksheet generation POST body and res.ok guards for worksheet/caption generation errors. |
 | 3.5.0-stable | Patch 3.5.0 — Daily Review Fix | stable | 2026-05-23 | Direction pre-populated from today's Planner data. Generate Worksheet and Generate Caption buttons added. Template gate replaced with visual card selector. |
@@ -117,7 +118,7 @@ Date: 2026-05-23
 ## Next Phase
 
 Current stable version: 3.5.2-stable
-Current working version: none
+Current working version: 3.5.3-alpha
 Next recommended phase: (none — full planned roadmap complete as of 3.3.0-stable)
 
 

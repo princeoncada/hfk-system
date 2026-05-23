@@ -19,7 +19,8 @@ Claude Code:
   the user to run and paste back
 - Analyzes validation output and reports pass/fail per check
 - Writes post-validation documentation Codex prompts
-- Provides 1-by-1 git commit command blocks for the user to run
+- Provides 1-by-1 git commit command blocks for the user to run —
+  one git add + one git commit per file, no exceptions, no grouping
 - Provides the git push origin master PowerShell block in the same
   message as the stable-promotion commit block
 
@@ -122,6 +123,9 @@ and proceed directly to the 2-section output.
 For implementation phases:
 1. Validation summary
 2. Implementation commit block (BEFORE stable-promotion prompt)
+   Implementation commit rule: one git add + one git commit per file.
+   Never group multiple files into a single commit. This applies to both
+   the implementation commit block and the stable-promotion commit block.
 3. Stable-promotion Codex prompt
 4. Stable-promotion commit block (IMMEDIATELY after the Codex prompt,
    in the same message — no AI turn between them)
@@ -162,9 +166,16 @@ SECTION 1: Stable-Promotion Confirmation
 - Identify remaining future work
 
 SECTION 2: 1-by-1 Git Commit Commands
+One git add + one git commit per file. Never group files.
 ```powershell
 git add docs/VERSIONING.md
 git commit -m "docs: promote X.Y.Z to stable"
+git add docs/AI_HANDOFF.md
+git commit -m "docs: update AI handoff for X.Y.Z stable"
+git add docs/PHASE_LOG.md
+git commit -m "docs: record X.Y.Z stable phase log"
+git add README.md
+git commit -m "docs: update README version to X.Y.Z stable"
 ...
 git status --short
 ```

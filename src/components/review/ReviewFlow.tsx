@@ -12,8 +12,10 @@ import type {
 } from '@/lib/approval.types'
 import type {
   CaptionDraftResponse,
+  WorksheetDraft,
   WorksheetDraftResponse,
 } from '@/lib/ai.types'
+import type { PlanDay } from '@/lib/planning.types'
 import type { Grade, Subject } from '@/lib/types'
 import RedirectModal from './RedirectModal'
 
@@ -68,6 +70,14 @@ const SUBJECT_LABELS: Record<Subject, string> = {
   values: 'Values',
 }
 
+const TEMPLATES = [
+  {
+    id: 'cozy_v1',
+    label: 'Cozy v1',
+    description: 'Clean serif layout. Vocabulary, activities, parent notes.',
+  },
+]
+
 const inputClass =
   'border border-[rgba(92,64,51,0.14)] rounded-[10px] px-3 py-2 text-[14px] text-ink bg-paper focus:outline-none focus:ring-2 focus:ring-sage/30 focus:border-sage/50 w-full'
 const selectClass = `${inputClass} appearance-none`
@@ -98,6 +108,7 @@ function isCaption(p: GatePayload): p is CaptionDraftResponse {
 
 interface ReviewFlowProps {
   pkg: DailyPackage
+  planDay?: PlanDay | null
 }
 
 function StatusLabel({ status }: { status: GateStatus }) {
@@ -161,19 +172,26 @@ function ProvenancePanel({
   )
 }
 
-export default function ReviewFlow({ pkg }: ReviewFlowProps) {
+export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
   const router = useRouter()
   const [loading, setLoading] = useState<GateName | null>(null)
   const [redirectTarget, setRedirectTarget] = useState<GateName | null>(null)
   const [rejectTarget, setRejectTarget] = useState<GateName | null>(null)
   const [rejectReason, setRejectReason] = useState('')
   const [dirForm, setDirForm] = useState({
-    topic: '',
-    grade: 1 as Grade,
-    subject: 'math' as Subject,
-    objective: '',
+    topic: planDay?.topic ?? '',
+    grade: (planDay?.grade ?? 1) as Grade,
+    subject: (planDay?.subject ?? 'math') as Subject,
+    objective: planDay?.objective ?? '',
   })
   const [templateId, setTemplateId] = useState('')
+  const [worksheetDraft, setWorksheetDraft] =
+    useState<WorksheetDraftResponse | null>(null)
+  const [captionDraft, setCaptionDraft] =
+    useState<CaptionDraftResponse | null>(null)
+  const [generating, setGenerating] = useState<'worksheet' | 'caption' | null>(
+    null,
+  )
 
   const allPriorApproved = GATE_ORDER.slice(0, 4).every(
     (gate) => pkg.gates[gate].status === 'approved',
@@ -199,6 +217,47 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
 
   function approve(gate: GateName, payload?: GatePayload) {
     void callGateApi(gate, 'approve', payload ? { payload } : {})
+  }
+
+  async function handleGenerate(gate: 'worksheet' | 'caption') {
+    setGenerating(gate)
+    try {
+      const dirPayload = pkg.gates.direction.payload
+      if (!isDirection(dirPayload)) return
+
+      if (gate === 'worksheet') {
+        const res = await fetch('/api/ai/draft/worksheet', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            topic: dirPayload.topic,
+            grade: dirPayload.grade,
+            subject: dirPayload.subject,
+            objective: dirPayload.objective,
+          }),
+        })
+        const data = (await res.json()) as WorksheetDraftResponse
+        setWorksheetDraft(data)
+      }
+
+      if (gate === 'caption') {
+        const wsPayload = pkg.gates.worksheet.payload
+        const res = await fetch('/api/ai/draft/caption', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            topic: dirPayload.topic,
+            grade: dirPayload.grade,
+            subject: dirPayload.subject,
+            worksheetContent: isWorksheet(wsPayload) ? wsPayload.draft : null,
+          }),
+        })
+        const data = (await res.json()) as CaptionDraftResponse
+        setCaptionDraft(data)
+      }
+    } finally {
+      setGenerating(null)
+    }
   }
 
   function reject(gate: GateName) {
@@ -319,6 +378,40 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
     )
   }
 
+  function renderWorksheetDraft(draft: WorksheetDraft, provenance: WorksheetDraftResponse['provenance']) {
+    return (
+      <div className="space-y-3">
+        {draft.subtitle ? (
+          <p className="font-medium text-ink">{draft.subtitle}</p>
+        ) : null}
+        <div>
+          <p className="text-[13px] text-ink-3">
+            Vocabulary: {draft.vocabulary.length} terms
+          </p>
+          <ul className="mt-1 space-y-1">
+            {draft.vocabulary.slice(0, 3).map((entry) => (
+              <li key={entry.word} className="text-[14px] text-ink">
+                <span className="font-medium">{entry.word}:</span>{' '}
+                {entry.definition}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p className="text-[13px] text-ink-3">Activities</p>
+          <ul className="mt-1 list-inside list-disc text-[14px] text-ink">
+            {draft.activities.map((activity, index) => (
+              <li key={`${activity.type}-${index}`}>{activity.type}</li>
+            ))}
+          </ul>
+        </div>
+        {provenance.length > 0 ? (
+          <ProvenancePanel provenance={provenance} />
+        ) : null}
+      </div>
+    )
+  }
+
   function renderWorksheetBody(payload: GatePayload, status: GateStatus) {
     if (status === 'redirecting') {
       return (
@@ -334,42 +427,33 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
     }
 
     if (isWorksheet(payload)) {
+      return renderWorksheetDraft(payload.draft, payload.provenance)
+    }
+
+    if (worksheetDraft && status !== 'approved') {
+      return renderWorksheetDraft(worksheetDraft.draft, worksheetDraft.provenance)
+    }
+
+    if (pkg.gates.direction.status === 'approved') {
       return (
-        <div className="space-y-3">
-          {payload.draft.subtitle ? (
-            <p className="font-medium text-ink">{payload.draft.subtitle}</p>
-          ) : null}
-          <div>
-            <p className="text-[13px] text-ink-3">
-              Vocabulary: {payload.draft.vocabulary.length} terms
-            </p>
-            <ul className="mt-1 space-y-1">
-              {payload.draft.vocabulary.slice(0, 3).map((entry) => (
-                <li key={entry.word} className="text-[14px] text-ink">
-                  <span className="font-medium">{entry.word}:</span>{' '}
-                  {entry.definition}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <p className="text-[13px] text-ink-3">Activities</p>
-            <ul className="mt-1 list-inside list-disc text-[14px] text-ink">
-              {payload.draft.activities.map((activity, index) => (
-                <li key={`${activity.type}-${index}`}>{activity.type}</li>
-              ))}
-            </ul>
-          </div>
-          {payload.provenance.length > 0 ? (
-            <ProvenancePanel provenance={payload.provenance} />
-          ) : null}
+        <div>
+          <button
+            onClick={() => void handleGenerate('worksheet')}
+            disabled={generating === 'worksheet'}
+            className="bg-ink text-cream rounded-[10px] px-5 py-2.5 text-[14px] font-medium hover:bg-[#1a120e] transition-colors disabled:opacity-40"
+          >
+            {generating === 'worksheet' ? 'Generating…' : 'Generate Worksheet'}
+          </button>
+          <p className="text-[12px] text-ink-3 mt-2">
+            AI will draft a worksheet based on the approved direction.
+          </p>
         </div>
       )
     }
 
     return (
       <p className="text-[14px] italic text-ink-3">
-        No worksheet draft yet. Generate one via POST /api/ai/draft/worksheet.
+        Approve the Direction gate first.
       </p>
     )
   }
@@ -380,14 +464,35 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
     }
 
     return (
-      <div className="flex flex-col gap-3 sm:flex-row">
-        <input
-          type="text"
-          placeholder="e.g. template/cozy_v1"
-          value={templateId}
-          onChange={(event) => setTemplateId(event.target.value)}
-          className={inputClass}
-        />
+      <div className="space-y-3">
+        <div className="grid grid-cols-1 gap-3">
+          {TEMPLATES.map((template) => (
+            <button
+              key={template.id}
+              type="button"
+              onClick={() => setTemplateId(template.id)}
+              className={`cursor-pointer rounded-[12px] border-2 p-4 text-left transition-colors ${
+                templateId === template.id
+                  ? 'border-sage bg-sage-tint'
+                  : 'border-[rgba(92,64,51,0.14)] bg-paper hover:border-sage/40 hover:bg-cream'
+              }`}
+            >
+              <span className="flex items-center gap-4">
+                <span className="w-[48px] h-[60px] rounded-[6px] bg-cream-deep border border-[rgba(92,64,51,0.1)] grid place-items-center text-[10px] font-mono text-ink-4">
+                  v1
+                </span>
+                <span>
+                  <span className="block font-medium text-ink text-[14px]">
+                    {template.label}
+                  </span>
+                  <span className="block text-[12px] text-ink-3 mt-0.5">
+                    {template.description}
+                  </span>
+                </span>
+              </span>
+            </button>
+          ))}
+        </div>
         <button
           onClick={() => approve('template', { templateId })}
           disabled={!templateId.trim() || loading === 'template'}
@@ -395,6 +500,29 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
         >
           {loading === 'template' ? '...' : 'Approve Template'}
         </button>
+      </div>
+    )
+  }
+
+  function renderCaptionDraft(draft: CaptionDraftResponse) {
+    return (
+      <div>
+        <blockquote className="border-l-2 border-sage pl-4 text-[14px] text-ink-2 italic">
+          {draft.caption}
+        </blockquote>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {draft.hashtags.map((tag) => (
+            <span
+              key={tag}
+              className="bg-cream text-ink-3 border border-[rgba(92,64,51,0.1)] rounded-full px-2.5 py-0.5 text-[11px]"
+            >
+              #{tag}
+            </span>
+          ))}
+        </div>
+        {draft.provenance.length > 0 ? (
+          <ProvenancePanel provenance={draft.provenance} />
+        ) : null}
       </div>
     )
   }
@@ -409,31 +537,33 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
     }
 
     if (isCaption(payload)) {
+      return renderCaptionDraft(payload)
+    }
+
+    if (captionDraft && status !== 'approved') {
+      return renderCaptionDraft(captionDraft)
+    }
+
+    if (pkg.gates.worksheet.status === 'approved') {
       return (
         <div>
-          <blockquote className="border-l-2 border-sage pl-4 text-[14px] text-ink-2 italic">
-            {payload.caption}
-          </blockquote>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {payload.hashtags.map((tag) => (
-              <span
-                key={tag}
-                className="bg-cream text-ink-3 border border-[rgba(92,64,51,0.1)] rounded-full px-2.5 py-0.5 text-[11px]"
-              >
-                #{tag}
-              </span>
-            ))}
-          </div>
-          {payload.provenance.length > 0 ? (
-            <ProvenancePanel provenance={payload.provenance} />
-          ) : null}
+          <button
+            onClick={() => void handleGenerate('caption')}
+            disabled={generating === 'caption'}
+            className="bg-ink text-cream rounded-[10px] px-5 py-2.5 text-[14px] font-medium hover:bg-[#1a120e] transition-colors disabled:opacity-40"
+          >
+            {generating === 'caption' ? 'Generating…' : 'Generate Caption'}
+          </button>
+          <p className="text-[12px] text-ink-3 mt-2">
+            AI will draft a Facebook caption based on the worksheet.
+          </p>
         </div>
       )
     }
 
     return (
       <p className="text-[14px] italic text-ink-3">
-        No caption draft yet. Generate one via POST /api/ai/draft/caption.
+        Approve the Worksheet gate first.
       </p>
     )
   }
@@ -518,21 +648,41 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
       gate === 'direction' ||
       gate === 'template' ||
       status === 'approved' ||
-      status === 'rejected'
+      status === 'rejected' ||
+      status === 'redirecting'
     ) {
       return null
     }
 
-    const canApproveWorksheet = gate === 'worksheet' && isWorksheet(payload)
-    const canApproveCaption = gate === 'caption' && isCaption(payload)
+    const canApproveWorksheet =
+      gate === 'worksheet' && (isWorksheet(payload) || worksheetDraft !== null)
+    const canApproveCaption =
+      gate === 'caption' && (isCaption(payload) || captionDraft !== null)
     const canApproveFinal = gate === 'final' && allPriorApproved
     const canApprove = canApproveWorksheet || canApproveCaption || canApproveFinal
+
+    if (
+      (gate === 'worksheet' && !canApproveWorksheet) ||
+      (gate === 'caption' && !canApproveCaption)
+    ) {
+      return null
+    }
 
     return (
       <div className="border-t border-[rgba(92,64,51,0.08)] mt-4 pt-4 flex flex-wrap items-center gap-2.5">
         {canApprove ? (
           <button
-            onClick={() => approve(gate)}
+            onClick={() => {
+              if (gate === 'worksheet' && worksheetDraft) {
+                approve('worksheet', worksheetDraft)
+                return
+              }
+              if (gate === 'caption' && captionDraft) {
+                approve('caption', captionDraft)
+                return
+              }
+              approve(gate)
+            }}
             disabled={loading === gate}
             className={primaryButtonClass}
           >
@@ -545,8 +695,26 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
                   : 'Approve Package'}
           </button>
         ) : null}
+        {gate === 'worksheet' && worksheetDraft ? (
+          <button
+            onClick={() => void handleGenerate('worksheet')}
+            disabled={generating === 'worksheet'}
+            className={textButtonClass}
+          >
+            Regenerate
+          </button>
+        ) : null}
+        {gate === 'caption' && captionDraft ? (
+          <button
+            onClick={() => void handleGenerate('caption')}
+            disabled={generating === 'caption'}
+            className={textButtonClass}
+          >
+            Regenerate
+          </button>
+        ) : null}
         {renderRejectControl(gate)}
-        {status !== 'redirecting' ? (
+        {status === 'pending' ? (
           <button
             onClick={() => setRedirectTarget(gate)}
             className={redirectButtonClass}
@@ -594,7 +762,11 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
                   {GATE_LABELS[gateName]}
                 </h2>
                 <p className="text-[12px] text-ink-3 mt-0.5">
-                  {GATE_DESCRIPTIONS[gateName]}
+                  {gateName === 'direction'
+                    ? planDay
+                      ? "Loaded from today's plan. Adjust if needed then approve."
+                      : 'No plan found for today. Enter the direction manually.'
+                    : GATE_DESCRIPTIONS[gateName]}
                 </p>
               </div>
               <StatusLabel status={gate.status} />

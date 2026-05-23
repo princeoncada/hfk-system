@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -88,31 +89,64 @@ export default function SidebarNav() {
   const pathname = usePathname()
 
   return (
-    <div className="space-y-1">
-      {NAV_ITEMS.map((item) => {
-        const active =
-          item.href === '/'
-            ? pathname === '/'
-            : pathname.startsWith(item.href)
-        const className = [
-          'flex items-center gap-2.5 rounded-[8px] px-3 py-2 text-[13px]',
-          active
-            ? 'bg-cream-deep text-ink font-medium'
-            : 'text-ink-3 hover:text-ink hover:bg-cream-deep transition-colors',
-        ].join(' ')
-        const content = (
-          <>
-            <NavIcon icon={item.icon} />
-            <span>{item.label}</span>
-          </>
-        )
+    <>
+      <div className="space-y-1">
+        {NAV_ITEMS.map((item) => {
+          const active =
+            item.href === '/'
+              ? pathname === '/'
+              : pathname.startsWith(item.href)
+          const className = [
+            'flex items-center gap-2.5 rounded-[8px] px-3 py-2 text-[13px]',
+            active
+              ? 'bg-cream-deep text-ink font-medium'
+              : 'text-ink-3 hover:text-ink hover:bg-cream-deep transition-colors',
+          ].join(' ')
+          const content = (
+            <>
+              <NavIcon icon={item.icon} />
+              <span>{item.label}</span>
+            </>
+          )
 
-        return (
-          <Link key={item.href} href={item.href} className={className}>
-            {content}
-          </Link>
-        )
-      })}
-    </div>
+          return (
+            <motion.div
+              key={item.href}
+              whileHover={{ x: 2 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.12 }}
+            >
+              <Link href={item.href} className={className}>
+                {content}
+              </Link>
+            </motion.div>
+          )
+        })}
+      </div>
+      <div className="pt-3 mt-3 border-t border-[rgba(92,64,51,0.08)]">
+        <button
+          onClick={() => {
+            if (typeof window !== 'undefined') {
+              window.dispatchEvent(new CustomEvent('hfk:open-help'))
+            }
+          }}
+          className="flex items-center gap-2.5 rounded-[8px] px-3 py-2 text-[13px] w-full text-ink-4 hover:text-ink-2 hover:bg-cream-deep transition-colors"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            className="h-3.5 w-3.5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          >
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 17v.01" />
+            <path d="M12 13.5a2 2 0 0 0 1.5-3.3A2 2 0 0 0 10 12" />
+          </svg>
+          <span>Help</span>
+        </button>
+      </div>
+    </>
   )
 }

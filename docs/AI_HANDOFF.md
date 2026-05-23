@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.6.0-alpha
+## Current Version: 3.6.0-stable
 
 ## Current Phase
 
-Phase 3.6.0 [3.6.0-alpha] — Instructions Flow — alpha.
+Phase 3.6.0 [3.6.0-stable] — Instructions Flow — stable.
 
 ## Architecture Invariant
 
@@ -24,11 +24,11 @@ records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Phase 3.6.0 [3.6.0-alpha] — Instructions Flow
+## Phase 3.6.0 [3.6.0-stable] — Instructions Flow
 
-Status: alpha
+Status: stable
 
-Version: 3.6.0-alpha
+Version: 3.6.0-stable
 
 Scope: Remove Reject, redesign Redirect as Instructions flow.
 
@@ -43,6 +43,19 @@ Purpose: Remove Reject from gate action rows. Replace Redirect with an
 editable Instructions dialog for worksheet and caption gates. Saved
 instruction text is held in ReviewFlow state and included as optional AI
 request context on the next worksheet or caption generation.
+
+Validation:
+- All 8 validation checks passed
+- Build clean, 21 pages
+- instruction field confirmed in ai.types.ts and both API routes
+- worksheetInstruction wired through ReviewFlow.tsx
+- rejectTarget fully removed
+- initialValue confirmed in RedirectModal.tsx
+
+Next recommended work:
+- Export from builder
+- Additional worksheet templates
+- Real analytics pipeline
 
 ## Patch 3.5.6 [3.5.6-stable] — Generate Caption Crash Fix
 

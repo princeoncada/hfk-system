@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.5.6-stable
+## Current Version: 3.6.0-alpha
 
 ## Current Phase
 
-Patch 3.5.6 [3.5.6-stable] — Generate Caption Crash Fix — stable.
+Phase 3.6.0 [3.6.0-alpha] — Instructions Flow — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,26 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Phase 3.6.0 [3.6.0-alpha] — Instructions Flow
+
+Status: alpha
+
+Version: 3.6.0-alpha
+
+Scope: Remove Reject, redesign Redirect as Instructions flow.
+
+Files:
+- src/lib/ai.types.ts
+- src/app/api/ai/draft/worksheet/route.ts
+- src/app/api/ai/draft/caption/route.ts
+- src/components/review/RedirectModal.tsx
+- src/components/review/ReviewFlow.tsx
+
+Purpose: Remove Reject from gate action rows. Replace Redirect with an
+editable Instructions dialog for worksheet and caption gates. Saved
+instruction text is held in ReviewFlow state and included as optional AI
+request context on the next worksheet or caption generation.
 
 ## Patch 3.5.6 [3.5.6-stable] — Generate Caption Crash Fix
 

@@ -2,13 +2,14 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.5.4-alpha | Patch 3.5.4 — Version Ordering Fix | alpha | 2026-05-23 | Docs hardening — version ordering fix and ordering rule. Files: docs/PHASE_LOG.md, docs/VERSIONING.md, CLAUDE.md, docs/WORKFLOW.md. |
 | 3.5.3-stable | Patch 3.5.3 — 1-by-1 Commit Rule Hardening | stable | 2026-05-23 | Docs hardening — explicit one git add + one git commit per file rule for implementation and stable-promotion commit blocks. |
 | 3.5.2-stable | Patch 3.5.2 — Post-Stable Bug Versioning Rule | stable | 2026-05-23 | Docs hardening — post-stable bug versioning rule. Files: CLAUDE.md, docs/WORKFLOW.md, docs/VERSIONING.md. |
 | 3.5.1-stable | Patch 3.5.1 — Generate Worksheet Crash Fix | stable | 2026-05-23 | Bug fix — ReviewFlow.tsx handleGenerate. Fixed missing template field in POST body and no res.ok guard causing undefined draft crash. |
 | 3.5.0-stable | Patch 3.5.0 — Daily Review Fix | stable | 2026-05-23 | Direction pre-populated from today's Planner data. Generate Worksheet and Generate Caption buttons added. Template gate replaced with visual card selector. |
-| 3.3.0-stable | Phase 3.3.0 â€” UI Animations + Onboarding | stable | 2026-05-23 | 4-step onboarding overlay (first-run + re-openable via Help button in sidebar). Framer Motion page transitions and sidebar nav micro-interactions. |
-| 3.4.1-stable | Patch 3.4.1 â€” Export Overhaul | stable | 2026-05-23 | Removed PDF export. PNG export now client-side via html-to-image targeting the .worksheet element at 2x. Save As dialog via showSaveFilePicker with download fallback. No more server-side archiving on export. |
-| 3.4.0-stable | Phase 3.4.0 - Worksheet Builder | stable | 2026-05-23 | Block-based worksheet builder with /worksheets route, drag-to-reorder sections, live preview, form editor, delete, and AI regeneration modal |
+| 3.4.0-stable | Phase 3.4.0 â€” UI Animations + Onboarding | stable | 2026-05-23 | 4-step onboarding overlay (first-run + re-openable via Help button in sidebar). Framer Motion page transitions and sidebar nav micro-interactions. |
+| 3.3.1-stable | Patch 3.3.1 â€” Export Overhaul | stable | 2026-05-23 | Removed PDF export. PNG export now client-side via html-to-image targeting the .worksheet element at 2x. Save As dialog via showSaveFilePicker with download fallback. No more server-side archiving on export. |
+| 3.3.0-stable | Phase 3.3.0 — Worksheet Builder | stable | 2026-05-23 | Block-based worksheet builder with /worksheets route, drag-to-reorder sections, live preview, form editor, delete, and AI regeneration modal |
 | 3.2.0-stable | Phase 3.2.0 â€” Analytics + Recommendations | stable | 2026-05-22 | Analytics + Recommendations â€” demo analytics screen with AI summary, post performance lists, heatmap, and recommendations |
 | 3.1.0-stable | Phase 3.1.0 â€” Vault Browser | stable | 2026-05-22 | Standing Vault asset library at /vault with browsing, inspection, and lifecycle mutation |
 | 3.0.0-stable | Phase 3.0.0 â€” Calendar Intelligence | stable | 2026-05-22 | Calendar Intelligence â€” bi-directional planner calendar with package status overlays |
@@ -38,6 +39,27 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap â€” docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Patch 3.5.4 — Version Ordering Fix
+
+Status: alpha
+
+Version: 3.5.4-alpha
+
+Date: 2026-05-23
+
+Scope: docs hardening — version ordering fix and ordering rule
+
+Files:
+- docs/PHASE_LOG.md
+- docs/VERSIONING.md
+- CLAUDE.md
+- docs/WORKFLOW.md
+
+Purpose: Correct out-of-order version labels for Worksheet Builder, Export
+Overhaul, and UI Animations + Onboarding while preserving implementation
+order. Add explicit rules that version numbers must follow implementation
+order, not planned order.
 
 ## Patch 3.5.3 — 1-by-1 Commit Rule Hardening
 
@@ -129,11 +151,11 @@ Validation:
 - TypeScript zero errors
 
 
-## Phase 3.3.0 â€” UI Animations + Onboarding
+## Phase 3.4.0 â€” UI Animations + Onboarding
 
 Status: stable
 
-Version: 3.3.0-stable
+Version: 3.4.0-stable
 
 Date: 2026-05-23
 
@@ -155,11 +177,11 @@ Validation:
   fix static prerendering of /404 and /500 error pages
 - All checks passed, build clean, 21/21 pages
 
-## Patch 3.4.1 â€” Export Overhaul
+## Patch 3.3.1 â€” Export Overhaul
 
 Status: stable
 
-Version: 3.4.1-stable
+Version: 3.3.1-stable
 
 Date: 2026-05-23
 
@@ -176,11 +198,11 @@ Validation:
 - createObjectURL download fallback for Safari and Firefox
 - All 10 checks passed, build clean, 21/21 pages
 
-## Phase 3.4.0 - Worksheet Builder
+## Phase 3.3.0 — Worksheet Builder
 
 Status: stable
 
-Version: 3.4.0-stable
+Version: 3.3.0-stable
 
 Date: 2026-05-23
 

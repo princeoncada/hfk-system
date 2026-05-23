@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.4.0-alpha
+## Current Version: 3.4.0-stable
 
 ## Current Phase
 
-Phase 3.4.0 [3.4.0-alpha] - Worksheet Builder - alpha.
+Phase 3.4.0 [3.4.0-stable] — Worksheet Builder — stable.
 
 ## Architecture Invariant
 
@@ -24,9 +24,11 @@ records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Phase 3.4.0 [3.4.0-alpha] - Worksheet Builder
+## Phase 3.4.0 [3.4.0-stable] — Worksheet Builder
 
-Status: alpha
+Status: stable
+
+Version: 3.4.0-stable
 
 Purpose: Worksheet Builder - block-based worksheet builder with /worksheets
 route, drag-to-reorder sections, live preview, form editor, delete, and AI
@@ -39,6 +41,20 @@ Scope:
 - BlockPanel client component with dnd-kit section ordering and live forms
 - Worksheet delete API and inline delete confirmation
 - Legacy /edit routes redirect to /worksheets
+
+Validation:
+- sectionOrder field added to WorksheetContent in types.ts
+- worksheet.blocks.ts - WorksheetBlock union type, worksheetToBlocks,
+  blocksToWorksheet utilities
+- deleteWorksheet added to save.ts, DELETE /api/worksheets/[id] route
+- WorksheetTemplate updated to render sections in sectionOrder
+- /worksheets list page with inline delete confirm
+- /worksheets/[id] - split-panel builder: dnd-kit sortable block list,
+  inline form editor, scaled live preview, save/cancel, AI regeneration modal
+- /worksheets/new - blank worksheet builder
+- /edit routes redirect to /worksheets equivalents
+- Worksheets sidebar link updated from /#worksheets to /worksheets
+- All checks passed, build clean, 21/21 pages
 
 ## Phase 3.2.0 [3.2.0-stable]
 
@@ -78,7 +94,7 @@ Validation:
 
 ## Next Phase
 
-Phase 3.4.1 - Export Overhaul
+Phase 3.4.1 — Export Overhaul
 
 ## Phase 3.1.0 [3.1.0-stable]
 
@@ -565,11 +581,11 @@ Modified files:
 - Phase 2.9.0 — UI Design System
 - Phase 3.0.0 — Calendar Intelligence
 - Phase 3.1.0 — Vault Browser
-- Phase 3.4.1 - Export Overhaul
+- Phase 3.4.1 — Export Overhaul
 
 ## Recommended Next Step
 
-Phase 3.4.1 - Export Overhaul.
+Phase 3.4.1 — Export Overhaul.
 
 ## What Exists
 

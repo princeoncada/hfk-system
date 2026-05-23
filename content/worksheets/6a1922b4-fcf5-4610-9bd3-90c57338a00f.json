@@ -1,0 +1,14 @@
+{
+  "id": "6a1922b4-fcf5-4610-9bd3-90c57338a00f",
+  "title": "test",
+  "subtitle": "test2",
+  "grade": 1,
+  "subject": "math",
+  "template": "cozy_v1",
+  "vocabulary": [],
+  "activities": [],
+  "parentNotes": "asdf",
+  "footerText": "asdf",
+  "createdAt": "2026-05-22",
+  "status": "draft"
+}

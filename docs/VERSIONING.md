@@ -42,16 +42,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.5.6-stable |
-| Phase | Patch 3.5.6 |
-| State | stable |
+| Version | 3.6.0-alpha |
+| Phase | Phase 3.6.0 |
+| State | alpha |
 | Date | 2026-05-23 |
-| Summary | Bug fix — Generate Caption crash: replace worksheetContent with worksheetTitle in caption fetch body. |
+| Summary | Phase 3.6.0 — Instructions Flow. Remove Reject from all gates. Replace Redirect with editable Instructions dialog on worksheet and caption gates. Saved instruction text passed to AI on next generation. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.6.0-alpha | Phase 3.6.0 — Instructions Flow | alpha | 2026-05-23 | Remove Reject from all gates. Replace Redirect with editable Instructions dialog on worksheet and caption gates. Saved instruction text passed to AI on next generation. |
 | 3.5.6-stable | Patch 3.5.6 — Generate Caption Crash Fix | stable | 2026-05-23 | Bug fix — Generate Caption crash: replace worksheetContent with worksheetTitle in caption fetch body. |
 | 3.5.5-stable | Patch 3.5.5 — Mojibake + Missed Version Label Fix | stable | 2026-05-23 | Docs hardening — fix UTF-8 mojibake for em dash, right arrow, and multiplication sign across PHASE_LOG.md, VERSIONING.md, AI_HANDOFF.md, README.md. Fix missed 3.4.0/3.4.1 version labels in AI_HANDOFF.md. |
 | 3.5.4-stable | Patch 3.5.4 — Version Ordering Fix | stable | 2026-05-23 | Docs hardening — fix out-of-order version numbers (3.4→3.3.0, 3.4.1→3.3.1, 3.3→3.4.0) and add Version Ordering Rule to CLAUDE.md and WORKFLOW.md. |
@@ -154,7 +155,7 @@ Date: 2026-05-23
 ## Next Phase
 
 Current stable version: 3.5.6-stable
-Current working version: none
+Current working version: 3.6.0-alpha
 Next recommended phase: (none — full planned roadmap complete as of 3.3.0-stable)
 
 

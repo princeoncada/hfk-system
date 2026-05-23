@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 3.6.0-alpha | Phase 3.6.0 — Instructions Flow | alpha | 2026-05-23 | Remove Reject, redesign Redirect as Instructions flow. Files: src/lib/ai.types.ts, src/app/api/ai/draft/worksheet/route.ts, src/app/api/ai/draft/caption/route.ts, src/components/review/RedirectModal.tsx, src/components/review/ReviewFlow.tsx. |
+| 3.6.0-stable | Phase 3.6.0 — Instructions Flow | stable | 2026-05-23 | Remove Reject, redesign Redirect as Instructions flow. Files: src/lib/ai.types.ts, src/app/api/ai/draft/worksheet/route.ts, src/app/api/ai/draft/caption/route.ts, src/components/review/RedirectModal.tsx, src/components/review/ReviewFlow.tsx. |
 | 3.5.6-stable | Patch 3.5.6 — Generate Caption Crash Fix | stable | 2026-05-23 | Bug fix — Generate Caption field name mismatch. Files: src/components/review/ReviewFlow.tsx. |
 | 3.5.5-stable | Patch 3.5.5 — Mojibake + Missed Version Label Fix | stable | 2026-05-23 | Docs hardening — mojibake fix across all docs plus missed version label fix in AI_HANDOFF.md. Files: docs/PHASE_LOG.md, docs/VERSIONING.md, docs/AI_HANDOFF.md, README.md. |
 | 3.5.4-stable | Patch 3.5.4 — Version Ordering Fix | stable | 2026-05-23 | Docs hardening — version ordering fix and ordering rule. Files: docs/PHASE_LOG.md, docs/VERSIONING.md, CLAUDE.md, docs/WORKFLOW.md. |
@@ -45,9 +45,9 @@
 
 ## Phase 3.6.0 — Instructions Flow
 
-Status: alpha
+Status: stable
 
-Version: 3.6.0-alpha
+Version: 3.6.0-stable
 
 Date: 2026-05-23
 
@@ -63,6 +63,13 @@ Files:
 Purpose: Replace destructive Reject and redirect mutation actions with a
 local Instructions flow for worksheet and caption generation. Saved
 instructions are passed to the AI as optional context on the next generation.
+
+Validation:
+- Date: 2026-05-23
+- Scope: remove Reject, Instructions flow with AI context injection
+- Files: src/lib/ai.types.ts, src/app/api/ai/draft/worksheet/route.ts, src/app/api/ai/draft/caption/route.ts, src/components/review/RedirectModal.tsx, src/components/review/ReviewFlow.tsx
+- All 8 checks passed
+- Build clean
 
 ## Patch 3.5.6 — Generate Caption Crash Fix
 

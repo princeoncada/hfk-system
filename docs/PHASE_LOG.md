@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.5.3-alpha | Patch 3.5.3 — 1-by-1 Commit Rule Hardening | alpha | 2026-05-23 | Docs hardening — explicit one git add + one git commit per file rule for implementation and stable-promotion commit blocks. |
 | 3.5.2-stable | Patch 3.5.2 — Post-Stable Bug Versioning Rule | stable | 2026-05-23 | Docs hardening — post-stable bug versioning rule. Files: CLAUDE.md, docs/WORKFLOW.md, docs/VERSIONING.md. |
 | 3.5.1-stable | Patch 3.5.1 — Generate Worksheet Crash Fix | stable | 2026-05-23 | Bug fix — ReviewFlow.tsx handleGenerate. Fixed missing template field in POST body and no res.ok guard causing undefined draft crash. |
 | 3.5.0-stable | Patch 3.5.0 — Daily Review Fix | stable | 2026-05-23 | Direction pre-populated from today's Planner data. Generate Worksheet and Generate Caption buttons added. Template gate replaced with visual card selector. |
@@ -37,6 +38,28 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap â€” docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Patch 3.5.3 — 1-by-1 Commit Rule Hardening
+
+Status: alpha
+
+Version: 3.5.3-alpha
+
+Date: 2026-05-23
+
+Scope: docs hardening — explicit one-file-per-commit rule
+
+Files:
+- CLAUDE.md
+- docs/WORKFLOW.md
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- README.md
+
+Purpose: Clarify that every implementation commit block and every
+stable-promotion commit block must use exactly one git add and one git commit
+per file, with no exceptions and no grouped commits.
 
 ## Patch 3.5.2 — Post-Stable Bug Versioning Rule
 

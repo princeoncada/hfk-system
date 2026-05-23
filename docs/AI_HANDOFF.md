@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-## Current Version: 3.5.3-stable
+## Current Version: 3.5.4-alpha
 
 ## Current Phase
 
-Patch 3.5.3 [3.5.3-stable] — 1-by-1 Commit Rule Hardening — stable.
+Patch 3.5.4 [3.5.4-alpha] — Version Ordering Fix — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,25 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only â€” the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Patch 3.5.4 [3.5.4-alpha] — Version Ordering Fix
+
+Status: alpha
+
+Version: 3.5.4-alpha
+
+Scope: Docs hardening — version ordering fix and ordering rule.
+
+Files:
+- docs/PHASE_LOG.md
+- docs/VERSIONING.md
+- CLAUDE.md
+- docs/WORKFLOW.md
+
+Purpose: Correct out-of-order version labels for Worksheet Builder,
+Export Overhaul, and UI Animations + Onboarding. Add explicit rules that
+future version numbers must be monotonically increasing and follow
+implementation order, not planning order.
 
 ## Patch 3.5.3 [3.5.3-stable] — 1-by-1 Commit Rule Hardening
 

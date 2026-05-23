@@ -13,6 +13,7 @@ const CaptionDraftRequestSchema = z.object({
   grade: GradeSchema,
   subject: SubjectSchema,
   topic: z.string().min(1),
+  instruction: z.string().optional(),
 })
 
 const CaptionDraftSchema = z.object({
@@ -47,7 +48,7 @@ Return ONLY valid JSON with no extra text.`
 Title: ${input.worksheetTitle}
 Grade: ${input.grade}
 Subject: ${input.subject}
-Topic: ${input.topic}`
+Topic: ${input.topic}${input.instruction ? `\n\nAdditional instructions: ${input.instruction}` : ''}`
 
     const rawDraft = await generate({
       systemPrompt,

@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-## Current Version: 3.5.1-alpha
+## Current Version: 3.5.1-stable
 
 ## Current Phase
 
-Patch 3.5.1 [3.5.1-alpha] — Generate Worksheet Crash Fix — alpha.
+Patch 3.5.1 [3.5.1-stable] — Generate Worksheet Crash Fix — stable.
 
 ## Architecture Invariant
 
@@ -24,17 +24,28 @@ records only â€” the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Patch 3.5.1 [3.5.1-alpha] — Generate Worksheet Crash Fix
+## Patch 3.5.1 [3.5.1-stable] — Generate Worksheet Crash Fix
 
-Status: alpha
+Status: stable
 
-Version: 3.5.1-alpha
+Version: 3.5.1-stable
 
 Scope: Bug fix — ReviewFlow.tsx handleGenerate.
 
 Bugs fixed:
 - Missing template field in Generate Worksheet POST body
 - No res.ok guard causing error payloads to be stored as drafts and crash on undefined draft
+
+Validation:
+- Build clean
+- TypeScript zero errors
+- Generate Worksheet no longer crashes
+- Inline generation error display confirmed
+
+Next recommended work:
+- Real analytics pipeline
+- Export from builder
+- Additional worksheet templates
 
 
 ## Patch 3.5.0 [3.5.0-stable] — Daily Review Fix

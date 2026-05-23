@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 3.5.1-alpha | Patch 3.5.1 — Generate Worksheet Crash Fix | alpha | 2026-05-23 | Bug fix — ReviewFlow.tsx handleGenerate. Fixed missing template field in POST body and no res.ok guard causing undefined draft crash. |
+| 3.5.1-stable | Patch 3.5.1 — Generate Worksheet Crash Fix | stable | 2026-05-23 | Bug fix — ReviewFlow.tsx handleGenerate. Fixed missing template field in POST body and no res.ok guard causing undefined draft crash. |
 | 3.5.0-stable | Patch 3.5.0 — Daily Review Fix | stable | 2026-05-23 | Direction pre-populated from today's Planner data. Generate Worksheet and Generate Caption buttons added. Template gate replaced with visual card selector. |
 | 3.3.0-stable | Phase 3.3.0 â€” UI Animations + Onboarding | stable | 2026-05-23 | 4-step onboarding overlay (first-run + re-openable via Help button in sidebar). Framer Motion page transitions and sidebar nav micro-interactions. |
 | 3.4.1-stable | Patch 3.4.1 â€” Export Overhaul | stable | 2026-05-23 | Removed PDF export. PNG export now client-side via html-to-image targeting the .worksheet element at 2x. Save As dialog via showSaveFilePicker with download fallback. No more server-side archiving on export. |
@@ -39,17 +39,24 @@
 
 ## Patch 3.5.1 — Generate Worksheet Crash Fix
 
-Status: alpha
+Status: stable
 
-Version: 3.5.1-alpha
+Version: 3.5.1-stable
 
 Date: 2026-05-23
 
-Scope: bug fix — ReviewFlow.tsx handleGenerate
+Scope: Generate Worksheet crash fix
 
 Bugs fixed:
 - Missing template field in POST body
 - No res.ok guard causing undefined draft crash
+
+Validation:
+- Date: 2026-05-23
+- Scope: Generate Worksheet crash fix
+- Files: src/components/review/ReviewFlow.tsx
+- Build clean
+- TypeScript zero errors
 
 
 ## Patch 3.5.0 — Daily Review Fix

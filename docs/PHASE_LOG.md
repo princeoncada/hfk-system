@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 3.5.4-alpha | Patch 3.5.4 — Version Ordering Fix | alpha | 2026-05-23 | Docs hardening — version ordering fix and ordering rule. Files: docs/PHASE_LOG.md, docs/VERSIONING.md, CLAUDE.md, docs/WORKFLOW.md. |
+| 3.5.4-stable | Patch 3.5.4 — Version Ordering Fix | stable | 2026-05-23 | Docs hardening — version ordering fix and ordering rule. Files: docs/PHASE_LOG.md, docs/VERSIONING.md, CLAUDE.md, docs/WORKFLOW.md. |
 | 3.5.3-stable | Patch 3.5.3 — 1-by-1 Commit Rule Hardening | stable | 2026-05-23 | Docs hardening — explicit one git add + one git commit per file rule for implementation and stable-promotion commit blocks. |
 | 3.5.2-stable | Patch 3.5.2 — Post-Stable Bug Versioning Rule | stable | 2026-05-23 | Docs hardening — post-stable bug versioning rule. Files: CLAUDE.md, docs/WORKFLOW.md, docs/VERSIONING.md. |
 | 3.5.1-stable | Patch 3.5.1 — Generate Worksheet Crash Fix | stable | 2026-05-23 | Bug fix — ReviewFlow.tsx handleGenerate. Fixed missing template field in POST body and no res.ok guard causing undefined draft crash. |
@@ -42,13 +42,13 @@
 
 ## Patch 3.5.4 — Version Ordering Fix
 
-Status: alpha
+Status: stable
 
-Version: 3.5.4-alpha
+Version: 3.5.4-stable
 
 Date: 2026-05-23
 
-Scope: docs hardening — version ordering fix and ordering rule
+Scope: version ordering fix and ordering rule hardening
 
 Files:
 - docs/PHASE_LOG.md
@@ -60,6 +60,12 @@ Purpose: Correct out-of-order version labels for Worksheet Builder, Export
 Overhaul, and UI Animations + Onboarding while preserving implementation
 order. Add explicit rules that version numbers must follow implementation
 order, not planned order.
+
+Validation:
+- Date: 2026-05-23
+- Scope: version ordering fix and ordering rule hardening
+- Files: docs/PHASE_LOG.md, docs/VERSIONING.md, CLAUDE.md, docs/WORKFLOW.md
+- All 10 grep checks passed
 
 ## Patch 3.5.3 — 1-by-1 Commit Rule Hardening
 

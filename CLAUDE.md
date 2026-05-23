@@ -32,7 +32,8 @@ You:
   the user to run and paste back
 - Analyze validation output and report pass/fail
 - Write post-validation documentation Codex prompts
-- Provide 1-by-1 git commit command blocks for the user to run
+- Provide 1-by-1 git commit command blocks for the user to run —
+  one git add + one git commit per file, no exceptions, no grouping
 - Provide the git push origin master PowerShell block in the same
   message as the stable-promotion commit block
 
@@ -143,6 +144,9 @@ appear in one message — no AI turn between them:
 - Implementation commit block
 - Stable-promotion Codex prompt
 - Stable-promotion commit block (SECTION 1 + SECTION 2 below)
+  Each commit block (implementation and stable-promotion) must have
+  exactly one git add and one git commit per file. Never group multiple
+  files into one commit.
 - git push origin master PowerShell block
 
 SECTION 1: Stable-Promotion Confirmation

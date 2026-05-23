@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 3.4.0-alpha | Phase 3.4.0 - Worksheet Builder | alpha | 2026-05-23 | Block-based worksheet builder with /worksheets route, drag-to-reorder sections, live preview, form editor, delete, and AI regeneration modal |
+| 3.4.0-stable | Phase 3.4.0 - Worksheet Builder | stable | 2026-05-23 | Block-based worksheet builder with /worksheets route, drag-to-reorder sections, live preview, form editor, delete, and AI regeneration modal |
 | 3.2.0-stable | Phase 3.2.0 — Analytics + Recommendations | stable | 2026-05-22 | Analytics + Recommendations — demo analytics screen with AI summary, post performance lists, heatmap, and recommendations |
 | 3.1.0-stable | Phase 3.1.0 — Vault Browser | stable | 2026-05-22 | Standing Vault asset library at /vault with browsing, inspection, and lifecycle mutation |
 | 3.0.0-stable | Phase 3.0.0 — Calendar Intelligence | stable | 2026-05-22 | Calendar Intelligence — bi-directional planner calendar with package status overlays |
@@ -35,13 +35,27 @@
 
 ## Phase 3.4.0 - Worksheet Builder
 
-Status: alpha
+Status: stable
 
-Version: 3.4.0-alpha
+Version: 3.4.0-stable
 
 Date: 2026-05-23
 
 Purpose: Block-based worksheet builder. /worksheets route, drag-to-reorder sections, live preview, form editor, delete, AI regeneration modal.
+
+Validation:
+- sectionOrder field added to WorksheetContent in types.ts
+- worksheet.blocks.ts - WorksheetBlock union type, worksheetToBlocks,
+  blocksToWorksheet utilities
+- deleteWorksheet added to save.ts, DELETE /api/worksheets/[id] route
+- WorksheetTemplate updated to render sections in sectionOrder
+- /worksheets list page with inline delete confirm
+- /worksheets/[id] - split-panel builder: dnd-kit sortable block list,
+  inline form editor, scaled live preview, save/cancel, AI regeneration modal
+- /worksheets/new - blank worksheet builder
+- /edit routes redirect to /worksheets equivalents
+- Worksheets sidebar link updated from /#worksheets to /worksheets
+- All checks passed, build clean, 21/21 pages
 
 ## Phase 3.2.0 — Analytics + Recommendations
 

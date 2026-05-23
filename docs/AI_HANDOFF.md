@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.5.5-stable
+## Current Version: 3.5.6-alpha
 
 ## Current Phase
 
-Patch 3.5.5 [3.5.5-stable] — Mojibake + Missed Version Label Fix — stable.
+Patch 3.5.6 [3.5.6-alpha] — Generate Caption Crash Fix — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,22 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Patch 3.5.6 [3.5.6-alpha] — Generate Caption Crash Fix
+
+Status: alpha
+
+Version: 3.5.6-alpha
+
+Scope: Bug fix — Generate Caption field name mismatch.
+
+Files:
+- src/components/review/ReviewFlow.tsx
+
+Purpose: Fix Generate Caption by sending the payload required by
+CaptionDraftRequestSchema: worksheetTitle, grade, subject, and topic.
+The previous request sent worksheetContent with the draft object/null,
+causing schema validation to reject the request.
 
 ## Patch 3.5.5 [3.5.5-stable] — Mojibake + Missed Version Label Fix
 

@@ -9,7 +9,7 @@ const NAV_ITEMS = [
   { label: 'Planner', href: '/planner', icon: 'calendar' },
   { label: 'Vault', href: '/vault', icon: 'vault' },
   { label: 'Analytics', href: '/analytics', icon: 'analytics' },
-  { label: 'Worksheets', href: '/#worksheets', icon: 'doc' },
+  { label: 'Worksheets', href: '/worksheets', icon: 'doc' },
 ]
 
 function NavIcon({ icon }: { icon: string }) {
@@ -93,7 +93,7 @@ export default function SidebarNav() {
         const active =
           item.href === '/'
             ? pathname === '/'
-            : item.href !== '/#worksheets' && pathname.startsWith(item.href)
+            : pathname.startsWith(item.href)
         const className = [
           'flex items-center gap-2.5 rounded-[8px] px-3 py-2 text-[13px]',
           active
@@ -106,14 +106,6 @@ export default function SidebarNav() {
             <span>{item.label}</span>
           </>
         )
-
-        if (item.href === '/#worksheets') {
-          return (
-            <a key={item.href} href={item.href} className={className}>
-              {content}
-            </a>
-          )
-        }
 
         return (
           <Link key={item.href} href={item.href} className={className}>

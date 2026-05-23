@@ -8,9 +8,9 @@ Grades 1â€“6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 3.5.5-stable |
-| Status | stable |
-| Current phase | Patch 3.5.5 — Mojibake + Missed Version Label Fix (stable) |
+| Current | 3.5.6-alpha |
+| Status | alpha |
+| Current phase | Patch 3.5.6 — Generate Caption Crash Fix (alpha) |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

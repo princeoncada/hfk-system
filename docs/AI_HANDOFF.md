@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.2.0-stable
+## Current Version: 3.4.0-alpha
 
 ## Current Phase
 
-Phase 3.2.0 [3.2.0-stable] — Analytics + Recommendations — stable.
+Phase 3.4.0 [3.4.0-alpha] - Worksheet Builder - alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,22 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Phase 3.4.0 [3.4.0-alpha] - Worksheet Builder
+
+Status: alpha
+
+Purpose: Worksheet Builder - block-based worksheet builder with /worksheets
+route, drag-to-reorder sections, live preview, form editor, delete, and AI
+regeneration modal.
+
+Scope:
+- /worksheets route replaces the dashboard worksheet section
+- Block conversion utilities for worksheet section ordering
+- WorksheetBuilder client component with live cozy_v1 preview
+- BlockPanel client component with dnd-kit section ordering and live forms
+- Worksheet delete API and inline delete confirmation
+- Legacy /edit routes redirect to /worksheets
 
 ## Phase 3.2.0 [3.2.0-stable]
 
@@ -62,7 +78,7 @@ Validation:
 
 ## Next Phase
 
-Phase 3.3.0 — UI Animations + Onboarding
+Phase 3.4.1 - Export Overhaul
 
 ## Phase 3.1.0 [3.1.0-stable]
 
@@ -549,11 +565,11 @@ Modified files:
 - Phase 2.9.0 — UI Design System
 - Phase 3.0.0 — Calendar Intelligence
 - Phase 3.1.0 — Vault Browser
-- Phase 3.3.0 — UI Animations + Onboarding
+- Phase 3.4.1 - Export Overhaul
 
 ## Recommended Next Step
 
-Phase 3.3.0 — UI Animations + Onboarding.
+Phase 3.4.1 - Export Overhaul.
 
 ## What Exists
 

@@ -39,16 +39,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.2.0-stable |
-| Phase | Phase 3.2.0 |
-| State | stable |
-| Date | 2026-05-22 |
-| Summary | Analytics + Recommendations — /analytics screen with AI-narrated demo summary, top/worst post lists, subject-grade heatmap, dismissible recommendation cards, and Analytics nav link added to sidebar. |
+| Version | 3.4.0-alpha |
+| Phase | Phase 3.4.0 |
+| State | alpha |
+| Date | 2026-05-23 |
+| Summary | Phase 3.4.0 - Worksheet Builder. Block-based worksheet builder, /worksheets route, drag-to-reorder sections, live preview, form editor, delete, AI regeneration modal. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.4.0-alpha | Phase 3.4.0 - Worksheet Builder | alpha | 2026-05-23 | Block-based worksheet builder. /worksheets route, drag-to-reorder sections, live preview, form editor, delete, AI regeneration modal. |
 | 3.2.0-stable | Phase 3.2.0 — Analytics + Recommendations | stable | 2026-05-22 | Analytics + Recommendations — /analytics screen with AI-narrated demo summary, top/worst post lists, subject-grade heatmap, dismissible recommendation cards, and Analytics nav link added to sidebar. |
 | 3.1.0-stable | Phase 3.1.0 — Vault Browser | stable | 2026-05-22 | Vault Browser — /vault standing asset library. 7 asset types, type filter tabs, name search, asset cards with freshness/lifecycle/usage data, lifecycle mutation actions (approve, archive, retire, resurrect). Vault nav link added to sidebar. |
 | 3.0.0-stable | Phase 3.0.0 — Calendar Intelligence | stable | 2026-05-22 | Calendar Intelligence — bi-directional planner. Past cells show shipped/in-review status from package data. Future cells show plan + in-review state. Day detail panel includes gate-by-gate package summary. |
@@ -80,5 +81,5 @@ Every version change must be applied to all four simultaneously:
 ## Next Phase
 
 Current stable version: 3.2.0-stable
-Current working version: none
-Next recommended phase: Phase 3.3.0 — UI Animations + Onboarding
+Current working version: 3.4.0-alpha
+Next recommended phase: Phase 3.4.1 - Export Overhaul

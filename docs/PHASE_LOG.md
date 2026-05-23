@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.4.0-alpha | Phase 3.4.0 - Worksheet Builder | alpha | 2026-05-23 | Block-based worksheet builder with /worksheets route, drag-to-reorder sections, live preview, form editor, delete, and AI regeneration modal |
 | 3.2.0-stable | Phase 3.2.0 — Analytics + Recommendations | stable | 2026-05-22 | Analytics + Recommendations — demo analytics screen with AI summary, post performance lists, heatmap, and recommendations |
 | 3.1.0-stable | Phase 3.1.0 — Vault Browser | stable | 2026-05-22 | Standing Vault asset library at /vault with browsing, inspection, and lifecycle mutation |
 | 3.0.0-stable | Phase 3.0.0 — Calendar Intelligence | stable | 2026-05-22 | Calendar Intelligence — bi-directional planner calendar with package status overlays |
@@ -31,6 +32,16 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Phase 3.4.0 - Worksheet Builder
+
+Status: alpha
+
+Version: 3.4.0-alpha
+
+Date: 2026-05-23
+
+Purpose: Block-based worksheet builder. /worksheets route, drag-to-reorder sections, live preview, form editor, delete, AI regeneration modal.
 
 ## Phase 3.2.0 — Analytics + Recommendations
 

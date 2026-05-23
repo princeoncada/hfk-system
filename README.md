@@ -8,9 +8,9 @@ Grades 1â€“6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 3.5.2-stable |
-| Status | stable |
-| Current phase | Patch 3.5.2 — Post-Stable Bug Versioning Rule (stable) |
+| Current | 3.5.3-alpha |
+| Status | alpha |
+| Current phase | Patch 3.5.3 — 1-by-1 Commit Rule Hardening (alpha) |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

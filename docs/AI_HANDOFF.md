@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.5.6-alpha
+## Current Version: 3.5.6-stable
 
 ## Current Phase
 
-Patch 3.5.6 [3.5.6-alpha] — Generate Caption Crash Fix — alpha.
+Patch 3.5.6 [3.5.6-stable] — Generate Caption Crash Fix — stable.
 
 ## Architecture Invariant
 
@@ -24,11 +24,11 @@ records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Patch 3.5.6 [3.5.6-alpha] — Generate Caption Crash Fix
+## Patch 3.5.6 [3.5.6-stable] — Generate Caption Crash Fix
 
-Status: alpha
+Status: stable
 
-Version: 3.5.6-alpha
+Version: 3.5.6-stable
 
 Scope: Bug fix — Generate Caption field name mismatch.
 
@@ -39,6 +39,17 @@ Purpose: Fix Generate Caption by sending the payload required by
 CaptionDraftRequestSchema: worksheetTitle, grade, subject, and topic.
 The previous request sent worksheetContent with the draft object/null,
 causing schema validation to reject the request.
+
+Validation:
+- All 4 validation checks passed
+- Build clean, 21 pages
+- worksheetTitle present in ReviewFlow.tsx
+- worksheetContent removed from ReviewFlow.tsx
+
+Next recommended work:
+- Real analytics pipeline
+- Export from builder
+- Additional worksheet templates
 
 ## Patch 3.5.5 [3.5.5-stable] — Mojibake + Missed Version Label Fix
 

@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.4.1-alpha
+## Current Version: 3.4.1-stable
 
 ## Current Phase
 
-Patch 3.4.1 [3.4.1-alpha] — Export Overhaul — alpha.
+Patch 3.4.1 [3.4.1-stable] — Export Overhaul — stable.
 
 ## Architecture Invariant
 
@@ -23,6 +23,23 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Patch 3.4.1 [3.4.1-stable] — Export Overhaul
+
+Status: stable
+
+Version: 3.4.1-stable
+
+Purpose: Export Overhaul — remove PDF export from preview and replace
+server-side PNG export with client-side worksheet image saving.
+
+Validation:
+- PDF export button removed from PreviewControls
+- PNG export replaced with client-side handleSaveImage using html-to-image
+- Targets .worksheet DOM element at pixelRatio 2 — no padding artifact
+- showSaveFilePicker Save As dialog with AbortError guard
+- createObjectURL download fallback for Safari and Firefox
+- All 10 checks passed, build clean, 21/21 pages
 
 ## Phase 3.4.0 [3.4.0-stable] — Worksheet Builder
 

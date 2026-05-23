@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.4.0-stable
+## Current Version: 3.4.1-alpha
 
 ## Current Phase
 
-Phase 3.4.0 [3.4.0-stable] — Worksheet Builder — stable.
+Patch 3.4.1 [3.4.1-alpha] — Export Overhaul — alpha.
 
 ## Architecture Invariant
 
@@ -94,7 +94,7 @@ Validation:
 
 ## Next Phase
 
-Phase 3.4.1 — Export Overhaul
+Phase 3.3.0 — UI Animations + Onboarding
 
 ## Phase 3.1.0 [3.1.0-stable]
 
@@ -581,11 +581,11 @@ Modified files:
 - Phase 2.9.0 — UI Design System
 - Phase 3.0.0 — Calendar Intelligence
 - Phase 3.1.0 — Vault Browser
-- Phase 3.4.1 — Export Overhaul
+- Phase 3.3.0 — UI Animations + Onboarding
 
 ## Recommended Next Step
 
-Phase 3.4.1 — Export Overhaul.
+Phase 3.3.0 — UI Animations + Onboarding.
 
 ## What Exists
 

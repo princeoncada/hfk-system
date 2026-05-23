@@ -39,16 +39,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.4.0-stable |
-| Phase | Phase 3.4.0 |
-| State | stable |
+| Version | 3.4.1-alpha |
+| Phase | Patch 3.4.1 |
+| State | alpha |
 | Date | 2026-05-23 |
-| Summary | Phase 3.4.0 - Worksheet Builder. Block-based worksheet builder, /worksheets route, drag-to-reorder sections, live preview, form editor, delete, AI regeneration modal. |
+| Summary | Patch 3.4.1 — Export Overhaul. Removed PDF export. PNG export now client-side via html-to-image targeting the .worksheet element at 2x. Save As dialog via showSaveFilePicker with download fallback. No more server-side archiving on export. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.4.1-alpha | Patch 3.4.1 — Export Overhaul | alpha | 2026-05-23 | Removed PDF export. PNG export now client-side via html-to-image targeting the .worksheet element at 2x. Save As dialog via showSaveFilePicker with download fallback. No more server-side archiving on export. |
 | 3.4.0-stable | Phase 3.4.0 - Worksheet Builder | stable | 2026-05-23 | Block-based worksheet builder. /worksheets route, drag-to-reorder sections, live preview, form editor, delete, AI regeneration modal. |
 | 3.2.0-stable | Phase 3.2.0 — Analytics + Recommendations | stable | 2026-05-22 | Analytics + Recommendations — /analytics screen with AI-narrated demo summary, top/worst post lists, subject-grade heatmap, dismissible recommendation cards, and Analytics nav link added to sidebar. |
 | 3.1.0-stable | Phase 3.1.0 — Vault Browser | stable | 2026-05-22 | Vault Browser — /vault standing asset library. 7 asset types, type filter tabs, name search, asset cards with freshness/lifecycle/usage data, lifecycle mutation actions (approve, archive, retire, resurrect). Vault nav link added to sidebar. |
@@ -81,5 +82,5 @@ Every version change must be applied to all four simultaneously:
 ## Next Phase
 
 Current stable version: 3.4.0-stable
-Current working version: none
-Next recommended phase: Phase 3.4.1 — Export Overhaul
+Current working version: 3.4.1-alpha
+Next recommended phase: Phase 3.3.0 — UI Animations + Onboarding

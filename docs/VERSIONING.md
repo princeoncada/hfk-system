@@ -42,9 +42,9 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.5.5-alpha |
+| Version | 3.5.5-stable |
 | Phase | Patch 3.5.5 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-23 |
 | Summary | Docs hardening — fix UTF-8 mojibake for em dash, right arrow, and multiplication sign across PHASE_LOG.md, VERSIONING.md, AI_HANDOFF.md, README.md. Fix missed 3.4.0/3.4.1 version labels in AI_HANDOFF.md. |
 
@@ -52,7 +52,7 @@ Every version change must be applied to all four simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 3.5.5-alpha | Patch 3.5.5 — Mojibake + Missed Version Label Fix | alpha | 2026-05-23 | Docs hardening — fix UTF-8 mojibake for em dash, right arrow, and multiplication sign across PHASE_LOG.md, VERSIONING.md, AI_HANDOFF.md, README.md. Fix missed 3.4.0/3.4.1 version labels in AI_HANDOFF.md. |
+| 3.5.5-stable | Patch 3.5.5 — Mojibake + Missed Version Label Fix | stable | 2026-05-23 | Docs hardening — fix UTF-8 mojibake for em dash, right arrow, and multiplication sign across PHASE_LOG.md, VERSIONING.md, AI_HANDOFF.md, README.md. Fix missed 3.4.0/3.4.1 version labels in AI_HANDOFF.md. |
 | 3.5.4-stable | Patch 3.5.4 — Version Ordering Fix | stable | 2026-05-23 | Docs hardening — fix out-of-order version numbers (3.4→3.3.0, 3.4.1→3.3.1, 3.3→3.4.0) and add Version Ordering Rule to CLAUDE.md and WORKFLOW.md. |
 | 3.5.3-stable | Patch 3.5.3 — 1-by-1 Commit Rule Hardening | stable | 2026-05-23 | Docs hardening — make implementation and stable-promotion commit blocks require one git add + one git commit per file, no exceptions and no grouping. |
 | 3.5.2-stable | Patch 3.5.2 — Post-Stable Bug Versioning Rule | stable | 2026-05-23 | Docs hardening — encode post-stable bug = Z+1 rule in CLAUDE.md, WORKFLOW.md, and VERSIONING.md. |
@@ -88,6 +88,14 @@ Every version change must be applied to all four simultaneously:
 | 1.0.2-stable | Patch 1.0.2 | stable | 2026-05-21 | Next.js config compatibility — replace next.config.ts with next.config.mjs |
 | 1.0.1-stable | Patch 1.0.1 | stable | 2026-05-21 | Docs hardening — chathead opener + session checkpoint workflow |
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
+
+## Validation Record — 3.5.5-stable
+
+Date: 2026-05-23
+
+- Version label fixes in AI_HANDOFF.md confirmed
+- Version bump confirmed in all four versioning files
+- Mojibake fix confirmed indirectly via clean em-dash display in grep output
 
 ## Validation Record — 3.5.0-stable
 
@@ -135,8 +143,8 @@ Date: 2026-05-23
 
 ## Next Phase
 
-Current stable version: 3.5.4-stable
-Current working version: 3.5.5-alpha
+Current stable version: 3.5.5-stable
+Current working version: none
 Next recommended phase: (none — full planned roadmap complete as of 3.3.0-stable)
 
 

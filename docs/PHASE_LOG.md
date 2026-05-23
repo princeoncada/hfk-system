@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 3.5.2-alpha | Patch 3.5.2 — Post-Stable Bug Versioning Rule | alpha | 2026-05-23 | Docs hardening — post-stable bug versioning rule. Files: CLAUDE.md, docs/WORKFLOW.md, docs/VERSIONING.md. |
+| 3.5.2-stable | Patch 3.5.2 — Post-Stable Bug Versioning Rule | stable | 2026-05-23 | Docs hardening — post-stable bug versioning rule. Files: CLAUDE.md, docs/WORKFLOW.md, docs/VERSIONING.md. |
 | 3.5.1-stable | Patch 3.5.1 — Generate Worksheet Crash Fix | stable | 2026-05-23 | Bug fix — ReviewFlow.tsx handleGenerate. Fixed missing template field in POST body and no res.ok guard causing undefined draft crash. |
 | 3.5.0-stable | Patch 3.5.0 — Daily Review Fix | stable | 2026-05-23 | Direction pre-populated from today's Planner data. Generate Worksheet and Generate Caption buttons added. Template gate replaced with visual card selector. |
 | 3.3.0-stable | Phase 3.3.0 â€” UI Animations + Onboarding | stable | 2026-05-23 | 4-step onboarding overlay (first-run + re-openable via Help button in sidebar). Framer Motion page transitions and sidebar nav micro-interactions. |
@@ -40,9 +40,9 @@
 
 ## Patch 3.5.2 — Post-Stable Bug Versioning Rule
 
-Status: alpha
+Status: stable
 
-Version: 3.5.2-alpha
+Version: 3.5.2-stable
 
 Date: 2026-05-23
 
@@ -55,6 +55,12 @@ Files:
 
 Purpose: Encode that bugs discovered after a stable release always open a
 new Z+1 patch version and are never fixed in place.
+
+Validation:
+- Date: 2026-05-23
+- Scope: docs hardening — post-stable bug versioning rule
+- Files: CLAUDE.md, docs/WORKFLOW.md, docs/VERSIONING.md
+- All 6 grep checks passed
 
 ## Patch 3.5.1 — Generate Worksheet Crash Fix
 

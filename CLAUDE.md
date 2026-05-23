@@ -217,6 +217,12 @@ X.Y.Z semantic versioning.
 Z = patch (bug fix, doc fix, single file)
 Post-stable bugs always trigger Z+1. Never fix a stable release in
 place — always open a new patch version.
+Version numbers must be monotonically increasing and reflect
+implementation order, not planning order. If a phase is implemented
+out of its originally planned sequence, assign the next available
+version (Y+1 from the last stable release). Never use a planned phase
+number that would create a non-sequential gap or a lower version than
+the last stable release.
 Y = minor (new feature or capability)
 X = major (architectural shift or production milestone)
 

@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.5.6-alpha | Patch 3.5.6 — Generate Caption Crash Fix | alpha | 2026-05-23 | Bug fix — Generate Caption field name mismatch. Files: src/components/review/ReviewFlow.tsx. |
 | 3.5.5-stable | Patch 3.5.5 — Mojibake + Missed Version Label Fix | stable | 2026-05-23 | Docs hardening — mojibake fix across all docs plus missed version label fix in AI_HANDOFF.md. Files: docs/PHASE_LOG.md, docs/VERSIONING.md, docs/AI_HANDOFF.md, README.md. |
 | 3.5.4-stable | Patch 3.5.4 — Version Ordering Fix | stable | 2026-05-23 | Docs hardening — version ordering fix and ordering rule. Files: docs/PHASE_LOG.md, docs/VERSIONING.md, CLAUDE.md, docs/WORKFLOW.md. |
 | 3.5.3-stable | Patch 3.5.3 — 1-by-1 Commit Rule Hardening | stable | 2026-05-23 | Docs hardening — explicit one git add + one git commit per file rule for implementation and stable-promotion commit blocks. |
@@ -40,6 +41,22 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Patch 3.5.6 — Generate Caption Crash Fix
+
+Status: alpha
+
+Version: 3.5.6-alpha
+
+Date: 2026-05-23
+
+Scope: bug fix — Generate Caption field name mismatch
+
+Files:
+- src/components/review/ReviewFlow.tsx
+
+Purpose: Replace worksheetContent with worksheetTitle in the caption
+generation fetch body so ReviewFlow matches CaptionDraftRequestSchema.
 
 ## Patch 3.5.5 — Mojibake + Missed Version Label Fix
 

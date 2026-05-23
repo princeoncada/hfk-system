@@ -192,6 +192,7 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
   const [generating, setGenerating] = useState<'worksheet' | 'caption' | null>(
     null,
   )
+  const [generateError, setGenerateError] = useState<string | null>(null)
 
   const allPriorApproved = GATE_ORDER.slice(0, 4).every(
     (gate) => pkg.gates[gate].status === 'approved',
@@ -220,6 +221,7 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
   }
 
   async function handleGenerate(gate: 'worksheet' | 'caption') {
+    setGenerateError(null)
     setGenerating(gate)
     try {
       const dirPayload = pkg.gates.direction.payload
@@ -234,8 +236,13 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
             grade: dirPayload.grade,
             subject: dirPayload.subject,
             objective: dirPayload.objective,
+            template: templateId || 'cozy_v1',
           }),
         })
+        if (!res.ok) {
+          const errData = (await res.json()) as { error?: string }
+          throw new Error(errData.error ?? 'Worksheet generation failed')
+        }
         const data = (await res.json()) as WorksheetDraftResponse
         setWorksheetDraft(data)
       }
@@ -252,9 +259,17 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
             worksheetContent: isWorksheet(wsPayload) ? wsPayload.draft : null,
           }),
         })
+        if (!res.ok) {
+          const errData = (await res.json()) as { error?: string }
+          throw new Error(errData.error ?? 'Caption generation failed')
+        }
         const data = (await res.json()) as CaptionDraftResponse
         setCaptionDraft(data)
       }
+    } catch (err) {
+      setGenerateError(
+        err instanceof Error ? err.message : 'Generation failed',
+      )
     } finally {
       setGenerating(null)
     }
@@ -444,6 +459,9 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
           >
             {generating === 'worksheet' ? 'Generating…' : 'Generate Worksheet'}
           </button>
+          {generateError && generating !== 'worksheet' ? (
+            <p className="text-[12px] text-rose mt-1">{generateError}</p>
+          ) : null}
           <p className="text-[12px] text-ink-3 mt-2">
             AI will draft a worksheet based on the approved direction.
           </p>
@@ -554,6 +572,9 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
           >
             {generating === 'caption' ? 'Generating…' : 'Generate Caption'}
           </button>
+          {generateError && generating !== 'caption' ? (
+            <p className="text-[12px] text-rose mt-1">{generateError}</p>
+          ) : null}
           <p className="text-[12px] text-ink-3 mt-2">
             AI will draft a Facebook caption based on the worksheet.
           </p>

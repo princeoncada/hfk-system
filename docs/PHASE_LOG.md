@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.5.1-alpha | Patch 3.5.1 — Generate Worksheet Crash Fix | alpha | 2026-05-23 | Bug fix — ReviewFlow.tsx handleGenerate. Fixed missing template field in POST body and no res.ok guard causing undefined draft crash. |
 | 3.5.0-stable | Patch 3.5.0 — Daily Review Fix | stable | 2026-05-23 | Direction pre-populated from today's Planner data. Generate Worksheet and Generate Caption buttons added. Template gate replaced with visual card selector. |
 | 3.3.0-stable | Phase 3.3.0 â€” UI Animations + Onboarding | stable | 2026-05-23 | 4-step onboarding overlay (first-run + re-openable via Help button in sidebar). Framer Motion page transitions and sidebar nav micro-interactions. |
 | 3.4.1-stable | Patch 3.4.1 â€” Export Overhaul | stable | 2026-05-23 | Removed PDF export. PNG export now client-side via html-to-image targeting the .worksheet element at 2x. Save As dialog via showSaveFilePicker with download fallback. No more server-side archiving on export. |
@@ -35,6 +36,21 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap â€” docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Patch 3.5.1 — Generate Worksheet Crash Fix
+
+Status: alpha
+
+Version: 3.5.1-alpha
+
+Date: 2026-05-23
+
+Scope: bug fix — ReviewFlow.tsx handleGenerate
+
+Bugs fixed:
+- Missing template field in POST body
+- No res.ok guard causing undefined draft crash
+
 
 ## Patch 3.5.0 — Daily Review Fix
 

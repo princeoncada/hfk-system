@@ -39,16 +39,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.5.0-stable |
-| Phase | Patch 3.5.0 |
-| State | stable |
+| Version | 3.5.1-alpha |
+| Phase | Patch 3.5.1 |
+| State | alpha |
 | Date | 2026-05-23 |
-| Summary | Patch 3.5.0 — Daily Review Fix. Direction pre-populated from today's Planner data. Generate Worksheet and Generate Caption buttons added. Template gate replaced with visual card selector. |
+| Summary | Patch 3.5.1 — fix Generate Worksheet crash (missing template field, no res.ok guard). |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.5.1-alpha | Patch 3.5.1 — Generate Worksheet Crash Fix | alpha | 2026-05-23 | Fix Generate Worksheet crash: add missing template field to worksheet generation POST body and res.ok guards for worksheet/caption generation errors. |
 | 3.5.0-stable | Patch 3.5.0 — Daily Review Fix | stable | 2026-05-23 | Direction pre-populated from today's Planner data. Generate Worksheet and Generate Caption buttons added. Template gate replaced with visual card selector. |
 | 3.3.0-stable | Phase 3.3.0 â€” UI Animations + Onboarding | stable | 2026-05-23 | 4-step onboarding overlay (first-run + re-openable via Help button in sidebar). Framer Motion page transitions and sidebar nav micro-interactions. |
 | 3.4.1-stable | Patch 3.4.1 â€” Export Overhaul | stable | 2026-05-23 | Removed PDF export. PNG export now client-side via html-to-image targeting the .worksheet element at 2x. Save As dialog via showSaveFilePicker with download fallback. No more server-side archiving on export. |
@@ -95,7 +96,7 @@ Date: 2026-05-23
 ## Next Phase
 
 Current stable version: 3.5.0-stable
-Current working version: none
+Current working version: 3.5.1-alpha
 Next recommended phase: (none — full planned roadmap complete as of 3.3.0-stable)
 
 

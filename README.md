@@ -8,9 +8,9 @@ Grades 1â€“6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 3.5.0-stable |
-| Status | stable |
-| Current phase | Patch 3.5.0 — Daily Review Fix (stable) |
+| Current | 3.5.1-alpha |
+| Status | alpha |
+| Current phase | Patch 3.5.1 — Generate Worksheet Crash Fix (alpha) |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

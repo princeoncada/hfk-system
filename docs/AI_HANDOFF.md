@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-## Current Version: 3.5.0-stable
+## Current Version: 3.5.1-alpha
 
 ## Current Phase
 
-Patch 3.5.0 [3.5.0-stable] — Daily Review Fix — stable.
+Patch 3.5.1 [3.5.1-alpha] — Generate Worksheet Crash Fix — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,19 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only â€” the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Patch 3.5.1 [3.5.1-alpha] — Generate Worksheet Crash Fix
+
+Status: alpha
+
+Version: 3.5.1-alpha
+
+Scope: Bug fix — ReviewFlow.tsx handleGenerate.
+
+Bugs fixed:
+- Missing template field in Generate Worksheet POST body
+- No res.ok guard causing error payloads to be stored as drafts and crash on undefined draft
+
 
 ## Patch 3.5.0 [3.5.0-stable] — Daily Review Fix
 

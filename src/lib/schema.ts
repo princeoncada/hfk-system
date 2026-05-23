@@ -53,12 +53,16 @@ export const WorksheetSchema = z.object({
   grade: GradeSchema,
   subject: SubjectSchema,
   template: z.string().min(1),
+  sectionOrder: z
+    .array(z.enum(['vocabulary', 'activities', 'parentNotes']))
+    .optional(),
   vocabulary: z.array(VocabularyEntrySchema).optional(),
   activities: z.array(ActivitySchema).optional(),
   parentNotes: z.string().optional(),
   footerText: z.string().optional(),
   references: z.array(z.string()).optional(),
   createdAt: z.string().min(1),
+  updatedAt: z.string().optional(),
   status: ContentStatusSchema,
 })
 

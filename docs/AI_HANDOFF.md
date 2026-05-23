@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-## Current Version: 3.5.2-stable
+## Current Version: 3.5.3-alpha
 
 ## Current Phase
 
-Patch 3.5.2 [3.5.2-stable] — Post-Stable Bug Versioning Rule — stable.
+Patch 3.5.3 [3.5.3-alpha] — 1-by-1 Commit Rule Hardening — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,23 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only â€” the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Patch 3.5.3 [3.5.3-alpha] — 1-by-1 Commit Rule Hardening
+
+Status: alpha
+
+Version: 3.5.3-alpha
+
+Scope: Docs hardening — one git add + one git commit per file rule.
+
+Files:
+- CLAUDE.md
+- docs/WORKFLOW.md
+
+Purpose: Make the 1-by-1 commit rule unambiguous for implementation commit
+blocks and stable-promotion commit blocks. Each file must receive exactly one
+git add and one git commit; grouping multiple files into one commit is never
+allowed.
 
 ## Patch 3.5.2 [3.5.2-stable] — Post-Stable Bug Versioning Rule
 

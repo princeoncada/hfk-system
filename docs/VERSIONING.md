@@ -42,9 +42,9 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.5.6-alpha |
+| Version | 3.5.6-stable |
 | Phase | Patch 3.5.6 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-23 |
 | Summary | Bug fix — Generate Caption crash: replace worksheetContent with worksheetTitle in caption fetch body. |
 
@@ -52,7 +52,7 @@ Every version change must be applied to all four simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 3.5.6-alpha | Patch 3.5.6 — Generate Caption Crash Fix | alpha | 2026-05-23 | Bug fix — Generate Caption crash: replace worksheetContent with worksheetTitle in caption fetch body. |
+| 3.5.6-stable | Patch 3.5.6 — Generate Caption Crash Fix | stable | 2026-05-23 | Bug fix — Generate Caption crash: replace worksheetContent with worksheetTitle in caption fetch body. |
 | 3.5.5-stable | Patch 3.5.5 — Mojibake + Missed Version Label Fix | stable | 2026-05-23 | Docs hardening — fix UTF-8 mojibake for em dash, right arrow, and multiplication sign across PHASE_LOG.md, VERSIONING.md, AI_HANDOFF.md, README.md. Fix missed 3.4.0/3.4.1 version labels in AI_HANDOFF.md. |
 | 3.5.4-stable | Patch 3.5.4 — Version Ordering Fix | stable | 2026-05-23 | Docs hardening — fix out-of-order version numbers (3.4→3.3.0, 3.4.1→3.3.1, 3.3→3.4.0) and add Version Ordering Rule to CLAUDE.md and WORKFLOW.md. |
 | 3.5.3-stable | Patch 3.5.3 — 1-by-1 Commit Rule Hardening | stable | 2026-05-23 | Docs hardening — make implementation and stable-promotion commit blocks require one git add + one git commit per file, no exceptions and no grouping. |
@@ -89,6 +89,15 @@ Every version change must be applied to all four simultaneously:
 | 1.0.2-stable | Patch 1.0.2 | stable | 2026-05-21 | Next.js config compatibility — replace next.config.ts with next.config.mjs |
 | 1.0.1-stable | Patch 1.0.1 | stable | 2026-05-21 | Docs hardening — chathead opener + session checkpoint workflow |
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
+
+## Validation Record — 3.5.6-stable
+
+Date: 2026-05-23
+
+- Build clean, 21 pages
+- worksheetTitle present in ReviewFlow.tsx
+- worksheetContent removed from ReviewFlow.tsx
+- Version bump confirmed in all four versioning files
 
 ## Validation Record — 3.5.5-stable
 
@@ -144,8 +153,8 @@ Date: 2026-05-23
 
 ## Next Phase
 
-Current stable version: 3.5.5-stable
-Current working version: 3.5.6-alpha
+Current stable version: 3.5.6-stable
+Current working version: none
 Next recommended phase: (none — full planned roadmap complete as of 3.3.0-stable)
 
 

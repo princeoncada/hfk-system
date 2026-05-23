@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-## Current Version: 3.5.0-alpha
+## Current Version: 3.5.0-stable
 
 ## Current Phase
 
-Patch 3.5.0 [3.5.0-alpha] — Daily Review Fix — alpha.
+Patch 3.5.0 [3.5.0-stable] — Daily Review Fix — stable.
 
 ## Architecture Invariant
 
@@ -24,15 +24,30 @@ records only â€” the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Patch 3.5.0 [3.5.0-alpha] — Daily Review Fix
+## Patch 3.5.0 [3.5.0-stable] — Daily Review Fix
 
-Status: alpha
+Status: stable
 
-Version: 3.5.0-alpha
+Version: 3.5.0-stable
 
 Purpose: Daily Review Fix — Direction pre-populated from today's Planner data.
 Generate Worksheet and Generate Caption buttons added. Template gate replaced
 with visual card selector.
+
+Validation:
+- Build clean
+- TypeScript zero errors
+- Direction pre-population verified from today's Planner data
+- Generate Worksheet and Generate Caption buttons present
+- Worksheet and caption draft state confirmed
+- Template selector replaces free-text input
+- renderActionRow narrowing fixed with status === 'pending'
+
+Next recommended work:
+- Real analytics pipeline
+- Export from builder
+- Additional worksheet templates
+
 
 ## Patch 3.4.1 [3.4.1-stable] â€” Export Overhaul
 
@@ -654,6 +669,7 @@ dev.
   only database dependency permitted, and it is local-only.
 - Do not embed actual image or template files into ChromaDB. Only metadata
   records for non-text assets are indexed.
+
 
 
 

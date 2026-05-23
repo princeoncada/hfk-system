@@ -39,16 +39,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.4.1-stable |
-| Phase | Patch 3.4.1 |
-| State | stable |
+| Version | 3.3.0-alpha |
+| Phase | Phase 3.3.0 |
+| State | alpha |
 | Date | 2026-05-23 |
-| Summary | Patch 3.4.1 — Export Overhaul. Removed PDF export. PNG export now client-side via html-to-image targeting the .worksheet element at 2x. Save As dialog via showSaveFilePicker with download fallback. No more server-side archiving on export. |
+| Summary | Phase 3.3.0 — UI Animations + Onboarding. 4-step onboarding overlay (first-run + re-openable via Help button in sidebar). Framer Motion page transitions and sidebar nav micro-interactions. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.3.0-alpha | Phase 3.3.0 — UI Animations + Onboarding | alpha | 2026-05-23 | 4-step onboarding overlay (first-run + re-openable via Help button in sidebar). Framer Motion page transitions and sidebar nav micro-interactions. |
 | 3.4.1-stable | Patch 3.4.1 — Export Overhaul | stable | 2026-05-23 | Removed PDF export. PNG export now client-side via html-to-image targeting the .worksheet element at 2x. Save As dialog via showSaveFilePicker with download fallback. No more server-side archiving on export. |
 | 3.4.0-stable | Phase 3.4.0 - Worksheet Builder | stable | 2026-05-23 | Block-based worksheet builder. /worksheets route, drag-to-reorder sections, live preview, form editor, delete, AI regeneration modal. |
 | 3.2.0-stable | Phase 3.2.0 — Analytics + Recommendations | stable | 2026-05-22 | Analytics + Recommendations — /analytics screen with AI-narrated demo summary, top/worst post lists, subject-grade heatmap, dismissible recommendation cards, and Analytics nav link added to sidebar. |
@@ -82,5 +83,5 @@ Every version change must be applied to all four simultaneously:
 ## Next Phase
 
 Current stable version: 3.4.1-stable
-Current working version: none
-Next recommended phase: Phase 3.3.0 — UI Animations + Onboarding
+Current working version: 3.3.0-alpha
+Next recommended phase: none planned — roadmap complete after stable promotion

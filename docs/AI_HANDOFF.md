@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.4.1-stable
+## Current Version: 3.3.0-alpha
 
 ## Current Phase
 
-Patch 3.4.1 [3.4.1-stable] — Export Overhaul — stable.
+Phase 3.3.0 [3.3.0-alpha] — UI Animations + Onboarding — alpha.
 
 ## Architecture Invariant
 

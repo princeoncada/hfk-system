@@ -42,23 +42,24 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.5.3-stable |
-| Phase | Patch 3.5.3 |
-| State | stable |
+| Version | 3.5.4-alpha |
+| Phase | Patch 3.5.4 |
+| State | alpha |
 | Date | 2026-05-23 |
-| Summary | Docs hardening — make 1-by-1 commit rule explicit: one git add + one git commit per file, no grouping. |
+| Summary | Docs hardening — fix out-of-order version numbers (3.4→3.3.0, 3.4.1→3.3.1, 3.3→3.4.0) and add Version Ordering Rule to CLAUDE.md and WORKFLOW.md |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.5.4-alpha | Patch 3.5.4 — Version Ordering Fix | alpha | 2026-05-23 | Docs hardening — fix out-of-order version numbers (3.4→3.3.0, 3.4.1→3.3.1, 3.3→3.4.0) and add Version Ordering Rule to CLAUDE.md and WORKFLOW.md. |
 | 3.5.3-stable | Patch 3.5.3 — 1-by-1 Commit Rule Hardening | stable | 2026-05-23 | Docs hardening — make implementation and stable-promotion commit blocks require one git add + one git commit per file, no exceptions and no grouping. |
 | 3.5.2-stable | Patch 3.5.2 — Post-Stable Bug Versioning Rule | stable | 2026-05-23 | Docs hardening — encode post-stable bug = Z+1 rule in CLAUDE.md, WORKFLOW.md, and VERSIONING.md. |
 | 3.5.1-stable | Patch 3.5.1 — Generate Worksheet Crash Fix | stable | 2026-05-23 | Fix Generate Worksheet crash: add missing template field to worksheet generation POST body and res.ok guards for worksheet/caption generation errors. |
 | 3.5.0-stable | Patch 3.5.0 — Daily Review Fix | stable | 2026-05-23 | Direction pre-populated from today's Planner data. Generate Worksheet and Generate Caption buttons added. Template gate replaced with visual card selector. |
-| 3.3.0-stable | Phase 3.3.0 â€” UI Animations + Onboarding | stable | 2026-05-23 | 4-step onboarding overlay (first-run + re-openable via Help button in sidebar). Framer Motion page transitions and sidebar nav micro-interactions. |
-| 3.4.1-stable | Patch 3.4.1 â€” Export Overhaul | stable | 2026-05-23 | Removed PDF export. PNG export now client-side via html-to-image targeting the .worksheet element at 2x. Save As dialog via showSaveFilePicker with download fallback. No more server-side archiving on export. |
-| 3.4.0-stable | Phase 3.4.0 - Worksheet Builder | stable | 2026-05-23 | Block-based worksheet builder. /worksheets route, drag-to-reorder sections, live preview, form editor, delete, AI regeneration modal. |
+| 3.4.0-stable | Phase 3.4.0 â€” UI Animations + Onboarding | stable | 2026-05-23 | 4-step onboarding overlay (first-run + re-openable via Help button in sidebar). Framer Motion page transitions and sidebar nav micro-interactions. |
+| 3.3.1-stable | Patch 3.3.1 â€” Export Overhaul | stable | 2026-05-23 | Removed PDF export. PNG export now client-side via html-to-image targeting the .worksheet element at 2x. Save As dialog via showSaveFilePicker with download fallback. No more server-side archiving on export. |
+| 3.3.0-stable | Phase 3.3.0 — Worksheet Builder | stable | 2026-05-23 | Block-based worksheet builder. /worksheets route, drag-to-reorder sections, live preview, form editor, delete, AI regeneration modal. |
 | 3.2.0-stable | Phase 3.2.0 â€” Analytics + Recommendations | stable | 2026-05-22 | Analytics + Recommendations â€” /analytics screen with AI-narrated demo summary, top/worst post lists, subject-grade heatmap, dismissible recommendation cards, and Analytics nav link added to sidebar. |
 | 3.1.0-stable | Phase 3.1.0 â€” Vault Browser | stable | 2026-05-22 | Vault Browser â€” /vault standing asset library. 7 asset types, type filter tabs, name search, asset cards with freshness/lifecycle/usage data, lifecycle mutation actions (approve, archive, retire, resurrect). Vault nav link added to sidebar. |
 | 3.0.0-stable | Phase 3.0.0 â€” Calendar Intelligence | stable | 2026-05-22 | Calendar Intelligence â€” bi-directional planner. Past cells show shipped/in-review status from package data. Future cells show plan + in-review state. Day detail panel includes gate-by-gate package summary. |
@@ -126,7 +127,7 @@ Date: 2026-05-23
 ## Next Phase
 
 Current stable version: 3.5.3-stable
-Current working version: none
+Current working version: 3.5.4-alpha
 Next recommended phase: (none — full planned roadmap complete as of 3.3.0-stable)
 
 

@@ -1,10 +1,10 @@
-﻿# AI Handoff
+# AI Handoff
 
-## Current Version: 3.5.4-stable
+## Current Version: 3.5.5-alpha
 
 ## Current Phase
 
-Patch 3.5.4 [3.5.4-stable] — Version Ordering Fix — stable.
+Patch 3.5.5 [3.5.5-alpha] — Mojibake + Missed Version Label Fix — alpha.
 
 ## Architecture Invariant
 
@@ -20,9 +20,29 @@ v2 introduces ChromaDB (local vector database) as a search and retrieval
 layer alongside the filesystem. Content JSON files remain the source of
 truth. ChromaDB is populated from them and re-indexed on every approval.
 Non-text assets (images, templates) are represented in ChromaDB by metadata
-records only â€” the actual files live on disk and are never embedded.
+records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Patch 3.5.5 [3.5.5-alpha] — Mojibake + Missed Version Label Fix
+
+Status: alpha
+
+Version: 3.5.5-alpha
+
+Scope: Mojibake fix across all docs plus missed version label fix in
+AI_HANDOFF.md.
+
+Files:
+- docs/PHASE_LOG.md
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- README.md
+
+Purpose: Replace UTF-8 mojibake sequences for em dash, right arrow, and
+multiplication sign across the four versioning docs. Correct missed
+3.4.0/3.4.1 labels in AI_HANDOFF.md for Worksheet Builder and Export
+Overhaul.
 
 ## Patch 3.5.4 [3.5.4-stable] — Version Ordering Fix
 
@@ -156,28 +176,28 @@ Next recommended work:
 - Additional worksheet templates
 
 
-## Patch 3.4.1 [3.4.1-stable] â€” Export Overhaul
+## Patch 3.3.1 [3.3.1-stable] — Export Overhaul
 
 Status: stable
 
-Version: 3.4.1-stable
+Version: 3.3.1-stable
 
-Purpose: Export Overhaul â€” remove PDF export from preview and replace
+Purpose: Export Overhaul — remove PDF export from preview and replace
 server-side PNG export with client-side worksheet image saving.
 
 Validation:
 - PDF export button removed from PreviewControls
 - PNG export replaced with client-side handleSaveImage using html-to-image
-- Targets .worksheet DOM element at pixelRatio 2 â€” no padding artifact
+- Targets .worksheet DOM element at pixelRatio 2 — no padding artifact
 - showSaveFilePicker Save As dialog with AbortError guard
 - createObjectURL download fallback for Safari and Firefox
 - All 10 checks passed, build clean, 21/21 pages
 
-## Phase 3.4.0 [3.4.0-stable] â€” Worksheet Builder
+## Phase 3.3.0 [3.3.0-stable] — Worksheet Builder
 
 Status: stable
 
-Version: 3.4.0-stable
+Version: 3.3.0-stable
 
 Purpose: Worksheet Builder - block-based worksheet builder with /worksheets
 route, drag-to-reorder sections, live preview, form editor, delete, and AI
@@ -209,15 +229,15 @@ Validation:
 
 Status: stable
 
-Purpose: Analytics + Recommendations â€” operator-facing analytics screen
+Purpose: Analytics + Recommendations — operator-facing analytics screen
 using demo data until real performance metrics exist.
 
 Scope:
-- /analytics route â€” Server Component loads mock analytics snapshot
-- AnalyticsDashboard client component â€” AI summary, top/worst post cards,
+- /analytics route — Server Component loads mock analytics snapshot
+- AnalyticsDashboard client component — AI summary, top/worst post cards,
   subject-grade heatmap, localStorage-backed dismissible recommendations
 - analytics types and mock snapshot provider
-- SidebarNav â€” Analytics link added
+- SidebarNav — Analytics link added
 
 New files:
 - src/lib/analytics.types.ts
@@ -230,13 +250,13 @@ Modified files:
 - docs/VERSIONING.md, docs/AI_HANDOFF.md, docs/PHASE_LOG.md, README.md
 
 Validation:
-- analytics.types.ts â€” PerformanceStat, HeatmapCell, RecommendationCard,
+- analytics.types.ts — PerformanceStat, HeatmapCell, RecommendationCard,
   AnalyticsSnapshot interfaces
-- analytics.mock.ts â€” getMockSnapshot() returns demo snapshot with isDemo: true,
+- analytics.mock.ts — getMockSnapshot() returns demo snapshot with isDemo: true,
   AI summary, 5 top posts, 5 worst posts, 36-cell heatmap, 4 recommendation cards
-- /analytics server page â€” calls getMockSnapshot, passes to AnalyticsDashboard
-- AnalyticsDashboard client component â€” AI summary card with Demo Data pill,
-  top/worst post columns, subjectÃ—grade heatmap, dismissible recommendation cards
+- /analytics server page — calls getMockSnapshot, passes to AnalyticsDashboard
+- AnalyticsDashboard client component — AI summary card with Demo Data pill,
+  top/worst post columns, subject×grade heatmap, dismissible recommendation cards
   persisted to localStorage
 - Analytics nav link + bar chart icon added to SidebarNav
 - All 17 checks passed, build clean, 19/19 static pages
@@ -270,14 +290,14 @@ Roadmap complete. All planned phases 1.0.0 through 3.3.0 are now stable.
 
 Status: stable
 
-Purpose: Vault Browser â€” standing UI for browsing, inspecting, and mutating
+Purpose: Vault Browser — standing UI for browsing, inspecting, and mutating
 the lifecycle of Vault assets indexed in ChromaDB.
 
 Scope:
-- /vault route â€” Server Component loads all 7 asset types
-- VaultBrowser client component â€” tabs, search, asset grid, lifecycle actions
-- POST /api/vault/asset/[id]/lifecycle â€” lifecycle mutation via re-ingest
-- SidebarNav â€” Vault link added
+- /vault route — Server Component loads all 7 asset types
+- VaultBrowser client component — tabs, search, asset grid, lifecycle actions
+- POST /api/vault/asset/[id]/lifecycle — lifecycle mutation via re-ingest
+- SidebarNav — Vault link added
 
 New files:
 - src/app/vault/page.tsx
@@ -289,9 +309,9 @@ Modified files:
 - docs/VERSIONING.md, docs/AI_HANDOFF.md, docs/PHASE_LOG.md, README.md
 
 Validation:
-- /vault page created â€” server component with ChromaDB asset fetch and offline fallback
-- VaultBrowser client component â€” type filter tabs, name/tag search, asset cards with freshness/lifecycle/usage, lifecycle mutation buttons
-- POST /api/vault/asset/[id]/lifecycle route â€” reads asset, updates lifecycle field, re-ingests via upsert
+- /vault page created — server component with ChromaDB asset fetch and offline fallback
+- VaultBrowser client component — type filter tabs, name/tag search, asset cards with freshness/lifecycle/usage, lifecycle mutation buttons
+- POST /api/vault/asset/[id]/lifecycle route — reads asset, updates lifecycle field, re-ingests via upsert
 - Vault nav link added to SidebarNav
 - All 15 checks passed, build clean
 
@@ -305,9 +325,9 @@ planned content with in-review overlay when a package already exists for that
 date. The day detail panel gains a package gate summary section.
 
 Scope:
-- src/lib/calendar.ts (new) â€” getPackagesForMonth() read-only helper
-- src/app/planner/[month]/page.tsx â€” load packages, pass to PlannerView
-- src/components/planner/PlannerView.tsx â€” bi-directional rendering,
+- src/lib/calendar.ts (new) — getPackagesForMonth() read-only helper
+- src/app/planner/[month]/page.tsx — load packages, pass to PlannerView
+- src/components/planner/PlannerView.tsx — bi-directional rendering,
   package summary in detail panel, calendar legend
 
 New files: src/lib/calendar.ts
@@ -326,18 +346,18 @@ Instrument Serif, JetBrains Mono), design token extension in Tailwind,
 and card-based component redesign.
 
 Scope:
-- tailwind.config.ts â€” design tokens + font families
-- globals.css â€” CSS custom properties
-- layout.tsx â€” sidebar shell with SidebarNav client component
-- SidebarNav.tsx (new) â€” active-state nav with usePathname
-- page.tsx â€” Command Center redesign
-- TodayStatus.tsx â€” dark banner card
-- MonthProgress.tsx â€” card redesign
-- VaultAlerts.tsx â€” tinted card redesign
-- review/page.tsx â€” page heading
-- planner/[month]/page.tsx â€” page heading + month nav
-- ReviewFlow.tsx â€” design system applied
-- PlannerView.tsx â€” design system applied
+- tailwind.config.ts — design tokens + font families
+- globals.css — CSS custom properties
+- layout.tsx — sidebar shell with SidebarNav client component
+- SidebarNav.tsx (new) — active-state nav with usePathname
+- page.tsx — Command Center redesign
+- TodayStatus.tsx — dark banner card
+- MonthProgress.tsx — card redesign
+- VaultAlerts.tsx — tinted card redesign
+- review/page.tsx — page heading
+- planner/[month]/page.tsx — page heading + month nav
+- ReviewFlow.tsx — design system applied
+- PlannerView.tsx — design system applied
 
 New files:
 - src/components/shell/SidebarNav.tsx
@@ -525,7 +545,7 @@ Status: stable
 
 Purpose:
 Build the 5-gate approval state machine for daily content packages:
-Direction â†’ Worksheet â†’ Template â†’ Caption â†’ Final Package. Persist package
+Direction → Worksheet → Template → Caption → Final Package. Persist package
 state as JSON and write approved worksheet/caption outputs back into the Vault.
 
 Scope:
@@ -739,23 +759,23 @@ Modified files:
 
 ## Future Phase Queue
 
-- Phase 2.0.0 â€” Vault Schema
-- Phase 2.1.0 â€” ChromaDB Layer
-- Phase 2.2.0 â€” DeepSeek Integration
-- Phase 2.3.0 â€” Approval Gate API
-- Phase 2.4.0 â€” Planning Engine
-- Phase 2.5.0 â€” Prompt Library API
-- Phase 2.6.0 â€” AI Command Center
-- Phase 2.7.0 â€” Daily Package Review
-- Phase 2.8.0 â€” Monthly Planner
-- Phase 2.9.0 â€” UI Design System
-- Phase 3.0.0 â€” Calendar Intelligence
-- Phase 3.1.0 â€” Vault Browser
-- Phase 3.3.0 â€” UI Animations + Onboarding
+- Phase 2.0.0 — Vault Schema
+- Phase 2.1.0 — ChromaDB Layer
+- Phase 2.2.0 — DeepSeek Integration
+- Phase 2.3.0 — Approval Gate API
+- Phase 2.4.0 — Planning Engine
+- Phase 2.5.0 — Prompt Library API
+- Phase 2.6.0 — AI Command Center
+- Phase 2.7.0 — Daily Package Review
+- Phase 2.8.0 — Monthly Planner
+- Phase 2.9.0 — UI Design System
+- Phase 3.0.0 — Calendar Intelligence
+- Phase 3.1.0 — Vault Browser
+- Phase 3.3.0 — UI Animations + Onboarding
 
 ## Recommended Next Step
 
-Phase 3.3.0 â€” UI Animations + Onboarding.
+Phase 3.3.0 — UI Animations + Onboarding.
 
 ## What Exists
 

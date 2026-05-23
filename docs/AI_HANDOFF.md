@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-## Current Version: 3.5.4-alpha
+## Current Version: 3.5.4-stable
 
 ## Current Phase
 
-Patch 3.5.4 [3.5.4-alpha] — Version Ordering Fix — alpha.
+Patch 3.5.4 [3.5.4-stable] — Version Ordering Fix — stable.
 
 ## Architecture Invariant
 
@@ -24,11 +24,11 @@ records only â€” the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Patch 3.5.4 [3.5.4-alpha] — Version Ordering Fix
+## Patch 3.5.4 [3.5.4-stable] — Version Ordering Fix
 
-Status: alpha
+Status: stable
 
-Version: 3.5.4-alpha
+Version: 3.5.4-stable
 
 Scope: Docs hardening — version ordering fix and ordering rule.
 
@@ -42,6 +42,16 @@ Purpose: Correct out-of-order version labels for Worksheet Builder,
 Export Overhaul, and UI Animations + Onboarding. Add explicit rules that
 future version numbers must be monotonically increasing and follow
 implementation order, not planning order.
+
+Validation:
+- All 10 grep checks passed
+- Version history ordering corrected in PHASE_LOG.md and VERSIONING.md
+- Ordering rule confirmed in CLAUDE.md and WORKFLOW.md
+
+Next recommended work:
+- Real analytics pipeline
+- Export from builder
+- Additional worksheet templates
 
 ## Patch 3.5.3 [3.5.3-stable] — 1-by-1 Commit Rule Hardening
 

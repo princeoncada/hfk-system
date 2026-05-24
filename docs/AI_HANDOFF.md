@@ -1,10 +1,16 @@
 # AI Handoff
 
-**Current Version:** 4.1.0-alpha
+**Current Version:** 4.1.0-stable
 
 ## Current Phase
 
-Phase 4.1.0 [4.1.0-alpha] — Template Routes + List Page: /templates nav entry, built-in/custom template list page, New Template placeholder, and edit placeholder routes — alpha.
+Phase 4.2.0 [in-progress] — Canvas + Drag-and-Drop Slots.
+
+## Completed Phase
+
+Phase 4.1.0 [4.1.0-stable] — Template Routes + List Page: /templates nav entry, built-in/custom template list page, New Template placeholder, and edit placeholder routes — complete.
+
+Phase 4.0.0 [4.0.0-stable] — Template definition schema (TemplateDefinition, TemplatePalette, TemplateSlot), template store (vault/templates/), DynamicWorksheetTemplate renderer, integrated into preview, builder, and review flow template selector. Sample modern_v1 template included — complete.
 
 ## Completed Phase
 

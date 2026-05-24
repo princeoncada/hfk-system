@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.6.2-alpha | Patch 3.6.2 — Daily Review UI/UX Fixes | alpha | 2026-05-24 | Edit button on all approved non-final gates, empty border removed when no draft, outline Regenerate with loading state, instructions link persists after generation, hashtags merged into caption copy block. Files: src/components/review/ReviewFlow.tsx. |
 | 3.6.1-stable | Patch 3.6.1 — Daily Review UI Improvements | stable | 2026-05-24 | Direction edit/fill, full draft content display, Instructions UX. Files: src/app/api/approval/gate/[gate]/reset/route.ts, src/components/review/ReviewFlow.tsx. Validation: all 7 checks passed, build clean, 22 pages. |
 | 3.6.0-stable | Phase 3.6.0 — Instructions Flow | stable | 2026-05-23 | Remove Reject, redesign Redirect as Instructions flow. Files: src/lib/ai.types.ts, src/app/api/ai/draft/worksheet/route.ts, src/app/api/ai/draft/caption/route.ts, src/components/review/RedirectModal.tsx, src/components/review/ReviewFlow.tsx. |
 | 3.5.6-stable | Patch 3.5.6 — Generate Caption Crash Fix | stable | 2026-05-23 | Bug fix — Generate Caption field name mismatch. Files: src/components/review/ReviewFlow.tsx. |
@@ -43,6 +44,29 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Patch 3.6.2 — Daily Review UI/UX Fixes
+
+Status: alpha
+
+Version: 3.6.2-alpha
+
+Date: 2026-05-24
+
+Scope: ReviewFlow.tsx UI/UX improvements
+
+Files:
+- src/components/review/ReviewFlow.tsx
+
+Changes:
+- outlineButtonClass added for outline-style buttons
+- renderDirectionBody approved: Edit Direction button removed from body (now in action row)
+- renderWorksheetBody pre-generation: instructions link stacked below Generate button
+- renderCaptionDraft: hashtags merged into caption copy block; Copy copies full text
+- renderCaptionBody pre-generation: instructions link stacked below Generate button
+- renderActionRow rewritten: approved non-final gates show Edit button; empty border removed when no draft; Regenerate uses outline style with Regenerating... state; instructions link visible in action row when draft exists
+
+Validation: pending
 
 ## Patch 3.6.1 — Daily Review UI Improvements
 

@@ -1,12 +1,14 @@
 # AI Handoff
 
-**Current Version:** 4.3.0-alpha
+**Current Version:** 4.3.0-stable
 
 ## Current Phase
 
-Phase 4.3.0 [4.3.0-alpha] — Property Panel: right-side editor panel with global palette color controls, footer text, avatar selector, selected-slot style overrides, and two-column template editor layout — alpha.
+Phase 4.4.0 [in-progress] — Live Preview + Publish.
 
 ## Completed Phase
+
+Phase 4.3.0 [4.3.0-stable] — Property Panel: right-side editor panel with global palette color controls, footer text, avatar selector, selected-slot style overrides, and two-column template editor layout — complete.
 
 Phase 4.2.0 [4.2.0-stable] — Canvas + Drag-and-Drop Slots: dnd-kit slot editor, reorderable TemplateSlot list, add/remove slot controls, save API route, new/edit template pages wired to editor — complete.
 

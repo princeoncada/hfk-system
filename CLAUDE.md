@@ -33,8 +33,8 @@ You:
 - Analyze validation output and report pass/fail
 - Provide .\scripts\promote.ps1 stable-promotion block after validation passes
 - Write post-validation session checkpoint Codex prompts (plain txt code block)
-- Provide 1-by-1 git commit command blocks for the user to run —
-  one git add + one git commit per file, no exceptions, no grouping
+- Provide .\scripts\commit-phase.ps1 call sequences for the user to run —
+  one call per file, no exceptions, no grouping
 - Provide the git push origin master PowerShell block in the same
   message as the stable-promotion commit block
 
@@ -207,6 +207,8 @@ Codex writes or modifies files:
     any path containing bracket characters (e.g. [id]). Without
     -LiteralPath, PowerShell treats brackets as wildcards and
     returns false negatives even when the file exists.
+  - .\scripts\validate.ps1 is the standard baseline for Section 2;
+    phase-specific Select-String checks append below it
 
 For post-validation documentation Codex prompts:
 - Single plain txt code block only
@@ -260,6 +262,9 @@ Five versioning locations — always update all five together:
 | Codex standing rules | docs/CODEX_RULES.md |
 | Stable promotion helper | scripts/promote.ps1 |
 | Mojibake repair script | scripts/fix-mojibake.ps1 |
+| Context window management strategy | docs/COMPACT_STRATEGY.md |
+| Commit helper (1-by-1 enforcer) | scripts/commit-phase.ps1 |
+| Standard validation runner | scripts/validate.ps1 |
 
 ## Protected Paths
 

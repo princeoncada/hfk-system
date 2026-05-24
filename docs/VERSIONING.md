@@ -42,16 +42,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.6.1-stable |
-| Phase | Patch 3.6.1 |
-| State | stable |
+| Version | 3.6.2-alpha |
+| Phase | Patch 3.6.2 |
+| State | alpha |
 | Date | 2026-05-24 |
-| Summary | Patch 3.6.1 — Direction fill-from-plan and edit, full worksheet and caption draft display, Instructions moved to subtle link near Generate button. |
+| Summary | Patch 3.6.2 — Daily Review UI/UX fixes: Edit button on all approved gates, outline Regenerate with loading state, instructions link persists after draft generation, hashtags merged into caption copy block. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.6.2-alpha | Patch 3.6.2 — Daily Review UI/UX Fixes | alpha | 2026-05-24 | Edit button on all approved gates, outline Regenerate with loading state, instructions link persists after draft generation, hashtags merged into caption copy block. |
 | 3.6.1-stable | Patch 3.6.1 — Daily Review UI Improvements | stable | 2026-05-24 | Direction fill-from-plan and edit, full worksheet and caption draft display, Instructions moved to subtle link near Generate button. |
 | 3.6.0-stable | Phase 3.6.0 — Instructions Flow | stable | 2026-05-23 | Remove Reject from all gates. Replace Redirect with editable Instructions dialog on worksheet and caption gates. Saved instruction text passed to AI on next generation. |
 | 3.5.6-stable | Patch 3.5.6 — Generate Caption Crash Fix | stable | 2026-05-23 | Bug fix — Generate Caption crash: replace worksheetContent with worksheetTitle in caption fetch body. |
@@ -177,7 +178,7 @@ Date: 2026-05-23
 ## Next Phase
 
 Current stable version: 3.6.1-stable
-Current working version: none
+Current working version: 3.6.2-alpha
 Next recommended phase: (none — full planned roadmap complete as of 3.3.0-stable)
 
 

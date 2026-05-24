@@ -4,8 +4,8 @@ Living backlog for HFK Publishing Engine.
 Completed items are struck through. Update this file every phase.
 
 Last updated: 2026-05-24
-Current stable version: 3.8.0-stable
-Current working version: none
+Current stable version: 4.0.0-stable
+Current working version: 4.1.0-alpha
 
 ---
 
@@ -50,54 +50,37 @@ Current working version: none
 - ~~Phase 3.7.0 — playful_v1 Illustrated Template~~ (stable 2026-05-24)
 - ~~Patch 3.7.1 — Export Crop + Instructions Icon Fix~~ (stable 2026-05-24)
 - ~~Phase 3.8.0 — Direction Overhaul~~ (stable 2026-05-24)
+- ~~Phase 4.0.0 — Template Definition Schema + Dynamic Renderer~~ (stable 2026-05-24)
 
 ---
 
 ## In Progress
 
-(none)
+- Phase 4.1.0 — Template Routes + List Page
 
 ---
 
 ## Planned
 
-### Phase 4.0.0 — Template Definition Schema + Dynamic Renderer
+### Phase 4.1.0 — Template Routes + List Page
 
-The data layer for custom templates. No editor UI yet.
+Scaffold /templates (list), /templates/new, /templates/[id]/edit routes. List page shows built-in and vault templates. Create button and edit links. No editor logic yet.
 
-- Define TypeScript interface and Zod schema for TemplateDefinition
-  (palette, avatar, slots with grid position and style overrides)
-- Dynamic renderer: React component that accepts TemplateDefinition +
-  WorksheetContent and renders the same HTML contract as cozy_v1/playful_v1
-- Store custom template definitions in vault/templates/ (ChromaDB-indexed,
-  AI-recommendable based on subject/grade fit)
-- Register custom templates alongside built-in templates in the review
-  flow template selector
+### Phase 4.2.0 — Canvas + Drag-and-Drop Slots
 
-### Phase 4.1.0 — Template Editor UI
+dnd-kit slot placement on a letter-sized canvas. Add/remove/reorder slot types (header, vocabulary, activity, parent-notes, footer, decoration). Slot type picker. No styling controls yet.
 
-The Canva-like drag-and-drop editor. Depends on 4.0.0.
+### Phase 4.3.0 — Property Panel
 
-- Routes: /templates (list), /templates/new, /templates/[id]/edit
-- dnd-kit drag-and-drop slot placement on a letter-sized canvas
-- Slot types: header, vocabulary, activity, parent-notes, footer,
-  decoration (SVG/avatar/banner overlays)
-- Property panel: slot type, colors, border style, font overrides
-- Avatar picker from assets/avatars/
-- Color palette selector (HFK tokens + custom)
-- Live preview panel (right side, uses dynamic renderer from 4.0.0)
-- Save template definition to vault/templates/ on publish
+Slot-level controls: colors, border style, font overrides. Color palette selector (HFK tokens + custom hex). Avatar picker from assets/avatars/.
 
-### Phase 4.2.0 — Vault Ingestion + AI Template Recommendation
+### Phase 4.4.0 — Live Preview + Publish
 
-AI wiring for template recommendation. Depends on 4.0.0 and 4.1.0.
+Right-side live preview panel using DynamicWorksheetTemplate. Save finished TemplateDefinition to vault/templates/ on publish. Wires /templates/new and /templates/[id]/edit to the real editor.
 
-- Ingest saved template definitions into ChromaDB with subject/grade
-  affinity metadata
-- During review flow template selection step, AI queries vault for
-  best-fit template for the day's grade, subject, and topic
-- Reuse score increments on each approved package using that template
-- Recommendation badge shown on best-fit template in selector
+### Phase 4.5.0 — Vault Ingestion + AI Template Recommendation
+
+Ingest saved template definitions into ChromaDB with subject/grade affinity metadata. AI queries vault during review flow template selection for best-fit template. Reuse score increments on approval. Recommendation badge in template selector.
 
 ---
 

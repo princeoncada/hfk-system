@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { getWorksheetById } from '@/lib/content'
 import WorksheetBuilder from '@/components/worksheets/WorksheetBuilder'
+import { listTemplates } from '@/lib/template.store'
+import type { TemplateDefinition } from '@/lib/template.types'
 
 export default function WorksheetBuilderPage({ params }: { params: { id: string } }) {
   const worksheet = getWorksheetById(params.id)
@@ -16,6 +18,8 @@ export default function WorksheetBuilderPage({ params }: { params: { id: string 
     )
   }
 
+  const customTemplateDefs: TemplateDefinition[] = listTemplates()
+
   return (
     <>
       <div className="mb-8">
@@ -27,7 +31,7 @@ export default function WorksheetBuilderPage({ params }: { params: { id: string 
         </h1>
       </div>
 
-      <WorksheetBuilder initialWorksheet={worksheet} />
+      <WorksheetBuilder initialWorksheet={worksheet} customTemplateDefs={customTemplateDefs} />
     </>
   )
 }

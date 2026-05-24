@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 5.0.2-alpha | Patch 5.0.2 | alpha | 2026-05-24 | Workflow Doc Hardening: fix four-to-five versioning locations, replace Stable-Promotion Codex Prompt step with .\scripts\promote.ps1, update CLAUDE.md Key File Map with 5.0.x entries. |
+| 5.0.2-stable | Patch 5.0.2 | stable | 2026-05-24 | Workflow Doc Hardening: fix four-to-five versioning locations, replace Stable-Promotion Codex Prompt step with .\scripts\promote.ps1, update CLAUDE.md Key File Map with 5.0.x entries. |
 | 5.0.1-stable | Patch 5.0.1 | stable | 2026-05-24 | Mojibake repair + State column fix: fix-mojibake.ps1 script, promote.ps1 State field improvement, em-dash mojibake corrected in PHASE_LOG, VERSIONING, AI_HANDOFF. Files: scripts/fix-mojibake.ps1, scripts/promote.ps1, docs/VERSIONING.md, docs/PHASE_LOG.md, versioning docs. |
 | 5.0.0-stable | Phase 5.0.0 | stable | 2026-05-24 | Workflow Core Hardening: STATE.json, scripts/promote.ps1, docs/CODEX_RULES.md, CLAUDE.md session start protocol update, pre-4.x doc archiving. Files: STATE.json, scripts/promote.ps1, docs/CODEX_RULES.md, CLAUDE.md, docs/PHASE_LOG.md, docs/VERSIONING.md, docs/FUTURE_PLANS.md, versioning docs. |
 | 4.5.0-stable | Phase 4.5.0 | stable | 2026-05-24 | Vault Ingestion + AI Template Recommendation: saved TemplateDefinitions ingest into template_definitions Chroma collection, review flow queries best-fit custom template, recommendation badge appears in selector, and approved custom template reuse score increments. Files: template.types.ts, template.chroma.ts, templates recommend/reuse API routes, templates save API, review/page.tsx, ReviewFlow.tsx, versioning docs. |
@@ -35,7 +35,7 @@ Date: 2026-05-24
 
 Status: alpha
 
-Version: 5.0.2-alpha
+Version: 5.0.2-stable
 
 Date: 2026-05-24
 
@@ -51,7 +51,7 @@ Files:
 - STATE.json
 
 Changes:
-- Bumped all five versioning locations to 5.0.2-alpha.
+- Bumped all five versioning locations to 5.0.2-stable.
 - Corrected CLAUDE.md references from four versioning locations to five.
 - Replaced stable-promotion Codex prompt wording with .\scripts\promote.ps1 stable-promotion block wording.
 - Updated CLAUDE.md Key File Map with STATE.json, docs/WORKFLOW.md, docs/CODEX_RULES.md, scripts/promote.ps1, and scripts/fix-mojibake.ps1.
@@ -1661,6 +1661,8 @@ New files:
 - TypeScript type-check: PASS
 - npm install: PASS
 - Promoted to stable: 2026-05-21
+
+
 
 
 

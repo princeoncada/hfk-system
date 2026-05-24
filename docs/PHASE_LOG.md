@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 5.2.0-alpha | Phase 5.2.0 | alpha | 2026-05-24 | Graphify-Ready Codebase Graph: committed codebase-graph.json, added Graphify wrapper and degraded fallback scanner, and wired the graph into Codex read-first workflow docs. |
+| 5.2.0-stable | Phase 5.2.0 | stable | 2026-05-24 | Graphify-Ready Codebase Graph: committed codebase-graph.json, added Graphify wrapper and degraded fallback scanner, and wired the graph into Codex read-first workflow docs. |
 | 5.1.1-stable | Patch 5.1.1 | stable | 2026-05-24 | Future Plans Queue: populated FUTURE_PLANS.md with 5.0.x + 5.1.0 completions and 5.2.0–5.5.0 planned phases (Graphify, ChromaDB Docs, Case Studies, Advanced Memory) with token optimization rationale. |
 | 5.1.0-stable | Phase 5.1.0 | stable | 2026-05-24 | Automation Scripts: commit-phase.ps1, validate.ps1, docs/COMPACT_STRATEGY.md, CLAUDE.md and WORKFLOW.md wired to new scripts. |
 | 5.0.2-stable | Patch 5.0.2 | stable | 2026-05-24 | Workflow Doc Hardening: fix four-to-five versioning locations, replace Stable-Promotion Codex Prompt step with .\scripts\promote.ps1, update CLAUDE.md Key File Map with 5.0.x entries. |
@@ -38,7 +38,7 @@ Date: 2026-05-24
 
 Status: alpha
 
-Version: 5.2.0-alpha
+Version: 5.2.0-stable
 
 Date: 2026-05-24
 
@@ -67,7 +67,7 @@ Changes:
 - Added docs/CODEBASE_GRAPH.md with refresh and usage guidance.
 - Wired codebase-graph.json into CLAUDE.md, docs/WORKFLOW.md, and docs/CODEX_RULES.md read-first guidance.
 - Added npm script graph:codebase for graph refresh convenience.
-- Bumped all five versioning locations to 5.2.0-alpha.
+- Bumped all five versioning locations to 5.2.0-stable.
 - Deferred literal Graphify CLI installation and generated Graphify output to a follow-up 5.2.1 patch.
 
 ## Patch 5.1.1 — Future Plans Queue
@@ -1767,6 +1767,8 @@ New files:
 - TypeScript type-check: PASS
 - npm install: PASS
 - Promoted to stable: 2026-05-21
+
+
 
 
 

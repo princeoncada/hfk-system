@@ -1,24 +1,25 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.1.0-stable
+**Current Version:** 5.1.1-alpha
 
 ## Current Phase
 
-Phase 5.1.0 [5.1.0-stable] — Automation Scripts
+Patch 5.1.1 [5.1.1-alpha] — Future Plans Queue
 
 Status: alpha
 
 The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 The 5.x workflow infrastructure series is now active.
 
-Current scope: commit-phase.ps1 is a parameter-driven single-file commit
-helper, and validate.ps1 is the standard validation runner. docs/COMPACT_STRATEGY.md
-documents context window management strategy, while CLAUDE.md and WORKFLOW.md
-wire both scripts into the operating workflow.
+Current scope: docs/FUTURE_PLANS.md is being updated with completed 5.0.x
+and 5.1.0 phases plus the planned 5.2.0–5.5.0 queue. Versioning surfaces
+are bumped to 5.1.1-alpha for this documentation-only patch.
 
-Next recommended work: Complete Phase 5.1.0 validation, then promote to stable.
+Next recommended work: Phase 5.2.0 — Graphify Integration.
 
 ## Completed Phase
+
+Phase 5.1.0 [5.1.0-stable] — Automation Scripts: commit-phase.ps1 single-file commit helper, validate.ps1 standard validation runner, docs/COMPACT_STRATEGY.md context window management strategy, and CLAUDE.md/WORKFLOW.md script wiring — complete.
 
 Patch 5.0.2 [5.0.2-stable] — Workflow Doc Hardening: corrected workflow docs for five versioning locations, promote.ps1 stable-promotion flow, and 5.0.x Key File Map entries; validation passed — complete.
 
@@ -957,12 +958,15 @@ Modified files:
 
 ## Future Phase Queue
 
-- Phase 5.2.0 or TBD
+- Phase 5.2.0 — Graphify Integration
+- Phase 5.3.0 — ChromaDB Docs Extension
+- Phase 5.4.0 — Portfolio Case Studies
+- Phase 5.5.0 — Advanced Memory Layer
 - hfk-token-dashboard has been scoped as a separate standalone project, not part of the HFK phase queue.
 
 ## Recommended Next Step
 
-Complete Phase 5.1.0 validation, then promote to stable.
+Complete Patch 5.1.1 validation, then promote to stable. Next implementation phase is 5.2.0 — Graphify Integration.
 
 ## What Exists
 

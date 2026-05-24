@@ -1,12 +1,14 @@
 # AI Handoff
 
-**Current Version:** 4.2.0-alpha
+**Current Version:** 4.2.0-stable
 
 ## Current Phase
 
-Phase 4.2.0 [4.2.0-alpha] — Canvas + Drag-and-Drop Slots: dnd-kit slot editor, reorderable TemplateSlot list, add/remove slot controls, save API route, new/edit template pages wired to editor — alpha.
+Phase 4.3.0 [in-progress] — Property Panel.
 
 ## Completed Phase
+
+Phase 4.2.0 [4.2.0-stable] — Canvas + Drag-and-Drop Slots: dnd-kit slot editor, reorderable TemplateSlot list, add/remove slot controls, save API route, new/edit template pages wired to editor — complete.
 
 Phase 4.1.0 [4.1.0-stable] — Template Routes + List Page: /templates nav entry, built-in/custom template list page, New Template placeholder, and edit placeholder routes — complete.
 

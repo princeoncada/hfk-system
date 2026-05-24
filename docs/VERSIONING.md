@@ -42,9 +42,9 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.8.0-alpha |
+| Version | 3.8.0-stable |
 | Phase | Phase 3.8.0 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-24 |
 | Summary | Phase 3.8.0 — Direction overhaul: grade/subject locked from planner, topic read-only with AI regenerate, objective editable, direction approval syncs topic/objective back to planner. |
 
@@ -52,7 +52,7 @@ Every version change must be applied to all four simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 3.8.0-alpha | Phase 3.8.0 — Direction Overhaul | alpha | 2026-05-24 | Direction overhaul: grade/subject locked from planner, topic read-only with AI regenerate, objective editable, direction approval syncs topic/objective back to planner. |
+| 3.8.0-stable | Phase 3.8.0 | stable | 2026-05-24 | Direction overhaul: grade/subject locked from planner, topic read-only with AI regenerate, objective editable, direction approval syncs topic/objective back to planner. |
 | 3.7.1-stable | Patch 3.7.1 â€” Export Crop + Instructions Icon Fix | stable | 2026-05-24 | PNG export crop fix (scrollWidth/minWidth), PDF print crop fix (zero @page margin, 816px worksheet width), instructions button replaced with Lucide Plus/SlidersHorizontal icon. |
 | 3.7.0-stable | Phase 3.7.0 Ã¢â‚¬â€ playful_v1 Template | stable | 2026-05-24 | playful_v1 template: emoji-illustrated colorful layout with Fredoka/Nunito fonts, rotating activity colors, vocab tracing lines for reading/vocab subjects. |
 | 3.6.5-stable | Patch 3.6.5 Ã¢â‚¬â€ Print/PDF Fix | stable | 2026-05-24 | Print/PDF fix: @page rule, 0.5in margin, main padding reset, full-width worksheet on print. |
@@ -196,6 +196,20 @@ Date: 2026-05-24
 - Text instruction buttons replaced (title attributes only â€” correct)
 - Version bump confirmed in all four versioning files
 
+## Validation Record — 3.8.0-stable
+
+Date: 2026-05-24
+
+- Build clean, 22 pages
+- update-day and topic/suggest API routes created
+- planDay: PlanDay | null in ReviewFlowProps, imported from planning.types
+- generatingTopic state wired to Regenerate button
+- handleRegenerateTopic and approveDirection defined and called
+- /api/planner/update-day called in approveDirection (non-fatal sync)
+- Locked from planner label confirmed in direction form
+- getPlan fetched in review/page.tsx, planDay passed to ReviewFlow
+- Version bump confirmed in all four versioning files
+
 ## Validation Record Ã¢â‚¬â€ 3.6.0-stable
 
 Date: 2026-05-23
@@ -270,7 +284,7 @@ Date: 2026-05-23
 
 ## Next Phase
 
-Current stable version: 3.7.1-stable
+Current stable version: 3.8.0-stable
 Current working version: none
 Next recommended phase: (none Ã¢â‚¬â€ full planned roadmap complete as of 3.3.0-stable)
 

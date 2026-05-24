@@ -1,10 +1,10 @@
 # AI Handoff
 
-**Current Version:** 3.8.0-stable
+**Current Version:** 4.0.0-alpha
 
 ## Current Phase
 
-Phase 3.8.0 [3.8.0-stable] — Direction overhaul: grade/subject locked from planner, topic read-only with AI regenerate, objective editable, direction approval syncs topic/objective back to planner — stable.
+Phase 4.0.0 [4.0.0-alpha] — Template definition schema (TemplateDefinition, TemplatePalette, TemplateSlot), template store (vault/templates/), DynamicWorksheetTemplate renderer, integrated into preview, builder, and review flow template selector. Sample modern_v1 template included — alpha.
 
 ## Architecture Invariant
 

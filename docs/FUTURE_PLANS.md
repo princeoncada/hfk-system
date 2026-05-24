@@ -4,8 +4,8 @@ Living backlog for HFK Publishing Engine.
 Completed items are struck through. Update this file every phase.
 
 Last updated: 2026-05-24
-Current stable version: 5.1.0-stable
-Current working version: 5.1.1-alpha
+Current stable version: 5.1.1-stable
+Current working version: 5.2.0-alpha
 
 ---
 
@@ -65,17 +65,17 @@ Current working version: 5.1.1-alpha
 
 ## In Progress
 
-(none)
+### Phase 5.2.0 — Graphify-Ready Codebase Graph
+
+Establish codebase-graph.json as the committed read-first graph artifact.
+Add a Graphify wrapper script, a degraded fallback scanner, and workflow wiring
+so Codex navigates from one graph file before reading source files. Real Graphify
+CLI output is deferred to a follow-up 5.2.1 patch. Estimated Codex token
+reduction after real Graphify output: ~20–25%.
 
 ---
 
 ## Planned
-
-### Phase 5.2.0 — Graphify Integration
-Generate a static codebase knowledge graph using Graphify (tree-sitter based).
-Commit the graph output. Wire codebase-graph.json into the Codex read-first list
-so Codex navigates the codebase from one file instead of reading 4–8 source files
-per prompt. Estimated Codex token reduction: ~20–25%.
 
 ### Phase 5.3.0 — ChromaDB Docs Extension
 Ingest all docs files (PHASE_LOG.md, AI_HANDOFF.md, FUTURE_PLANS.md, DECISIONS.md,

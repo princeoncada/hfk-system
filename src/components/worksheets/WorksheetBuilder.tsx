@@ -8,10 +8,13 @@ import type { HeaderBlock, WorksheetBlock } from '@/lib/worksheet.blocks'
 import { blocksToWorksheet, worksheetToBlocks } from '@/lib/worksheet.blocks'
 import { WorksheetTemplate as CozyV1 } from '@/components/templates/cozy_v1/WorksheetTemplate'
 import { WorksheetTemplate as PlayfulV1 } from '@/components/templates/playful_v1/WorksheetTemplate'
+import { DynamicWorksheetTemplate } from '@/components/templates/dynamic'
+import type { TemplateDefinition } from '@/lib/template.types'
 import BlockPanel from './BlockPanel'
 
 interface WorksheetBuilderProps {
   initialWorksheet: Partial<WorksheetContent>
+  customTemplateDefs?: TemplateDefinition[]
 }
 
 function normalizeForDirty(worksheet: WorksheetContent) {
@@ -21,7 +24,10 @@ function normalizeForDirty(worksheet: WorksheetContent) {
   return rest
 }
 
-export default function WorksheetBuilder({ initialWorksheet }: WorksheetBuilderProps) {
+export default function WorksheetBuilder({
+  initialWorksheet,
+  customTemplateDefs = [],
+}: WorksheetBuilderProps) {
   const router = useRouter()
   const initialBlocks = useMemo(
     () => worksheetToBlocks(initialWorksheet),
@@ -45,6 +51,7 @@ export default function WorksheetBuilder({ initialWorksheet }: WorksheetBuilderP
   const preview = blocksToWorksheet(blocks, initialWorksheet)
   const templateId = headerBlock?.data.template ?? 'cozy_v1'
   const ActiveTemplate = templateId === 'playful_v1' ? PlayfulV1 : CozyV1
+  const customDef = customTemplateDefs.find((d) => d.id === templateId) ?? null
 
   useEffect(() => {
     const serialized = JSON.stringify(
@@ -239,7 +246,11 @@ export default function WorksheetBuilder({ initialWorksheet }: WorksheetBuilderP
               className="w-[816px]"
               style={{ transform: 'scale(0.722)', transformOrigin: 'top left' }}
             >
-              <ActiveTemplate worksheet={preview} />
+              {customDef ? (
+                <DynamicWorksheetTemplate definition={customDef} worksheet={preview} />
+              ) : (
+                <ActiveTemplate worksheet={preview} />
+              )}
             </div>
           </div>
         </div>

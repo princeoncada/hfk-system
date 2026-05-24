@@ -8,7 +8,7 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.1.1-alpha |
+| Current | 5.1.1-stable |
 | Status | alpha |
 | Current phase | Patch 5.1.1 — Future Plans Queue: populated FUTURE_PLANS.md with 5.0.x + 5.1.0 completions and 5.2.0–5.5.0 planned phases with token optimization context. |
 
@@ -61,6 +61,7 @@ Open http://localhost:3000 to see the dashboard.
 | docs/WORKFLOW.md | AI and human contribution workflow |
 | docs/FUTURE_PLANS.md | Living backlog and planned phases |
 | docs/PHASE_LOG.md | Full version and validation history |
+
 
 
 

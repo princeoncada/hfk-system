@@ -8,7 +8,7 @@ Grades 1ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.0.0-alpha |
+| Current | 5.0.0-stable |
 | Status | alpha |
 | Current phase | Phase 5.0.0 — Workflow Core Hardening: STATE.json, scripts/promote.ps1, docs/CODEX_RULES.md, CLAUDE.md session start protocol update, and pre-4.x doc history archiving. |
 
@@ -61,6 +61,7 @@ Open http://localhost:3000 to see the dashboard.
 | docs/WORKFLOW.md | AI and human contribution workflow |
 | docs/FUTURE_PLANS.md | Living backlog and planned phases |
 | docs/PHASE_LOG.md | Full version and validation history |
+
 
 
 

@@ -1,3 +1,5 @@
+import fs from 'fs'
+import path from 'path'
 import Link from 'next/link'
 import { TemplateSlotEditor } from '@/components/templates/editor'
 import { getTemplateById } from '@/lib/template.store'
@@ -8,6 +10,10 @@ interface EditTemplatePageProps {
 
 export default async function EditTemplatePage({ params }: EditTemplatePageProps) {
   const def = getTemplateById(params.id)
+  const AVATARS_DIR = path.join(process.cwd(), 'assets', 'avatars')
+  const avatarOptions = fs.existsSync(AVATARS_DIR)
+    ? fs.readdirSync(AVATARS_DIR).filter((f) => /\.(png|svg|jpe?g|webp)$/i.test(f))
+    : []
 
   if (!def) {
     return (
@@ -31,7 +37,7 @@ export default async function EditTemplatePage({ params }: EditTemplatePageProps
         </h1>
       </div>
 
-      <TemplateSlotEditor initialDefinition={def} />
+      <TemplateSlotEditor initialDefinition={def} avatarOptions={avatarOptions} />
     </>
   )
 }

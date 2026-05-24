@@ -1,0 +1,279 @@
+{
+  "schemaVersion": "hfk-codebase-graph/v1",
+  "version": "5.2.0-alpha",
+  "generatedAt": "2026-05-24",
+  "generator": "codex-curated Graphify-ready foundation snapshot",
+  "graphify": {
+    "preferredCli": "graphify",
+    "package": "graphifyy",
+    "fallbackUsed": true,
+    "note": "Graphify is authoritative. This committed snapshot is a degraded fallback until a future 5.2.1 patch installs/runs the real Graphify CLI."
+  },
+  "protectedPathsExcluded": [
+    ".env",
+    ".git",
+    ".next",
+    "archives",
+    "assets/avatars",
+    "content",
+    "exports",
+    "graphify-out",
+    "node_modules",
+    "vault"
+  ],
+  "readFirst": [
+    "STATE.json",
+    "codebase-graph.json",
+    "docs/CODEX_RULES.md",
+    "docs/VERSIONING.md",
+    "docs/AI_HANDOFF.md",
+    "docs/PHASE_LOG.md",
+    "docs/WORKFLOW.md"
+  ],
+  "clusters": [
+    {
+      "id": "workflow-infrastructure",
+      "purpose": "Versioning, phase workflow, validation, promotion, commit helpers, and AI session continuity.",
+      "files": [
+        "STATE.json",
+        "CLAUDE.md",
+        "docs/CODEX_RULES.md",
+        "docs/WORKFLOW.md",
+        "docs/VERSIONING.md",
+        "docs/AI_HANDOFF.md",
+        "docs/PHASE_LOG.md",
+        "docs/FUTURE_PLANS.md",
+        "scripts/promote.ps1",
+        "scripts/commit-phase.ps1",
+        "scripts/validate.ps1",
+        "scripts/generate-codebase-graph.ps1",
+        "scripts/generate_codebase_graph.py"
+      ]
+    },
+    {
+      "id": "app-shell",
+      "purpose": "Next.js shell, navigation, page transitions, and dashboard entry surfaces.",
+      "files": [
+        "src/app/layout.tsx",
+        "src/app/page.tsx",
+        "src/components/shell/SidebarNav.tsx",
+        "src/components/shell/PageTransition.tsx",
+        "src/components/onboarding/OnboardingOverlay.tsx"
+      ]
+    },
+    {
+      "id": "content-and-worksheet-core",
+      "purpose": "Filesystem worksheet loading, validation, editing, saving, previewing, and export.",
+      "files": [
+        "src/lib/types.ts",
+        "src/lib/schema.ts",
+        "src/lib/content.ts",
+        "src/lib/save.ts",
+        "src/lib/export.ts",
+        "src/lib/archive.ts",
+        "src/components/worksheets/WorksheetList.tsx",
+        "src/components/worksheets/WorksheetBuilder.tsx",
+        "src/app/worksheets/page.tsx",
+        "src/app/worksheets/[id]/page.tsx",
+        "src/app/preview/[id]/page.tsx",
+        "src/app/preview/[id]/PreviewControls.tsx"
+      ]
+    },
+    {
+      "id": "approval-and-review",
+      "purpose": "Daily package approval state machine and operator review UI.",
+      "files": [
+        "src/lib/approval.types.ts",
+        "src/lib/approval.store.ts",
+        "src/lib/approval.actions.ts",
+        "src/app/review/page.tsx",
+        "src/components/review/ReviewFlow.tsx",
+        "src/components/review/RedirectModal.tsx",
+        "src/app/api/approval/package/route.ts",
+        "src/app/api/approval/gate/[gate]/approve/route.ts",
+        "src/app/api/approval/gate/[gate]/reject/route.ts",
+        "src/app/api/approval/gate/[gate]/redirect/route.ts",
+        "src/app/api/approval/gate/[gate]/reset/route.ts"
+      ]
+    },
+    {
+      "id": "planning-and-ai",
+      "purpose": "DeepSeek-backed planning, topic updates, draft generation, and prompt assembly.",
+      "files": [
+        "src/lib/deepseek.ts",
+        "src/lib/ai.types.ts",
+        "src/lib/planning.types.ts",
+        "src/lib/planning.store.ts",
+        "src/lib/planning.rag.ts",
+        "src/lib/planning.generate.ts",
+        "src/lib/prompt.types.ts",
+        "src/lib/prompt.assemble.ts",
+        "src/app/api/planning/generate/route.ts",
+        "src/app/api/planning/[month]/route.ts",
+        "src/app/api/planner/update-day/route.ts",
+        "src/app/api/ai/draft/worksheet/route.ts",
+        "src/app/api/ai/draft/caption/route.ts",
+        "src/app/api/ai/topic/suggest/route.ts",
+        "src/app/api/ai/summary/route.ts"
+      ]
+    },
+    {
+      "id": "vault-and-chroma",
+      "purpose": "Vault asset schemas, ChromaDB access, ingestion, query, seeding, and vault UI.",
+      "files": [
+        "src/lib/chroma.ts",
+        "src/lib/vault.types.ts",
+        "src/lib/vault.schema.ts",
+        "src/lib/vault.constants.ts",
+        "src/lib/vault.ingest.ts",
+        "src/lib/vault.query.ts",
+        "src/lib/vault.rag.ts",
+        "src/lib/vault.seed.ts",
+        "src/app/vault/page.tsx",
+        "src/components/vault/VaultBrowser.tsx",
+        "src/app/api/vault/ingest/route.ts",
+        "src/app/api/vault/query/route.ts",
+        "src/app/api/vault/seed/route.ts",
+        "src/app/api/vault/asset/[id]/lifecycle/route.ts"
+      ]
+    },
+    {
+      "id": "templates",
+      "purpose": "Stable worksheet templates, dynamic renderer, and custom template editor.",
+      "files": [
+        "src/lib/template.types.ts",
+        "src/lib/template.store.ts",
+        "src/lib/template.chroma.ts",
+        "src/components/templates/cozy_v1/WorksheetTemplate.tsx",
+        "src/components/templates/playful_v1/WorksheetTemplate.tsx",
+        "src/components/templates/dynamic/DynamicWorksheetTemplate.tsx",
+        "src/components/templates/editor/TemplateSlotEditor.tsx",
+        "src/components/templates/editor/TemplatePreview.tsx",
+        "src/components/templates/editor/PropertyPanel.tsx",
+        "src/app/templates/page.tsx",
+        "src/app/templates/new/page.tsx",
+        "src/app/templates/[id]/edit/page.tsx",
+        "src/app/api/templates/save/route.ts",
+        "src/app/api/templates/recommend/route.ts",
+        "src/app/api/templates/reuse/route.ts"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "src/app/page.tsx",
+      "target": "src/components/command/TodayStatus.tsx",
+      "type": "renders"
+    },
+    {
+      "source": "src/app/page.tsx",
+      "target": "src/components/command/MonthProgress.tsx",
+      "type": "renders"
+    },
+    {
+      "source": "src/app/page.tsx",
+      "target": "src/components/command/VaultAlerts.tsx",
+      "type": "renders"
+    },
+    {
+      "source": "src/app/review/page.tsx",
+      "target": "src/components/review/ReviewFlow.tsx",
+      "type": "renders"
+    },
+    {
+      "source": "src/components/review/ReviewFlow.tsx",
+      "target": "src/lib/approval.actions.ts",
+      "type": "calls-api-backed-actions"
+    },
+    {
+      "source": "src/lib/approval.actions.ts",
+      "target": "src/lib/approval.store.ts",
+      "type": "persists-package-state"
+    },
+    {
+      "source": "src/lib/approval.actions.ts",
+      "target": "src/lib/save.ts",
+      "type": "saves-approved-worksheet"
+    },
+    {
+      "source": "src/app/planner/[month]/page.tsx",
+      "target": "src/components/planner/PlannerView.tsx",
+      "type": "renders"
+    },
+    {
+      "source": "src/lib/planning.generate.ts",
+      "target": "src/lib/deepseek.ts",
+      "type": "generates-with"
+    },
+    {
+      "source": "src/lib/planning.generate.ts",
+      "target": "src/lib/planning.rag.ts",
+      "type": "uses-rag-context"
+    },
+    {
+      "source": "src/lib/vault.rag.ts",
+      "target": "src/lib/vault.query.ts",
+      "type": "queries-vault"
+    },
+    {
+      "source": "src/lib/vault.query.ts",
+      "target": "src/lib/chroma.ts",
+      "type": "uses-chroma-client"
+    },
+    {
+      "source": "src/app/templates/[id]/edit/page.tsx",
+      "target": "src/components/templates/editor/TemplateSlotEditor.tsx",
+      "type": "renders-editor"
+    },
+    {
+      "source": "src/components/templates/editor/TemplateSlotEditor.tsx",
+      "target": "src/components/templates/editor/PropertyPanel.tsx",
+      "type": "renders"
+    },
+    {
+      "source": "src/components/templates/editor/TemplateSlotEditor.tsx",
+      "target": "src/components/templates/editor/TemplatePreview.tsx",
+      "type": "renders"
+    },
+    {
+      "source": "src/components/templates/editor/TemplatePreview.tsx",
+      "target": "src/components/templates/dynamic/DynamicWorksheetTemplate.tsx",
+      "type": "previews-with"
+    },
+    {
+      "source": "src/app/preview/[id]/page.tsx",
+      "target": "src/lib/content.ts",
+      "type": "loads-worksheet"
+    },
+    {
+      "source": "src/app/preview/[id]/page.tsx",
+      "target": "src/components/templates/cozy_v1/WorksheetTemplate.tsx",
+      "type": "renders-template"
+    },
+    {
+      "source": "src/app/api/export/route.ts",
+      "target": "src/lib/export.ts",
+      "type": "delegates-export"
+    },
+    {
+      "source": "src/lib/export.ts",
+      "target": "src/lib/archive.ts",
+      "type": "archives-output"
+    },
+    {
+      "source": "docs/CODEX_RULES.md",
+      "target": "codebase-graph.json",
+      "type": "read-first-rule"
+    },
+    {
+      "source": "CLAUDE.md",
+      "target": "codebase-graph.json",
+      "type": "key-file-map"
+    },
+    {
+      "source": "scripts/generate-codebase-graph.ps1",
+      "target": "scripts/generate_codebase_graph.py",
+      "type": "wraps"
+    }
+  ]
+}

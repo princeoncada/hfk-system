@@ -58,7 +58,7 @@ VERIFY  — Section 2 PowerShell block is provided for the user to run.
 TEST    — User runs Section 2 commands and pastes results back.
 ANALYZE — AI reviews every check. Reports pass/fail per check.
 FIX     — If failures: AI writes targeted fix prompt. Repeat from BUILD.
-DOCUMENT — AI writes stable-promotion Codex prompt after all checks pass.
+DOCUMENT — AI provides .\scripts\promote.ps1 stable-promotion block after all checks pass.
 COMMIT  — User commits manually. AI never commits or pushes.
 
 ## Bug Fix Versioning Rule
@@ -67,7 +67,7 @@ Any bug discovered after a stable release always triggers a Z+1 patch.
 Never modify a stable release in place.
 
 The fix implementation prompt must:
-1. Bump all four versioning files to X.Y.(Z+1)-alpha
+1. Bump all five versioning files to X.Y.(Z+1)-alpha
 2. Open the new patch in alpha state
 3. Follow the standard stable-promotion cycle after validation passes
 
@@ -80,7 +80,7 @@ originally planned.
 If a phase is built out of its planned sequence:
 1. Discard the originally planned phase number
 2. Assign the next available Y.Z version after the last stable release
-3. All four versioning files must use the new number
+3. All five versioning files must use the new number
 4. The PHASE_LOG.md history table must remain in implementation order
    with the corrected version numbers
 
@@ -111,10 +111,11 @@ Stop instruction (mandatory, always last):
   per file, expected behavior, assumptions made
 
 Documentation requirement (mandatory for every phase prompt):
-- README.md, docs/PHASE_LOG.md, docs/AI_HANDOFF.md, docs/VERSIONING.md
+- README.md, docs/PHASE_LOG.md, docs/AI_HANDOFF.md, docs/VERSIONING.md,
+  STATE.json
 
 Post-stable bug fix: always include the version bump to X.Y.(Z+1)-alpha
-in all four versioning files as an implementation requirement — not as a
+in all five versioning files as an implementation requirement — not as a
 separate step.
 
 ## When To Use The 2-Section Format
@@ -135,19 +136,19 @@ and proceed directly to the 2-section output.
 
 For implementation phases:
 1. Validation summary
-2. Implementation commit block (BEFORE stable-promotion prompt)
+2. Implementation commit block (BEFORE running promote.ps1)
    Implementation commit rule: one git add + one git commit per file.
    Never group multiple files into a single commit. This applies to both
    the implementation commit block and the stable-promotion commit block.
-3. Stable-promotion Codex prompt
-4. Stable-promotion commit block (IMMEDIATELY after the Codex prompt,
+3. Stable-promotion block: .\scripts\promote.ps1 PowerShell command
+4. Stable-promotion commit block (IMMEDIATELY after the promote.ps1 block,
    in the same message — no AI turn between them)
 5. ```powershell git push origin master ``` block — must appear
    in the same message as the stable-promotion commit block,
    no separate turn
 
-For stable-promotion docs-only prompts:
-1. Stable-promotion Codex prompt
+For stable-promotion docs-only promotions:
+1. Stable-promotion block: .\scripts\promote.ps1 PowerShell command
 2. Two-section response (confirmation + 1-by-1 commit block)
 3. ```powershell git push origin master ``` block — must appear
    in the same message as the stable-promotion commit block,
@@ -159,19 +160,19 @@ For stable-promotion docs-only prompts:
 If all pass, provide all of the following in one message:
 1. Validation summary
 2. Implementation commit block
-3. Stable-promotion Codex prompt
+3. Stable-promotion block: .\scripts\promote.ps1 PowerShell command
 4. Stable-promotion commit block
 5. ```powershell git push origin master ``` block
 
-The stable-promotion prompt and stable-promotion commit block MUST
+The promote.ps1 block and stable-promotion commit block MUST
 travel together in the same message, with the commit block appearing
-immediately below the Codex prompt block. No additional AI turn is
+immediately below the promote.ps1 block. No additional AI turn is
 required or permitted between them.
 
 ## Post-Validation Two-Section Response
 
 This two-section block must appear immediately below the
-stable-promotion Codex prompt in the same message.
+promote.ps1 block in the same message.
 
 SECTION 1: Stable-Promotion Confirmation
 - Summarize what passed
@@ -189,6 +190,8 @@ git add docs/PHASE_LOG.md
 git commit -m "docs: record X.Y.Z stable phase log"
 git add README.md
 git commit -m "docs: update README version to X.Y.Z stable"
+git add STATE.json
+git commit -m "chore: update STATE.json to X.Y.Z stable"
 ...
 git status --short
 ```

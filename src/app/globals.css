@@ -10,7 +10,7 @@
 @media print {
   @page {
     size: letter portrait;
-    margin: 0.5in;
+    margin: 0;
   }
 
   body {
@@ -35,8 +35,11 @@
   }
 
   .worksheet {
-    max-width: 100% !important;
+    width: 816px !important;
+    max-width: 816px !important;
     min-height: 0 !important;
+    padding: 0.5in !important;
+    box-sizing: border-box !important;
     box-shadow: none !important;
     border: none !important;
   }

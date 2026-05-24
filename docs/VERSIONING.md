@@ -42,16 +42,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.6.5-alpha |
+| Version | 3.6.5-stable |
 | Phase | Patch 3.6.5 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-24 |
-| Summary | Patch 3.6.5 - Print/PDF fix: @page rule, margin reset, full-width worksheet on print. |
+| Summary | Patch 3.6.5 — Print/PDF fix: @page rule, 0.5in margin, main padding reset, full-width worksheet on print. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.6.5-stable | Patch 3.6.5 — Print/PDF Fix | stable | 2026-05-24 | Print/PDF fix: @page rule, 0.5in margin, main padding reset, full-width worksheet on print. |
 | 3.6.4-stable | Patch 3.6.4 — Daily Review UX Polish + Print/Export Fixes | stable | 2026-05-24 | Print scrollbar fix, multi-page PNG export, preview 404 redirect, Fill from Plan removed, Instructions inline-right of Generate, draft persistence via localStorage, step indicator layout fix. |
 | 3.6.3-stable | Patch 3.6.3 — Final Package Lock and Worksheet Link | stable | 2026-05-24 | Save AI worksheet to content/worksheets/ on final approval, show Edit Worksheet and Preview links in final gate, lock all action rows when package is complete, locked banner at page top. |
 | 3.6.2-stable | Patch 3.6.2 — Daily Review UI/UX Fixes | stable | 2026-05-24 | Edit button on all approved gates, outline Regenerate with loading state, instructions link persists after draft generation, hashtags merged into caption copy block. |
@@ -151,6 +152,18 @@ Date: 2026-05-24
 - flatMap step indicator confirmed
 - Version bump confirmed in all four versioning files
 
+## Validation Record — 3.6.5-stable
+
+Date: 2026-05-24
+
+- Build clean, 22 pages
+- @page rule confirmed in globals.css
+- margin: 0.5in confirmed
+- print-color-adjust: exact confirmed
+- main padding: 0 !important confirmed
+- .worksheet max-width: 100% !important confirmed
+- Version bump confirmed in all four versioning files
+
 ## Validation Record — 3.6.0-stable
 
 Date: 2026-05-23
@@ -225,7 +238,7 @@ Date: 2026-05-23
 
 ## Next Phase
 
-Current stable version: 3.6.4-stable
+Current stable version: 3.6.5-stable
 Current working version: none
 Next recommended phase: (none — full planned roadmap complete as of 3.3.0-stable)
 

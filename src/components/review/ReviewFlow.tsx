@@ -85,6 +85,8 @@ const primaryButtonClass =
   'bg-ink text-cream rounded-[10px] px-4 py-2.5 text-sm font-medium font-sans hover:bg-[#1a120e] transition-colors disabled:opacity-40'
 const textButtonClass =
   'bg-transparent text-ink-3 px-2.5 py-2 text-sm font-sans hover:text-ink transition-colors'
+const outlineButtonClass =
+  'border border-[rgba(92,64,51,0.25)] bg-paper text-ink rounded-[10px] px-4 py-2.5 text-sm font-medium font-sans hover:bg-cream transition-colors disabled:opacity-40'
 
 function isDirection(p: GatePayload): p is DirectionPayload {
   return p !== null && typeof p === 'object' && 'topic' in p && 'grade' in p
@@ -285,37 +287,28 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
   function renderDirectionBody(payload: GatePayload, status: GateStatus) {
     if (status === 'approved' && isDirection(payload)) {
       return (
-        <div className="space-y-3">
-          <dl className="grid gap-2 text-[14px]">
+        <dl className="grid gap-2 text-[14px]">
+          <div className="flex justify-between gap-4">
+            <dt className="text-ink-3">Topic</dt>
+            <dd className="font-medium text-ink">{payload.topic}</dd>
+          </div>
+          <div className="flex justify-between gap-4">
+            <dt className="text-ink-3">Grade</dt>
+            <dd className="text-ink">Grade {payload.grade}</dd>
+          </div>
+          <div className="flex justify-between gap-4">
+            <dt className="text-ink-3">Subject</dt>
+            <dd className="text-ink">{SUBJECT_LABELS[payload.subject]}</dd>
+          </div>
+          {payload.objective ? (
             <div className="flex justify-between gap-4">
-              <dt className="text-ink-3">Topic</dt>
-              <dd className="font-medium text-ink">{payload.topic}</dd>
+              <dt className="text-ink-3">Objective</dt>
+              <dd className="max-w-md text-right text-ink">
+                {payload.objective}
+              </dd>
             </div>
-            <div className="flex justify-between gap-4">
-              <dt className="text-ink-3">Grade</dt>
-              <dd className="text-ink">Grade {payload.grade}</dd>
-            </div>
-            <div className="flex justify-between gap-4">
-              <dt className="text-ink-3">Subject</dt>
-              <dd className="text-ink">{SUBJECT_LABELS[payload.subject]}</dd>
-            </div>
-            {payload.objective ? (
-              <div className="flex justify-between gap-4">
-                <dt className="text-ink-3">Objective</dt>
-                <dd className="max-w-md text-right text-ink">
-                  {payload.objective}
-                </dd>
-              </div>
-            ) : null}
-          </dl>
-          <button
-            onClick={() => void resetGate('direction')}
-            disabled={loading === 'direction'}
-            className={textButtonClass}
-          >
-            Edit Direction
-          </button>
-        </div>
+          ) : null}
+        </dl>
       )
     }
 
@@ -513,30 +506,34 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
 
     if (pkg.gates.direction.status === 'approved') {
       return (
-        <div>
-          <button
-            onClick={() => void handleGenerate('worksheet')}
-            disabled={generating === 'worksheet'}
-            className="bg-ink text-cream rounded-[10px] px-5 py-2.5 text-[14px] font-medium hover:bg-[#1a120e] transition-colors disabled:opacity-40"
-          >
-            {generating === 'worksheet' ? 'Generating…' : 'Generate Worksheet'}
-          </button>
+        <div className="space-y-3">
+          <div className="space-y-1.5">
+            <button
+              onClick={() => void handleGenerate('worksheet')}
+              disabled={generating === 'worksheet'}
+              className={primaryButtonClass}
+            >
+              {generating === 'worksheet' ? 'Generating…' : 'Generate Worksheet'}
+            </button>
+            <div>
+              <button
+                type="button"
+                onClick={() => setRedirectTarget('worksheet')}
+                className="text-[11px] text-ink-4 hover:text-ink-2 transition-colors underline-offset-2 underline"
+              >
+                {worksheetInstruction ? 'Edit instructions' : 'Add instructions'}
+              </button>
+              {worksheetInstruction ? (
+                <p className="text-[11px] text-ink-3 mt-0.5 truncate max-w-[280px]">
+                  {worksheetInstruction}
+                </p>
+              ) : null}
+            </div>
+          </div>
           {generateError && generating !== 'worksheet' ? (
-            <p className="text-[12px] text-rose mt-1">{generateError}</p>
+            <p className="text-[12px] text-rose">{generateError}</p>
           ) : null}
-          {worksheetInstruction ? (
-            <p className="text-[11px] text-ink-3 mt-1 truncate max-w-[280px]">
-              Instructions: {worksheetInstruction}
-            </p>
-          ) : null}
-          <button
-            type="button"
-            onClick={() => setRedirectTarget('worksheet')}
-            className="text-[11px] text-ink-4 hover:text-ink-2 transition-colors underline-offset-2 underline mt-0.5"
-          >
-            {worksheetInstruction ? 'Edit instructions' : 'Add instructions'}
-          </button>
-          <p className="text-[12px] text-ink-3 mt-2">
+          <p className="text-[12px] text-ink-3">
             AI will draft a worksheet based on the approved direction.
           </p>
         </div>
@@ -597,6 +594,12 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
   }
 
   function renderCaptionDraft(draft: CaptionDraftResponse) {
+    const hashtagText = draft.hashtags.map((t) => `#${t}`).join('  ')
+    const fullCopyText =
+      draft.hashtags.length > 0
+        ? `${draft.caption}\n\n${hashtagText}`
+        : draft.caption
+
     return (
       <div className="space-y-3">
         <div>
@@ -605,7 +608,7 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
           </p>
           <div className="relative rounded-[10px] border border-[rgba(92,64,51,0.14)] bg-cream-deep p-4">
             <button
-              onClick={() => void navigator.clipboard.writeText(draft.caption)}
+              onClick={() => void navigator.clipboard.writeText(fullCopyText)}
               className="absolute top-2.5 right-3 text-[11px] font-medium text-ink-3 hover:text-ink transition-colors"
             >
               Copy
@@ -613,19 +616,13 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
             <p className="text-[13px] text-ink leading-relaxed pr-10">
               {draft.caption}
             </p>
+            {draft.hashtags.length > 0 ? (
+              <p className="text-[13px] text-ink-2 leading-relaxed mt-3 pt-3 border-t border-[rgba(92,64,51,0.08)]">
+                {hashtagText}
+              </p>
+            ) : null}
           </div>
         </div>
-
-        {draft.hashtags.length > 0 ? (
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-widest text-ink-4 mb-2">
-              Hashtags
-            </p>
-            <p className="text-[13px] text-ink-2 leading-relaxed">
-              {draft.hashtags.map((tag) => `#${tag}`).join('  ')}
-            </p>
-          </div>
-        ) : null}
 
         {draft.provenance.length > 0 ? (
           <ProvenancePanel provenance={draft.provenance} />
@@ -653,30 +650,34 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
 
     if (pkg.gates.worksheet.status === 'approved') {
       return (
-        <div>
-          <button
-            onClick={() => void handleGenerate('caption')}
-            disabled={generating === 'caption'}
-            className="bg-ink text-cream rounded-[10px] px-5 py-2.5 text-[14px] font-medium hover:bg-[#1a120e] transition-colors disabled:opacity-40"
-          >
-            {generating === 'caption' ? 'Generating…' : 'Generate Caption'}
-          </button>
+        <div className="space-y-3">
+          <div className="space-y-1.5">
+            <button
+              onClick={() => void handleGenerate('caption')}
+              disabled={generating === 'caption'}
+              className={primaryButtonClass}
+            >
+              {generating === 'caption' ? 'Generating…' : 'Generate Caption'}
+            </button>
+            <div>
+              <button
+                type="button"
+                onClick={() => setRedirectTarget('caption')}
+                className="text-[11px] text-ink-4 hover:text-ink-2 transition-colors underline-offset-2 underline"
+              >
+                {captionInstruction ? 'Edit instructions' : 'Add instructions'}
+              </button>
+              {captionInstruction ? (
+                <p className="text-[11px] text-ink-3 mt-0.5 truncate max-w-[280px]">
+                  {captionInstruction}
+                </p>
+              ) : null}
+            </div>
+          </div>
           {generateError && generating !== 'caption' ? (
-            <p className="text-[12px] text-rose mt-1">{generateError}</p>
+            <p className="text-[12px] text-rose">{generateError}</p>
           ) : null}
-          {captionInstruction ? (
-            <p className="text-[11px] text-ink-3 mt-1 truncate max-w-[280px]">
-              Instructions: {captionInstruction}
-            </p>
-          ) : null}
-          <button
-            type="button"
-            onClick={() => setRedirectTarget('caption')}
-            className="text-[11px] text-ink-4 hover:text-ink-2 transition-colors underline-offset-2 underline mt-0.5"
-          >
-            {captionInstruction ? 'Edit instructions' : 'Add instructions'}
-          </button>
-          <p className="text-[12px] text-ink-3 mt-2">
+          <p className="text-[12px] text-ink-3">
             AI will draft a Facebook caption based on the worksheet.
           </p>
         </div>
@@ -728,26 +729,56 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
   }
 
   function renderActionRow(gate: GateName, payload: GatePayload, status: GateStatus) {
-    if (
-      gate === 'direction' ||
-      gate === 'template' ||
-      status === 'approved' ||
-      status === 'rejected' ||
-      status === 'redirecting'
-    ) {
-      return null
+    // rejected/redirecting: no action row
+    if (status === 'rejected' || status === 'redirecting') return null
+
+    // approved: Edit button for all gates except final
+    if (status === 'approved') {
+      if (gate === 'final') return null
+      return (
+        <div className="border-t border-[rgba(92,64,51,0.08)] mt-4 pt-4">
+          <button
+            onClick={() => void resetGate(gate)}
+            disabled={loading === gate}
+            className={outlineButtonClass}
+          >
+            {loading === gate ? '…' : 'Edit'}
+          </button>
+        </div>
+      )
     }
+
+    // direction and template pending: approve buttons live inside body renderers
+    if (gate === 'direction' || gate === 'template') return null
+
+    // final gate pending
+    if (gate === 'final') {
+      if (!allPriorApproved) return null
+      return (
+        <div className="border-t border-[rgba(92,64,51,0.08)] mt-4 pt-4 flex flex-wrap items-center gap-2.5">
+          <button
+            onClick={() => approve(gate)}
+            disabled={loading === gate}
+            className={primaryButtonClass}
+          >
+            {loading === gate ? '…' : 'Approve Package'}
+          </button>
+        </div>
+      )
+    }
+
+    // worksheet and caption: draft-driven action row
+    const hasWorksheetDraft = gate === 'worksheet' && worksheetDraft !== null
+    const hasCaptionDraft = gate === 'caption' && captionDraft !== null
 
     const canApproveWorksheet =
       gate === 'worksheet' && (isWorksheet(payload) || worksheetDraft !== null)
     const canApproveCaption =
       gate === 'caption' && (isCaption(payload) || captionDraft !== null)
-    const canApproveFinal = gate === 'final' && allPriorApproved
-    const canApprove = canApproveWorksheet || canApproveCaption || canApproveFinal
+    const canApprove = canApproveWorksheet || canApproveCaption
 
-    if (gate === 'final' && !canApproveFinal) {
-      return null
-    }
+    // no draft yet - return null to avoid showing an empty bordered row
+    if (!canApprove && !hasWorksheetDraft && !hasCaptionDraft) return null
 
     return (
       <div className="border-t border-[rgba(92,64,51,0.08)] mt-4 pt-4 flex flex-wrap items-center gap-2.5">
@@ -768,30 +799,46 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
             className={primaryButtonClass}
           >
             {loading === gate
-              ? '...'
+              ? '…'
               : gate === 'worksheet'
                 ? 'Approve Worksheet'
-                : gate === 'caption'
-                  ? 'Approve Caption'
-                  : 'Approve Package'}
+                : 'Approve Caption'}
           </button>
         ) : null}
-        {gate === 'worksheet' && worksheetDraft ? (
+        {hasWorksheetDraft ? (
           <button
             onClick={() => void handleGenerate('worksheet')}
             disabled={generating === 'worksheet'}
-            className={textButtonClass}
+            className={outlineButtonClass}
           >
-            Regenerate
+            {generating === 'worksheet' ? 'Regenerating…' : 'Regenerate'}
           </button>
         ) : null}
-        {gate === 'caption' && captionDraft ? (
+        {hasCaptionDraft ? (
           <button
             onClick={() => void handleGenerate('caption')}
             disabled={generating === 'caption'}
-            className={textButtonClass}
+            className={outlineButtonClass}
           >
-            Regenerate
+            {generating === 'caption' ? 'Regenerating…' : 'Regenerate'}
+          </button>
+        ) : null}
+        {hasWorksheetDraft ? (
+          <button
+            type="button"
+            onClick={() => setRedirectTarget('worksheet')}
+            className="text-[11px] text-ink-4 hover:text-ink-2 transition-colors underline-offset-2 underline"
+          >
+            {worksheetInstruction ? 'Edit instructions' : 'Add instructions'}
+          </button>
+        ) : null}
+        {hasCaptionDraft ? (
+          <button
+            type="button"
+            onClick={() => setRedirectTarget('caption')}
+            className="text-[11px] text-ink-4 hover:text-ink-2 transition-colors underline-offset-2 underline"
+          >
+            {captionInstruction ? 'Edit instructions' : 'Add instructions'}
           </button>
         ) : null}
       </div>

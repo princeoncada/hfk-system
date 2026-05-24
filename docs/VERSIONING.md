@@ -261,9 +261,9 @@ Date: 2026-05-23
 
 ## Next Phase
 
-Current stable version: 5.2.0-stable
-Current working version: 5.2.1-stable
-Next recommended phase: Phase 5.3.0 — ChromaDB Docs Extension
+Current stable version: 5.2.1-stable
+Current working version: 5.2.2-alpha
+Next recommended phase: Patch 5.2.2 — Graphify Workflow Clarification
 
 
 

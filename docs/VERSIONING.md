@@ -42,9 +42,9 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.6.1-alpha |
+| Version | 3.6.1-stable |
 | Phase | Patch 3.6.1 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-24 |
 | Summary | Patch 3.6.1 — Direction fill-from-plan and edit, full worksheet and caption draft display, Instructions moved to subtle link near Generate button. |
 
@@ -52,7 +52,7 @@ Every version change must be applied to all four simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 3.6.1-alpha | Patch 3.6.1 — Daily Review UI Improvements | alpha | 2026-05-24 | Direction fill-from-plan and edit, full worksheet and caption draft display, Instructions moved to subtle link near Generate button. |
+| 3.6.1-stable | Patch 3.6.1 — Daily Review UI Improvements | stable | 2026-05-24 | Direction fill-from-plan and edit, full worksheet and caption draft display, Instructions moved to subtle link near Generate button. |
 | 3.6.0-stable | Phase 3.6.0 — Instructions Flow | stable | 2026-05-23 | Remove Reject from all gates. Replace Redirect with editable Instructions dialog on worksheet and caption gates. Saved instruction text passed to AI on next generation. |
 | 3.5.6-stable | Patch 3.5.6 — Generate Caption Crash Fix | stable | 2026-05-23 | Bug fix — Generate Caption crash: replace worksheetContent with worksheetTitle in caption fetch body. |
 | 3.5.5-stable | Patch 3.5.5 — Mojibake + Missed Version Label Fix | stable | 2026-05-23 | Docs hardening — fix UTF-8 mojibake for em dash, right arrow, and multiplication sign across PHASE_LOG.md, VERSIONING.md, AI_HANDOFF.md, README.md. Fix missed 3.4.0/3.4.1 version labels in AI_HANDOFF.md. |
@@ -91,6 +91,16 @@ Every version change must be applied to all four simultaneously:
 | 1.0.2-stable | Patch 1.0.2 | stable | 2026-05-21 | Next.js config compatibility — replace next.config.ts with next.config.mjs |
 | 1.0.1-stable | Patch 1.0.1 | stable | 2026-05-21 | Docs hardening — chathead opener + session checkpoint workflow |
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
+
+## Validation Record — 3.6.1-stable
+
+Date: 2026-05-24
+
+- Build clean, 22 pages
+- reset/route.ts exists
+- resetGate, Fill from Plan, Edit Direction confirmed in ReviewFlow.tsx
+- tracking-widest count 5 (all content section labels present)
+- Version bump confirmed in all four versioning files
 
 ## Validation Record — 3.6.0-stable
 
@@ -166,8 +176,8 @@ Date: 2026-05-23
 
 ## Next Phase
 
-Current stable version: 3.6.0-stable
-Current working version: 3.6.1-alpha
+Current stable version: 3.6.1-stable
+Current working version: none
 Next recommended phase: (none — full planned roadmap complete as of 3.3.0-stable)
 
 

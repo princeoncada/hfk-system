@@ -42,11 +42,11 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.6.4-stable |
-| Phase | Patch 3.6.4 |
-| State | stable |
+| Version | 3.6.5-alpha |
+| Phase | Patch 3.6.5 |
+| State | alpha |
 | Date | 2026-05-24 |
-| Summary | Patch 3.6.4 — Print scrollbar fix, multi-page PNG export, preview 404 redirect, Fill from Plan removed, Instructions button inline-right of Generate with items-end, draft persistence via localStorage, step indicator layout fix. |
+| Summary | Patch 3.6.5 - Print/PDF fix: @page rule, margin reset, full-width worksheet on print. |
 
 ## Complete Version History
 

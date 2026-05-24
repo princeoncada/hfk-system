@@ -8,7 +8,8 @@
     "chroma": "chroma run --path ./chroma-data",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "graph:codebase": "powershell -ExecutionPolicy Bypass -File ./scripts/generate-codebase-graph.ps1"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

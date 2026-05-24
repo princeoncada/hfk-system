@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.0.1-stable |
-| Status | stable |
-| Current phase | Patch 5.0.1 — Mojibake + State Column Fix: fix-mojibake.ps1 script, promote.ps1 State field improvement, and 5.0.0-stable State column correction. |
+| Current | 5.0.2-alpha |
+| Status | alpha |
+| Current phase | Patch 5.0.2 — Workflow Doc Hardening: fix four-to-five versioning locations, replace Stable-Promotion Codex Prompt step with .\scripts\promote.ps1, update CLAUDE.md Key File Map with 5.0.x entries. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.8.0-alpha
+**Current Version:** 3.8.0-stable
 
 ## Current Phase
 
-Phase 3.8.0 [3.8.0-alpha] — Direction overhaul: grade/subject locked from planner, topic read-only with AI regenerate, objective editable, direction approval syncs topic/objective back to planner — alpha.
+Phase 3.8.0 [3.8.0-stable] — Direction overhaul: grade/subject locked from planner, topic read-only with AI regenerate, objective editable, direction approval syncs topic/objective back to planner — stable.
 
 ## Architecture Invariant
 

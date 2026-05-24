@@ -6,17 +6,19 @@
 
 Patch 5.0.2 [5.0.2-stable] — Workflow Doc Hardening.
 
-Status: alpha
+Status: stable
 
 The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 The 5.x workflow infrastructure series is now active.
 
-Current scope in alpha: CLAUDE.md, docs/WORKFLOW.md, and versioning docs
+Current scope complete: CLAUDE.md, docs/WORKFLOW.md, and versioning docs
 updated for five versioning locations and promote.ps1 stable-promotion flow.
 
 Next recommended work: Phase 5.1.0 — Automation Scripts.
 
 ## Completed Phase
+
+Patch 5.0.2 [5.0.2-stable] — Workflow Doc Hardening: corrected workflow docs for five versioning locations, promote.ps1 stable-promotion flow, and 5.0.x Key File Map entries; validation passed — complete.
 
 Patch 5.0.1 [5.0.1-stable] — Mojibake + State Column Fix: docs mojibake repaired, fix-mojibake wrapper added, promote.ps1 State field handling improved, validation passed — complete.
 
@@ -954,6 +956,7 @@ Modified files:
 ## Future Phase Queue
 
 - Phase 5.1.0 — Automation Scripts
+- hfk-token-dashboard has been scoped as a separate standalone project, not part of the HFK phase queue.
 
 ## Recommended Next Step
 

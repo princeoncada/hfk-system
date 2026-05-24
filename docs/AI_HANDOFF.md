@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.1.1-alpha
+**Current Version:** 5.1.1-stable
 
 ## Current Phase
 
-Patch 5.1.1 [5.1.1-alpha] — Future Plans Queue
+Patch 5.1.1 [5.1.1-stable] — Future Plans Queue
 
 Status: alpha
 
@@ -13,7 +13,7 @@ The 5.x workflow infrastructure series is now active.
 
 Current scope: docs/FUTURE_PLANS.md is being updated with completed 5.0.x
 and 5.1.0 phases plus the planned 5.2.0–5.5.0 queue. Versioning surfaces
-are bumped to 5.1.1-alpha for this documentation-only patch.
+are bumped to 5.1.1-stable for this documentation-only patch.
 
 Next recommended work: Phase 5.2.0 — Graphify Integration.
 
@@ -987,6 +987,7 @@ dev.
   only database dependency permitted, and it is local-only.
 - Do not embed actual image or template files into ChromaDB. Only metadata
   records for non-text assets are indexed.
+
 
 
 

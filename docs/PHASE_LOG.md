@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 4.4.0-alpha | Phase 4.4.0 | alpha | 2026-05-24 | Live Preview + Publish: right-panel Style/Preview toggle with scaled DynamicWorksheetTemplate live preview driven by current TemplateDefinition state and sample worksheet content. Files: TemplatePreview.tsx, TemplateSlotEditor.tsx, versioning docs. |
+| 4.4.0-stable | Phase 4.4.0 | stable | 2026-05-24 | Live Preview + Publish: right-panel Style/Preview toggle with scaled DynamicWorksheetTemplate live preview driven by current TemplateDefinition state and sample worksheet content. Files: TemplatePreview.tsx, TemplateSlotEditor.tsx, versioning docs. |
 | 4.3.0-stable | Phase 4.3.0 | stable | 2026-05-24 | Property Panel: right-side editor panel with global palette color controls, footer text, avatar selector, selected-slot style overrides, and two-column template editor layout. Files: PropertyPanel.tsx, TemplateSlotEditor.tsx, SortableSlotRow.tsx, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs. |
 | 4.2.0-stable | Phase 4.2.0 | stable | 2026-05-24 | Canvas + Drag-and-Drop Slots: dnd-kit slot editor, reorderable TemplateSlot list, add/remove slot controls, save API route, new/edit template pages wired to editor. Files: TemplateSlotEditor.tsx, SortableSlotRow.tsx, editor/index.ts, api/templates/save/route.ts, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs. |
 | 4.1.0-stable | Phase 4.1.0 | stable | 2026-05-24 | Template Routes + List Page: /templates nav entry, built-in/custom template list page, New Template placeholder, and edit placeholder routes. Files: SidebarNav.tsx, templates/page.tsx, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs, FUTURE_PLANS.md. |
@@ -64,11 +64,19 @@ Date: 2026-05-24
 
 # Phase Log
 
+## Validation Record — 4.4.0-stable
+
+Date: 2026-05-24
+
+- 10/10 checks passed
+- Build clean at 25 pages
+- Files validated: TemplatePreview.tsx, TemplateSlotEditor.tsx, docs/VERSIONING.md, docs/AI_HANDOFF.md, docs/PHASE_LOG.md, README.md
+
 ## Phase 4.4.0 — Live Preview + Publish
 
-Status: alpha
+Status: stable
 
-Version: 4.4.0-alpha
+Version: 4.4.0-stable
 
 Date: 2026-05-24
 
@@ -87,7 +95,7 @@ Changes:
 - Added realistic sample WorksheetContent for live preview rendering.
 - Added Style/Preview toggle to TemplateSlotEditor right panel.
 - Derived currentDefinition from editor state so palette, slot, footer, and avatar changes preview immediately.
-- Bumped all four versioning files to 4.4.0-alpha.
+- Promoted all four versioning files to 4.4.0-stable.
 
 ## Validation Record — 4.3.0-stable
 

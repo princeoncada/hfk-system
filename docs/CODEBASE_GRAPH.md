@@ -1,8 +1,8 @@
-# HFK Publishing Engine — Graphify-Ready Codebase Graph
+# HFK Publishing Engine — Graphify Codebase Graph
 
 ## Purpose
 
-`codebase-graph.json` is the read-first map for code navigation. Graphify is the intended authoritative generator for this artifact. The committed graph gives AI sessions a compact map of files, symbols, imports, route surfaces, scripts, and docs so they can choose targeted source reads instead of scanning several files at the start of each implementation prompt.
+`codebase-graph.json` is the read-first map for code navigation. Graphify is the authoritative generator for this artifact. The committed graph gives AI sessions a compact map of files, symbols, imports, route surfaces, scripts, and docs so they can choose targeted source reads instead of scanning several files at the start of each implementation prompt.
 
 ## Refreshing the Graph
 
@@ -12,9 +12,9 @@ Run:
 .\scripts\generate-codebase-graph.ps1
 ```
 
-When the `graphify` CLI is installed, the wrapper uses it and normalizes the output into `codebase-graph.json`. If Graphify is unavailable, the wrapper writes a degraded fallback graph using `scripts/generate_codebase_graph.py`; that fallback is only a bridge until the real Graphify CLI is installed and run.
+The wrapper uses the installed `graphify` CLI from the PyPI package `graphifyy` and normalizes the output into `codebase-graph.json`. It also leaves Graphify's native outputs in `graphify-out/graph.json` and `graphify-out/GRAPH_REPORT.md`.
 
-Use the fallback explicitly only when needed:
+Use the degraded fallback explicitly only when Graphify is unavailable:
 
 ```powershell
 .\scripts\generate-codebase-graph.ps1 -FallbackOnly
@@ -26,4 +26,4 @@ The generator excludes `content/`, `exports/`, `archives/`, `assets/avatars/`, `
 
 ## AI Usage Rule
 
-Codex should read `STATE.json`, then `codebase-graph.json`, before choosing implementation files. The graph does not replace source reads for edits; it narrows them to the few files most likely to matter. A future 5.2.1 patch should install/run real Graphify and replace the fallback-derived graph with Graphify-derived output.
+Codex should read `STATE.json`, then `codebase-graph.json`, before choosing implementation files. For orientation-heavy work, read `graphify-out/GRAPH_REPORT.md` before source files. The graph does not replace source reads for edits; it narrows them to the few files most likely to matter.

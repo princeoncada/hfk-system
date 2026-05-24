@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 5.2.0-alpha | Phase 5.2.0 | alpha | 2026-05-24 | Graphify-Ready Codebase Graph: committed codebase-graph.json, added Graphify wrapper and degraded fallback scanner, and wired the graph into Codex read-first workflow docs. |
 | 5.1.1-stable | Patch 5.1.1 | stable | 2026-05-24 | Future Plans Queue: populated FUTURE_PLANS.md with 5.0.x + 5.1.0 completions and 5.2.0–5.5.0 planned phases (Graphify, ChromaDB Docs, Case Studies, Advanced Memory) with token optimization rationale. |
 | 5.1.0-stable | Phase 5.1.0 | stable | 2026-05-24 | Automation Scripts: commit-phase.ps1, validate.ps1, docs/COMPACT_STRATEGY.md, CLAUDE.md and WORKFLOW.md wired to new scripts. |
 | 5.0.2-stable | Patch 5.0.2 | stable | 2026-05-24 | Workflow Doc Hardening: fix four-to-five versioning locations, replace Stable-Promotion Codex Prompt step with .\scripts\promote.ps1, update CLAUDE.md Key File Map with 5.0.x entries. |
@@ -33,9 +34,45 @@ Date: 2026-05-24
 
 # Phase Log
 
-## Patch 5.1.1 — Future Plans Queue
+## Phase 5.2.0 — Graphify-Ready Codebase Graph
 
 Status: alpha
+
+Version: 5.2.0-alpha
+
+Date: 2026-05-24
+
+Scope: codebase-graph.json, Graphify wrapper scripts, graph usage docs, and read-first workflow wiring.
+
+Files:
+- codebase-graph.json
+- scripts/generate-codebase-graph.ps1
+- scripts/generate_codebase_graph.py
+- docs/CODEBASE_GRAPH.md
+- docs/CODEX_RULES.md
+- CLAUDE.md
+- docs/WORKFLOW.md
+- package.json
+- docs/FUTURE_PLANS.md
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- README.md
+- STATE.json
+
+Changes:
+- Added committed codebase-graph.json as the AI read-first navigation map.
+- Added scripts/generate-codebase-graph.ps1 wrapper for refreshing the graph through Graphify when installed.
+- Added scripts/generate_codebase_graph.py degraded fallback scanner that excludes protected paths and emits file, symbol, and import graph data.
+- Added docs/CODEBASE_GRAPH.md with refresh and usage guidance.
+- Wired codebase-graph.json into CLAUDE.md, docs/WORKFLOW.md, and docs/CODEX_RULES.md read-first guidance.
+- Added npm script graph:codebase for graph refresh convenience.
+- Bumped all five versioning locations to 5.2.0-alpha.
+- Deferred literal Graphify CLI installation and generated Graphify output to a follow-up 5.2.1 patch.
+
+## Patch 5.1.1 — Future Plans Queue
+
+Status: stable
 
 Version: 5.1.1-stable
 

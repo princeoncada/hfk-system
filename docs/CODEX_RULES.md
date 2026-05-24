@@ -15,6 +15,7 @@ Reference this file in prompts instead of repeating these rules inline.
 
 - Read all files listed in the prompt's READ FIRST section before writing any code
 - Read STATE.json, then codebase-graph.json, before selecting source files when the task touches app code
+- Read graphify-out/GRAPH_REPORT.md for orientation-heavy app-code work before opening source files
 - Wrap all ChromaDB and external service calls in try/catch (graceful degradation when offline)
 - Use 'use client' only when the component uses React hooks or browser APIs
 - Use inline styles (not Tailwind classes) for values driven by dynamic or user data

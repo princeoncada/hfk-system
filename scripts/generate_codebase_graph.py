@@ -17,7 +17,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "codebase-graph.json"
-GRAPHIFY_OUTPUTS = [ROOT / "graphify-out" / "graph.json", ROOT / "graph.json"]
+VERSION = "5.2.1-alpha"
+GRAPHIFY_DIR = ROOT / "graphify-out"
+GRAPHIFY_GRAPH = GRAPHIFY_DIR / "graph.json"
+GRAPHIFY_REPORT = GRAPHIFY_DIR / "GRAPH_REPORT.md"
 PROTECTED_DIRS = {
     "content",
     "exports",
@@ -145,7 +148,7 @@ def build_fallback_graph() -> dict:
 
     return {
         "schemaVersion": "hfk-codebase-graph/v1",
-        "version": "5.2.0-alpha",
+        "version": VERSION,
         "generatedAt": date.today().isoformat(),
         "generator": "scripts/generate_codebase_graph.py fallback scanner",
         "graphify": {
@@ -173,35 +176,54 @@ def try_graphify() -> dict | None:
     if not shutil.which("graphify"):
         return None
 
-    completed = subprocess.run(["graphify", ".", "--no-viz"], cwd=ROOT, capture_output=True, text=True)
-    if completed.returncode != 0:
+    extract = subprocess.run(
+        ["graphify", "extract", ".", "--out", ".", "--no-cluster"],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+    if extract.returncode != 0:
         return None
 
-    for output in GRAPHIFY_OUTPUTS:
-        if output.exists():
-            graph = json.loads(output.read_text(encoding="utf-8"))
-            return {
-                "schemaVersion": "hfk-codebase-graph/v1",
-                "version": "5.2.0-alpha",
-                "generatedAt": date.today().isoformat(),
-                "generator": "graphify CLI",
-                "graphify": {
-                    "preferredCli": "graphify",
-                    "package": "graphifyy",
-                    "fallbackUsed": False,
-                    "source": output.relative_to(ROOT).as_posix(),
-                },
-                "readFirst": [
-                    "STATE.json",
-                    "codebase-graph.json",
-                    "docs/CODEX_RULES.md",
-                    "docs/VERSIONING.md",
-                    "docs/AI_HANDOFF.md",
-                    "docs/PHASE_LOG.md",
-                    "docs/WORKFLOW.md",
-                ],
-                "graph": graph,
-            }
+    cluster = subprocess.run(
+        ["graphify", "cluster-only", ".", "--no-viz"],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+    if cluster.returncode != 0 or not GRAPHIFY_GRAPH.exists():
+        return None
+
+    graph = json.loads(GRAPHIFY_GRAPH.read_text(encoding="utf-8"))
+    report_excerpt = ""
+    if GRAPHIFY_REPORT.exists():
+        report_excerpt = "\n".join(GRAPHIFY_REPORT.read_text(encoding="utf-8", errors="replace").splitlines()[:80])
+
+    return {
+        "schemaVersion": "hfk-codebase-graph/v1",
+        "version": VERSION,
+        "generatedAt": date.today().isoformat(),
+        "generator": "graphify CLI via graphifyy",
+        "graphify": {
+            "preferredCli": "graphify",
+            "package": "graphifyy",
+            "fallbackUsed": False,
+            "graph": GRAPHIFY_GRAPH.relative_to(ROOT).as_posix(),
+            "report": GRAPHIFY_REPORT.relative_to(ROOT).as_posix(),
+        },
+        "readFirst": [
+            "STATE.json",
+            "codebase-graph.json",
+            "graphify-out/GRAPH_REPORT.md",
+            "docs/CODEX_RULES.md",
+            "docs/VERSIONING.md",
+            "docs/AI_HANDOFF.md",
+            "docs/PHASE_LOG.md",
+            "docs/WORKFLOW.md",
+        ],
+        "reportExcerpt": report_excerpt,
+        "graph": graph,
+    }
     return None
 
 

@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 4.1.0-alpha | Phase 4.1.0 | alpha | 2026-05-24 | Template Routes + List Page: /templates nav entry, built-in/custom template list page, New Template placeholder, and edit placeholder routes. Files: SidebarNav.tsx, templates/page.tsx, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs, FUTURE_PLANS.md. |
 | 4.0.0-stable | Phase 4.0.0 | stable | 2026-05-24 | Template definition schema (TemplateDefinition, TemplatePalette, TemplateSlot), template store (vault/templates/), DynamicWorksheetTemplate renderer, integrated into preview, builder, and review flow template selector. Sample modern_v1 template included. |
 | 3.8.0-stable | Phase 3.8.0 | stable | 2026-05-24 | Direction overhaul: grade/subject locked from planner, topic read-only with AI regenerate, objective editable, direction approval syncs topic/objective back to planner. |
 | 3.7.1-stable | Patch 3.7.1 - Export Crop + Instructions Icon Fix | stable | 2026-05-24 | PNG export crop fix (scrollWidth/minWidth), PDF print crop fix (zero @page margin, 816px worksheet width), instructions button replaced with Lucide Plus/SlidersHorizontal icon. |
@@ -59,6 +60,35 @@ Date: 2026-05-24
 - Files validated: template.types.ts, template.store.ts, DynamicWorksheetTemplate.tsx, dynamic/index.ts, vault/templates/modern_v1.json, preview/[id]/page.tsx, worksheets/[id]/page.tsx, worksheets/new/page.tsx, WorksheetBuilder.tsx, review/page.tsx, ReviewFlow.tsx
 
 # Phase Log
+
+## Phase 4.1.0 — Template Routes + List Page
+
+Status: alpha
+
+Version: 4.1.0-alpha
+
+Date: 2026-05-24
+
+Scope: Scaffold template routes and list page.
+
+Files:
+- src/components/shell/SidebarNav.tsx
+- src/app/templates/page.tsx
+- src/app/templates/new/page.tsx
+- src/app/templates/[id]/edit/page.tsx
+- docs/FUTURE_PLANS.md
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- README.md
+
+Changes:
+- Added Templates sidebar navigation entry.
+- Added /templates list page for built-in and custom vault templates.
+- Added placeholder /templates/new route.
+- Added placeholder /templates/[id]/edit route with template lookup and not-found state.
+- Updated 4.x roadmap and versioning docs.
+
 
 ## Patch 3.6.4 Ã¢â‚¬â€ Daily Review UX Polish + Print/Export Fixes
 

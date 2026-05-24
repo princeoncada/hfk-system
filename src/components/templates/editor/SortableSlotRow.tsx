@@ -8,6 +8,8 @@ interface SortableSlotRowProps {
   slot: TemplateSlot
   onRemove: () => void
   canRemove: boolean
+  onSelect: () => void
+  isSelected: boolean
 }
 
 const SLOT_COLOR: Record<TemplateSlot['type'], string> = {
@@ -27,6 +29,8 @@ export function SortableSlotRow({
   slot,
   onRemove,
   canRemove,
+  onSelect,
+  isSelected,
 }: SortableSlotRowProps) {
   const {
     attributes,
@@ -43,7 +47,10 @@ export function SortableSlotRow({
         transform: CSS.Transform.toString(transform),
         transition,
       }}
-      className="mb-2 flex items-center gap-3 rounded-lg border border-[rgba(92,64,51,0.1)] bg-paper p-3"
+      onClick={onSelect}
+      className={`mb-2 flex cursor-pointer items-center gap-3 rounded-lg border border-[rgba(92,64,51,0.1)] bg-paper p-3 ${
+        isSelected ? 'ring-2 ring-inset ring-ink' : ''
+      }`}
     >
       <button
         type="button"
@@ -68,7 +75,10 @@ export function SortableSlotRow({
       <div className="flex-1" />
       <button
         type="button"
-        onClick={onRemove}
+        onClick={(event) => {
+          event.stopPropagation()
+          onRemove()
+        }}
         disabled={!canRemove}
         className="px-1 text-[16px] leading-none text-ink-4 hover:text-rose disabled:cursor-not-allowed disabled:opacity-30"
       >

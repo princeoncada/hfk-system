@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.6.3-alpha | Patch 3.6.3 — Final Package Lock and Worksheet Link | alpha | 2026-05-24 | Save AI worksheet to content/worksheets/ on final approval, Edit Worksheet and Preview links in final gate, locked banner + locked action rows when package complete. Files: src/lib/approval.actions.ts, src/components/review/ReviewFlow.tsx. |
 | 3.6.2-stable | Patch 3.6.2 — Daily Review UI/UX Fixes | stable | 2026-05-24 | Edit button on all approved non-final gates, empty border removed when no draft, outline Regenerate with loading state, instructions link persists after generation, hashtags merged into caption copy block. Files: src/components/review/ReviewFlow.tsx. |
 | 3.6.1-stable | Patch 3.6.1 — Daily Review UI Improvements | stable | 2026-05-24 | Direction edit/fill, full draft content display, Instructions UX. Files: src/app/api/approval/gate/[gate]/reset/route.ts, src/components/review/ReviewFlow.tsx. Validation: all 7 checks passed, build clean, 22 pages. |
 | 3.6.0-stable | Phase 3.6.0 — Instructions Flow | stable | 2026-05-23 | Remove Reject, redesign Redirect as Instructions flow. Files: src/lib/ai.types.ts, src/app/api/ai/draft/worksheet/route.ts, src/app/api/ai/draft/caption/route.ts, src/components/review/RedirectModal.tsx, src/components/review/ReviewFlow.tsx. |
@@ -44,6 +45,26 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Patch 3.6.3 — Final Package Lock and Worksheet Link
+
+Status: alpha
+
+Version: 3.6.3-alpha
+
+Date: 2026-05-24
+
+Scope: approval.actions.ts + ReviewFlow.tsx
+
+Files:
+- src/lib/approval.actions.ts
+- src/components/review/ReviewFlow.tsx
+
+Changes:
+- approval.actions.ts: saveWorksheetContent() converts approved AI draft to WorksheetContent and calls saveWorksheet on final gate approval. isTemplatePayload type guard added. TemplatePayload imported. Wrapped in try/catch so approval never fails if save fails.
+- ReviewFlow.tsx: isPackageComplete derived const. renderActionRow returns null when isPackageComplete. renderFinalBody approved state shows Edit Worksheet and Preview links using Next.js Link. Locked banner rendered above step circles when isPackageComplete.
+
+Validation: pending
 
 ## Patch 3.6.2 — Daily Review UI/UX Fixes
 

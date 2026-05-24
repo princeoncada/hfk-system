@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 3.6.4-alpha | Patch 3.6.4 — Daily Review UX Polish + Print/Export Fixes | alpha | 2026-05-24 | Print/export fixes, Fill from Plan removed, Instructions inline layout, localStorage persistence, step indicator spacing. Files: globals.css, preview/[id]/page.tsx, preview/[id]/PreviewControls.tsx, review/page.tsx, ReviewFlow.tsx. |
+| 3.6.4-stable | Patch 3.6.4 — Daily Review UX Polish + Print/Export Fixes | stable | 2026-05-24 | Print/export fixes, Fill from Plan removed, Instructions inline layout, localStorage persistence, step indicator spacing. Files: globals.css, preview/[id]/page.tsx, preview/[id]/PreviewControls.tsx, review/page.tsx, ReviewFlow.tsx. |
 | 3.6.3-stable | Patch 3.6.3 — Final Package Lock and Worksheet Link | stable | 2026-05-24 | Save AI worksheet to content/worksheets/ on final approval, Edit Worksheet and Preview links in final gate, locked banner + locked action rows when package complete. Files: src/lib/approval.actions.ts, src/components/review/ReviewFlow.tsx. |
 | 3.6.2-stable | Patch 3.6.2 — Daily Review UI/UX Fixes | stable | 2026-05-24 | Edit button on all approved non-final gates, empty border removed when no draft, outline Regenerate with loading state, instructions link persists after generation, hashtags merged into caption copy block. Files: src/components/review/ReviewFlow.tsx. |
 | 3.6.1-stable | Patch 3.6.1 — Daily Review UI Improvements | stable | 2026-05-24 | Direction edit/fill, full draft content display, Instructions UX. Files: src/app/api/approval/gate/[gate]/reset/route.ts, src/components/review/ReviewFlow.tsx. Validation: all 7 checks passed, build clean, 22 pages. |
@@ -49,9 +49,9 @@
 
 ## Patch 3.6.4 — Daily Review UX Polish + Print/Export Fixes
 
-Status: alpha
+Status: stable
 
-Version: 3.6.4-alpha
+Version: 3.6.4-stable
 
 Date: 2026-05-24
 
@@ -71,7 +71,10 @@ Changes:
 - review/page.tsx: planDay/plan fetching removed; ReviewFlow receives only pkg
 - ReviewFlow.tsx: useEffect added; planDay prop removed; dirForm starts empty; Fill from Plan button removed; gate description simplified; localStorage persistence for worksheetDraft/captionDraft/instructions; resetGate clears worksheet/caption draft state; Instructions button inline-right of Generate with flex items-end; action row items-center → items-end; step indicator rewritten with flatMap fixed-width steps + flex-1 connectors
 
-Validation: pending
+Validation:
+- Build clean
+- All 16 checks passed
+- Version bump confirmed in all four versioning files
 
 ## Patch 3.6.3 — Final Package Lock and Worksheet Link
 

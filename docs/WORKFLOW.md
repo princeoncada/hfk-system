@@ -91,6 +91,7 @@ Every Codex prompt must include:
 Read-first list (mandatory):
 - STATE.json
 - codebase-graph.json when the prompt touches app code or scripts
+- graphify-out/GRAPH_REPORT.md for orientation-heavy app-code changes
 - docs/VERSIONING.md
 - docs/AI_HANDOFF.md
 - docs/PHASE_LOG.md

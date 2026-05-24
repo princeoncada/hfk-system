@@ -8,8 +8,8 @@ Grades 1Ã¢â‚¬â€œ6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 4.5.0-alpha |
-| Status | alpha |
+| Current | 4.5.0-stable |
+| Status | stable |
 | Current phase | Phase 4.5.0 — Vault Ingestion + AI Template Recommendation: saved TemplateDefinitions ingest into template_definitions Chroma collection, review flow queries best-fit custom template, recommendation badge appears in selector, and approved custom template reuse score increments. |
 
 Full planned roadmap complete as of 3.3.0-stable.

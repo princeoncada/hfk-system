@@ -1,8 +1,13 @@
 import ReviewFlow from '@/components/review/ReviewFlow'
 import { getPackage } from '@/lib/approval.store'
+import { getPlan } from '@/lib/planning.store'
+import type { PlanDay } from '@/lib/planning.types'
 
 export default async function ReviewPage() {
   const pkg = getPackage()
+  const month = pkg.date.slice(0, 7)
+  const plan = getPlan(month)
+  const planDay: PlanDay | null = plan?.days.find((d) => d.date === pkg.date) ?? null
 
   return (
     <>
@@ -17,7 +22,7 @@ export default async function ReviewPage() {
           <p className="text-[13px] text-ink-3 mb-1">{pkg.date}</p>
         </div>
       </div>
-      <ReviewFlow pkg={pkg} />
+      <ReviewFlow pkg={pkg} planDay={planDay} />
     </>
   )
 }

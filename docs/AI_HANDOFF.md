@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.1.0-alpha
+**Current Version:** 5.1.0-stable
 
 ## Current Phase
 
-Phase 5.1.0 [5.1.0-alpha] — Automation Scripts
+Phase 5.1.0 [5.1.0-stable] — Automation Scripts
 
 Status: alpha
 
@@ -983,6 +983,7 @@ dev.
   only database dependency permitted, and it is local-only.
 - Do not embed actual image or template files into ChromaDB. Only metadata
   records for non-text assets are indexed.
+
 
 
 

@@ -1,23 +1,27 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.1.1-stable
+**Current Version:** 5.2.0-alpha
 
 ## Current Phase
 
-Patch 5.1.1 [5.1.1-stable] — Future Plans Queue
+Phase 5.2.0 [5.2.0-alpha] — Graphify-Ready Codebase Graph
 
 Status: alpha
 
 The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 The 5.x workflow infrastructure series is now active.
 
-Current scope: docs/FUTURE_PLANS.md is being updated with completed 5.0.x
-and 5.1.0 phases plus the planned 5.2.0–5.5.0 queue. Versioning surfaces
-are bumped to 5.1.1-stable for this documentation-only patch.
+Current scope: codebase-graph.json is now the committed code navigation map.
+scripts/generate-codebase-graph.ps1 wraps Graphify when installed and falls
+back to scripts/generate_codebase_graph.py as a degraded bridge only.
+CLAUDE.md, docs/WORKFLOW.md, and docs/CODEX_RULES.md wire the graph into
+read-first behavior.
 
-Next recommended work: Phase 5.2.0 — Graphify Integration.
+Next recommended work: Complete Phase 5.2.0 validation, then promote to stable. Then open 5.2.1 for real Graphify CLI output.
 
 ## Completed Phase
+
+Patch 5.1.1 [5.1.1-stable] — Future Plans Queue: populated FUTURE_PLANS.md with 5.0.x + 5.1.0 completions and 5.2.0–5.5.0 planned phases with token optimization rationale — complete.
 
 Phase 5.1.0 [5.1.0-stable] — Automation Scripts: commit-phase.ps1 single-file commit helper, validate.ps1 standard validation runner, docs/COMPACT_STRATEGY.md context window management strategy, and CLAUDE.md/WORKFLOW.md script wiring — complete.
 
@@ -966,7 +970,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Complete Patch 5.1.1 validation, then promote to stable. Next implementation phase is 5.2.0 — Graphify Integration.
+Complete Phase 5.2.0 validation, then promote to stable. Next implementation phase is 5.3.0 — ChromaDB Docs Extension.
 
 ## What Exists
 

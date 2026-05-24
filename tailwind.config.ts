@@ -23,6 +23,8 @@ const config: Config = {
         'rose-tint': '#F2DCD6',
         yellow: '#E8C75B',
         'yellow-tint': '#F6E9B8',
+        'play-sky': '#4A90D9',
+        'play-sky-light': '#D6EAF8',
         'warm-brown': '#5C4033',
         'sage-green': '#87A878',
         'dusty-rose': '#D4897A',
@@ -33,6 +35,8 @@ const config: Config = {
         body: ['var(--font-inter)', 'sans-serif'],
         display: ['var(--font-display)', 'serif'],
         mono: ['var(--font-mono)', 'monospace'],
+        'playful-heading': ['var(--font-fredoka)', 'sans-serif'],
+        'playful-body': ['var(--font-nunito)', 'sans-serif'],
       },
       boxShadow: {
         card: '0 1px 0 rgba(92,64,51,0.04), 0 1px 3px rgba(92,64,51,0.06)',

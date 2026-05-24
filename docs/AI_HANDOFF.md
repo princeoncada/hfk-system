@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.6.0-stable
+## Current Version: 3.6.1-alpha
 
 ## Current Phase
 
-Phase 3.6.0 [3.6.0-stable] — Instructions Flow — stable.
+Patch 3.6.1 [3.6.1-alpha] — Daily Review UI Improvements — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,23 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Patch 3.6.1 [3.6.1-alpha] — Daily Review UI Improvements
+
+Status: alpha
+
+Version: 3.6.1-alpha
+
+Scope: Direction edit/fill, full draft content display, Instructions UX.
+
+Files:
+- src/app/api/approval/gate/[gate]/reset/route.ts
+- src/components/review/ReviewFlow.tsx
+
+Purpose: Add a reset route so approved direction can return to pending for
+editing, add Fill from Plan to the direction form, expand worksheet and
+caption draft displays to show full content, and move Instructions from the
+action row to a subtle link near Generate.
 
 ## Phase 3.6.0 [3.6.0-stable] — Instructions Flow
 

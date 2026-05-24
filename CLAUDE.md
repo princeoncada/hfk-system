@@ -31,7 +31,8 @@ You:
 - Provide Section 2 validation commands as a PowerShell block for
   the user to run and paste back
 - Analyze validation output and report pass/fail
-- Write post-validation documentation Codex prompts
+- Provide .\scripts\promote.ps1 stable-promotion block after validation passes
+- Write post-validation session checkpoint Codex prompts (plain txt code block)
 - Provide 1-by-1 git commit command blocks for the user to run —
   one git add + one git commit per file, no exceptions, no grouping
 - Provide the git push origin master PowerShell block in the same
@@ -107,7 +108,7 @@ Run this at the start of every session before doing anything else:
 2. Diagnose root cause
 3. If the bug was discovered after a stable release, it is always a Z+1
    patch. The fix prompt must include version bumps from X.Y.Z-stable to
-   X.Y.(Z+1)-alpha in all four versioning locations.
+   X.Y.(Z+1)-alpha in all five versioning locations.
 4. Ask any clarifying questions upfront — wait for answers
 5. If no questions are needed, confirm that, then write the 2-section
    fix prompt
@@ -128,21 +129,21 @@ Run this at the start of every session before doing anything else:
    artifacts in the same response:
    - Validation summary (what passed, files changed, remaining work)
    - Implementation commit block (git add + git commit per file;
-     git status --short; user runs this BEFORE stable-promotion prompt)
-   - Stable-promotion Codex prompt (plain txt code block)
+     git status --short; user runs this BEFORE running promote.ps1)
+   - Stable-promotion block: .\scripts\promote.ps1 PowerShell command
    - Stable-promotion commit block
    - git push origin master PowerShell block
-   The stable-promotion prompt and two-section response must travel
+   The promote.ps1 block and stable-promotion commit block must travel
    together in the same message.
 4. If failures exist -> diagnose, write a Codex fix prompt
 
 ### After Validation Passes
 This section describes SECTION 1 and SECTION 2 of the same message
-that contains the stable-promotion Codex prompt. All five items must
+that contains the promote.ps1 block. All five items must
 appear in one message — no AI turn between them:
 - Validation summary
 - Implementation commit block
-- Stable-promotion Codex prompt
+- Stable-promotion block: .\scripts\promote.ps1 PowerShell command
 - Stable-promotion commit block (SECTION 1 + SECTION 2 below)
   Each commit block (implementation and stable-promotion) must have
   exactly one git add and one git commit per file. Never group multiple
@@ -155,7 +156,7 @@ SECTION 1: Stable-Promotion Confirmation
 
 SECTION 2: Stable-Promotion Commit Block
 - One PowerShell block
-- git add + git commit per docs file changed
+- git add + git commit per file changed
 - git status --short at the end
 - Followed immediately by a separate git push origin master PowerShell block
 
@@ -229,11 +230,12 @@ X = major (architectural shift or production milestone)
 States: alpha (implemented, not tested) → beta (partial validation)
 → stable (fully validated, committed)
 
-Four versioning locations — always update all four together:
+Five versioning locations — always update all five together:
 1. docs/VERSIONING.md
 2. docs/AI_HANDOFF.md
 3. docs/PHASE_LOG.md
 4. README.md
+5. STATE.json
 
 ## Key File Map
 
@@ -253,6 +255,11 @@ Four versioning locations — always update all four together:
 | Content types | src/lib/types.ts |
 | Content loader | src/lib/content.ts |
 | Template directory | src/components/templates/ |
+| Machine-readable version + state | STATE.json |
+| Operational workflow reference | docs/WORKFLOW.md |
+| Codex standing rules | docs/CODEX_RULES.md |
+| Stable promotion helper | scripts/promote.ps1 |
+| Mojibake repair script | scripts/fix-mojibake.ps1 |
 
 ## Protected Paths
 

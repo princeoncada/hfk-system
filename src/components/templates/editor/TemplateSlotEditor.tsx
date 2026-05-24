@@ -17,11 +17,14 @@ import type {
   TemplateDefinition,
   TemplatePalette,
   TemplateSlot,
+  TemplateSlotStyle,
 } from '@/lib/template.types'
+import { PropertyPanel } from './PropertyPanel'
 import { SortableSlotRow } from './SortableSlotRow'
 
 interface TemplateSlotEditorProps {
   initialDefinition?: TemplateDefinition
+  avatarOptions: string[]
 }
 
 const SLOT_TYPES: Array<{ type: SlotType; label: string }> = [
@@ -62,15 +65,26 @@ function slugify(name: string) {
 
 export function TemplateSlotEditor({
   initialDefinition,
+  avatarOptions,
 }: TemplateSlotEditorProps) {
   const router = useRouter()
   const [name, setName] = useState(initialDefinition?.name ?? '')
   const [description, setDescription] = useState(
     initialDefinition?.description ?? '',
   )
+  const [palette, setPalette] = useState<TemplatePalette>(
+    initialDefinition?.palette ?? DEFAULT_PALETTE,
+  )
+  const [avatar, setAvatar] = useState<string | undefined>(
+    initialDefinition?.avatar,
+  )
+  const [footerText, setFooterText] = useState(
+    initialDefinition?.footerText ?? '',
+  )
   const [slots, setSlots] = useState<TemplateSlot[]>(() =>
     initialDefinition?.slots ?? createDefaultSlots(),
   )
+  const [selectedSlotId, setSelectedSlotId] = useState<string | null>(null)
   const [showTypePicker, setShowTypePicker] = useState(false)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -96,6 +110,23 @@ export function TemplateSlotEditor({
 
   function removeSlot(id: string) {
     setSlots((current) => current.filter((slot) => slot.id !== id))
+    setSelectedSlotId((current) => (current === id ? null : current))
+  }
+
+  function updateSlotStyle(id: string, patch: Partial<TemplateSlotStyle>) {
+    setSlots((current) =>
+      current.map((slot) =>
+        slot.id === id ? { ...slot, style: { ...slot.style, ...patch } } : slot,
+      ),
+    )
+  }
+
+  function clearSlotStyle(id: string) {
+    setSlots((current) =>
+      current.map((slot) =>
+        slot.id === id ? { ...slot, style: undefined } : slot,
+      ),
+    )
   }
 
   async function handleSave() {
@@ -115,10 +146,10 @@ export function TemplateSlotEditor({
       name: name.trim(),
       description: description.trim(),
       version: '1.0.0',
-      palette: initialDefinition?.palette ?? DEFAULT_PALETTE,
-      avatar: initialDefinition?.avatar,
+      palette,
+      avatar: avatar || undefined,
       slots,
-      footerText: initialDefinition?.footerText,
+      footerText: footerText || undefined,
     }
 
     try {
@@ -173,51 +204,82 @@ export function TemplateSlotEditor({
 
       {error ? <p className="mb-4 text-[13px] text-rose">{error}</p> : null}
 
-      <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
-        Slots
-      </p>
+      <div className="flex items-start gap-8">
+        <div className="min-w-0 flex-1">
+          <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">
+            Slots
+          </p>
 
-      <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-        <SortableContext
-          items={slots.map((slot) => slot.id)}
-          strategy={verticalListSortingStrategy}
-        >
-          {slots.map((slot) => (
-            <SortableSlotRow
-              key={slot.id}
-              slot={slot}
-              onRemove={() => removeSlot(slot.id)}
-              canRemove={slots.length > 1}
-            />
-          ))}
-        </SortableContext>
-      </DndContext>
+          <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+            <SortableContext
+              items={slots.map((slot) => slot.id)}
+              strategy={verticalListSortingStrategy}
+            >
+              {slots.map((slot) => (
+                <SortableSlotRow
+                  key={slot.id}
+                  slot={slot}
+                  onRemove={() => removeSlot(slot.id)}
+                  canRemove={slots.length > 1}
+                  onSelect={() => setSelectedSlotId(slot.id)}
+                  isSelected={selectedSlotId === slot.id}
+                />
+              ))}
+            </SortableContext>
+          </DndContext>
 
-      <div className="mt-3">
-        <button
-          type="button"
-          onClick={() => setShowTypePicker((current) => !current)}
-          className="flex items-center gap-1.5 rounded border border-[rgba(92,64,51,0.2)] px-3 py-1.5 text-[13px] text-ink-3 hover:text-ink"
-        >
-          Add Slot
-        </button>
-        {showTypePicker ? (
-          <div className="mt-3 flex flex-wrap gap-2">
-            {SLOT_TYPES.map((slotType) => (
-              <button
-                key={slotType.type}
-                type="button"
-                onClick={() => {
-                  addSlot(slotType.type)
-                  setShowTypePicker(false)
-                }}
-                className="rounded-full border border-[rgba(92,64,51,0.15)] bg-paper px-3 py-1 text-[12px] text-ink-2 hover:bg-cream-deep"
-              >
-                {slotType.label}
-              </button>
-            ))}
+          <div className="mt-3">
+            <button
+              type="button"
+              onClick={() => setShowTypePicker((current) => !current)}
+              className="flex items-center gap-1.5 rounded border border-[rgba(92,64,51,0.2)] px-3 py-1.5 text-[13px] text-ink-3 hover:text-ink"
+            >
+              Add Slot
+            </button>
+            {showTypePicker ? (
+              <div className="mt-3 flex flex-wrap gap-2">
+                {SLOT_TYPES.map((slotType) => (
+                  <button
+                    key={slotType.type}
+                    type="button"
+                    onClick={() => {
+                      addSlot(slotType.type)
+                      setShowTypePicker(false)
+                    }}
+                    className="rounded-full border border-[rgba(92,64,51,0.15)] bg-paper px-3 py-1 text-[12px] text-ink-2 hover:bg-cream-deep"
+                  >
+                    {slotType.label}
+                  </button>
+                ))}
+              </div>
+            ) : null}
           </div>
-        ) : null}
+        </div>
+
+        <div className="w-72 shrink-0">
+          <PropertyPanel
+            palette={palette}
+            onPaletteChange={(key, value) =>
+              setPalette((current) => ({ ...current, [key]: value }))
+            }
+            footerText={footerText}
+            onFooterTextChange={setFooterText}
+            avatar={avatar}
+            onAvatarChange={setAvatar}
+            avatarOptions={avatarOptions}
+            selectedSlot={
+              selectedSlotId
+                ? slots.find((slot) => slot.id === selectedSlotId) ?? null
+                : null
+            }
+            onSlotStyleChange={(patch) => {
+              if (selectedSlotId) updateSlotStyle(selectedSlotId, patch)
+            }}
+            onSlotStyleClear={() => {
+              if (selectedSlotId) clearSlotStyle(selectedSlotId)
+            }}
+          />
+        </div>
       </div>
     </div>
   )

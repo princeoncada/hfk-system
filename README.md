@@ -8,9 +8,9 @@ Grades 1Ã¢â‚¬â€œ6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 4.1.0-stable |
-| Status | stable |
-| Current phase | Phase 4.1.0 — Template Routes + List Page: /templates nav entry, built-in/custom template list page, New Template placeholder, and edit placeholder routes. |
+| Current | 4.2.0-alpha |
+| Status | alpha |
+| Current phase | Phase 4.2.0 — Canvas + Drag-and-Drop Slots: dnd-kit slot editor, reorderable TemplateSlot list, add/remove slot controls, save API route, new/edit template pages wired to editor. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

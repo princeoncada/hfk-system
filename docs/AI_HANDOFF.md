@@ -1,19 +1,23 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.0.1-alpha
+**Current Version:** 5.0.1-stable
 
 ## Current Phase
 
-Patch 5.0.1 [5.0.1-alpha] — Mojibake + State Column Fix.
+Patch 5.0.1 [5.0.1-stable] — Mojibake + State Column Fix.
 
 The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 The 5.x workflow infrastructure series is now active.
 
-Current scope: add scripts/fix-mojibake.ps1, improve scripts/promote.ps1
-State field transitions, correct 5.0.0-stable State columns, and bump
-versioning surfaces to 5.0.1-alpha.
+Current scope complete: scripts/fix-mojibake.ps1, scripts/promote.ps1
+State field transitions, 5.0.0-stable State column correction, and
+5.0.1-stable versioning surfaces.
+
+Next recommended work: Phase 5.1.0 — Automation Scripts.
 
 ## Completed Phase
+
+Patch 5.0.1 [5.0.1-stable] — Mojibake + State Column Fix: docs mojibake repaired, fix-mojibake wrapper added, promote.ps1 State field handling improved, validation passed — complete.
 
 Phase 5.0.0 [5.0.0-stable] — Workflow Core Hardening: STATE.json machine-readable project state, scripts/promote.ps1 stable promotion helper, docs/CODEX_RULES.md standing ruleset, CLAUDE.md session start protocol update, and pre-4.x doc history archive — complete.
 
@@ -952,7 +956,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Complete validation for Patch 5.0.1, then promote 5.0.1-alpha to stable with scripts/promote.ps1.
+Start Phase 5.1.0 — Automation Scripts: commit-phase.ps1, validate.ps1, and compact strategy documentation.
 
 ## What Exists
 
@@ -973,6 +977,7 @@ dev.
   only database dependency permitted, and it is local-only.
 - Do not embed actual image or template files into ChromaDB. Only metadata
   records for non-text assets are indexed.
+
 
 
 

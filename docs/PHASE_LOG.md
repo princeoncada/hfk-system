@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 3.8.0-alpha | Phase 3.8.0 - Direction Overhaul | alpha | 2026-05-24 | Direction overhaul: grade/subject locked from planner, topic read-only with AI regenerate, objective editable, direction approval syncs topic/objective back to planner. |
+| 3.8.0-stable | Phase 3.8.0 | stable | 2026-05-24 | Direction overhaul: grade/subject locked from planner, topic read-only with AI regenerate, objective editable, direction approval syncs topic/objective back to planner. |
 | 3.7.1-stable | Patch 3.7.1 - Export Crop + Instructions Icon Fix | stable | 2026-05-24 | PNG export crop fix (scrollWidth/minWidth), PDF print crop fix (zero @page margin, 816px worksheet width), instructions button replaced with Lucide Plus/SlidersHorizontal icon. |
 | 3.7.0-stable | Phase 3.7.0 - playful_v1 Template | stable | 2026-05-24 | playful_v1 template: emoji-illustrated colorful layout with Fredoka/Nunito fonts, rotating activity colors, vocab tracing lines for reading/vocab subjects. |
 | 3.6.5-stable | Patch 3.6.5 - Print/PDF Fix | stable | 2026-05-24 | Print/PDF fix: @page rule, 0.5in margin, main padding reset, full-width worksheet on print. Files: src/app/globals.css. |

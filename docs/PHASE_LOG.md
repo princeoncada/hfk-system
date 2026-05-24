@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 5.2.1-alpha | Patch 5.2.1 | alpha | 2026-05-24 | Real Graphify Output: installed graphifyy, generated graphify-out/graph.json and GRAPH_REPORT.md, normalized codebase-graph.json from Graphify output, and updated graph read-first docs. |
 | 5.2.0-stable | Phase 5.2.0 | stable | 2026-05-24 | Graphify-Ready Codebase Graph: committed codebase-graph.json, added Graphify wrapper and degraded fallback scanner, and wired the graph into Codex read-first workflow docs. |
 | 5.1.1-stable | Patch 5.1.1 | stable | 2026-05-24 | Future Plans Queue: populated FUTURE_PLANS.md with 5.0.x + 5.1.0 completions and 5.2.0–5.5.0 planned phases (Graphify, ChromaDB Docs, Case Studies, Advanced Memory) with token optimization rationale. |
 | 5.1.0-stable | Phase 5.1.0 | stable | 2026-05-24 | Automation Scripts: commit-phase.ps1, validate.ps1, docs/COMPACT_STRATEGY.md, CLAUDE.md and WORKFLOW.md wired to new scripts. |
@@ -34,9 +35,46 @@ Date: 2026-05-24
 
 # Phase Log
 
-## Phase 5.2.0 — Graphify-Ready Codebase Graph
+## Patch 5.2.1 — Real Graphify Output
 
 Status: alpha
+
+Version: 5.2.1-alpha
+
+Date: 2026-05-24
+
+Scope: graphifyy install, real Graphify graph output, normalized graph artifact, and graph read-first docs.
+
+Files:
+- .graphifyignore
+- .gitignore
+- codebase-graph.json
+- graphify-out/graph.json
+- graphify-out/GRAPH_REPORT.md
+- scripts/generate_codebase_graph.py
+- docs/CODEBASE_GRAPH.md
+- docs/CODEX_RULES.md
+- CLAUDE.md
+- docs/WORKFLOW.md
+- docs/FUTURE_PLANS.md
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- README.md
+- STATE.json
+
+Changes:
+- Installed graphifyy into the active Python environment, making the graphify CLI available.
+- Added .graphifyignore to exclude protected/generated paths and keep Graphify focused on engine code/config.
+- Generated graphify-out/graph.json from the real Graphify CLI: 739 nodes, 1378 edges, 44 communities.
+- Generated graphify-out/GRAPH_REPORT.md as the human-readable graph orientation report.
+- Normalized codebase-graph.json from Graphify output with fallbackUsed false.
+- Updated graph docs and read-first rules to point Codex at Graphify's report for orientation-heavy work.
+- Bumped all five versioning locations to 5.2.1-alpha.
+
+## Phase 5.2.0 — Graphify-Ready Codebase Graph
+
+Status: stable
 
 Version: 5.2.0-stable
 

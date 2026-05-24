@@ -1,10 +1,10 @@
 ﻿{
-    "version":  "5.0.1-stable",
-    "state":  "stable",
+    "version":  "5.0.2-alpha",
+    "state":  "alpha",
     "phase":  {
-                  "current":  "5.0.1",
-                  "name":  "Mojibake + State Column Fix",
-                  "status":  "stable"
+                  "current":  "5.0.2",
+                  "name":  "Workflow Doc Hardening",
+                  "status":  "alpha"
               },
     "next":  {
                  "phase":  "5.1.0",

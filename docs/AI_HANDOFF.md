@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.2.1-alpha
+**Current Version:** 5.2.1-stable
 
 ## Current Phase
 
-Patch 5.2.1 [5.2.1-alpha] — Real Graphify Output
+Patch 5.2.1 [5.2.1-stable] — Real Graphify Output
 
 Status: alpha
 
@@ -992,6 +992,7 @@ dev.
   only database dependency permitted, and it is local-only.
 - Do not embed actual image or template files into ChromaDB. Only metadata
   records for non-text assets are indexed.
+
 
 
 

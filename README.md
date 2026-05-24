@@ -1,16 +1,16 @@
-# HFK Publishing Engine
+﻿# HFK Publishing Engine
 
 Internal content publishing studio for **Homeschooling for Kiddos (HFK)**,
 a Facebook educational page serving homeschool families and parents of
-Grades 1Ã¢â‚¬â€œ6 learners.
+Grades 1ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“6 learners.
 
 ## Version Status
 
 | Field | Value |
 | --- | --- |
-| Current | 4.5.0-stable |
-| Status | stable |
-| Current phase | Phase 4.5.0 — Vault Ingestion + AI Template Recommendation: saved TemplateDefinitions ingest into template_definitions Chroma collection, review flow queries best-fit custom template, recommendation badge appears in selector, and approved custom template reuse score increments. |
+| Current | 5.0.0-alpha |
+| Status | alpha |
+| Current phase | Phase 5.0.0 — Workflow Core Hardening: STATE.json, scripts/promote.ps1, docs/CODEX_RULES.md, CLAUDE.md session start protocol update, and pre-4.x doc history archiving. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 
@@ -32,10 +32,10 @@ from structured JSON content files and stable React templates.
 
 ```
 content/ (JSON source of truth)
-Ã¢â€ â€™ React Template (cozy_v1, etc.)
-Ã¢â€ â€™ Live Preview (Next.js)
-Ã¢â€ â€™ PDF Export / PNG Export (Puppeteer)
-Ã¢â€ â€™ Archives
+ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ React Template (cozy_v1, etc.)
+ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ Live Preview (Next.js)
+ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ PDF Export / PNG Export (Puppeteer)
+ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ Archives
 ```
 
 Same JSON + same template = same output, every time.
@@ -61,6 +61,7 @@ Open http://localhost:3000 to see the dashboard.
 | docs/WORKFLOW.md | AI and human contribution workflow |
 | docs/FUTURE_PLANS.md | Living backlog and planned phases |
 | docs/PHASE_LOG.md | Full version and validation history |
+
 
 
 

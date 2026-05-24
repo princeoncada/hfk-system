@@ -43,9 +43,9 @@ Every version change must be applied to all five simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 5.0.2-alpha |
+| Version | 5.0.2-stable |
 | Phase | Patch 5.0.2 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-24 |
 | Summary | Workflow Doc Hardening: fix four-to-five versioning locations, replace Stable-Promotion Codex Prompt step with .\scripts\promote.ps1, update CLAUDE.md Key File Map with 5.0.x entries. |
 
@@ -53,7 +53,7 @@ Every version change must be applied to all five simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 5.0.2-alpha | Patch 5.0.2 | alpha | 2026-05-24 | Workflow Doc Hardening: fix four-to-five versioning locations, replace Stable-Promotion Codex Prompt step with .\scripts\promote.ps1, update CLAUDE.md Key File Map with 5.0.x entries. |
+| 5.0.2-stable | Patch 5.0.2 | stable | 2026-05-24 | Workflow Doc Hardening: fix four-to-five versioning locations, replace Stable-Promotion Codex Prompt step with .\scripts\promote.ps1, update CLAUDE.md Key File Map with 5.0.x entries. |
 | 5.0.1-stable | Patch 5.0.1 | stable | 2026-05-24 | Mojibake repair + State column fix: fix-mojibake.ps1 script, promote.ps1 State field improvement, em-dash mojibake corrected in PHASE_LOG, VERSIONING, AI_HANDOFF. Files: scripts/fix-mojibake.ps1, scripts/promote.ps1, docs/VERSIONING.md, docs/PHASE_LOG.md, versioning docs. |
 | 5.0.0-stable | Phase 5.0.0 | stable | 2026-05-24 | Workflow Core Hardening: STATE.json, scripts/promote.ps1, docs/CODEX_RULES.md, CLAUDE.md session start protocol update, pre-4.x doc archiving. Files: STATE.json, scripts/promote.ps1, docs/CODEX_RULES.md, CLAUDE.md, docs/PHASE_LOG.md, docs/VERSIONING.md, docs/FUTURE_PLANS.md, versioning docs. |
 | 4.5.0-stable | Phase 4.5.0 | stable | 2026-05-24 | Vault Ingestion + AI Template Recommendation: saved TemplateDefinitions ingest into template_definitions Chroma collection, review flow queries best-fit custom template, recommendation badge appears in selector, and approved custom template reuse score increments. Files: template.types.ts, template.chroma.ts, templates recommend/reuse API routes, templates save API, review/page.tsx, ReviewFlow.tsx, versioning docs. |
@@ -258,7 +258,7 @@ Date: 2026-05-23
 ## Next Phase
 
 Current stable version: 5.0.1-stable
-Current working version: 5.0.2-alpha
+Current working version: 5.0.2-stable
 Next recommended phase: Phase 5.1.0 — Automation Scripts
 
 
@@ -316,6 +316,8 @@ Next recommended phase: Phase 5.1.0 — Automation Scripts
 | 1.0.2-stable | Patch 1.0.2 | stable | 2026-05-21 | Next.js config compatibility — replace next.config.ts with next.config.mjs |
 | 1.0.1-stable | Patch 1.0.1 | stable | 2026-05-21 | Docs hardening — chathead opener + session checkpoint workflow |
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
+
+
 
 
 

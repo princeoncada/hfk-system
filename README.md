@@ -8,9 +8,9 @@ Grades 1â€“6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 3.6.1-alpha |
-| Status | alpha |
-| Current phase | Patch 3.6.1 — Daily Review UI Improvements (alpha) |
+| Current | 3.6.1-stable |
+| Status | stable |
+| Current phase | Patch 3.6.1 — Daily Review UI Improvements (stable) |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 4.2.0-alpha | Phase 4.2.0 | alpha | 2026-05-24 | Canvas + Drag-and-Drop Slots: dnd-kit slot editor, reorderable TemplateSlot list, add/remove slot controls, save API route, new/edit template pages wired to editor. Files: TemplateSlotEditor.tsx, SortableSlotRow.tsx, editor/index.ts, api/templates/save/route.ts, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs. |
 | 4.1.0-stable | Phase 4.1.0 | stable | 2026-05-24 | Template Routes + List Page: /templates nav entry, built-in/custom template list page, New Template placeholder, and edit placeholder routes. Files: SidebarNav.tsx, templates/page.tsx, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs, FUTURE_PLANS.md. |
 | 4.0.0-stable | Phase 4.0.0 | stable | 2026-05-24 | Template definition schema (TemplateDefinition, TemplatePalette, TemplateSlot), template store (vault/templates/), DynamicWorksheetTemplate renderer, integrated into preview, builder, and review flow template selector. Sample modern_v1 template included. |
 | 3.8.0-stable | Phase 3.8.0 | stable | 2026-05-24 | Direction overhaul: grade/subject locked from planner, topic read-only with AI regenerate, objective editable, direction approval syncs topic/objective back to planner. |
@@ -60,6 +61,36 @@ Date: 2026-05-24
 - Files validated: template.types.ts, template.store.ts, DynamicWorksheetTemplate.tsx, dynamic/index.ts, vault/templates/modern_v1.json, preview/[id]/page.tsx, worksheets/[id]/page.tsx, worksheets/new/page.tsx, WorksheetBuilder.tsx, review/page.tsx, ReviewFlow.tsx
 
 # Phase Log
+
+## Phase 4.2.0 — Canvas + Drag-and-Drop Slots
+
+Status: alpha
+
+Version: 4.2.0-alpha
+
+Date: 2026-05-24
+
+Scope: Replace template new/edit placeholders with a dnd-kit slot editor and save API.
+
+Files:
+- src/components/templates/editor/TemplateSlotEditor.tsx
+- src/components/templates/editor/SortableSlotRow.tsx
+- src/components/templates/editor/index.ts
+- src/app/api/templates/save/route.ts
+- src/app/templates/new/page.tsx
+- src/app/templates/[id]/edit/page.tsx
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- README.md
+
+Changes:
+- Added client-side TemplateSlotEditor with name/description inputs, reorderable TemplateSlot list, add-slot type picker, remove-slot controls, and save flow.
+- Added SortableSlotRow using dnd-kit sortable handles and slot type badges.
+- Added /api/templates/save route to validate TemplateDefinition payloads and persist them via saveTemplate().
+- Wired /templates/new to create a new template through the editor.
+- Wired /templates/[id]/edit to load an existing vault template and edit its slot order.
+- Bumped all four versioning files to 4.2.0-alpha.
 
 ## Validation Record — 4.1.0-stable
 

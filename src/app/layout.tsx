@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
+import { Fredoka, Inter, Instrument_Serif, JetBrains_Mono, Nunito } from 'next/font/google'
 import SidebarNav from '@/components/shell/SidebarNav'
 import PageTransition from '@/components/shell/PageTransition'
 import OnboardingOverlay from '@/components/onboarding/OnboardingOverlay'
@@ -26,6 +26,20 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 })
 
+const fredoka = Fredoka({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-fredoka',
+  display: 'swap',
+})
+
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-nunito',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
   title: 'HFK Publishing Engine',
   description: 'Internal content publishing studio for Homeschooling for Kiddos',
@@ -39,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} ${fredoka.variable} ${nunito.variable}`}
     >
       <body className="min-h-screen bg-cream text-ink font-sans antialiased">
         <div className="flex min-h-screen">

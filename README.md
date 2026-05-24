@@ -2,15 +2,15 @@
 
 Internal content publishing studio for **Homeschooling for Kiddos (HFK)**,
 a Facebook educational page serving homeschool families and parents of
-Grades 1ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“6 learners.
+Grades 1–6 learners.
 
 ## Version Status
 
 | Field | Value |
 | --- | --- |
-| Current | 5.0.0-stable |
+| Current | 5.0.1-alpha |
 | Status | alpha |
-| Current phase | Phase 5.0.0 — Workflow Core Hardening: STATE.json, scripts/promote.ps1, docs/CODEX_RULES.md, CLAUDE.md session start protocol update, and pre-4.x doc history archiving. |
+| Current phase | Patch 5.0.1 — Mojibake + State Column Fix: fix-mojibake.ps1 script, promote.ps1 State field improvement, and 5.0.0-stable State column correction. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 
@@ -32,10 +32,10 @@ from structured JSON content files and stable React templates.
 
 ```
 content/ (JSON source of truth)
-ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ React Template (cozy_v1, etc.)
-ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ Live Preview (Next.js)
-ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ PDF Export / PNG Export (Puppeteer)
-ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ Archives
+→ React Template (cozy_v1, etc.)
+→ Live Preview (Next.js)
+→ PDF Export / PNG Export (Puppeteer)
+→ Archives
 ```
 
 Same JSON + same template = same output, every time.

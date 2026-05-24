@@ -1,17 +1,18 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.0.1-stable
+**Current Version:** 5.0.2-alpha
 
 ## Current Phase
 
-Patch 5.0.1 [5.0.1-stable] — Mojibake + State Column Fix.
+Patch 5.0.2 [5.0.2-alpha] — Workflow Doc Hardening.
+
+Status: alpha
 
 The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 The 5.x workflow infrastructure series is now active.
 
-Current scope complete: scripts/fix-mojibake.ps1, scripts/promote.ps1
-State field transitions, 5.0.0-stable State column correction, and
-5.0.1-stable versioning surfaces.
+Current scope in alpha: CLAUDE.md, docs/WORKFLOW.md, and versioning docs
+updated for five versioning locations and promote.ps1 stable-promotion flow.
 
 Next recommended work: Phase 5.1.0 — Automation Scripts.
 

@@ -4,8 +4,8 @@ Living backlog for HFK Publishing Engine.
 Completed items are struck through. Update this file every phase.
 
 Last updated: 2026-05-24
-Current stable version: 4.5.0-stable
-Current working version: 5.0.0-alpha
+Current stable version: 5.0.2-stable
+Current working version: 5.1.0-alpha
 
 ---
 
@@ -61,19 +61,15 @@ Current working version: 5.0.0-alpha
 
 ## In Progress
 
-- Phase 5.0.0 — Workflow Core Hardening
+- Phase 5.1.0 — Automation Scripts
 
-Workflow Core Hardening: STATE.json machine-readable project state, scripts/promote.ps1 for automated stable promotion, docs/CODEX_RULES.md standing ruleset, CLAUDE.md session start protocol updated to read STATE.json, pre-4.x doc history archived.
+commit-phase.ps1 single-file commit enforcer, validate.ps1 standard
+validation runner, docs/COMPACT_STRATEGY.md context window management
+strategy, CLAUDE.md and WORKFLOW.md wired to new scripts.
 
 ---
 
 ## Planned
-
-### Phase 5.1.0 — Automation Scripts
-
-commit-phase.ps1, validate.ps1, compact strategy documentation.
-
----
 
 ## Potential Next Directions
 

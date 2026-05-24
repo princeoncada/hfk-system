@@ -8,9 +8,9 @@ Grades 1â€“6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 3.6.0-stable |
-| Status | stable |
-| Current phase | Phase 3.6.0 — Instructions Flow (stable) |
+| Current | 3.6.1-alpha |
+| Status | alpha |
+| Current phase | Patch 3.6.1 — Daily Review UI Improvements (alpha) |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

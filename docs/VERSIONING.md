@@ -42,9 +42,9 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 4.3.0-alpha |
+| Version | 4.3.0-stable |
 | Phase | Phase 4.3.0 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-24 |
 | Summary | Phase 4.3.0 — Property Panel: right-side editor panel with global palette color controls, footer text, avatar selector, selected-slot style overrides, and two-column template editor layout. |
 
@@ -52,7 +52,7 @@ Every version change must be applied to all four simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 4.3.0-alpha | Phase 4.3.0 | alpha | 2026-05-24 | Property Panel: right-side editor panel with global palette color controls, footer text, avatar selector, selected-slot style overrides, and two-column template editor layout. Files: PropertyPanel.tsx, TemplateSlotEditor.tsx, SortableSlotRow.tsx, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs. |
+| 4.3.0-stable | Phase 4.3.0 | stable | 2026-05-24 | Property Panel: right-side editor panel with global palette color controls, footer text, avatar selector, selected-slot style overrides, and two-column template editor layout. Files: PropertyPanel.tsx, TemplateSlotEditor.tsx, SortableSlotRow.tsx, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs. |
 | 4.2.0-stable | Phase 4.2.0 | stable | 2026-05-24 | Canvas + Drag-and-Drop Slots: dnd-kit slot editor, reorderable TemplateSlot list, add/remove slot controls, save API route, new/edit template pages wired to editor. Files: TemplateSlotEditor.tsx, SortableSlotRow.tsx, editor/index.ts, api/templates/save/route.ts, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs. |
 | 4.1.0-stable | Phase 4.1.0 | stable | 2026-05-24 | Template Routes + List Page: /templates nav entry, built-in/custom template list page, New Template placeholder, and edit placeholder routes. Files: SidebarNav.tsx, templates/page.tsx, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs, FUTURE_PLANS.md. |
 | 4.0.0-stable | Phase 4.0.0 | stable | 2026-05-24 | Template definition schema (TemplateDefinition, TemplatePalette, TemplateSlot), template store (vault/templates/), DynamicWorksheetTemplate renderer, integrated into preview, builder, and review flow template selector. Sample modern_v1 template included. |
@@ -288,8 +288,8 @@ Date: 2026-05-23
 
 ## Next Phase
 
-Current stable version: 4.2.0-stable
-Current working version: 4.3.0-alpha
+Current stable version: 4.3.0-stable
+Current working version: none
 Next recommended phase: Phase 4.4.0 — Live Preview + Publish
 
 

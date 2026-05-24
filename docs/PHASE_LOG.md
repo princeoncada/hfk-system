@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.6.1-alpha | Patch 3.6.1 — Daily Review UI Improvements | alpha | 2026-05-24 | Direction edit/fill, full draft content display, Instructions UX. Files: src/app/api/approval/gate/[gate]/reset/route.ts, src/components/review/ReviewFlow.tsx. |
 | 3.6.0-stable | Phase 3.6.0 — Instructions Flow | stable | 2026-05-23 | Remove Reject, redesign Redirect as Instructions flow. Files: src/lib/ai.types.ts, src/app/api/ai/draft/worksheet/route.ts, src/app/api/ai/draft/caption/route.ts, src/components/review/RedirectModal.tsx, src/components/review/ReviewFlow.tsx. |
 | 3.5.6-stable | Patch 3.5.6 — Generate Caption Crash Fix | stable | 2026-05-23 | Bug fix — Generate Caption field name mismatch. Files: src/components/review/ReviewFlow.tsx. |
 | 3.5.5-stable | Patch 3.5.5 — Mojibake + Missed Version Label Fix | stable | 2026-05-23 | Docs hardening — mojibake fix across all docs plus missed version label fix in AI_HANDOFF.md. Files: docs/PHASE_LOG.md, docs/VERSIONING.md, docs/AI_HANDOFF.md, README.md. |
@@ -42,6 +43,25 @@
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
 
 # Phase Log
+
+## Patch 3.6.1 — Daily Review UI Improvements
+
+Status: alpha
+
+Version: 3.6.1-alpha
+
+Date: 2026-05-24
+
+Scope: Direction edit/fill, full draft content display, Instructions UX
+
+Files:
+- src/app/api/approval/gate/[gate]/reset/route.ts
+- src/components/review/ReviewFlow.tsx
+
+Purpose: Improve the Daily Review operator flow by allowing approved
+direction edits, refilling direction from the daily plan, showing complete
+worksheet and caption drafts, and moving Instructions to a quieter link near
+Generate.
 
 ## Phase 3.6.0 — Instructions Flow
 

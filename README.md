@@ -8,8 +8,8 @@ Grades 1Ã¢â‚¬â€œ6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 4.0.0-alpha |
-| Status | alpha |
+| Current | 4.0.0-stable |
+| Status | stable |
 | Current phase | Phase 4.0.0 — Template definition schema (TemplateDefinition, TemplatePalette, TemplateSlot), template store (vault/templates/), DynamicWorksheetTemplate renderer, integrated into preview, builder, and review flow template selector. Sample modern_v1 template included. |
 
 Full planned roadmap complete as of 3.3.0-stable.

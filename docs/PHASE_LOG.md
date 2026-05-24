@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 4.5.0-alpha | Phase 4.5.0 | alpha | 2026-05-24 | Vault Ingestion + AI Template Recommendation: saved TemplateDefinitions ingest into template_definitions Chroma collection, review flow queries best-fit custom template, recommendation badge appears in selector, and approved custom template reuse score increments. Files: template.types.ts, template.chroma.ts, templates recommend/reuse API routes, templates save API, review/page.tsx, ReviewFlow.tsx, versioning docs. |
 | 4.4.0-stable | Phase 4.4.0 | stable | 2026-05-24 | Live Preview + Publish: right-panel Style/Preview toggle with scaled DynamicWorksheetTemplate live preview driven by current TemplateDefinition state and sample worksheet content. Files: TemplatePreview.tsx, TemplateSlotEditor.tsx, versioning docs. |
 | 4.3.0-stable | Phase 4.3.0 | stable | 2026-05-24 | Property Panel: right-side editor panel with global palette color controls, footer text, avatar selector, selected-slot style overrides, and two-column template editor layout. Files: PropertyPanel.tsx, TemplateSlotEditor.tsx, SortableSlotRow.tsx, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs. |
 | 4.2.0-stable | Phase 4.2.0 | stable | 2026-05-24 | Canvas + Drag-and-Drop Slots: dnd-kit slot editor, reorderable TemplateSlot list, add/remove slot controls, save API route, new/edit template pages wired to editor. Files: TemplateSlotEditor.tsx, SortableSlotRow.tsx, editor/index.ts, api/templates/save/route.ts, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs. |
@@ -63,6 +64,38 @@ Date: 2026-05-24
 - Files validated: template.types.ts, template.store.ts, DynamicWorksheetTemplate.tsx, dynamic/index.ts, vault/templates/modern_v1.json, preview/[id]/page.tsx, worksheets/[id]/page.tsx, worksheets/new/page.tsx, WorksheetBuilder.tsx, review/page.tsx, ReviewFlow.tsx
 
 # Phase Log
+
+## Phase 4.5.0 — Vault Ingestion + AI Template Recommendation
+
+Status: alpha
+
+Version: 4.5.0-alpha
+
+Date: 2026-05-24
+
+Scope: Ingest saved TemplateDefinitions into ChromaDB and recommend the best-fit template in review flow.
+
+Files:
+- src/lib/template.types.ts
+- src/lib/template.chroma.ts
+- src/app/api/templates/recommend/route.ts
+- src/app/api/templates/reuse/route.ts
+- src/app/api/templates/save/route.ts
+- src/app/review/page.tsx
+- src/components/review/ReviewFlow.tsx
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- README.md
+
+Changes:
+- Added subjectAffinity, gradeAffinity, and reuseScore to TemplateDefinition and schema.
+- Added template_definitions ChromaDB collection helper for ingest, best-fit query, and reuse-score updates.
+- Added recommend and reuse API routes that degrade gracefully when ChromaDB is unavailable.
+- Added non-fatal template ingest after saving TemplateDefinitions.
+- Added server-side best-fit lookup for custom templates on the review page.
+- Added Recommended badge in the template selector and reuse-score increment on template approval.
+- Bumped all four versioning files to 4.5.0-alpha.
 
 ## Validation Record — 4.4.0-stable
 

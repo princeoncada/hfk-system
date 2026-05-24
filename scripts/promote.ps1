@@ -37,6 +37,22 @@ foreach ($file in $docFiles) {
   Write-Host "  Updated $file"
 }
 
+# Fix standalone State fields that version-string replacement does not reach
+
+# VERSIONING.md: Current Version table State field
+$vmContent = Get-Content -LiteralPath "docs/VERSIONING.md" -Raw
+$vmContent = $vmContent -replace [regex]::Escape("| State | alpha |"), "| State | stable |"
+# History table row state column for the promoted version
+$vmContent = $vmContent -replace ("(\| " + [regex]::Escape($stableVersion) + " \| [^\|]+ \| )alpha( \|)"), '${1}stable${2}'
+Set-Content -LiteralPath "docs/VERSIONING.md" -Value $vmContent -Encoding utf8
+Write-Host "  Fixed State fields in docs/VERSIONING.md"
+
+# PHASE_LOG.md: history table row state column for the promoted version
+$plContent = Get-Content -LiteralPath "docs/PHASE_LOG.md" -Raw
+$plContent = $plContent -replace ("(\| " + [regex]::Escape($stableVersion) + " \| [^\|]+ \| )alpha( \|)"), '${1}stable${2}'
+Set-Content -LiteralPath "docs/PHASE_LOG.md" -Value $plContent -Encoding utf8
+Write-Host "  Fixed State fields in docs/PHASE_LOG.md"
+
 $state.version = $stableVersion
 $state.state = "stable"
 $state.phase.status = "stable"

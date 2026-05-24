@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.2.0-alpha
+**Current Version:** 5.2.0-stable
 
 ## Current Phase
 
-Phase 5.2.0 [5.2.0-alpha] — Graphify-Ready Codebase Graph
+Phase 5.2.0 [5.2.0-stable] — Graphify-Ready Codebase Graph
 
 Status: alpha
 
@@ -991,6 +991,7 @@ dev.
   only database dependency permitted, and it is local-only.
 - Do not embed actual image or template files into ChromaDB. Only metadata
   records for non-text assets are indexed.
+
 
 
 

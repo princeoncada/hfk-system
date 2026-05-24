@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.6.1-stable
+## Current Version: 3.6.2-alpha
 
 ## Current Phase
 
-Patch 3.6.1 [3.6.1-stable] — Daily Review UI Improvements — stable.
+Patch 3.6.2 [3.6.2-alpha] — Daily Review UI/UX Fixes — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,21 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Patch 3.6.2 [3.6.2-alpha] — Daily Review UI/UX Fixes
+
+Status: alpha
+
+Version: 3.6.2-alpha
+
+Scope: ReviewFlow.tsx UI/UX improvements across all gates.
+
+Files:
+- src/components/review/ReviewFlow.tsx
+
+Purpose: Edit button (outline style) on all approved non-final gates so the operator can reset any gate before finalizing. Empty border removed when worksheet/caption has no draft yet. Regenerate button styled as outline with Regenerating... loading state. Instructions link persists in action row after draft generation. Hashtags merged into caption copy block so Copy copies caption + hashtags together.
+
+Validation: pending
 
 ## Patch 3.6.1 [3.6.1-stable] — Daily Review UI Improvements
 

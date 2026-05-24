@@ -1,20 +1,25 @@
-{
-  "version": "5.2.0-alpha",
-  "state": "alpha",
-  "phase": {
-    "current": "5.2.0",
-    "name": "Graphify-Ready Codebase Graph",
-    "status": "alpha"
-  },
-  "next": {
-    "phase": "5.3.0",
-    "name": "ChromaDB Docs Extension",
-    "description": "Ingest documentation into an hfk_docs ChromaDB collection and add semantic query helpers for decisions and phase history."
-  },
-  "series": {
-    "completed": ["1.x", "2.x", "3.x", "4.x"],
-    "active": "5.x"
-  },
-  "lastUpdated": "2026-05-24",
-  "notes": null
+﻿{
+    "version":  "5.2.0-stable",
+    "state":  "stable",
+    "phase":  {
+                  "current":  "5.2.0",
+                  "name":  "Graphify-Ready Codebase Graph",
+                  "status":  "stable"
+              },
+    "next":  {
+                 "phase":  "5.3.0",
+                 "name":  "ChromaDB Docs Extension",
+                 "description":  "Ingest documentation into an hfk_docs ChromaDB collection and add semantic query helpers for decisions and phase history."
+             },
+    "series":  {
+                   "completed":  [
+                                     "1.x",
+                                     "2.x",
+                                     "3.x",
+                                     "4.x"
+                                 ],
+                   "active":  "5.x"
+               },
+    "lastUpdated":  "2026-05-24",
+    "notes":  null
 }

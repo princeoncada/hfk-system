@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 5.2.1-alpha | Patch 5.2.1 | alpha | 2026-05-24 | Real Graphify Output: installed graphifyy, generated graphify-out/graph.json and GRAPH_REPORT.md, normalized codebase-graph.json from Graphify output, and updated graph read-first docs. |
+| 5.2.1-stable | Patch 5.2.1 | stable | 2026-05-24 | Real Graphify Output: installed graphifyy, generated graphify-out/graph.json and GRAPH_REPORT.md, normalized codebase-graph.json from Graphify output, and updated graph read-first docs. |
 | 5.2.0-stable | Phase 5.2.0 | stable | 2026-05-24 | Graphify-Ready Codebase Graph: committed codebase-graph.json, added Graphify wrapper and degraded fallback scanner, and wired the graph into Codex read-first workflow docs. |
 | 5.1.1-stable | Patch 5.1.1 | stable | 2026-05-24 | Future Plans Queue: populated FUTURE_PLANS.md with 5.0.x + 5.1.0 completions and 5.2.0–5.5.0 planned phases (Graphify, ChromaDB Docs, Case Studies, Advanced Memory) with token optimization rationale. |
 | 5.1.0-stable | Phase 5.1.0 | stable | 2026-05-24 | Automation Scripts: commit-phase.ps1, validate.ps1, docs/COMPACT_STRATEGY.md, CLAUDE.md and WORKFLOW.md wired to new scripts. |
@@ -39,7 +39,7 @@ Date: 2026-05-24
 
 Status: alpha
 
-Version: 5.2.1-alpha
+Version: 5.2.1-stable
 
 Date: 2026-05-24
 
@@ -70,7 +70,7 @@ Changes:
 - Generated graphify-out/GRAPH_REPORT.md as the human-readable graph orientation report.
 - Normalized codebase-graph.json from Graphify output with fallbackUsed false.
 - Updated graph docs and read-first rules to point Codex at Graphify's report for orientation-heavy work.
-- Bumped all five versioning locations to 5.2.1-alpha.
+- Bumped all five versioning locations to 5.2.1-stable.
 
 ## Phase 5.2.0 — Graphify-Ready Codebase Graph
 
@@ -1805,6 +1805,8 @@ New files:
 - TypeScript type-check: PASS
 - npm install: PASS
 - Promoted to stable: 2026-05-21
+
+
 
 
 

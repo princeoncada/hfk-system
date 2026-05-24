@@ -6,7 +6,8 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Grade, Subject, WorksheetContent } from '@/lib/types'
 import type { HeaderBlock, WorksheetBlock } from '@/lib/worksheet.blocks'
 import { blocksToWorksheet, worksheetToBlocks } from '@/lib/worksheet.blocks'
-import { WorksheetTemplate } from '@/components/templates/cozy_v1/WorksheetTemplate'
+import { WorksheetTemplate as CozyV1 } from '@/components/templates/cozy_v1/WorksheetTemplate'
+import { WorksheetTemplate as PlayfulV1 } from '@/components/templates/playful_v1/WorksheetTemplate'
 import BlockPanel from './BlockPanel'
 
 interface WorksheetBuilderProps {
@@ -42,6 +43,8 @@ export default function WorksheetBuilder({ initialWorksheet }: WorksheetBuilderP
     (block): block is HeaderBlock => block.type === 'header',
   )
   const preview = blocksToWorksheet(blocks, initialWorksheet)
+  const templateId = headerBlock?.data.template ?? 'cozy_v1'
+  const ActiveTemplate = templateId === 'playful_v1' ? PlayfulV1 : CozyV1
 
   useEffect(() => {
     const serialized = JSON.stringify(
@@ -236,7 +239,7 @@ export default function WorksheetBuilder({ initialWorksheet }: WorksheetBuilderP
               className="w-[816px]"
               style={{ transform: 'scale(0.722)', transformOrigin: 'top left' }}
             >
-              <WorksheetTemplate worksheet={preview} />
+              <ActiveTemplate worksheet={preview} />
             </div>
           </div>
         </div>

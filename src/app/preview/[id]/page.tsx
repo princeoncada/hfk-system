@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation'
+import { redirect } from 'next/navigation'
 import { getWorksheetById } from '@/lib/content'
 import { WorksheetTemplate } from '@/components/templates/cozy_v1'
 import { PreviewControls } from './PreviewControls'
@@ -9,7 +9,7 @@ interface PreviewPageProps {
 
 export default function PreviewPage({ params }: PreviewPageProps) {
   const worksheet = getWorksheetById(params.id)
-  if (!worksheet) notFound()
+  if (!worksheet) redirect('/worksheets')
 
   return (
     <div>

@@ -8,16 +8,39 @@
 }
 
 @media print {
+  @page {
+    size: letter portrait;
+    margin: 0.5in;
+  }
+
   body {
     background: white;
+    -webkit-print-default-button: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
+
   html,
   body {
     overflow: hidden;
   }
+
   ::-webkit-scrollbar {
     display: none;
   }
+
+  main {
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  .worksheet {
+    max-width: 100% !important;
+    min-height: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
   .no-print {
     display: none !important;
   }

@@ -1,10 +1,10 @@
 ﻿{
-    "version":  "5.0.1-alpha",
-    "state":  "alpha",
+    "version":  "5.0.1-stable",
+    "state":  "stable",
     "phase":  {
                   "current":  "5.0.1",
                   "name":  "Mojibake + State Column Fix",
-                  "status":  "alpha"
+                  "status":  "stable"
               },
     "next":  {
                  "phase":  "5.1.0",

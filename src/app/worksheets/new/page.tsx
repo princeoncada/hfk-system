@@ -1,7 +1,10 @@
 import type { Grade, Subject, WorksheetContent } from '@/lib/types'
 import WorksheetBuilder from '@/components/worksheets/WorksheetBuilder'
+import { listTemplates } from '@/lib/template.store'
+import type { TemplateDefinition } from '@/lib/template.types'
 
 export default function NewWorksheetPage() {
+  const customTemplateDefs: TemplateDefinition[] = listTemplates()
   const blank: Partial<WorksheetContent> = {
     id: '',
     title: 'New Worksheet',
@@ -27,7 +30,7 @@ export default function NewWorksheetPage() {
         </h1>
       </div>
 
-      <WorksheetBuilder initialWorksheet={blank} />
+      <WorksheetBuilder initialWorksheet={blank} customTemplateDefs={customTemplateDefs} />
     </>
   )
 }

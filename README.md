@@ -8,7 +8,7 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.2.0-alpha |
+| Current | 5.2.0-stable |
 | Status | alpha |
 | Current phase | Phase 5.2.0 — Graphify-Ready Codebase Graph: codebase-graph.json, Graphify wrapper script, degraded fallback scanner, and read-first workflow wiring. |
 
@@ -62,6 +62,7 @@ Open http://localhost:3000 to see the dashboard.
 | docs/FUTURE_PLANS.md | Living backlog and planned phases |
 | docs/PHASE_LOG.md | Full version and validation history |
 | docs/CODEBASE_GRAPH.md | Codebase graph usage and refresh guide |
+
 
 
 

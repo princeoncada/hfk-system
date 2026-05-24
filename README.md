@@ -2,15 +2,15 @@
 
 Internal content publishing studio for **Homeschooling for Kiddos (HFK)**,
 a Facebook educational page serving homeschool families and parents of
-Grades 1â€“6 learners.
+Grades 1–6 learners.
 
 ## Version Status
 
 | Field | Value |
 | --- | --- |
-| Current | 3.6.5-stable |
-| Status | stable |
-| Current phase | Patch 3.6.5 - Print/PDF fix: @page rule, 0.5in margin, main padding reset, full-width worksheet on print. |
+| Current | 3.7.0-alpha |
+| Status | alpha |
+| Current phase | Phase 3.7.0 - playful_v1 template: emoji-illustrated colorful layout with Fredoka/Nunito fonts, rotating activity colors, vocab tracing lines for reading/vocab subjects. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

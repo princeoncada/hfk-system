@@ -18,6 +18,7 @@ import type {
 } from '@/lib/ai.types'
 import type { Grade, Subject } from '@/lib/types'
 import RedirectModal from './RedirectModal'
+import { Plus, SlidersHorizontal } from 'lucide-react'
 
 const GATE_ORDER: GateName[] = [
   'direction',
@@ -90,6 +91,12 @@ const primaryButtonClass =
   'bg-ink text-cream rounded-[10px] px-4 py-2.5 text-sm font-medium font-sans hover:bg-[#1a120e] transition-colors disabled:opacity-40'
 const outlineButtonClass =
   'border border-[rgba(92,64,51,0.25)] bg-paper text-ink rounded-[10px] px-4 py-2.5 text-sm font-medium font-sans hover:bg-cream transition-colors disabled:opacity-40'
+const instructionIconClass = (active: boolean) =>
+  `flex h-6 w-6 items-center justify-center rounded-full border transition-colors ${
+    active
+      ? 'border-sage/40 bg-sage-tint text-sage-deep hover:bg-sage-tint/80'
+      : 'border-[rgba(92,64,51,0.25)] bg-paper text-ink-3 hover:bg-cream hover:text-ink'
+  }`
 
 function isDirection(p: GatePayload): p is DirectionPayload {
   return p !== null && typeof p === 'object' && 'topic' in p && 'grade' in p
@@ -539,9 +546,10 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
               <button
                 type="button"
                 onClick={() => setRedirectTarget('worksheet')}
-                className="text-[11px] text-ink-4 hover:text-ink-2 transition-colors underline-offset-2 underline"
+                className={instructionIconClass(!!worksheetInstruction)}
+                title={worksheetInstruction ? 'Edit instructions' : 'Add instructions'}
               >
-                {worksheetInstruction ? 'Edit instructions' : 'Add instructions'}
+                {worksheetInstruction ? <SlidersHorizontal size={12} /> : <Plus size={12} />}
               </button>
             </div>
             {worksheetInstruction ? (
@@ -683,9 +691,10 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
               <button
                 type="button"
                 onClick={() => setRedirectTarget('caption')}
-                className="text-[11px] text-ink-4 hover:text-ink-2 transition-colors underline-offset-2 underline"
+                className={instructionIconClass(!!captionInstruction)}
+                title={captionInstruction ? 'Edit instructions' : 'Add instructions'}
               >
-                {captionInstruction ? 'Edit instructions' : 'Add instructions'}
+                {captionInstruction ? <SlidersHorizontal size={12} /> : <Plus size={12} />}
               </button>
             </div>
             {captionInstruction ? (
@@ -867,18 +876,20 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
           <button
             type="button"
             onClick={() => setRedirectTarget('worksheet')}
-            className="text-[11px] text-ink-4 hover:text-ink-2 transition-colors underline-offset-2 underline"
+            className={instructionIconClass(!!worksheetInstruction)}
+            title={worksheetInstruction ? 'Edit instructions' : 'Add instructions'}
           >
-            {worksheetInstruction ? 'Edit instructions' : 'Add instructions'}
+            {worksheetInstruction ? <SlidersHorizontal size={12} /> : <Plus size={12} />}
           </button>
         ) : null}
         {hasCaptionDraft ? (
           <button
             type="button"
             onClick={() => setRedirectTarget('caption')}
-            className="text-[11px] text-ink-4 hover:text-ink-2 transition-colors underline-offset-2 underline"
+            className={instructionIconClass(!!captionInstruction)}
+            title={captionInstruction ? 'Edit instructions' : 'Add instructions'}
           >
-            {captionInstruction ? 'Edit instructions' : 'Add instructions'}
+            {captionInstruction ? <SlidersHorizontal size={12} /> : <Plus size={12} />}
           </button>
         ) : null}
       </div>

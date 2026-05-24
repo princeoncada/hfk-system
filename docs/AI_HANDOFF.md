@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.0.2-alpha
+**Current Version:** 5.0.2-stable
 
 ## Current Phase
 
-Patch 5.0.2 [5.0.2-alpha] — Workflow Doc Hardening.
+Patch 5.0.2 [5.0.2-stable] — Workflow Doc Hardening.
 
 Status: alpha
 
@@ -978,6 +978,7 @@ dev.
   only database dependency permitted, and it is local-only.
 - Do not embed actual image or template files into ChromaDB. Only metadata
   records for non-text assets are indexed.
+
 
 
 

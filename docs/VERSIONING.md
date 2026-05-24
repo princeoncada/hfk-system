@@ -42,16 +42,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.6.0-stable |
-| Phase | Phase 3.6.0 |
-| State | stable |
-| Date | 2026-05-23 |
-| Summary | Phase 3.6.0 — Instructions Flow. Remove Reject from all gates. Replace Redirect with editable Instructions dialog on worksheet and caption gates. Saved instruction text passed to AI on next generation. |
+| Version | 3.6.1-alpha |
+| Phase | Patch 3.6.1 |
+| State | alpha |
+| Date | 2026-05-24 |
+| Summary | Patch 3.6.1 — Direction fill-from-plan and edit, full worksheet and caption draft display, Instructions moved to subtle link near Generate button. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.6.1-alpha | Patch 3.6.1 — Daily Review UI Improvements | alpha | 2026-05-24 | Direction fill-from-plan and edit, full worksheet and caption draft display, Instructions moved to subtle link near Generate button. |
 | 3.6.0-stable | Phase 3.6.0 — Instructions Flow | stable | 2026-05-23 | Remove Reject from all gates. Replace Redirect with editable Instructions dialog on worksheet and caption gates. Saved instruction text passed to AI on next generation. |
 | 3.5.6-stable | Patch 3.5.6 — Generate Caption Crash Fix | stable | 2026-05-23 | Bug fix — Generate Caption crash: replace worksheetContent with worksheetTitle in caption fetch body. |
 | 3.5.5-stable | Patch 3.5.5 — Mojibake + Missed Version Label Fix | stable | 2026-05-23 | Docs hardening — fix UTF-8 mojibake for em dash, right arrow, and multiplication sign across PHASE_LOG.md, VERSIONING.md, AI_HANDOFF.md, README.md. Fix missed 3.4.0/3.4.1 version labels in AI_HANDOFF.md. |
@@ -166,7 +167,7 @@ Date: 2026-05-23
 ## Next Phase
 
 Current stable version: 3.6.0-stable
-Current working version: none
+Current working version: 3.6.1-alpha
 Next recommended phase: (none — full planned roadmap complete as of 3.3.0-stable)
 
 

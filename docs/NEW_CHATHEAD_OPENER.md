@@ -9,17 +9,17 @@ You are continuing the HFK Publishing Engine project in Claude Code.
 
 Before doing anything else:
 1. Run: git pull origin master
-2. Read: docs/VERSIONING.md, docs/WORKFLOW.md, docs/AI_HANDOFF.md,
-         docs/PHASE_LOG.md (top section), docs/FUTURE_PLANS.md
-3. Report:
+2. Read: STATE.json
+3. Report state from STATE.json only:
    - Current version and state
    - Current phase
-   - What is in progress or pending
-   - Any uncommitted work (git status --short)
-   - Recommended next action
-Do not do anything else until I confirm.
+   - Next phase and recommended action
+4. Run: git status --short and report any uncommitted work
 
-See CLAUDE.md at repo root for full session rules, role definition,
-workflow protocol, and Codex prompt format.
+Current expected state: 5.2.1-stable. Next planned work:
+Patch 5.2.2 — Graphify Workflow Clarification.
+
+Do not read other docs or begin implementation until I confirm.
+See CLAUDE.md and docs/CODEX_RULES.md for full rules after confirmation.
 
 --- END ---

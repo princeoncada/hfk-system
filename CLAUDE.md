@@ -257,6 +257,8 @@ Five versioning locations — always update all five together:
 | Content types | src/lib/types.ts |
 | Content loader | src/lib/content.ts |
 | Template directory | src/components/templates/ |
+| Codebase graph read-first map | codebase-graph.json |
+| Codebase graph guide | docs/CODEBASE_GRAPH.md |
 | Machine-readable version + state | STATE.json |
 | Operational workflow reference | docs/WORKFLOW.md |
 | Codex standing rules | docs/CODEX_RULES.md |

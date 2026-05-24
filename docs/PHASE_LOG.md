@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.7.0-alpha | Phase 3.7.0 - playful_v1 Template | alpha | 2026-05-24 | playful_v1 template: emoji-illustrated colorful layout with Fredoka/Nunito fonts, rotating activity colors, vocab tracing lines for reading/vocab subjects. |
 | 3.6.5-stable | Patch 3.6.5 - Print/PDF Fix | stable | 2026-05-24 | Print/PDF fix: @page rule, 0.5in margin, main padding reset, full-width worksheet on print. Files: src/app/globals.css. |
 | 3.6.4-stable | Patch 3.6.4 — Daily Review UX Polish + Print/Export Fixes | stable | 2026-05-24 | Print/export fixes, Fill from Plan removed, Instructions inline layout, localStorage persistence, step indicator spacing. Files: globals.css, preview/[id]/page.tsx, preview/[id]/PreviewControls.tsx, review/page.tsx, ReviewFlow.tsx. |
 | 3.6.3-stable | Patch 3.6.3 — Final Package Lock and Worksheet Link | stable | 2026-05-24 | Save AI worksheet to content/worksheets/ on final approval, Edit Worksheet and Preview links in final gate, locked banner + locked action rows when package complete. Files: src/lib/approval.actions.ts, src/components/review/ReviewFlow.tsx. |
@@ -436,7 +437,7 @@ Validation:
   AI summary, 5 top posts, 5 worst posts, 36-cell heatmap, 4 recommendation cards
 - /analytics server page — calls getMockSnapshot, passes to AnalyticsDashboard
 - AnalyticsDashboard client component — AI summary card with Demo Data pill,
-  top/worst post columns, subject×grade heatmap, dismissible recommendation cards
+  top/worst post columns, subjectÃƒÆ’—grade heatmap, dismissible recommendation cards
   persisted to localStorage
 - Analytics nav link + bar chart icon added to SidebarNav
 - All 17 checks passed, build clean, 19/19 static pages
@@ -738,7 +739,7 @@ Introduced the Vault type system for v2. Defined TypeScript interfaces
 and Zod schemas for all seven Vault asset types (template, worksheet,
 caption, prompt, topic, avatar, brand-rule). Established lifecycle
 states (draft → approved → archived → retired), freshness model
-(fresh / healthy / stale_ish / stale / retired), reuse score (0.0â€“1.0),
+(fresh / healthy / stale_ish / stale / retired), reuse score (0.0–1.0),
 provenance tracking, and rejection records.
 
 New files:
@@ -763,7 +764,7 @@ Date: 2026-05-22
 
 Purpose:
 Documentation-only patch. Replaced the old planned phase queue
-(2.0.0â€“2.3.0) with the full v2 phase sequence (2.0.0â€“3.1.0).
+(2.0.0–2.3.0) with the full v2 phase sequence (2.0.0–3.1.0).
 Documented ChromaDB (local vector DB) and DeepSeek API as the v2
 backend stack. Established that non-text assets are represented
 in ChromaDB by metadata only. Confirmed backend-first build order.

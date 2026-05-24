@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.7.1-alpha
+## Current Version: 3.7.1-stable
 
 ## Current Phase
 
-Patch 3.7.1 [3.7.1-alpha] — PNG export crop fix (scrollWidth/minWidth), PDF print crop fix (zero @page margin, 816px worksheet width), instructions button replaced with Lucide Plus/SlidersHorizontal icon — alpha.
+Patch 3.7.1 [3.7.1-stable] — PNG export crop fix (scrollWidth/minWidth), PDF print crop fix (zero @page margin, 816px worksheet width), instructions button replaced with Lucide Plus/SlidersHorizontal icon — stable.
 
 ## Architecture Invariant
 
@@ -20,11 +20,11 @@ v2 introduces ChromaDB (local vector database) as a search and retrieval
 layer alongside the filesystem. Content JSON files remain the source of
 truth. ChromaDB is populated from them and re-indexed on every approval.
 Non-text assets (images, templates) are represented in ChromaDB by metadata
-records only — the actual files live on disk and are never embedded.
+records only â€” the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Patch 3.6.4 [3.6.4-stable] — Daily Review UX Polish + Print/Export Fixes
+## Patch 3.6.4 [3.6.4-stable] â€” Daily Review UX Polish + Print/Export Fixes
 
 Status: stable
 
@@ -39,7 +39,7 @@ Files:
 - src/app/review/page.tsx
 - src/components/review/ReviewFlow.tsx
 
-Purpose: Fix scrollbar visible in print/PDF (overflow:hidden in print CSS). Multi-page PNG export — worksheet sliced into letter-proportion pages, single-page uses Save As dialog, multi-page auto-downloads each slice. preview/[id] redirects to /worksheets instead of 404 on missing worksheet. Fill from Plan button removed from direction gate — operator fills manually. Instructions link moved inline-right of Generate button with items-end alignment; same in action row. Draft worksheet and caption persisted to localStorage keyed by pkg.id so navigation away and back preserves in-progress work. Step indicator rewritten with flatMap to use fixed-width steps + flex-1 connectors for even spacing.
+Purpose: Fix scrollbar visible in print/PDF (overflow:hidden in print CSS). Multi-page PNG export â€” worksheet sliced into letter-proportion pages, single-page uses Save As dialog, multi-page auto-downloads each slice. preview/[id] redirects to /worksheets instead of 404 on missing worksheet. Fill from Plan button removed from direction gate â€” operator fills manually. Instructions link moved inline-right of Generate button with items-end alignment; same in action row. Draft worksheet and caption persisted to localStorage keyed by pkg.id so navigation away and back preserves in-progress work. Step indicator rewritten with flatMap to use fixed-width steps + flex-1 connectors for even spacing.
 
 Validation:
 - Build clean
@@ -49,7 +49,7 @@ Validation:
   flatMap step indicator all confirmed
 - Version bump confirmed in all four versioning files
 
-## Patch 3.6.3 [3.6.3-stable] — Final Package Lock and Worksheet Link
+## Patch 3.6.3 [3.6.3-stable] â€” Final Package Lock and Worksheet Link
 
 Status: stable
 
@@ -70,7 +70,7 @@ Validation:
 - isPackageComplete, Link, Edit Worksheet link, locked banner confirmed in ReviewFlow.tsx
 - Version bump confirmed in all four versioning files
 
-## Patch 3.6.2 [3.6.2-stable] — Daily Review UI/UX Fixes
+## Patch 3.6.2 [3.6.2-stable] â€” Daily Review UI/UX Fixes
 
 Status: stable
 
@@ -93,7 +93,7 @@ Validation:
 - fullCopyText merges hashtags into caption copy block
 - Version bump confirmed in all four versioning files
 
-## Patch 3.6.1 [3.6.1-stable] — Daily Review UI Improvements
+## Patch 3.6.1 [3.6.1-stable] â€” Daily Review UI Improvements
 
 Status: stable
 
@@ -122,7 +122,7 @@ Next recommended work:
 - Additional worksheet templates
 - Real analytics pipeline
 
-## Phase 3.6.0 [3.6.0-stable] — Instructions Flow
+## Phase 3.6.0 [3.6.0-stable] â€” Instructions Flow
 
 Status: stable
 
@@ -155,13 +155,13 @@ Next recommended work:
 - Additional worksheet templates
 - Real analytics pipeline
 
-## Patch 3.5.6 [3.5.6-stable] — Generate Caption Crash Fix
+## Patch 3.5.6 [3.5.6-stable] â€” Generate Caption Crash Fix
 
 Status: stable
 
 Version: 3.5.6-stable
 
-Scope: Bug fix — Generate Caption field name mismatch.
+Scope: Bug fix â€” Generate Caption field name mismatch.
 
 Files:
 - src/components/review/ReviewFlow.tsx
@@ -182,7 +182,7 @@ Next recommended work:
 - Export from builder
 - Additional worksheet templates
 
-## Patch 3.5.5 [3.5.5-stable] — Mojibake + Missed Version Label Fix
+## Patch 3.5.5 [3.5.5-stable] â€” Mojibake + Missed Version Label Fix
 
 Status: stable
 
@@ -211,13 +211,13 @@ Next recommended work:
 - Export from builder
 - Additional worksheet templates
 
-## Patch 3.5.4 [3.5.4-stable] — Version Ordering Fix
+## Patch 3.5.4 [3.5.4-stable] â€” Version Ordering Fix
 
 Status: stable
 
 Version: 3.5.4-stable
 
-Scope: Docs hardening — version ordering fix and ordering rule.
+Scope: Docs hardening â€” version ordering fix and ordering rule.
 
 Files:
 - docs/PHASE_LOG.md
@@ -240,13 +240,13 @@ Next recommended work:
 - Export from builder
 - Additional worksheet templates
 
-## Patch 3.5.3 [3.5.3-stable] — 1-by-1 Commit Rule Hardening
+## Patch 3.5.3 [3.5.3-stable] â€” 1-by-1 Commit Rule Hardening
 
 Status: stable
 
 Version: 3.5.3-stable
 
-Scope: Docs hardening — one git add + one git commit per file rule.
+Scope: Docs hardening â€” one git add + one git commit per file rule.
 
 Files:
 - CLAUDE.md
@@ -267,13 +267,13 @@ Next recommended work:
 - Export from builder
 - Additional worksheet templates
 
-## Patch 3.5.2 [3.5.2-stable] — Post-Stable Bug Versioning Rule
+## Patch 3.5.2 [3.5.2-stable] â€” Post-Stable Bug Versioning Rule
 
 Status: stable
 
 Version: 3.5.2-stable
 
-Scope: Docs hardening — post-stable bug versioning rule.
+Scope: Docs hardening â€” post-stable bug versioning rule.
 
 Files:
 - CLAUDE.md
@@ -294,13 +294,13 @@ Next recommended work:
 - Export from builder
 - Additional worksheet templates
 
-## Patch 3.5.1 [3.5.1-stable] — Generate Worksheet Crash Fix
+## Patch 3.5.1 [3.5.1-stable] â€” Generate Worksheet Crash Fix
 
 Status: stable
 
 Version: 3.5.1-stable
 
-Scope: Bug fix — ReviewFlow.tsx handleGenerate.
+Scope: Bug fix â€” ReviewFlow.tsx handleGenerate.
 
 Bugs fixed:
 - Missing template field in Generate Worksheet POST body
@@ -318,13 +318,13 @@ Next recommended work:
 - Additional worksheet templates
 
 
-## Patch 3.5.0 [3.5.0-stable] — Daily Review Fix
+## Patch 3.5.0 [3.5.0-stable] â€” Daily Review Fix
 
 Status: stable
 
 Version: 3.5.0-stable
 
-Purpose: Daily Review Fix — Direction pre-populated from today's Planner data.
+Purpose: Daily Review Fix â€” Direction pre-populated from today's Planner data.
 Generate Worksheet and Generate Caption buttons added. Template gate replaced
 with visual card selector.
 
@@ -343,24 +343,24 @@ Next recommended work:
 - Additional worksheet templates
 
 
-## Patch 3.3.1 [3.3.1-stable] — Export Overhaul
+## Patch 3.3.1 [3.3.1-stable] â€” Export Overhaul
 
 Status: stable
 
 Version: 3.3.1-stable
 
-Purpose: Export Overhaul — remove PDF export from preview and replace
+Purpose: Export Overhaul â€” remove PDF export from preview and replace
 server-side PNG export with client-side worksheet image saving.
 
 Validation:
 - PDF export button removed from PreviewControls
 - PNG export replaced with client-side handleSaveImage using html-to-image
-- Targets .worksheet DOM element at pixelRatio 2 — no padding artifact
+- Targets .worksheet DOM element at pixelRatio 2 â€” no padding artifact
 - showSaveFilePicker Save As dialog with AbortError guard
 - createObjectURL download fallback for Safari and Firefox
 - All 10 checks passed, build clean, 21/21 pages
 
-## Phase 3.3.0 [3.3.0-stable] — Worksheet Builder
+## Phase 3.3.0 [3.3.0-stable] â€” Worksheet Builder
 
 Status: stable
 
@@ -396,15 +396,15 @@ Validation:
 
 Status: stable
 
-Purpose: Analytics + Recommendations — operator-facing analytics screen
+Purpose: Analytics + Recommendations â€” operator-facing analytics screen
 using demo data until real performance metrics exist.
 
 Scope:
-- /analytics route — Server Component loads mock analytics snapshot
-- AnalyticsDashboard client component — AI summary, top/worst post cards,
+- /analytics route â€” Server Component loads mock analytics snapshot
+- AnalyticsDashboard client component â€” AI summary, top/worst post cards,
   subject-grade heatmap, localStorage-backed dismissible recommendations
 - analytics types and mock snapshot provider
-- SidebarNav — Analytics link added
+- SidebarNav â€” Analytics link added
 
 New files:
 - src/lib/analytics.types.ts
@@ -417,37 +417,37 @@ Modified files:
 - docs/VERSIONING.md, docs/AI_HANDOFF.md, docs/PHASE_LOG.md, README.md
 
 Validation:
-- analytics.types.ts — PerformanceStat, HeatmapCell, RecommendationCard,
+- analytics.types.ts â€” PerformanceStat, HeatmapCell, RecommendationCard,
   AnalyticsSnapshot interfaces
-- analytics.mock.ts — getMockSnapshot() returns demo snapshot with isDemo: true,
+- analytics.mock.ts â€” getMockSnapshot() returns demo snapshot with isDemo: true,
   AI summary, 5 top posts, 5 worst posts, 36-cell heatmap, 4 recommendation cards
-- /analytics server page — calls getMockSnapshot, passes to AnalyticsDashboard
-- AnalyticsDashboard client component — AI summary card with Demo Data pill,
-  top/worst post columns, subjectÃƒ�grade heatmap, dismissible recommendation cards
+- /analytics server page â€” calls getMockSnapshot, passes to AnalyticsDashboard
+- AnalyticsDashboard client component â€” AI summary card with Demo Data pill,
+  top/worst post columns, subjectÃƒÆ’ï¿½grade heatmap, dismissible recommendation cards
   persisted to localStorage
 - Analytics nav link + bar chart icon added to SidebarNav
 - All 17 checks passed, build clean, 19/19 static pages
 
-## Phase 3.3.0 [3.3.0-stable] — UI Animations + Onboarding
+## Phase 3.3.0 [3.3.0-stable] â€” UI Animations + Onboarding
 
 Status: stable
 
 Version: 3.3.0-stable
 
-Purpose: UI Animations + Onboarding — first-run orientation, re-openable
+Purpose: UI Animations + Onboarding â€” first-run orientation, re-openable
 help flow, page transitions, and sidebar nav micro-interactions.
 
 Validation:
-- PageTransition.tsx — Framer Motion enter animation (fade + slide up)
+- PageTransition.tsx â€” Framer Motion enter animation (fade + slide up)
   keyed by pathname, no AnimatePresence at root level
-- OnboardingOverlay.tsx — 4-step modal, first-run auto-open via
+- OnboardingOverlay.tsx â€” 4-step modal, first-run auto-open via
   localStorage, re-openable via hfk:open-help custom event,
   AnimatePresence on step content and modal itself
 - Root layout wired with PageTransition wrapping children and
   OnboardingOverlay mounted as sibling
-- SidebarNav — Help button dispatches hfk:open-help, nav items
+- SidebarNav â€” Help button dispatches hfk:open-help, nav items
   have whileHover and whileTap micro-interactions via Framer Motion
-- next.config.mjs — transpilePackages added for framer-motion to
+- next.config.mjs â€” transpilePackages added for framer-motion to
   fix static prerendering of /404 and /500 error pages
 - All checks passed, build clean, 21/21 pages
 
@@ -457,14 +457,14 @@ Roadmap complete. All planned phases 1.0.0 through 3.3.0 are now stable.
 
 Status: stable
 
-Purpose: Vault Browser — standing UI for browsing, inspecting, and mutating
+Purpose: Vault Browser â€” standing UI for browsing, inspecting, and mutating
 the lifecycle of Vault assets indexed in ChromaDB.
 
 Scope:
-- /vault route — Server Component loads all 7 asset types
-- VaultBrowser client component — tabs, search, asset grid, lifecycle actions
-- POST /api/vault/asset/[id]/lifecycle — lifecycle mutation via re-ingest
-- SidebarNav — Vault link added
+- /vault route â€” Server Component loads all 7 asset types
+- VaultBrowser client component â€” tabs, search, asset grid, lifecycle actions
+- POST /api/vault/asset/[id]/lifecycle â€” lifecycle mutation via re-ingest
+- SidebarNav â€” Vault link added
 
 New files:
 - src/app/vault/page.tsx
@@ -476,9 +476,9 @@ Modified files:
 - docs/VERSIONING.md, docs/AI_HANDOFF.md, docs/PHASE_LOG.md, README.md
 
 Validation:
-- /vault page created — server component with ChromaDB asset fetch and offline fallback
-- VaultBrowser client component — type filter tabs, name/tag search, asset cards with freshness/lifecycle/usage, lifecycle mutation buttons
-- POST /api/vault/asset/[id]/lifecycle route — reads asset, updates lifecycle field, re-ingests via upsert
+- /vault page created â€” server component with ChromaDB asset fetch and offline fallback
+- VaultBrowser client component â€” type filter tabs, name/tag search, asset cards with freshness/lifecycle/usage, lifecycle mutation buttons
+- POST /api/vault/asset/[id]/lifecycle route â€” reads asset, updates lifecycle field, re-ingests via upsert
 - Vault nav link added to SidebarNav
 - All 15 checks passed, build clean
 
@@ -492,9 +492,9 @@ planned content with in-review overlay when a package already exists for that
 date. The day detail panel gains a package gate summary section.
 
 Scope:
-- src/lib/calendar.ts (new) — getPackagesForMonth() read-only helper
-- src/app/planner/[month]/page.tsx — load packages, pass to PlannerView
-- src/components/planner/PlannerView.tsx — bi-directional rendering,
+- src/lib/calendar.ts (new) â€” getPackagesForMonth() read-only helper
+- src/app/planner/[month]/page.tsx â€” load packages, pass to PlannerView
+- src/components/planner/PlannerView.tsx â€” bi-directional rendering,
   package summary in detail panel, calendar legend
 
 New files: src/lib/calendar.ts
@@ -513,18 +513,18 @@ Instrument Serif, JetBrains Mono), design token extension in Tailwind,
 and card-based component redesign.
 
 Scope:
-- tailwind.config.ts — design tokens + font families
-- globals.css — CSS custom properties
-- layout.tsx — sidebar shell with SidebarNav client component
-- SidebarNav.tsx (new) — active-state nav with usePathname
-- page.tsx — Command Center redesign
-- TodayStatus.tsx — dark banner card
-- MonthProgress.tsx — card redesign
-- VaultAlerts.tsx — tinted card redesign
-- review/page.tsx — page heading
-- planner/[month]/page.tsx — page heading + month nav
-- ReviewFlow.tsx — design system applied
-- PlannerView.tsx — design system applied
+- tailwind.config.ts â€” design tokens + font families
+- globals.css â€” CSS custom properties
+- layout.tsx â€” sidebar shell with SidebarNav client component
+- SidebarNav.tsx (new) â€” active-state nav with usePathname
+- page.tsx â€” Command Center redesign
+- TodayStatus.tsx â€” dark banner card
+- MonthProgress.tsx â€” card redesign
+- VaultAlerts.tsx â€” tinted card redesign
+- review/page.tsx â€” page heading
+- planner/[month]/page.tsx â€” page heading + month nav
+- ReviewFlow.tsx â€” design system applied
+- PlannerView.tsx â€” design system applied
 
 New files:
 - src/components/shell/SidebarNav.tsx
@@ -712,7 +712,7 @@ Status: stable
 
 Purpose:
 Build the 5-gate approval state machine for daily content packages:
-Direction → Worksheet → Template → Caption → Final Package. Persist package
+Direction â†’ Worksheet â†’ Template â†’ Caption â†’ Final Package. Persist package
 state as JSON and write approved worksheet/caption outputs back into the Vault.
 
 Scope:
@@ -926,23 +926,23 @@ Modified files:
 
 ## Future Phase Queue
 
-- Phase 2.0.0 — Vault Schema
-- Phase 2.1.0 — ChromaDB Layer
-- Phase 2.2.0 — DeepSeek Integration
-- Phase 2.3.0 — Approval Gate API
-- Phase 2.4.0 — Planning Engine
-- Phase 2.5.0 — Prompt Library API
-- Phase 2.6.0 — AI Command Center
-- Phase 2.7.0 — Daily Package Review
-- Phase 2.8.0 — Monthly Planner
-- Phase 2.9.0 — UI Design System
-- Phase 3.0.0 — Calendar Intelligence
-- Phase 3.1.0 — Vault Browser
-- Phase 3.3.0 — UI Animations + Onboarding
+- Phase 2.0.0 â€” Vault Schema
+- Phase 2.1.0 â€” ChromaDB Layer
+- Phase 2.2.0 â€” DeepSeek Integration
+- Phase 2.3.0 â€” Approval Gate API
+- Phase 2.4.0 â€” Planning Engine
+- Phase 2.5.0 â€” Prompt Library API
+- Phase 2.6.0 â€” AI Command Center
+- Phase 2.7.0 â€” Daily Package Review
+- Phase 2.8.0 â€” Monthly Planner
+- Phase 2.9.0 â€” UI Design System
+- Phase 3.0.0 â€” Calendar Intelligence
+- Phase 3.1.0 â€” Vault Browser
+- Phase 3.3.0 â€” UI Animations + Onboarding
 
 ## Recommended Next Step
 
-Phase 3.3.0 — UI Animations + Onboarding.
+Phase 3.3.0 â€” UI Animations + Onboarding.
 
 ## What Exists
 

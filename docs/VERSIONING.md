@@ -43,16 +43,17 @@ Every version change must be applied to all five simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 5.0.1-stable |
-| Phase | Patch 5.0.1 |
-| State | stable |
+| Version | 5.0.2-alpha |
+| Phase | Patch 5.0.2 |
+| State | alpha |
 | Date | 2026-05-24 |
-| Summary | Patch 5.0.1 — Mojibake + State Column Fix: fix-mojibake.ps1 script, promote.ps1 State field improvement, and 5.0.0-stable State column correction. |
+| Summary | Workflow Doc Hardening: fix four-to-five versioning locations, replace Stable-Promotion Codex Prompt step with .\scripts\promote.ps1, update CLAUDE.md Key File Map with 5.0.x entries. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 5.0.2-alpha | Patch 5.0.2 | alpha | 2026-05-24 | Workflow Doc Hardening: fix four-to-five versioning locations, replace Stable-Promotion Codex Prompt step with .\scripts\promote.ps1, update CLAUDE.md Key File Map with 5.0.x entries. |
 | 5.0.1-stable | Patch 5.0.1 | stable | 2026-05-24 | Mojibake repair + State column fix: fix-mojibake.ps1 script, promote.ps1 State field improvement, em-dash mojibake corrected in PHASE_LOG, VERSIONING, AI_HANDOFF. Files: scripts/fix-mojibake.ps1, scripts/promote.ps1, docs/VERSIONING.md, docs/PHASE_LOG.md, versioning docs. |
 | 5.0.0-stable | Phase 5.0.0 | stable | 2026-05-24 | Workflow Core Hardening: STATE.json, scripts/promote.ps1, docs/CODEX_RULES.md, CLAUDE.md session start protocol update, pre-4.x doc archiving. Files: STATE.json, scripts/promote.ps1, docs/CODEX_RULES.md, CLAUDE.md, docs/PHASE_LOG.md, docs/VERSIONING.md, docs/FUTURE_PLANS.md, versioning docs. |
 | 4.5.0-stable | Phase 4.5.0 | stable | 2026-05-24 | Vault Ingestion + AI Template Recommendation: saved TemplateDefinitions ingest into template_definitions Chroma collection, review flow queries best-fit custom template, recommendation badge appears in selector, and approved custom template reuse score increments. Files: template.types.ts, template.chroma.ts, templates recommend/reuse API routes, templates save API, review/page.tsx, ReviewFlow.tsx, versioning docs. |
@@ -257,7 +258,7 @@ Date: 2026-05-23
 ## Next Phase
 
 Current stable version: 5.0.1-stable
-Current working version: none
+Current working version: 5.0.2-alpha
 Next recommended phase: Phase 5.1.0 — Automation Scripts
 
 

@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 4.5.0-alpha | Phase 4.5.0 | alpha | 2026-05-24 | Vault Ingestion + AI Template Recommendation: saved TemplateDefinitions ingest into template_definitions Chroma collection, review flow queries best-fit custom template, recommendation badge appears in selector, and approved custom template reuse score increments. Files: template.types.ts, template.chroma.ts, templates recommend/reuse API routes, templates save API, review/page.tsx, ReviewFlow.tsx, versioning docs. |
+| 4.5.0-stable | Phase 4.5.0 | stable | 2026-05-24 | Vault Ingestion + AI Template Recommendation: saved TemplateDefinitions ingest into template_definitions Chroma collection, review flow queries best-fit custom template, recommendation badge appears in selector, and approved custom template reuse score increments. Files: template.types.ts, template.chroma.ts, templates recommend/reuse API routes, templates save API, review/page.tsx, ReviewFlow.tsx, versioning docs. |
 | 4.4.0-stable | Phase 4.4.0 | stable | 2026-05-24 | Live Preview + Publish: right-panel Style/Preview toggle with scaled DynamicWorksheetTemplate live preview driven by current TemplateDefinition state and sample worksheet content. Files: TemplatePreview.tsx, TemplateSlotEditor.tsx, versioning docs. |
 | 4.3.0-stable | Phase 4.3.0 | stable | 2026-05-24 | Property Panel: right-side editor panel with global palette color controls, footer text, avatar selector, selected-slot style overrides, and two-column template editor layout. Files: PropertyPanel.tsx, TemplateSlotEditor.tsx, SortableSlotRow.tsx, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs. |
 | 4.2.0-stable | Phase 4.2.0 | stable | 2026-05-24 | Canvas + Drag-and-Drop Slots: dnd-kit slot editor, reorderable TemplateSlot list, add/remove slot controls, save API route, new/edit template pages wired to editor. Files: TemplateSlotEditor.tsx, SortableSlotRow.tsx, editor/index.ts, api/templates/save/route.ts, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs. |
@@ -65,11 +65,19 @@ Date: 2026-05-24
 
 # Phase Log
 
+## Validation Record — 4.5.0-stable
+
+Date: 2026-05-24
+
+- 13/13 checks passed
+- Build clean at 25 pages
+- Files validated: template.types.ts, template.chroma.ts, recommend/route.ts, reuse/route.ts, save/route.ts, review/page.tsx, ReviewFlow.tsx, docs/VERSIONING.md, docs/AI_HANDOFF.md, docs/PHASE_LOG.md, README.md
+- Completes the 4.x template builder series
 ## Phase 4.5.0 — Vault Ingestion + AI Template Recommendation
 
-Status: alpha
+Status: stable
 
-Version: 4.5.0-alpha
+Version: 4.5.0-stable
 
 Date: 2026-05-24
 
@@ -95,7 +103,7 @@ Changes:
 - Added non-fatal template ingest after saving TemplateDefinitions.
 - Added server-side best-fit lookup for custom templates on the review page.
 - Added Recommended badge in the template selector and reuse-score increment on template approval.
-- Bumped all four versioning files to 4.5.0-alpha.
+- Promoted all four versioning files to 4.5.0-stable.
 
 ## Validation Record — 4.4.0-stable
 

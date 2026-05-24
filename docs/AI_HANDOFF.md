@@ -1,21 +1,16 @@
 # AI Handoff
 
-**Current Version:** 4.1.0-stable
+**Current Version:** 4.2.0-alpha
 
 ## Current Phase
 
-Phase 4.2.0 [in-progress] — Canvas + Drag-and-Drop Slots.
+Phase 4.2.0 [4.2.0-alpha] — Canvas + Drag-and-Drop Slots: dnd-kit slot editor, reorderable TemplateSlot list, add/remove slot controls, save API route, new/edit template pages wired to editor — alpha.
 
 ## Completed Phase
 
 Phase 4.1.0 [4.1.0-stable] — Template Routes + List Page: /templates nav entry, built-in/custom template list page, New Template placeholder, and edit placeholder routes — complete.
 
 Phase 4.0.0 [4.0.0-stable] — Template definition schema (TemplateDefinition, TemplatePalette, TemplateSlot), template store (vault/templates/), DynamicWorksheetTemplate renderer, integrated into preview, builder, and review flow template selector. Sample modern_v1 template included — complete.
-
-## Completed Phase
-
-Phase 4.0.0 [4.0.0-stable] — Template definition schema (TemplateDefinition, TemplatePalette, TemplateSlot), template store (vault/templates/), DynamicWorksheetTemplate renderer, integrated into preview, builder, and review flow template selector. Sample modern_v1 template included — complete.
-
 ## Architecture Invariant
 
 Filesystem-first, template-stable architecture is locked.

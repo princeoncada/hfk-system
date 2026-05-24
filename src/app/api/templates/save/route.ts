@@ -7,6 +7,12 @@ export async function POST(request: Request) {
     const body = await request.json()
     const definition = validateTemplateDefinition(body)
     saveTemplate(definition)
+    try {
+      const { ingestTemplateDefinition } = await import('@/lib/template.chroma')
+      await ingestTemplateDefinition(definition)
+    } catch {
+      // ChromaDB not running - skip ingest.
+    }
     return NextResponse.json({ ok: true, id: definition.id })
   } catch (error) {
     return NextResponse.json(

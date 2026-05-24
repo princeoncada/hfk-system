@@ -1,20 +1,22 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.0.2-stable
+**Current Version:** 5.1.0-alpha
 
 ## Current Phase
 
-Patch 5.0.2 [5.0.2-stable] — Workflow Doc Hardening.
+Phase 5.1.0 [5.1.0-alpha] — Automation Scripts
 
-Status: stable
+Status: alpha
 
 The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 The 5.x workflow infrastructure series is now active.
 
-Current scope complete: CLAUDE.md, docs/WORKFLOW.md, and versioning docs
-updated for five versioning locations and promote.ps1 stable-promotion flow.
+Current scope: commit-phase.ps1 is a parameter-driven single-file commit
+helper, and validate.ps1 is the standard validation runner. docs/COMPACT_STRATEGY.md
+documents context window management strategy, while CLAUDE.md and WORKFLOW.md
+wire both scripts into the operating workflow.
 
-Next recommended work: Phase 5.1.0 — Automation Scripts.
+Next recommended work: Complete Phase 5.1.0 validation, then promote to stable.
 
 ## Completed Phase
 
@@ -955,12 +957,12 @@ Modified files:
 
 ## Future Phase Queue
 
-- Phase 5.1.0 — Automation Scripts
+- Phase 5.2.0 or TBD
 - hfk-token-dashboard has been scoped as a separate standalone project, not part of the HFK phase queue.
 
 ## Recommended Next Step
 
-Start Phase 5.1.0 — Automation Scripts: commit-phase.ps1, validate.ps1, and compact strategy documentation.
+Complete Phase 5.1.0 validation, then promote to stable.
 
 ## What Exists
 

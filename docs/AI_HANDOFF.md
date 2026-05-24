@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.6.3-stable
+## Current Version: 3.6.4-alpha
 
 ## Current Phase
 
-Patch 3.6.3 [3.6.3-stable] — Final Package Lock and Worksheet Link — stable.
+Patch 3.6.4 [3.6.4-alpha] — Daily Review UX Polish + Print/Export Fixes — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,25 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Patch 3.6.4 [3.6.4-alpha] — Daily Review UX Polish + Print/Export Fixes
+
+Status: alpha
+
+Version: 3.6.4-alpha
+
+Scope: globals.css, preview page, PreviewControls, review page, ReviewFlow.tsx
+
+Files:
+- src/app/globals.css
+- src/app/preview/[id]/page.tsx
+- src/app/preview/[id]/PreviewControls.tsx
+- src/app/review/page.tsx
+- src/components/review/ReviewFlow.tsx
+
+Purpose: Fix scrollbar visible in print/PDF (overflow:hidden in print CSS). Multi-page PNG export — worksheet sliced into letter-proportion pages, single-page uses Save As dialog, multi-page auto-downloads each slice. preview/[id] redirects to /worksheets instead of 404 on missing worksheet. Fill from Plan button removed from direction gate — operator fills manually. Instructions link moved inline-right of Generate button with items-end alignment; same in action row. Draft worksheet and caption persisted to localStorage keyed by pkg.id so navigation away and back preserves in-progress work. Step indicator rewritten with flatMap to use fixed-width steps + flex-1 connectors for even spacing.
+
+Validation: pending
 
 ## Patch 3.6.3 [3.6.3-stable] — Final Package Lock and Worksheet Link
 

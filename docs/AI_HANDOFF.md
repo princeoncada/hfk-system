@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.6.2-alpha
+## Current Version: 3.6.2-stable
 
 ## Current Phase
 
-Patch 3.6.2 [3.6.2-alpha] — Daily Review UI/UX Fixes — alpha.
+Patch 3.6.2 [3.6.2-stable] — Daily Review UI/UX Fixes — stable.
 
 ## Architecture Invariant
 
@@ -24,11 +24,11 @@ records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Patch 3.6.2 [3.6.2-alpha] — Daily Review UI/UX Fixes
+## Patch 3.6.2 [3.6.2-stable] — Daily Review UI/UX Fixes
 
-Status: alpha
+Status: stable
 
-Version: 3.6.2-alpha
+Version: 3.6.2-stable
 
 Scope: ReviewFlow.tsx UI/UX improvements across all gates.
 
@@ -37,7 +37,15 @@ Files:
 
 Purpose: Edit button (outline style) on all approved non-final gates so the operator can reset any gate before finalizing. Empty border removed when worksheet/caption has no draft yet. Regenerate button styled as outline with Regenerating... loading state. Instructions link persists in action row after draft generation. Hashtags merged into caption copy block so Copy copies caption + hashtags together.
 
-Validation: pending
+Validation:
+- Build clean
+- outlineButtonClass defined and used at 3 sites in ReviewFlow.tsx
+- Edit Direction button removed from renderDirectionBody approved body
+- resetGate(gate) in renderActionRow approved branch
+- Regenerating... loading state on both regenerate buttons
+- hasWorksheetDraft guards in action row and instructions link blocks
+- fullCopyText merges hashtags into caption copy block
+- Version bump confirmed in all four versioning files
 
 ## Patch 3.6.1 [3.6.1-stable] — Daily Review UI Improvements
 

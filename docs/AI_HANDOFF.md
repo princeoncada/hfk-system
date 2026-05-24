@@ -1,10 +1,10 @@
 # AI Handoff
 
-**Current Version:** 4.0.0-stable
+**Current Version:** 4.1.0-alpha
 
 ## Current Phase
 
-Phase 4.1.0 [in-progress] — Template Editor UI.
+Phase 4.1.0 [4.1.0-alpha] — Template Routes + List Page: /templates nav entry, built-in/custom template list page, New Template placeholder, and edit placeholder routes — alpha.
 
 ## Completed Phase
 

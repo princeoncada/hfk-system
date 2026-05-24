@@ -1,20 +1,25 @@
-{
-  "version": "5.1.1-alpha",
-  "state": "alpha",
-  "phase": {
-    "current": "5.1.1",
-    "name": "Future Plans Queue",
-    "status": "alpha"
-  },
-  "next": {
-    "phase": "5.2.0",
-    "name": "Graphify Integration",
-    "description": "Generate a static codebase knowledge graph using Graphify. Wire codebase-graph.json into Codex read-first list to reduce per-prompt file reads by ~20-25%."
-  },
-  "series": {
-    "completed": ["1.x", "2.x", "3.x", "4.x"],
-    "active": "5.x"
-  },
-  "lastUpdated": "2026-05-24",
-  "notes": null
+﻿{
+    "version":  "5.1.1-stable",
+    "state":  "stable",
+    "phase":  {
+                  "current":  "5.1.1",
+                  "name":  "Future Plans Queue",
+                  "status":  "stable"
+              },
+    "next":  {
+                 "phase":  "5.2.0",
+                 "name":  "Graphify Integration",
+                 "description":  "Generate a static codebase knowledge graph using Graphify. Wire codebase-graph.json into Codex read-first list to reduce per-prompt file reads by ~20-25%."
+             },
+    "series":  {
+                   "completed":  [
+                                     "1.x",
+                                     "2.x",
+                                     "3.x",
+                                     "4.x"
+                                 ],
+                   "active":  "5.x"
+               },
+    "lastUpdated":  "2026-05-24",
+    "notes":  null
 }

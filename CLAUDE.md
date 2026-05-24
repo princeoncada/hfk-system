@@ -258,6 +258,7 @@ Five versioning locations — always update all five together:
 | Content loader | src/lib/content.ts |
 | Template directory | src/components/templates/ |
 | Codebase graph read-first map | codebase-graph.json |
+| Graphify report | graphify-out/GRAPH_REPORT.md |
 | Codebase graph guide | docs/CODEBASE_GRAPH.md |
 | Machine-readable version + state | STATE.json |
 | Operational workflow reference | docs/WORKFLOW.md |

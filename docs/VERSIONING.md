@@ -42,9 +42,9 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.6.4-alpha |
+| Version | 3.6.4-stable |
 | Phase | Patch 3.6.4 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-24 |
 | Summary | Patch 3.6.4 — Print scrollbar fix, multi-page PNG export, preview 404 redirect, Fill from Plan removed, Instructions button inline-right of Generate with items-end, draft persistence via localStorage, step indicator layout fix. |
 
@@ -52,7 +52,7 @@ Every version change must be applied to all four simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 3.6.4-alpha | Patch 3.6.4 — Daily Review UX Polish + Print/Export Fixes | alpha | 2026-05-24 | Print scrollbar fix, multi-page PNG export, preview 404 redirect, Fill from Plan removed, Instructions inline-right of Generate, draft persistence via localStorage, step indicator layout fix. |
+| 3.6.4-stable | Patch 3.6.4 — Daily Review UX Polish + Print/Export Fixes | stable | 2026-05-24 | Print scrollbar fix, multi-page PNG export, preview 404 redirect, Fill from Plan removed, Instructions inline-right of Generate, draft persistence via localStorage, step indicator layout fix. |
 | 3.6.3-stable | Patch 3.6.3 — Final Package Lock and Worksheet Link | stable | 2026-05-24 | Save AI worksheet to content/worksheets/ on final approval, show Edit Worksheet and Preview links in final gate, lock all action rows when package is complete, locked banner at page top. |
 | 3.6.2-stable | Patch 3.6.2 — Daily Review UI/UX Fixes | stable | 2026-05-24 | Edit button on all approved gates, outline Regenerate with loading state, instructions link persists after draft generation, hashtags merged into caption copy block. |
 | 3.6.1-stable | Patch 3.6.1 — Daily Review UI Improvements | stable | 2026-05-24 | Direction fill-from-plan and edit, full worksheet and caption draft display, Instructions moved to subtle link near Generate button. |
@@ -133,6 +133,24 @@ Date: 2026-05-24
 - Locked banner in main return
 - Version bump confirmed in all four versioning files
 
+## Validation Record — 3.6.4-stable
+
+Date: 2026-05-24
+
+- Build clean
+- overflow:hidden confirmed in globals.css print media query
+- redirect('/worksheets') confirmed in preview/[id]/page.tsx
+- pageCount/pageHeight multi-page PNG logic confirmed in PreviewControls.tsx
+- planDay removed from review/page.tsx
+- useEffect imported and used at 2 sites in ReviewFlow.tsx
+- localStorage get/set confirmed
+- Fill from Plan removed (0 matches)
+- setWorksheetDraft(null) in resetGate
+- flex items-end gap-3 on both Generate rows
+- items-end gap-2.5 on both action rows
+- flatMap step indicator confirmed
+- Version bump confirmed in all four versioning files
+
 ## Validation Record — 3.6.0-stable
 
 Date: 2026-05-23
@@ -207,8 +225,8 @@ Date: 2026-05-23
 
 ## Next Phase
 
-Current stable version: 3.6.3-stable
-Current working version: 3.6.4-alpha
+Current stable version: 3.6.4-stable
+Current working version: none
 Next recommended phase: (none — full planned roadmap complete as of 3.3.0-stable)
 
 

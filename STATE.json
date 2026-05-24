@@ -1,0 +1,20 @@
+{
+  "version": "5.0.0-alpha",
+  "state": "alpha",
+  "phase": {
+    "current": "5.0.0",
+    "name": "Workflow Core Hardening",
+    "status": "alpha"
+  },
+  "next": {
+    "phase": "5.1.0",
+    "name": "Automation Scripts",
+    "description": "commit-phase.ps1, validate.ps1, compact strategy documentation"
+  },
+  "series": {
+    "completed": ["1.x", "2.x", "3.x", "4.x"],
+    "active": "5.x"
+  },
+  "lastUpdated": "2026-05-24",
+  "notes": null
+}

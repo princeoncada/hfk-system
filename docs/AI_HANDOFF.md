@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.6.1-alpha
+## Current Version: 3.6.1-stable
 
 ## Current Phase
 
-Patch 3.6.1 [3.6.1-alpha] — Daily Review UI Improvements — alpha.
+Patch 3.6.1 [3.6.1-stable] — Daily Review UI Improvements — stable.
 
 ## Architecture Invariant
 
@@ -24,11 +24,11 @@ records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Patch 3.6.1 [3.6.1-alpha] — Daily Review UI Improvements
+## Patch 3.6.1 [3.6.1-stable] — Daily Review UI Improvements
 
-Status: alpha
+Status: stable
 
-Version: 3.6.1-alpha
+Version: 3.6.1-stable
 
 Scope: Direction edit/fill, full draft content display, Instructions UX.
 
@@ -40,6 +40,18 @@ Purpose: Add a reset route so approved direction can return to pending for
 editing, add Fill from Plan to the direction form, expand worksheet and
 caption draft displays to show full content, and move Instructions from the
 action row to a subtle link near Generate.
+
+Validation:
+- All 7 validation checks passed
+- Build clean, 22 pages
+- reset/route.ts exists
+- resetGate, Fill from Plan, Edit Direction confirmed in ReviewFlow.tsx
+- tracking-widest count 5
+
+Next recommended work:
+- Export from builder
+- Additional worksheet templates
+- Real analytics pipeline
 
 ## Phase 3.6.0 [3.6.0-stable] — Instructions Flow
 

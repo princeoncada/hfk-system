@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 5.1.1-alpha | Patch 5.1.1 | alpha | 2026-05-24 | Future Plans Queue: populated FUTURE_PLANS.md with 5.0.x + 5.1.0 completions and 5.2.0–5.5.0 planned phases (Graphify, ChromaDB Docs, Case Studies, Advanced Memory) with token optimization rationale. |
 | 5.1.0-stable | Phase 5.1.0 | stable | 2026-05-24 | Automation Scripts: commit-phase.ps1, validate.ps1, docs/COMPACT_STRATEGY.md, CLAUDE.md and WORKFLOW.md wired to new scripts. |
 | 5.0.2-stable | Patch 5.0.2 | stable | 2026-05-24 | Workflow Doc Hardening: fix four-to-five versioning locations, replace Stable-Promotion Codex Prompt step with .\scripts\promote.ps1, update CLAUDE.md Key File Map with 5.0.x entries. |
 | 5.0.1-stable | Patch 5.0.1 | stable | 2026-05-24 | Mojibake repair + State column fix: fix-mojibake.ps1 script, promote.ps1 State field improvement, em-dash mojibake corrected in PHASE_LOG, VERSIONING, AI_HANDOFF. Files: scripts/fix-mojibake.ps1, scripts/promote.ps1, docs/VERSIONING.md, docs/PHASE_LOG.md, versioning docs. |
@@ -32,9 +33,34 @@ Date: 2026-05-24
 
 # Phase Log
 
-## Phase 5.1.0 — Automation Scripts
+## Patch 5.1.1 — Future Plans Queue
 
 Status: alpha
+
+Version: 5.1.1-alpha
+
+Date: 2026-05-24
+
+Scope: Documentation-only patch to update the 5.x roadmap and open the next alpha patch.
+
+Files:
+- docs/FUTURE_PLANS.md
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- README.md
+- STATE.json
+
+Changes:
+- Added completed 5.x workflow infrastructure entries to docs/FUTURE_PLANS.md.
+- Replaced the empty planned queue with Phase 5.2.0 through Phase 5.5.0.
+- Added token optimization rationale for Graphify, ChromaDB docs retrieval, case studies, and advanced memory.
+- Bumped all five versioning locations to 5.1.1-alpha.
+- Set the next recommended phase to 5.2.0 — Graphify Integration.
+
+## Phase 5.1.0 — Automation Scripts
+
+Status: stable
 
 Version: 5.1.0-stable
 

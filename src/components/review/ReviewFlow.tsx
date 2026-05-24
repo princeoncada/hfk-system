@@ -108,6 +108,7 @@ interface ReviewFlowProps {
   pkg: DailyPackage
   planDay: PlanDay | null
   customTemplates: TemplateDefinition[]
+  recommendedTemplateId?: string | null
 }
 
 function StatusLabel({ status }: { status: GateStatus }) {
@@ -175,6 +176,7 @@ export default function ReviewFlow({
   pkg,
   planDay,
   customTemplates,
+  recommendedTemplateId,
 }: ReviewFlowProps) {
   const router = useRouter()
   const [loading, setLoading] = useState<GateName | null>(null)
@@ -255,6 +257,20 @@ export default function ReviewFlow({
 
   function approve(gate: GateName, payload?: GatePayload) {
     void callGateApi(gate, 'approve', payload ? { payload } : {})
+  }
+
+  async function approveTemplate() {
+    if (!templateId) return
+    await callGateApi('template', 'approve', { payload: { templateId } })
+    try {
+      await fetch('/api/templates/reuse', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ templateId }),
+      })
+    } catch {
+      // non-fatal
+    }
   }
 
   async function resetGate(gate: GateName) {
@@ -624,35 +640,45 @@ export default function ReviewFlow({
     return (
       <div className="space-y-3">
         <div className="grid grid-cols-1 gap-3">
-          {allTemplates.map((template) => (
-            <button
-              key={template.id}
-              type="button"
-              onClick={() => setTemplateId(template.id)}
-              className={`cursor-pointer rounded-[12px] border-2 p-4 text-left transition-colors ${
-                templateId === template.id
-                  ? 'border-sage bg-sage-tint'
-                  : 'border-[rgba(92,64,51,0.14)] bg-paper hover:border-sage/40 hover:bg-cream'
-              }`}
-            >
-              <span className="flex items-center gap-4">
-                <span className="w-[48px] h-[60px] rounded-[6px] bg-cream-deep border border-[rgba(92,64,51,0.1)] grid place-items-center text-[10px] font-mono text-ink-4">
-                  v1
-                </span>
-                <span>
-                  <span className="block font-medium text-ink text-[14px]">
-                    {template.label}
+          {allTemplates.map((template) => {
+            const isRecommended = template.id === recommendedTemplateId
+            return (
+              <button
+                key={template.id}
+                type="button"
+                onClick={() => setTemplateId(template.id)}
+                className={`cursor-pointer rounded-[12px] border-2 p-4 text-left transition-colors ${
+                  templateId === template.id
+                    ? 'border-sage bg-sage-tint'
+                    : 'border-[rgba(92,64,51,0.14)] bg-paper hover:border-sage/40 hover:bg-cream'
+                }`}
+              >
+                <span className="flex items-center gap-4">
+                  <span className="w-[48px] h-[60px] rounded-[6px] bg-cream-deep border border-[rgba(92,64,51,0.1)] grid place-items-center text-[10px] font-mono text-ink-4">
+                    v1
                   </span>
-                  <span className="block text-[12px] text-ink-3 mt-0.5">
-                    {template.description}
+                  <span className="min-w-0 flex-1">
+                    <span className="flex items-center gap-2">
+                      <span className="block font-medium text-ink text-[14px]">
+                        {template.label}
+                      </span>
+                      {isRecommended ? (
+                        <span className="inline-flex items-center gap-1 rounded-full border border-yellow/30 bg-yellow-tint px-2 py-0.5 text-[11px] font-medium text-ink-2">
+                          ✨ Recommended
+                        </span>
+                      ) : null}
+                    </span>
+                    <span className="block text-[12px] text-ink-3 mt-0.5">
+                      {template.description}
+                    </span>
                   </span>
                 </span>
-              </span>
-            </button>
-          ))}
+              </button>
+            )
+          })}
         </div>
         <button
-          onClick={() => approve('template', { templateId })}
+          onClick={() => void approveTemplate()}
           disabled={!templateId.trim() || loading === 'template'}
           className={primaryButtonClass}
         >

@@ -1,7 +1,14 @@
 import { redirect } from 'next/navigation'
 import { getWorksheetById } from '@/lib/content'
-import { WorksheetTemplate } from '@/components/templates/cozy_v1'
+import { WorksheetTemplate as CozyV1 } from '@/components/templates/cozy_v1'
+import { WorksheetTemplate as PlayfulV1 } from '@/components/templates/playful_v1'
+import type { WorksheetContent } from '@/lib/types'
 import { PreviewControls } from './PreviewControls'
+
+function resolveTemplate(worksheet: WorksheetContent) {
+  if (worksheet.template === 'playful_v1') return PlayfulV1
+  return CozyV1
+}
 
 interface PreviewPageProps {
   params: { id: string }
@@ -10,12 +17,13 @@ interface PreviewPageProps {
 export default function PreviewPage({ params }: PreviewPageProps) {
   const worksheet = getWorksheetById(params.id)
   if (!worksheet) redirect('/worksheets')
+  const Template = resolveTemplate(worksheet)
 
   return (
     <div>
       <PreviewControls id={params.id} />
       <main className="min-h-screen bg-warm-brown/5 px-4 py-8">
-        <WorksheetTemplate worksheet={worksheet} />
+        <Template worksheet={worksheet} />
       </main>
     </div>
   )

@@ -8,9 +8,9 @@ Grades 1Ã¢â‚¬â€œ6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 4.2.0-stable |
-| Status | stable |
-| Current phase | Phase 4.2.0 — Canvas + Drag-and-Drop Slots: dnd-kit slot editor, reorderable TemplateSlot list, add/remove slot controls, save API route, new/edit template pages wired to editor. |
+| Current | 4.3.0-alpha |
+| Status | alpha |
+| Current phase | Phase 4.3.0 — Property Panel: right-side editor panel with global palette color controls, footer text, avatar selector, selected-slot style overrides, and two-column template editor layout. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

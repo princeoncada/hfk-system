@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import type {
@@ -195,6 +196,7 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
   const allPriorApproved = GATE_ORDER.slice(0, 4).every(
     (gate) => pkg.gates[gate].status === 'approved',
   )
+  const isPackageComplete = pkg.gates.final.status === 'approved'
 
   async function callGateApi(
     gate: GateName,
@@ -706,7 +708,25 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
           ))}
         </ul>
         {status === 'approved' ? (
-          <p className="text-[13px] text-sage-deep">Package complete!</p>
+          <div className="space-y-3 pt-1">
+            <p className="text-[13px] text-sage-deep font-medium">
+              Package complete. Worksheet saved to library.
+            </p>
+            <div className="flex flex-wrap gap-2.5">
+              <Link
+                href={`/worksheets/${pkg.id}`}
+                className={primaryButtonClass}
+              >
+                Edit Worksheet
+              </Link>
+              <Link
+                href={`/preview/${pkg.id}`}
+                className={outlineButtonClass}
+              >
+                Preview
+              </Link>
+            </div>
+          </div>
         ) : allPriorApproved ? (
           <p className="text-[13px] text-sage-deep">
             All gates approved. Ready to finalize.
@@ -729,6 +749,8 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
   }
 
   function renderActionRow(gate: GateName, payload: GatePayload, status: GateStatus) {
+    if (isPackageComplete) return null
+
     // rejected/redirecting: no action row
     if (status === 'rejected' || status === 'redirecting') return null
 
@@ -847,6 +869,16 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
 
   return (
     <div>
+      {isPackageComplete ? (
+        <div className="mb-6 rounded-[12px] bg-sage-tint border border-sage/20 px-5 py-4">
+          <p className="text-[14px] font-medium text-sage-deep">
+            Today&apos;s package is complete.
+          </p>
+          <p className="text-[12px] text-ink-3 mt-0.5">
+            All 5 gates approved. This day is locked.
+          </p>
+        </div>
+      ) : null}
       <div className="mb-8 flex items-start">
         {GATE_ORDER.map((gateName, index) => {
           const gate = pkg.gates[gateName]

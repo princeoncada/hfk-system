@@ -8,9 +8,9 @@ Grades 1â€“6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 3.6.4-alpha |
-| Status | alpha |
-| Current phase | Patch 3.6.4 — Daily Review UX Polish + Print/Export Fixes (alpha) |
+| Current | 3.6.4-stable |
+| Status | stable |
+| Current phase | Patch 3.6.4 — Daily Review UX Polish + Print/Export Fixes (stable) |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

@@ -9,7 +9,7 @@ Grades 1–6 learners.
 | Field | Value |
 | --- | --- |
 | Current | 5.2.1-stable |
-| Status | alpha |
+| Status | stable |
 | Current phase | Patch 5.2.1 — Real Graphify Output: graphifyy installed, graphify-out/graph.json and GRAPH_REPORT.md generated, codebase-graph.json normalized from Graphify output. |
 
 Full planned roadmap complete as of 3.3.0-stable.

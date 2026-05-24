@@ -37,6 +37,9 @@ export interface TemplateDefinition {
   avatar?: string
   slots: TemplateSlot[]
   footerText?: string
+  subjectAffinity?: string[]
+  gradeAffinity?: string[]
+  reuseScore?: number
 }
 
 const TemplatePaletteSchema = z.object({
@@ -74,6 +77,9 @@ export const TemplateDefinitionSchema = z.object({
   avatar: z.string().optional(),
   slots: z.array(TemplateSlotSchema).min(1),
   footerText: z.string().optional(),
+  subjectAffinity: z.array(z.string()).optional(),
+  gradeAffinity: z.array(z.string()).optional(),
+  reuseScore: z.number().int().min(0).optional(),
 })
 
 export function validateTemplateDefinition(data: unknown): TemplateDefinition {

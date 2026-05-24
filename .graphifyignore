@@ -1,0 +1,20 @@
+# Protected and generated paths
+content/
+exports/
+archives/
+assets/avatars/
+vault/
+node_modules/
+.next/
+.git/
+chroma-data/
+graphify-out/cache/
+
+# Keep Graphify focused on engine code/config for 5.2.1.
+# Docs semantic ingestion is planned separately in Phase 5.3.0.
+docs/SESSION_LOG/
+*.md
+
+# Avoid graphing graph artifacts as source inputs.
+codebase-graph.json
+graphify-out/

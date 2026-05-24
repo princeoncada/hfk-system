@@ -2,15 +2,15 @@
 
 Internal content publishing studio for **Homeschooling for Kiddos (HFK)**,
 a Facebook educational page serving homeschool families and parents of
-Grades 1â€“6 learners.
+Grades 1Ã¢â‚¬â€œ6 learners.
 
 ## Version Status
 
 | Field | Value |
 | --- | --- |
-| Current | 3.7.1-stable |
-| Status | stable |
-| Current phase | Patch 3.7.1 â€” PNG export crop fix (scrollWidth/minWidth), PDF print crop fix (zero @page margin, 816px worksheet width), instructions button replaced with Lucide Plus/SlidersHorizontal icon. |
+| Current | 3.8.0-alpha |
+| Status | alpha |
+| Current phase | Phase 3.8.0 — Direction overhaul: grade/subject locked from planner, topic read-only with AI regenerate, objective editable, direction approval syncs topic/objective back to planner. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 
@@ -32,10 +32,10 @@ from structured JSON content files and stable React templates.
 
 ```
 content/ (JSON source of truth)
-â†’ React Template (cozy_v1, etc.)
-â†’ Live Preview (Next.js)
-â†’ PDF Export / PNG Export (Puppeteer)
-â†’ Archives
+Ã¢â€ â€™ React Template (cozy_v1, etc.)
+Ã¢â€ â€™ Live Preview (Next.js)
+Ã¢â€ â€™ PDF Export / PNG Export (Puppeteer)
+Ã¢â€ â€™ Archives
 ```
 
 Same JSON + same template = same output, every time.

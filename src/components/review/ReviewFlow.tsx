@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type {
   DailyPackage,
   DirectionPayload,
@@ -16,7 +16,6 @@ import type {
   WorksheetDraft,
   WorksheetDraftResponse,
 } from '@/lib/ai.types'
-import type { PlanDay } from '@/lib/planning.types'
 import type { Grade, Subject } from '@/lib/types'
 import RedirectModal from './RedirectModal'
 
@@ -84,8 +83,6 @@ const inputClass =
 const selectClass = `${inputClass} appearance-none`
 const primaryButtonClass =
   'bg-ink text-cream rounded-[10px] px-4 py-2.5 text-sm font-medium font-sans hover:bg-[#1a120e] transition-colors disabled:opacity-40'
-const textButtonClass =
-  'bg-transparent text-ink-3 px-2.5 py-2 text-sm font-sans hover:text-ink transition-colors'
 const outlineButtonClass =
   'border border-[rgba(92,64,51,0.25)] bg-paper text-ink rounded-[10px] px-4 py-2.5 text-sm font-medium font-sans hover:bg-cream transition-colors disabled:opacity-40'
 
@@ -107,7 +104,6 @@ function isCaption(p: GatePayload): p is CaptionDraftResponse {
 
 interface ReviewFlowProps {
   pkg: DailyPackage
-  planDay?: PlanDay | null
 }
 
 function StatusLabel({ status }: { status: GateStatus }) {
@@ -171,15 +167,15 @@ function ProvenancePanel({
   )
 }
 
-export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
+export default function ReviewFlow({ pkg }: ReviewFlowProps) {
   const router = useRouter()
   const [loading, setLoading] = useState<GateName | null>(null)
   const [redirectTarget, setRedirectTarget] = useState<GateName | null>(null)
   const [dirForm, setDirForm] = useState({
-    topic: planDay?.topic ?? '',
-    grade: (planDay?.grade ?? 1) as Grade,
-    subject: (planDay?.subject ?? 'math') as Subject,
-    objective: planDay?.objective ?? '',
+    topic: '',
+    grade: 1 as Grade,
+    subject: 'math' as Subject,
+    objective: '',
   })
   const [templateId, setTemplateId] = useState('')
   const [worksheetDraft, setWorksheetDraft] =
@@ -197,6 +193,37 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
     (gate) => pkg.gates[gate].status === 'approved',
   )
   const isPackageComplete = pkg.gates.final.status === 'approved'
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(`hfk:review:${pkg.id}`)
+      if (!saved) return
+      const state = JSON.parse(saved) as {
+        worksheetDraft?: WorksheetDraftResponse
+        captionDraft?: CaptionDraftResponse
+        worksheetInstruction?: string
+        captionInstruction?: string
+      }
+      if (state.worksheetDraft) setWorksheetDraft(state.worksheetDraft)
+      if (state.captionDraft) setCaptionDraft(state.captionDraft)
+      if (state.worksheetInstruction) setWorksheetInstruction(state.worksheetInstruction)
+      if (state.captionInstruction) setCaptionInstruction(state.captionInstruction)
+    } catch {}
+  }, [pkg.id])
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(
+        `hfk:review:${pkg.id}`,
+        JSON.stringify({
+          worksheetDraft,
+          captionDraft,
+          worksheetInstruction,
+          captionInstruction,
+        }),
+      )
+    } catch {}
+  }, [pkg.id, worksheetDraft, captionDraft, worksheetInstruction, captionInstruction])
 
   async function callGateApi(
     gate: GateName,
@@ -224,6 +251,8 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
     setLoading(gate)
     try {
       await fetch(`/api/approval/gate/${gate}/reset`, { method: 'POST' })
+      if (gate === 'worksheet') setWorksheetDraft(null)
+      if (gate === 'caption') setCaptionDraft(null)
       router.refresh()
     } finally {
       setLoading(null)
@@ -320,22 +349,6 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
           <p className="text-[13px] text-[#7A5A11]">
             {pkg.gates.direction.redirectNote}
           </p>
-        ) : null}
-        {planDay ? (
-          <button
-            type="button"
-            onClick={() =>
-              setDirForm({
-                topic: planDay.topic,
-                grade: planDay.grade as Grade,
-                subject: planDay.subject as Subject,
-                objective: planDay.objective ?? '',
-              })
-            }
-            className={textButtonClass}
-          >
-            Fill from Plan
-          </button>
         ) : null}
         <input
           type="text"
@@ -509,15 +522,15 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
     if (pkg.gates.direction.status === 'approved') {
       return (
         <div className="space-y-3">
-          <div className="space-y-1.5">
-            <button
-              onClick={() => void handleGenerate('worksheet')}
-              disabled={generating === 'worksheet'}
-              className={primaryButtonClass}
-            >
-              {generating === 'worksheet' ? 'Generating…' : 'Generate Worksheet'}
-            </button>
-            <div>
+          <div>
+            <div className="flex items-end gap-3">
+              <button
+                onClick={() => void handleGenerate('worksheet')}
+                disabled={generating === 'worksheet'}
+                className={primaryButtonClass}
+              >
+                {generating === 'worksheet' ? 'Generating…' : 'Generate Worksheet'}
+              </button>
               <button
                 type="button"
                 onClick={() => setRedirectTarget('worksheet')}
@@ -525,12 +538,12 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
               >
                 {worksheetInstruction ? 'Edit instructions' : 'Add instructions'}
               </button>
-              {worksheetInstruction ? (
-                <p className="text-[11px] text-ink-3 mt-0.5 truncate max-w-[280px]">
-                  {worksheetInstruction}
-                </p>
-              ) : null}
             </div>
+            {worksheetInstruction ? (
+              <p className="mt-1.5 text-[11px] text-ink-3 truncate max-w-[320px]">
+                {worksheetInstruction}
+              </p>
+            ) : null}
           </div>
           {generateError && generating !== 'worksheet' ? (
             <p className="text-[12px] text-rose">{generateError}</p>
@@ -653,15 +666,15 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
     if (pkg.gates.worksheet.status === 'approved') {
       return (
         <div className="space-y-3">
-          <div className="space-y-1.5">
-            <button
-              onClick={() => void handleGenerate('caption')}
-              disabled={generating === 'caption'}
-              className={primaryButtonClass}
-            >
-              {generating === 'caption' ? 'Generating…' : 'Generate Caption'}
-            </button>
-            <div>
+          <div>
+            <div className="flex items-end gap-3">
+              <button
+                onClick={() => void handleGenerate('caption')}
+                disabled={generating === 'caption'}
+                className={primaryButtonClass}
+              >
+                {generating === 'caption' ? 'Generating…' : 'Generate Caption'}
+              </button>
               <button
                 type="button"
                 onClick={() => setRedirectTarget('caption')}
@@ -669,12 +682,12 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
               >
                 {captionInstruction ? 'Edit instructions' : 'Add instructions'}
               </button>
-              {captionInstruction ? (
-                <p className="text-[11px] text-ink-3 mt-0.5 truncate max-w-[280px]">
-                  {captionInstruction}
-                </p>
-              ) : null}
             </div>
+            {captionInstruction ? (
+              <p className="mt-1.5 text-[11px] text-ink-3 truncate max-w-[320px]">
+                {captionInstruction}
+              </p>
+            ) : null}
           </div>
           {generateError && generating !== 'caption' ? (
             <p className="text-[12px] text-rose">{generateError}</p>
@@ -777,7 +790,7 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
     if (gate === 'final') {
       if (!allPriorApproved) return null
       return (
-        <div className="border-t border-[rgba(92,64,51,0.08)] mt-4 pt-4 flex flex-wrap items-center gap-2.5">
+        <div className="border-t border-[rgba(92,64,51,0.08)] mt-4 pt-4 flex flex-wrap items-end gap-2.5">
           <button
             onClick={() => approve(gate)}
             disabled={loading === gate}
@@ -803,7 +816,7 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
     if (!canApprove && !hasWorksheetDraft && !hasCaptionDraft) return null
 
     return (
-      <div className="border-t border-[rgba(92,64,51,0.08)] mt-4 pt-4 flex flex-wrap items-center gap-2.5">
+      <div className="border-t border-[rgba(92,64,51,0.08)] mt-4 pt-4 flex flex-wrap items-end gap-2.5">
         {canApprove ? (
           <button
             onClick={() => {
@@ -880,22 +893,28 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
         </div>
       ) : null}
       <div className="mb-8 flex items-start">
-        {GATE_ORDER.map((gateName, index) => {
+        {GATE_ORDER.flatMap((gateName, index) => {
           const gate = pkg.gates[gateName]
-
-          return (
-            <div key={gateName} className="flex flex-1 items-start">
-              <div className="flex flex-1 flex-col items-center text-center">
-                <StepCircle status={gate.status} />
-                <p className="mt-2 text-[12px] font-medium text-ink-3">
-                  {GATE_LABELS[gateName]}
-                </p>
-              </div>
-              {index < GATE_ORDER.length - 1 ? (
-                <div className="bg-[rgba(92,64,51,0.14)] h-px flex-1 mt-4" />
-              ) : null}
-            </div>
-          )
+          const elements = [
+            <div
+              key={gateName}
+              className="w-20 shrink-0 flex flex-col items-center text-center"
+            >
+              <StepCircle status={gate.status} />
+              <p className="mt-2 text-[12px] font-medium text-ink-3 leading-tight">
+                {GATE_LABELS[gateName]}
+              </p>
+            </div>,
+          ]
+          if (index < GATE_ORDER.length - 1) {
+            elements.push(
+              <div
+                key={`c-${gateName}`}
+                className="flex-1 bg-[rgba(92,64,51,0.14)] h-px mt-4"
+              />,
+            )
+          }
+          return elements
         })}
       </div>
 
@@ -913,11 +932,7 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
                   {GATE_LABELS[gateName]}
                 </h2>
                 <p className="text-[12px] text-ink-3 mt-0.5">
-                  {gateName === 'direction'
-                    ? planDay
-                      ? "Loaded from today's plan. Adjust if needed then approve."
-                      : 'No plan found for today. Enter the direction manually.'
-                    : GATE_DESCRIPTIONS[gateName]}
+                  {GATE_DESCRIPTIONS[gateName]}
                 </p>
               </div>
               <StatusLabel status={gate.status} />

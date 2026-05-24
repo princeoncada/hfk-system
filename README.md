@@ -8,7 +8,7 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.1.0-alpha |
+| Current | 5.1.0-stable |
 | Status | alpha |
 | Current phase | Phase 5.1.0 — Automation Scripts: commit-phase.ps1, validate.ps1, docs/COMPACT_STRATEGY.md, CLAUDE.md and WORKFLOW.md wired to new scripts. |
 
@@ -61,6 +61,7 @@ Open http://localhost:3000 to see the dashboard.
 | docs/WORKFLOW.md | AI and human contribution workflow |
 | docs/FUTURE_PLANS.md | Living backlog and planned phases |
 | docs/PHASE_LOG.md | Full version and validation history |
+
 
 
 

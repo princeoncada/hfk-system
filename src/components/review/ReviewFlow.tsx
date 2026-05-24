@@ -76,6 +76,11 @@ const TEMPLATES = [
     label: 'Cozy v1',
     description: 'Clean serif layout. Vocabulary, activities, parent notes.',
   },
+  {
+    id: 'playful_v1',
+    label: 'Playful v1',
+    description: 'Colorful emoji-illustrated layout with bold playful fonts.',
+  },
 ]
 
 const inputClass =

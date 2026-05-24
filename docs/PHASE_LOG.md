@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 5.0.1-alpha | Patch 5.0.1 | alpha | 2026-05-24 | Mojibake repair + State column fix: fix-mojibake.ps1 script, promote.ps1 State field improvement, em-dash mojibake corrected in PHASE_LOG, VERSIONING, AI_HANDOFF. Files: scripts/fix-mojibake.ps1, scripts/promote.ps1, docs/VERSIONING.md, docs/PHASE_LOG.md, versioning docs. |
+| 5.0.1-stable | Patch 5.0.1 | stable | 2026-05-24 | Mojibake repair + State column fix: fix-mojibake.ps1 script, promote.ps1 State field improvement, em-dash mojibake corrected in PHASE_LOG, VERSIONING, AI_HANDOFF. Files: scripts/fix-mojibake.ps1, scripts/promote.ps1, docs/VERSIONING.md, docs/PHASE_LOG.md, versioning docs. |
 | 5.0.0-stable | Phase 5.0.0 | stable | 2026-05-24 | Workflow Core Hardening: STATE.json, scripts/promote.ps1, docs/CODEX_RULES.md, CLAUDE.md session start protocol update, pre-4.x doc archiving. Files: STATE.json, scripts/promote.ps1, docs/CODEX_RULES.md, CLAUDE.md, docs/PHASE_LOG.md, docs/VERSIONING.md, docs/FUTURE_PLANS.md, versioning docs. |
 | 4.5.0-stable | Phase 4.5.0 | stable | 2026-05-24 | Vault Ingestion + AI Template Recommendation: saved TemplateDefinitions ingest into template_definitions Chroma collection, review flow queries best-fit custom template, recommendation badge appears in selector, and approved custom template reuse score increments. Files: template.types.ts, template.chroma.ts, templates recommend/reuse API routes, templates save API, review/page.tsx, ReviewFlow.tsx, versioning docs. |
 | 4.4.0-stable | Phase 4.4.0 | stable | 2026-05-24 | Live Preview + Publish: right-panel Style/Preview toggle with scaled DynamicWorksheetTemplate live preview driven by current TemplateDefinition state and sample worksheet content. Files: TemplatePreview.tsx, TemplateSlotEditor.tsx, versioning docs. |
@@ -10,6 +10,15 @@
 | 4.2.0-stable | Phase 4.2.0 | stable | 2026-05-24 | Canvas + Drag-and-Drop Slots: dnd-kit slot editor, reorderable TemplateSlot list, add/remove slot controls, save API route, new/edit template pages wired to editor. Files: TemplateSlotEditor.tsx, SortableSlotRow.tsx, editor/index.ts, api/templates/save/route.ts, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs. |
 | 4.1.0-stable | Phase 4.1.0 | stable | 2026-05-24 | Template Routes + List Page: /templates nav entry, built-in/custom template list page, New Template placeholder, and edit placeholder routes. Files: SidebarNav.tsx, templates/page.tsx, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs, FUTURE_PLANS.md. |
 | 4.0.0-stable | Phase 4.0.0 | stable | 2026-05-24 | Template definition schema (TemplateDefinition, TemplatePalette, TemplateSlot), template store (vault/templates/), DynamicWorksheetTemplate renderer, integrated into preview, builder, and review flow template selector. Sample modern_v1 template included. |
+
+## Validation Record — 5.0.1-stable
+
+Date: 2026-05-24
+
+- scripts/fix-mojibake.ps1 ran idempotently with no file changes.
+- Mojibake scan clean across README.md, docs/, vault/, CLAUDE.md, master_prompt.md, and scripts/.
+- npm run type-check passed.
+- npm run build passed with 28/28 static pages.
 
 ## Validation Record — 4.0.0-stable
 
@@ -23,7 +32,7 @@ Date: 2026-05-24
 
 ## Phase 5.0.0 — Workflow Core Hardening
 
-Status: alpha
+Status: stable
 
 Version: 5.0.0-stable
 
@@ -51,9 +60,9 @@ Changes:
 
 ## Patch 5.0.1 — Mojibake + State Column Fix
 
-Status: alpha
+Status: stable
 
-Version: 5.0.1-alpha
+Version: 5.0.1-stable
 
 Date: 2026-05-24
 
@@ -72,7 +81,13 @@ Changes:
 - Added fix-mojibake.ps1 to repair triple-encoded UTF-8 mojibake in docs files.
 - Updated promote.ps1 to fix standalone State fields during alpha-to-stable promotion.
 - Corrected 5.0.0-stable State columns from alpha to stable in active history tables.
-- Bumped versioning surfaces to 5.0.1-alpha.
+- Bumped versioning surfaces to 5.0.1-stable.
+
+Validation:
+- scripts/fix-mojibake.ps1 ran idempotently with no file changes.
+- Mojibake scan clean across README.md, docs/, vault/, CLAUDE.md, master_prompt.md, and scripts/.
+- npm run type-check passed.
+- npm run build passed with 28/28 static pages.
 
 ## Validation Record — 4.5.0-stable
 
@@ -1618,6 +1633,8 @@ New files:
 - TypeScript type-check: PASS
 - npm install: PASS
 - Promoted to stable: 2026-05-21
+
+
 
 
 

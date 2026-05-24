@@ -216,6 +216,16 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
     void callGateApi(gate, 'approve', payload ? { payload } : {})
   }
 
+  async function resetGate(gate: GateName) {
+    setLoading(gate)
+    try {
+      await fetch(`/api/approval/gate/${gate}/reset`, { method: 'POST' })
+      router.refresh()
+    } finally {
+      setLoading(null)
+    }
+  }
+
   async function handleGenerate(gate: 'worksheet' | 'caption') {
     setGenerateError(null)
     setGenerating(gate)
@@ -275,26 +285,37 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
   function renderDirectionBody(payload: GatePayload, status: GateStatus) {
     if (status === 'approved' && isDirection(payload)) {
       return (
-        <dl className="grid gap-2 text-[14px]">
-          <div className="flex justify-between gap-4">
-            <dt className="text-ink-3">Topic</dt>
-            <dd className="font-medium text-ink">{payload.topic}</dd>
-          </div>
-          <div className="flex justify-between gap-4">
-            <dt className="text-ink-3">Grade</dt>
-            <dd className="text-ink">Grade {payload.grade}</dd>
-          </div>
-          <div className="flex justify-between gap-4">
-            <dt className="text-ink-3">Subject</dt>
-            <dd className="text-ink">{SUBJECT_LABELS[payload.subject]}</dd>
-          </div>
-          {payload.objective ? (
+        <div className="space-y-3">
+          <dl className="grid gap-2 text-[14px]">
             <div className="flex justify-between gap-4">
-              <dt className="text-ink-3">Objective</dt>
-              <dd className="max-w-md text-right text-ink">{payload.objective}</dd>
+              <dt className="text-ink-3">Topic</dt>
+              <dd className="font-medium text-ink">{payload.topic}</dd>
             </div>
-          ) : null}
-        </dl>
+            <div className="flex justify-between gap-4">
+              <dt className="text-ink-3">Grade</dt>
+              <dd className="text-ink">Grade {payload.grade}</dd>
+            </div>
+            <div className="flex justify-between gap-4">
+              <dt className="text-ink-3">Subject</dt>
+              <dd className="text-ink">{SUBJECT_LABELS[payload.subject]}</dd>
+            </div>
+            {payload.objective ? (
+              <div className="flex justify-between gap-4">
+                <dt className="text-ink-3">Objective</dt>
+                <dd className="max-w-md text-right text-ink">
+                  {payload.objective}
+                </dd>
+              </div>
+            ) : null}
+          </dl>
+          <button
+            onClick={() => void resetGate('direction')}
+            disabled={loading === 'direction'}
+            className={textButtonClass}
+          >
+            Edit Direction
+          </button>
+        </div>
       )
     }
 
@@ -304,6 +325,22 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
           <p className="text-[13px] text-[#7A5A11]">
             {pkg.gates.direction.redirectNote}
           </p>
+        ) : null}
+        {planDay ? (
+          <button
+            type="button"
+            onClick={() =>
+              setDirForm({
+                topic: planDay.topic,
+                grade: planDay.grade as Grade,
+                subject: planDay.subject as Subject,
+                objective: planDay.objective ?? '',
+              })
+            }
+            className={textButtonClass}
+          >
+            Fill from Plan
+          </button>
         ) : null}
         <input
           type="text"
@@ -378,33 +415,73 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
     )
   }
 
-  function renderWorksheetDraft(draft: WorksheetDraft, provenance: WorksheetDraftResponse['provenance']) {
+  function renderWorksheetDraft(
+    draft: WorksheetDraft,
+    provenance: WorksheetDraftResponse['provenance'],
+  ) {
     return (
-      <div className="space-y-3">
+      <div className="space-y-4">
         {draft.subtitle ? (
-          <p className="font-medium text-ink">{draft.subtitle}</p>
+          <p className="text-[13px] italic text-ink-2">{draft.subtitle}</p>
         ) : null}
-        <div>
-          <p className="text-[13px] text-ink-3">
-            Vocabulary: {draft.vocabulary.length} terms
-          </p>
-          <ul className="mt-1 space-y-1">
-            {draft.vocabulary.slice(0, 3).map((entry) => (
-              <li key={entry.word} className="text-[14px] text-ink">
-                <span className="font-medium">{entry.word}:</span>{' '}
-                {entry.definition}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <p className="text-[13px] text-ink-3">Activities</p>
-          <ul className="mt-1 list-inside list-disc text-[14px] text-ink">
-            {draft.activities.map((activity, index) => (
-              <li key={`${activity.type}-${index}`}>{activity.type}</li>
-            ))}
-          </ul>
-        </div>
+
+        {draft.vocabulary.length > 0 ? (
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-ink-4 mb-2">
+              Vocabulary
+            </p>
+            <div className="space-y-1.5">
+              {draft.vocabulary.map((entry) => (
+                <div key={entry.word} className="flex gap-3 text-[13px]">
+                  <span className="font-semibold text-ink min-w-[110px] shrink-0">
+                    {entry.word}
+                  </span>
+                  <span className="text-ink-2">{entry.definition}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : null}
+
+        {draft.activities.length > 0 ? (
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-ink-4 mb-2">
+              Activities
+            </p>
+            <div className="space-y-2">
+              {draft.activities.map((activity, index) => (
+                <div
+                  key={index}
+                  className="rounded-[8px] bg-cream-deep border border-[rgba(92,64,51,0.08)] p-3"
+                >
+                  <p className="text-[11px] font-semibold text-ink capitalize mb-1">
+                    {activity.type.replace(/-/g, ' ')}
+                  </p>
+                  <p className="text-[12px] italic text-ink-2 mb-2">
+                    {activity.instruction}
+                  </p>
+                  <ul className="space-y-0.5">
+                    {activity.items.map((item, i) => (
+                      <li key={i} className="text-[12px] text-ink-3">
+                        {i + 1}. {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : null}
+
+        {draft.parentNotes ? (
+          <div className="rounded-[8px] bg-yellow-tint border border-[rgba(92,64,51,0.1)] p-3">
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-ink-4 mb-1">
+              Parent Notes
+            </p>
+            <p className="text-[13px] text-ink-2">{draft.parentNotes}</p>
+          </div>
+        ) : null}
+
         {provenance.length > 0 ? (
           <ProvenancePanel provenance={provenance} />
         ) : null}
@@ -452,6 +529,13 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
               Instructions: {worksheetInstruction}
             </p>
           ) : null}
+          <button
+            type="button"
+            onClick={() => setRedirectTarget('worksheet')}
+            className="text-[11px] text-ink-4 hover:text-ink-2 transition-colors underline-offset-2 underline mt-0.5"
+          >
+            {worksheetInstruction ? 'Edit instructions' : 'Add instructions'}
+          </button>
           <p className="text-[12px] text-ink-3 mt-2">
             AI will draft a worksheet based on the approved direction.
           </p>
@@ -514,20 +598,35 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
 
   function renderCaptionDraft(draft: CaptionDraftResponse) {
     return (
-      <div>
-        <blockquote className="border-l-2 border-sage pl-4 text-[14px] text-ink-2 italic">
-          {draft.caption}
-        </blockquote>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {draft.hashtags.map((tag) => (
-            <span
-              key={tag}
-              className="bg-cream text-ink-3 border border-[rgba(92,64,51,0.1)] rounded-full px-2.5 py-0.5 text-[11px]"
+      <div className="space-y-3">
+        <div>
+          <p className="text-[10px] font-semibold uppercase tracking-widest text-ink-4 mb-2">
+            Caption
+          </p>
+          <div className="relative rounded-[10px] border border-[rgba(92,64,51,0.14)] bg-cream-deep p-4">
+            <button
+              onClick={() => void navigator.clipboard.writeText(draft.caption)}
+              className="absolute top-2.5 right-3 text-[11px] font-medium text-ink-3 hover:text-ink transition-colors"
             >
-              #{tag}
-            </span>
-          ))}
+              Copy
+            </button>
+            <p className="text-[13px] text-ink leading-relaxed pr-10">
+              {draft.caption}
+            </p>
+          </div>
         </div>
+
+        {draft.hashtags.length > 0 ? (
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-ink-4 mb-2">
+              Hashtags
+            </p>
+            <p className="text-[13px] text-ink-2 leading-relaxed">
+              {draft.hashtags.map((tag) => `#${tag}`).join('  ')}
+            </p>
+          </div>
+        ) : null}
+
         {draft.provenance.length > 0 ? (
           <ProvenancePanel provenance={draft.provenance} />
         ) : null}
@@ -570,6 +669,13 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
               Instructions: {captionInstruction}
             </p>
           ) : null}
+          <button
+            type="button"
+            onClick={() => setRedirectTarget('caption')}
+            className="text-[11px] text-ink-4 hover:text-ink-2 transition-colors underline-offset-2 underline mt-0.5"
+          >
+            {captionInstruction ? 'Edit instructions' : 'Add instructions'}
+          </button>
           <p className="text-[12px] text-ink-3 mt-2">
             AI will draft a Facebook caption based on the worksheet.
           </p>
@@ -686,14 +792,6 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
             className={textButtonClass}
           >
             Regenerate
-          </button>
-        ) : null}
-        {gate === 'worksheet' || gate === 'caption' ? (
-          <button
-            onClick={() => setRedirectTarget(gate)}
-            className={textButtonClass}
-          >
-            Instructions
           </button>
         ) : null}
       </div>

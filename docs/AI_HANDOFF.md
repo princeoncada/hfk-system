@@ -1,12 +1,14 @@
 # AI Handoff
 
-**Current Version:** 4.4.0-alpha
+**Current Version:** 4.4.0-stable
 
 ## Current Phase
 
-Phase 4.4.0 [4.4.0-alpha] — Live Preview + Publish: right-panel Style/Preview toggle with scaled DynamicWorksheetTemplate live preview driven by current TemplateDefinition state and sample worksheet content — alpha.
+Phase 4.5.0 [in-progress] — Vault Ingestion + AI Template Recommendation.
 
 ## Completed Phase
+
+Phase 4.4.0 [4.4.0-stable] — Live Preview + Publish: right-panel Style/Preview toggle with scaled DynamicWorksheetTemplate live preview driven by current TemplateDefinition state and sample worksheet content — complete.
 
 Phase 4.3.0 [4.3.0-stable] — Property Panel: right-side editor panel with global palette color controls, footer text, avatar selector, selected-slot style overrides, and two-column template editor layout — complete.
 

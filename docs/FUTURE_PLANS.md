@@ -4,8 +4,8 @@ Living backlog for HFK Publishing Engine.
 Completed items are struck through. Update this file every phase.
 
 Last updated: 2026-05-24
-Current stable version: 5.0.2-stable
-Current working version: 5.1.0-alpha
+Current stable version: 5.1.0-stable
+Current working version: 5.1.1-alpha
 
 ---
 
@@ -56,20 +56,48 @@ Current working version: 5.1.0-alpha
 - ~~Phase 4.3.0 — Property Panel~~ (stable 2026-05-24)
 - ~~Phase 4.4.0 — Live Preview + Publish~~ (stable 2026-05-24)
 - ~~Phase 4.5.0 — Vault Ingestion + AI Template Recommendation~~ (stable 2026-05-24)
+- ~~Phase 5.0.0 — Workflow Core Hardening~~ (stable 2026-05-24)
+- ~~Patch 5.0.1 — Mojibake + State Column Fix~~ (stable 2026-05-24)
+- ~~Patch 5.0.2 — Mojibake Repair Completion~~ (stable 2026-05-24)
+- ~~Phase 5.1.0 — Automation Scripts~~ (stable 2026-05-24)
 
 ---
 
 ## In Progress
 
-- Phase 5.1.0 — Automation Scripts
-
-commit-phase.ps1 single-file commit enforcer, validate.ps1 standard
-validation runner, docs/COMPACT_STRATEGY.md context window management
-strategy, CLAUDE.md and WORKFLOW.md wired to new scripts.
+(none)
 
 ---
 
 ## Planned
+
+### Phase 5.2.0 — Graphify Integration
+Generate a static codebase knowledge graph using Graphify (tree-sitter based).
+Commit the graph output. Wire codebase-graph.json into the Codex read-first list
+so Codex navigates the codebase from one file instead of reading 4–8 source files
+per prompt. Estimated Codex token reduction: ~20–25%.
+
+### Phase 5.3.0 — ChromaDB Docs Extension
+Ingest all docs files (PHASE_LOG.md, AI_HANDOFF.md, FUTURE_PLANS.md, DECISIONS.md,
+BRAND_GUIDE.md, etc.) into a new hfk_docs ChromaDB collection. Add a query helper
+so Claude Code can answer "what was the decision for X?" with a semantic query
+instead of reading entire files. Estimated Claude Code token reduction: ~15–20%
+on session starts and planning turns.
+
+### Phase 5.4.0 — Portfolio Case Studies
+Two documents under docs/case-studies/:
+- Case Study A — Docs-Led AI Workflow: How structured documentation replaced
+  ad-hoc prompting and created a reproducible AI-assisted build process.
+- Case Study B — Token Optimization Journey: Specific optimizations made in the
+  5.x series and measurable token reduction at each step.
+Serves as portfolio material and a compact onboarding reference for future
+AI sessions. Indirect token reduction: ~10%.
+
+### Phase 5.5.0 — Advanced Memory Layer
+Integrate Zep or Mem0 as a persistent memory server. Replace the file-based
+memory/ system with query-based memory retrieval. Session start reads STATE.json
+and queries memory instead of opening multiple large docs. Estimated Claude Code
+token reduction: ~30–40% on session start overhead.
 
 ## Potential Next Directions
 

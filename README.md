@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.0.2-stable |
+| Current | 5.1.0-alpha |
 | Status | alpha |
-| Current phase | Patch 5.0.2 — Workflow Doc Hardening: fix four-to-five versioning locations, replace Stable-Promotion Codex Prompt step with .\scripts\promote.ps1, update CLAUDE.md Key File Map with 5.0.x entries. |
+| Current phase | Phase 5.1.0 — Automation Scripts: commit-phase.ps1, validate.ps1, docs/COMPACT_STRATEGY.md, CLAUDE.md and WORKFLOW.md wired to new scripts. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

@@ -5,11 +5,13 @@ import {
 } from './vault.schema'
 import { REUSE_SCORE_DEFAULT } from './vault.constants'
 import { getPackage, savePackage } from './approval.store'
+import { saveWorksheet } from './save'
 import type {
   DailyPackage,
   DirectionPayload,
   GateName,
   GatePayload,
+  TemplatePayload,
 } from './approval.types'
 import type {
   CaptionDraftResponse,
@@ -32,6 +34,39 @@ function isDirectionPayload(p: GatePayload): p is DirectionPayload {
     'topic' in p &&
     'grade' in p
   )
+}
+
+function isTemplatePayload(p: GatePayload): p is TemplatePayload {
+  return p !== null && typeof p === 'object' && 'templateId' in p
+}
+
+function saveWorksheetContent(pkg: DailyPackage, now: string): void {
+  const worksheetPayload = pkg.gates.worksheet.payload
+  const dirPayload = pkg.gates.direction.payload
+  const templatePayload = pkg.gates.template.payload
+
+  if (!isWorksheetPayload(worksheetPayload) || !isDirectionPayload(dirPayload)) {
+    return
+  }
+
+  const templateId = isTemplatePayload(templatePayload)
+    ? templatePayload.templateId
+    : 'cozy_v1'
+
+  saveWorksheet({
+    id: pkg.id,
+    title: dirPayload.topic,
+    subtitle: worksheetPayload.draft.subtitle,
+    grade: dirPayload.grade,
+    subject: dirPayload.subject,
+    template: templateId,
+    vocabulary: worksheetPayload.draft.vocabulary,
+    activities: worksheetPayload.draft.activities,
+    parentNotes: worksheetPayload.draft.parentNotes,
+    sectionOrder: ['vocabulary', 'activities', 'parentNotes'],
+    createdAt: now,
+    status: 'ready',
+  })
 }
 
 function slugify(value: string): string {
@@ -128,6 +163,14 @@ export async function approveGate(
       await writeCaptionToVault(packageId, directionPayload, resolvedPayload, now)
     } catch (error) {
       console.warn('Caption gate approved but Vault write-back failed.', error)
+    }
+  }
+
+  if (gate === 'final') {
+    try {
+      saveWorksheetContent(pkg, now)
+    } catch (error) {
+      console.warn('Final gate approved but worksheet content save failed.', error)
     }
   }
 

@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 5.1.0-alpha | Phase 5.1.0 | alpha | 2026-05-24 | Automation Scripts: commit-phase.ps1, validate.ps1, docs/COMPACT_STRATEGY.md, CLAUDE.md and WORKFLOW.md wired to new scripts. |
 | 5.0.2-stable | Patch 5.0.2 | stable | 2026-05-24 | Workflow Doc Hardening: fix four-to-five versioning locations, replace Stable-Promotion Codex Prompt step with .\scripts\promote.ps1, update CLAUDE.md Key File Map with 5.0.x entries. |
 | 5.0.1-stable | Patch 5.0.1 | stable | 2026-05-24 | Mojibake repair + State column fix: fix-mojibake.ps1 script, promote.ps1 State field improvement, em-dash mojibake corrected in PHASE_LOG, VERSIONING, AI_HANDOFF. Files: scripts/fix-mojibake.ps1, scripts/promote.ps1, docs/VERSIONING.md, docs/PHASE_LOG.md, versioning docs. |
 | 5.0.0-stable | Phase 5.0.0 | stable | 2026-05-24 | Workflow Core Hardening: STATE.json, scripts/promote.ps1, docs/CODEX_RULES.md, CLAUDE.md session start protocol update, pre-4.x doc archiving. Files: STATE.json, scripts/promote.ps1, docs/CODEX_RULES.md, CLAUDE.md, docs/PHASE_LOG.md, docs/VERSIONING.md, docs/FUTURE_PLANS.md, versioning docs. |
@@ -31,9 +32,51 @@ Date: 2026-05-24
 
 # Phase Log
 
-## Patch 5.0.2 — Workflow Doc Hardening
+## Phase 5.1.0 — Automation Scripts
 
 Status: alpha
+
+Version: 5.1.0-alpha
+
+Date: 2026-05-24
+
+Scope: scripts/commit-phase.ps1, scripts/validate.ps1, docs/COMPACT_STRATEGY.md,
+CLAUDE.md, docs/WORKFLOW.md.
+
+Files:
+- scripts/commit-phase.ps1
+- scripts/validate.ps1
+- docs/COMPACT_STRATEGY.md
+- CLAUDE.md
+- docs/WORKFLOW.md
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- README.md
+- STATE.json
+- docs/FUTURE_PLANS.md
+
+Changes:
+- Created commit-phase.ps1: parameter-driven single-file commit helper
+  enforcing the 1-by-1 rule mechanically.
+- Created validate.ps1: standard four-step validation runner
+  (fix-mojibake, mojibake scan, type-check, build) replacing ad-hoc
+  per-phase Section 2 blocks.
+- Created docs/COMPACT_STRATEGY.md: documents context window management
+  strategy for session pacing, STATE.json + opener usage, SESSION_LOG
+  compression, opener update rules, and AI_HANDOFF.md lean strategy.
+- CLAUDE.md: commit bullet updated to commit-phase.ps1 call sequences,
+  Section 2 note added for validate.ps1 baseline, Key File Map updated
+  with three new rows.
+- WORKFLOW.md: line 21 residual inconsistency fixed (post-validation docs
+  Codex prompts → promote.ps1 stable-promotion block + session checkpoint),
+  Section 2 standard note added to Mandatory Workflow Artifact Enforcement,
+  SECTION 2 example updated from raw git commands to commit-phase.ps1 calls.
+- Bumped all five versioning locations to 5.1.0-alpha.
+
+## Patch 5.0.2 — Workflow Doc Hardening
+
+Status: stable
 
 Version: 5.0.2-stable
 

@@ -1,12 +1,16 @@
 # AI Handoff
 
-**Current Version:** 4.5.0-alpha
+**Current Version:** 4.5.0-stable
 
 ## Current Phase
 
-Phase 4.5.0 [4.5.0-alpha] — Vault Ingestion + AI Template Recommendation: saved TemplateDefinitions ingest into ChromaDB, review flow shows a best-fit recommendation badge, and template approval increments reuse score — alpha.
+Phase 5.0.0 [next] — Workflow Core Hardening.
+
+The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 
 ## Completed Phase
+
+Phase 4.5.0 [4.5.0-stable] — Vault Ingestion + AI Template Recommendation: saved TemplateDefinitions ingest into ChromaDB, review flow shows a best-fit recommendation badge, and template approval increments reuse score — complete.
 
 Phase 4.4.0 [4.4.0-stable] — Live Preview + Publish: right-panel Style/Preview toggle with scaled DynamicWorksheetTemplate live preview driven by current TemplateDefinition state and sample worksheet content — complete.
 

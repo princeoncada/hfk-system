@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { TemplateSlotEditor } from '@/components/templates/editor'
 import { getTemplateById } from '@/lib/template.store'
 
 interface EditTemplatePageProps {
@@ -30,14 +31,7 @@ export default async function EditTemplatePage({ params }: EditTemplatePageProps
         </h1>
       </div>
 
-      <div className="mx-auto max-w-sm rounded-card bg-paper p-8 text-center shadow-card">
-        <p className="mb-4 text-[14px] text-ink-2">
-          Template editor coming in Phase 4.2.0
-        </p>
-        <Link href="/templates" className="text-[13px] text-sage hover:underline">
-          Back to templates
-        </Link>
-      </div>
+      <TemplateSlotEditor initialDefinition={def} />
     </>
   )
 }

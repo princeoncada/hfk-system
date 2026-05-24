@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.6.3-alpha
+## Current Version: 3.6.3-stable
 
 ## Current Phase
 
-Patch 3.6.3 [3.6.3-alpha] — Final Package Lock and Worksheet Link — alpha.
+Patch 3.6.3 [3.6.3-stable] — Final Package Lock and Worksheet Link — stable.
 
 ## Architecture Invariant
 
@@ -24,11 +24,11 @@ records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
 
-## Patch 3.6.3 [3.6.3-alpha] — Final Package Lock and Worksheet Link
+## Patch 3.6.3 [3.6.3-stable] — Final Package Lock and Worksheet Link
 
-Status: alpha
+Status: stable
 
-Version: 3.6.3-alpha
+Version: 3.6.3-stable
 
 Scope: approval.actions.ts + ReviewFlow.tsx
 
@@ -38,7 +38,12 @@ Files:
 
 Purpose: When the final gate is approved, save the AI-generated worksheet to content/worksheets/[date].json using the existing saveWorksheet utility so it appears in /worksheets for editing and export. Show Edit Worksheet and Preview links in the final gate card. Lock the entire review page (all action rows return null, locked banner appears) when the package is complete so the day cannot be further edited from the review screen.
 
-Validation: pending
+Validation:
+- Build clean
+- isTemplatePayload, saveWorksheetContent, saveWorksheet confirmed in approval.actions.ts
+- gate === 'final' hook in approveGate confirmed
+- isPackageComplete, Link, Edit Worksheet link, locked banner confirmed in ReviewFlow.tsx
+- Version bump confirmed in all four versioning files
 
 ## Patch 3.6.2 [3.6.2-stable] — Daily Review UI/UX Fixes
 

@@ -17,6 +17,7 @@ import type {
   WorksheetDraftResponse,
 } from '@/lib/ai.types'
 import type { PlanDay } from '@/lib/planning.types'
+import type { TemplateDefinition } from '@/lib/template.types'
 import type { Subject } from '@/lib/types'
 import RedirectModal from './RedirectModal'
 import { Plus, SlidersHorizontal } from 'lucide-react'
@@ -106,6 +107,7 @@ function isCaption(p: GatePayload): p is CaptionDraftResponse {
 interface ReviewFlowProps {
   pkg: DailyPackage
   planDay: PlanDay | null
+  customTemplates: TemplateDefinition[]
 }
 
 function StatusLabel({ status }: { status: GateStatus }) {
@@ -169,7 +171,11 @@ function ProvenancePanel({
   )
 }
 
-export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
+export default function ReviewFlow({
+  pkg,
+  planDay,
+  customTemplates,
+}: ReviewFlowProps) {
   const router = useRouter()
   const [loading, setLoading] = useState<GateName | null>(null)
   const [redirectTarget, setRedirectTarget] = useState<GateName | null>(null)
@@ -606,10 +612,19 @@ export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
       return <p className="text-[14px] text-ink">Template: {payload.templateId}</p>
     }
 
+    const allTemplates = [
+      ...TEMPLATES,
+      ...customTemplates.map((def) => ({
+        id: def.id,
+        label: def.name,
+        description: def.description,
+      })),
+    ]
+
     return (
       <div className="space-y-3">
         <div className="grid grid-cols-1 gap-3">
-          {TEMPLATES.map((template) => (
+          {allTemplates.map((template) => (
             <button
               key={template.id}
               type="button"

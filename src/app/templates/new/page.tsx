@@ -1,6 +1,13 @@
+import fs from 'fs'
+import path from 'path'
 import { TemplateSlotEditor } from '@/components/templates/editor'
 
 export default async function NewTemplatePage() {
+  const AVATARS_DIR = path.join(process.cwd(), 'assets', 'avatars')
+  const avatarOptions = fs.existsSync(AVATARS_DIR)
+    ? fs.readdirSync(AVATARS_DIR).filter((f) => /\.(png|svg|jpe?g|webp)$/i.test(f))
+    : []
+
   return (
     <>
       <div className="mb-8">
@@ -12,7 +19,7 @@ export default async function NewTemplatePage() {
         </h1>
       </div>
 
-      <TemplateSlotEditor />
+      <TemplateSlotEditor avatarOptions={avatarOptions} />
     </>
   )
 }

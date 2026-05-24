@@ -1,10 +1,10 @@
 # AI Handoff
 
-**Current Version:** 4.3.0-stable
+**Current Version:** 4.4.0-alpha
 
 ## Current Phase
 
-Phase 4.4.0 [in-progress] — Live Preview + Publish.
+Phase 4.4.0 [4.4.0-alpha] — Live Preview + Publish: right-panel Style/Preview toggle with scaled DynamicWorksheetTemplate live preview driven by current TemplateDefinition state and sample worksheet content — alpha.
 
 ## Completed Phase
 

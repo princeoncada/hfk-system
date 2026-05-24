@@ -8,7 +8,7 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.2.1-alpha |
+| Current | 5.2.1-stable |
 | Status | alpha |
 | Current phase | Patch 5.2.1 — Real Graphify Output: graphifyy installed, graphify-out/graph.json and GRAPH_REPORT.md generated, codebase-graph.json normalized from Graphify output. |
 
@@ -62,6 +62,7 @@ Open http://localhost:3000 to see the dashboard.
 | docs/FUTURE_PLANS.md | Living backlog and planned phases |
 | docs/PHASE_LOG.md | Full version and validation history |
 | docs/CODEBASE_GRAPH.md | Codebase graph usage and refresh guide |
+
 
 
 

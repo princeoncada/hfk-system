@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.0.0-alpha
+**Current Version:** 5.0.0-stable
 
 ## Current Phase
 
-Phase 5.0.0 [5.0.0-alpha] — Workflow Core Hardening.
+Phase 5.0.0 [5.0.0-stable] — Workflow Core Hardening.
 
 The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 The 5.x workflow infrastructure series is now active.
@@ -951,7 +951,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Complete validation for Phase 5.0.0, then promote 5.0.0-alpha to stable with scripts/promote.ps1.
+Complete validation for Phase 5.0.0, then promote 5.0.0-stable to stable with scripts/promote.ps1.
 
 ## What Exists
 
@@ -972,6 +972,7 @@ dev.
   only database dependency permitted, and it is local-only.
 - Do not embed actual image or template files into ChromaDB. Only metadata
   records for non-text assets are indexed.
+
 
 
 

@@ -1,25 +1,26 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.2.0-stable
+**Current Version:** 5.2.1-alpha
 
 ## Current Phase
 
-Phase 5.2.0 [5.2.0-stable] — Graphify-Ready Codebase Graph
+Patch 5.2.1 [5.2.1-alpha] — Real Graphify Output
 
 Status: alpha
 
 The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 The 5.x workflow infrastructure series is now active.
 
-Current scope: codebase-graph.json is now the committed code navigation map.
-scripts/generate-codebase-graph.ps1 wraps Graphify when installed and falls
-back to scripts/generate_codebase_graph.py as a degraded bridge only.
-CLAUDE.md, docs/WORKFLOW.md, and docs/CODEX_RULES.md wire the graph into
-read-first behavior.
+Current scope: graphifyy is installed in the active Python environment and
+the real graphify CLI generated graphify-out/graph.json plus GRAPH_REPORT.md.
+codebase-graph.json is normalized from Graphify output with fallbackUsed false.
+Graph read-first docs now point Codex to the report for orientation-heavy work.
 
-Next recommended work: Complete Phase 5.2.0 validation, then promote to stable. Then open 5.2.1 for real Graphify CLI output.
+Next recommended work: Complete Patch 5.2.1 validation, then promote to stable.
 
 ## Completed Phase
+
+Phase 5.2.0 [5.2.0-stable] — Graphify-Ready Codebase Graph: committed codebase-graph.json, added Graphify wrapper and degraded fallback scanner, and wired graph read-first workflow docs — complete.
 
 Patch 5.1.1 [5.1.1-stable] — Future Plans Queue: populated FUTURE_PLANS.md with 5.0.x + 5.1.0 completions and 5.2.0–5.5.0 planned phases with token optimization rationale — complete.
 
@@ -970,7 +971,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Complete Phase 5.2.0 validation, then promote to stable. Next implementation phase is 5.3.0 — ChromaDB Docs Extension.
+Complete Patch 5.2.1 validation, then promote to stable. Next implementation phase is 5.3.0 — ChromaDB Docs Extension.
 
 ## What Exists
 

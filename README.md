@@ -8,8 +8,8 @@ Grades 1Ã¢â‚¬â€œ6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 3.8.0-alpha |
-| Status | alpha |
+| Current | 3.8.0-stable |
+| Status | stable |
 | Current phase | Phase 3.8.0 — Direction overhaul: grade/subject locked from planner, topic read-only with AI regenerate, objective editable, direction approval syncs topic/objective back to planner. |
 
 Full planned roadmap complete as of 3.3.0-stable.

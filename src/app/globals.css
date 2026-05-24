@@ -11,6 +11,13 @@
   body {
     background: white;
   }
+  html,
+  body {
+    overflow: hidden;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
   .no-print {
     display: none !important;
   }

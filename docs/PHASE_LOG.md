@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 4.3.0-alpha | Phase 4.3.0 | alpha | 2026-05-24 | Property Panel: right-side editor panel with global palette color controls, footer text, avatar selector, selected-slot style overrides, and two-column template editor layout. Files: PropertyPanel.tsx, TemplateSlotEditor.tsx, SortableSlotRow.tsx, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs. |
 | 4.2.0-stable | Phase 4.2.0 | stable | 2026-05-24 | Canvas + Drag-and-Drop Slots: dnd-kit slot editor, reorderable TemplateSlot list, add/remove slot controls, save API route, new/edit template pages wired to editor. Files: TemplateSlotEditor.tsx, SortableSlotRow.tsx, editor/index.ts, api/templates/save/route.ts, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs. |
 | 4.1.0-stable | Phase 4.1.0 | stable | 2026-05-24 | Template Routes + List Page: /templates nav entry, built-in/custom template list page, New Template placeholder, and edit placeholder routes. Files: SidebarNav.tsx, templates/page.tsx, templates/new/page.tsx, templates/[id]/edit/page.tsx, versioning docs, FUTURE_PLANS.md. |
 | 4.0.0-stable | Phase 4.0.0 | stable | 2026-05-24 | Template definition schema (TemplateDefinition, TemplatePalette, TemplateSlot), template store (vault/templates/), DynamicWorksheetTemplate renderer, integrated into preview, builder, and review flow template selector. Sample modern_v1 template included. |
@@ -61,6 +62,36 @@ Date: 2026-05-24
 - Files validated: template.types.ts, template.store.ts, DynamicWorksheetTemplate.tsx, dynamic/index.ts, vault/templates/modern_v1.json, preview/[id]/page.tsx, worksheets/[id]/page.tsx, worksheets/new/page.tsx, WorksheetBuilder.tsx, review/page.tsx, ReviewFlow.tsx
 
 # Phase Log
+
+## Phase 4.3.0 — Property Panel
+
+Status: alpha
+
+Version: 4.3.0-alpha
+
+Date: 2026-05-24
+
+Scope: Add global palette controls and selected-slot style overrides to the template editor.
+
+Files:
+- src/components/templates/editor/PropertyPanel.tsx
+- src/components/templates/editor/TemplateSlotEditor.tsx
+- src/components/templates/editor/SortableSlotRow.tsx
+- src/app/templates/new/page.tsx
+- src/app/templates/[id]/edit/page.tsx
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- README.md
+
+Changes:
+- Added right-side PropertyPanel with HFK color token swatches and hex inputs for TemplatePalette fields.
+- Added footer text and avatar selection controls, with avatar options read from assets/avatars/ by server pages.
+- Added selected-slot style controls for background, text color, border color, border width, border radius, and padding.
+- Updated TemplateSlotEditor to manage palette, avatar, footerText, selectedSlotId, and slot style state.
+- Updated SortableSlotRow to support row selection and selected styling while preserving existing dnd-kit sorting behavior.
+- Updated new/edit template pages to pass avatarOptions into the editor.
+- Bumped all four versioning files to 4.3.0-alpha.
 
 ## Validation Record — 4.2.0-stable
 

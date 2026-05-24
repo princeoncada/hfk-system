@@ -42,16 +42,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.6.5-stable |
-| Phase | Patch 3.6.5 |
-| State | stable |
+| Version | 3.7.0-alpha |
+| Phase | Phase 3.7.0 |
+| State | alpha |
 | Date | 2026-05-24 |
-| Summary | Patch 3.6.5 — Print/PDF fix: @page rule, 0.5in margin, main padding reset, full-width worksheet on print. |
+| Summary | Phase 3.7.0 — playful_v1 template: emoji-illustrated colorful layout with Fredoka/Nunito fonts, rotating activity colors, vocab tracing lines for reading/vocab subjects. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 3.7.0-alpha | Phase 3.7.0 — playful_v1 Template | alpha | 2026-05-24 | playful_v1 template: emoji-illustrated colorful layout with Fredoka/Nunito fonts, rotating activity colors, vocab tracing lines for reading/vocab subjects. |
 | 3.6.5-stable | Patch 3.6.5 — Print/PDF Fix | stable | 2026-05-24 | Print/PDF fix: @page rule, 0.5in margin, main padding reset, full-width worksheet on print. |
 | 3.6.4-stable | Patch 3.6.4 — Daily Review UX Polish + Print/Export Fixes | stable | 2026-05-24 | Print scrollbar fix, multi-page PNG export, preview 404 redirect, Fill from Plan removed, Instructions inline-right of Generate, draft persistence via localStorage, step indicator layout fix. |
 | 3.6.3-stable | Patch 3.6.3 — Final Package Lock and Worksheet Link | stable | 2026-05-24 | Save AI worksheet to content/worksheets/ on final approval, show Edit Worksheet and Preview links in final gate, lock all action rows when package is complete, locked banner at page top. |
@@ -81,7 +82,7 @@ Every version change must be applied to all four simultaneously:
 | 2.2.0-stable | Phase 2.2.0 — DeepSeek Integration | stable | 2026-05-22 | DeepSeek integration with RAG pipeline — worksheet draft, caption draft, and daily summary endpoints |
 | 2.1.0-stable | Phase 2.1.0 — ChromaDB Layer | stable | 2026-05-22 | Local ChromaDB vector database integration. Ingestion, query, and seed pipelines. Three API routes: /api/vault/ingest, /api/vault/query, /api/vault/seed. Seeds from existing worksheets, templates, avatars, and vault/ contents. |
 | 2.0.0-stable | Phase 2.0.0 — Vault Schema | stable | 2026-05-22 | Vault asset type system. Defines TypeScript interfaces and Zod schemas for all Vault asset types (template, worksheet, caption, prompt, topic, avatar, brand-rule), lifecycle states, freshness model, reuse score, provenance tracking, and rejection records. |
-| 1.5.2-stable | Patch 1.5.2 | stable | 2026-05-22 | Documentation patch — v2 phase queue defined. New backend-first phase sequence (2.0.0â€“3.1.0) replaces old planned phases (2.0.0â€“2.3.0). ChromaDB and DeepSeek architecture constraints documented. |
+| 1.5.2-stable | Patch 1.5.2 | stable | 2026-05-22 | Documentation patch — v2 phase queue defined. New backend-first phase sequence (2.0.0–3.1.0) replaces old planned phases (2.0.0–2.3.0). ChromaDB and DeepSeek architecture constraints documented. |
 | 1.5.1-stable | Patch 1.5.1 | stable | 2026-05-21 | Validation hardening — require -LiteralPath for bracket paths in PowerShell |
 | 1.5.0-stable | Phase 1.5.0 | stable | 2026-05-21 | Save + Archive — JSON editor UI, save API, archive-on-export |
 | 1.4.1-stable | Patch 1.4.1 | stable | 2026-05-21 | Workflow hardening — Section 2 ownership, npm command rule, push block rule |

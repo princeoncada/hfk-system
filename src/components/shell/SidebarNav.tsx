@@ -11,6 +11,7 @@ const NAV_ITEMS = [
   { label: 'Vault', href: '/vault', icon: 'vault' },
   { label: 'Analytics', href: '/analytics', icon: 'analytics' },
   { label: 'Worksheets', href: '/worksheets', icon: 'doc' },
+  { label: 'Templates', href: '/templates', icon: 'template' },
 ]
 
 function NavIcon({ icon }: { icon: string }) {
@@ -73,6 +74,23 @@ function NavIcon({ icon }: { icon: string }) {
         <rect x="3" y="12" width="4" height="9" rx="1" />
         <rect x="10" y="7" width="4" height="14" rx="1" />
         <rect x="17" y="3" width="4" height="18" rx="1" />
+      </svg>
+    )
+  }
+
+  if (icon === 'template') {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        className="h-3.5 w-3.5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      >
+        <rect x="4" y="4" width="7" height="7" rx="1.5" />
+        <rect x="13" y="4" width="7" height="7" rx="1.5" />
+        <rect x="4" y="13" width="7" height="7" rx="1.5" />
+        <rect x="13" y="13" width="7" height="7" rx="1.5" />
       </svg>
     )
   }

@@ -6,19 +6,21 @@
 
 Patch 5.2.1 [5.2.1-stable] — Real Graphify Output
 
-Status: alpha
+Status: stable
 
 The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 The 5.x workflow infrastructure series is now active.
 
-Current scope: graphifyy is installed in the active Python environment and
+Current scope complete: graphifyy is installed in the active Python environment and
 the real graphify CLI generated graphify-out/graph.json plus GRAPH_REPORT.md.
 codebase-graph.json is normalized from Graphify output with fallbackUsed false.
 Graph read-first docs now point Codex to the report for orientation-heavy work.
 
-Next recommended work: Complete Patch 5.2.1 validation, then promote to stable.
+Next recommended work: Patch 5.2.2 — Graphify Workflow Clarification.
 
 ## Completed Phase
+
+Patch 5.2.1 [5.2.1-stable] — Real Graphify Output: installed graphifyy, generated graphify-out/graph.json and GRAPH_REPORT.md, normalized codebase-graph.json from Graphify output, and updated graph read-first docs — complete.
 
 Phase 5.2.0 [5.2.0-stable] — Graphify-Ready Codebase Graph: committed codebase-graph.json, added Graphify wrapper and degraded fallback scanner, and wired graph read-first workflow docs — complete.
 
@@ -963,7 +965,8 @@ Modified files:
 
 ## Future Phase Queue
 
-- Phase 5.2.0 — Graphify Integration
+- Patch 5.2.2 — Graphify Workflow Clarification
+- Patch 5.2.3 — Graphify Server/Tool Mode
 - Phase 5.3.0 — ChromaDB Docs Extension
 - Phase 5.4.0 — Portfolio Case Studies
 - Phase 5.5.0 — Advanced Memory Layer
@@ -971,7 +974,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Complete Patch 5.2.1 validation, then promote to stable. Next implementation phase is 5.3.0 — ChromaDB Docs Extension.
+Start Patch 5.2.2 — Graphify Workflow Clarification. Next planned follow-up is Patch 5.2.3 — Graphify Server/Tool Mode.
 
 ## What Exists
 

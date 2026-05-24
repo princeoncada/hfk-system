@@ -89,6 +89,8 @@ If a phase is built out of its planned sequence:
 Every Codex prompt must include:
 
 Read-first list (mandatory):
+- STATE.json
+- codebase-graph.json when the prompt touches app code or scripts
 - docs/VERSIONING.md
 - docs/AI_HANDOFF.md
 - docs/PHASE_LOG.md

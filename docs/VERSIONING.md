@@ -43,16 +43,17 @@ Every version change must be applied to all five simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 5.1.0-stable |
-| Phase | Phase 5.1.0 |
-| State | stable |
+| Version | 5.1.1-alpha |
+| Phase | Patch 5.1.1 |
+| State | alpha |
 | Date | 2026-05-24 |
-| Summary | Automation Scripts: commit-phase.ps1, validate.ps1, docs/COMPACT_STRATEGY.md, CLAUDE.md and WORKFLOW.md wired to new scripts. |
+| Summary | Patch 5.1.1 — Future Plans Queue: populated FUTURE_PLANS.md with 5.0.x + 5.1.0 completions and 5.2.0–5.5.0 planned phases with token optimization context. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 5.1.1-alpha | Patch 5.1.1 | alpha | 2026-05-24 | Future Plans Queue: populated FUTURE_PLANS.md with 5.0.x + 5.1.0 completions and 5.2.0–5.5.0 planned phases (Graphify, ChromaDB Docs, Case Studies, Advanced Memory) with token optimization rationale. |
 | 5.1.0-stable | Phase 5.1.0 | stable | 2026-05-24 | Automation Scripts: commit-phase.ps1, validate.ps1, docs/COMPACT_STRATEGY.md, CLAUDE.md and WORKFLOW.md wired to new scripts. |
 | 5.0.2-stable | Patch 5.0.2 | stable | 2026-05-24 | Workflow Doc Hardening: fix four-to-five versioning locations, replace Stable-Promotion Codex Prompt step with .\scripts\promote.ps1, update CLAUDE.md Key File Map with 5.0.x entries. |
 | 5.0.1-stable | Patch 5.0.1 | stable | 2026-05-24 | Mojibake repair + State column fix: fix-mojibake.ps1 script, promote.ps1 State field improvement, em-dash mojibake corrected in PHASE_LOG, VERSIONING, AI_HANDOFF. Files: scripts/fix-mojibake.ps1, scripts/promote.ps1, docs/VERSIONING.md, docs/PHASE_LOG.md, versioning docs. |
@@ -258,9 +259,9 @@ Date: 2026-05-23
 
 ## Next Phase
 
-Current stable version: 5.0.2-stable
-Current working version: 5.1.0-stable
-Next recommended phase: Phase 5.2.0 or TBD
+Current stable version: 5.1.0-stable
+Current working version: 5.1.1-alpha
+Next recommended phase: Phase 5.2.0 — Graphify Integration
 
 
 

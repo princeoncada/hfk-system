@@ -18,7 +18,7 @@ Claude Code:
 - Provides Section 2 validation commands as a PowerShell block for
   the user to run and paste back
 - Analyzes validation output and reports pass/fail per check
-- Writes post-validation documentation Codex prompts
+- Provides .\scripts\promote.ps1 stable-promotion block and writes session checkpoint Codex prompts
 - Provides 1-by-1 git commit command blocks for the user to run —
   one git add + one git commit per file, no exceptions, no grouping
 - Provides the git push origin master PowerShell block in the same
@@ -134,6 +134,10 @@ and proceed directly to the 2-section output.
 
 ## Mandatory Workflow Artifact Enforcement
 
+Section 2 standard: .\scripts\validate.ps1 is the baseline runner for all
+Section 2 validation blocks. Phase-specific Select-String checks append
+below the validate.ps1 call.
+
 For implementation phases:
 1. Validation summary
 2. Implementation commit block (BEFORE running promote.ps1)
@@ -179,19 +183,14 @@ SECTION 1: Stable-Promotion Confirmation
 - Identify files changed
 - Identify remaining future work
 
-SECTION 2: 1-by-1 Git Commit Commands
-One git add + one git commit per file. Never group files.
+SECTION 2: commit-phase.ps1 Call Sequence
+One .\scripts\commit-phase.ps1 call per file. Never group files.
 ```powershell
-git add docs/VERSIONING.md
-git commit -m "docs: promote X.Y.Z to stable"
-git add docs/AI_HANDOFF.md
-git commit -m "docs: update AI handoff for X.Y.Z stable"
-git add docs/PHASE_LOG.md
-git commit -m "docs: record X.Y.Z stable phase log"
-git add README.md
-git commit -m "docs: update README version to X.Y.Z stable"
-git add STATE.json
-git commit -m "chore: update STATE.json to X.Y.Z stable"
+.\scripts\commit-phase.ps1 -File "docs/VERSIONING.md" -Message "docs: promote X.Y.Z to stable"
+.\scripts\commit-phase.ps1 -File "docs/AI_HANDOFF.md" -Message "docs: update AI handoff for X.Y.Z stable"
+.\scripts\commit-phase.ps1 -File "docs/PHASE_LOG.md" -Message "docs: record X.Y.Z stable phase log"
+.\scripts\commit-phase.ps1 -File "README.md" -Message "docs: update README version to X.Y.Z stable"
+.\scripts\commit-phase.ps1 -File "STATE.json" -Message "chore: update STATE.json to X.Y.Z stable"
 ...
 git status --short
 ```

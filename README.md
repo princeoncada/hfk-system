@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.1.0-stable |
+| Current | 5.1.1-alpha |
 | Status | alpha |
-| Current phase | Phase 5.1.0 — Automation Scripts: commit-phase.ps1, validate.ps1, docs/COMPACT_STRATEGY.md, CLAUDE.md and WORKFLOW.md wired to new scripts. |
+| Current phase | Patch 5.1.1 — Future Plans Queue: populated FUTURE_PLANS.md with 5.0.x + 5.1.0 completions and 5.2.0–5.5.0 planned phases with token optimization context. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

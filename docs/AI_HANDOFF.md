@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.6.5-alpha
+## Current Version: 3.6.5-stable
 
 ## Current Phase
 
-Patch 3.6.4 [3.6.4-stable] â€” Daily Review UX Polish + Print/Export Fixes â€” stable.
+Patch 3.6.5 [3.6.5-stable] — Print/PDF fix: @page rule, 0.5in margin, main padding reset, full-width worksheet on print — stable.
 
 ## Architecture Invariant
 

@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.6.2-stable
+## Current Version: 3.6.3-alpha
 
 ## Current Phase
 
-Patch 3.6.2 [3.6.2-stable] — Daily Review UI/UX Fixes — stable.
+Patch 3.6.3 [3.6.3-alpha] — Final Package Lock and Worksheet Link — alpha.
 
 ## Architecture Invariant
 
@@ -23,6 +23,22 @@ Non-text assets (images, templates) are represented in ChromaDB by metadata
 records only — the actual files live on disk and are never embedded.
 DeepSeek API handles all text generation. Visuals and worksheet template
 generation go to external tools via the Prompt Library.
+
+## Patch 3.6.3 [3.6.3-alpha] — Final Package Lock and Worksheet Link
+
+Status: alpha
+
+Version: 3.6.3-alpha
+
+Scope: approval.actions.ts + ReviewFlow.tsx
+
+Files:
+- src/lib/approval.actions.ts
+- src/components/review/ReviewFlow.tsx
+
+Purpose: When the final gate is approved, save the AI-generated worksheet to content/worksheets/[date].json using the existing saveWorksheet utility so it appears in /worksheets for editing and export. Show Edit Worksheet and Preview links in the final gate card. Lock the entire review page (all action rows return null, locked banner appears) when the package is complete so the day cannot be further edited from the review screen.
+
+Validation: pending
 
 ## Patch 3.6.2 [3.6.2-stable] — Daily Review UI/UX Fixes
 

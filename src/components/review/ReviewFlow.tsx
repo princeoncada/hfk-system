@@ -16,7 +16,8 @@ import type {
   WorksheetDraft,
   WorksheetDraftResponse,
 } from '@/lib/ai.types'
-import type { Grade, Subject } from '@/lib/types'
+import type { PlanDay } from '@/lib/planning.types'
+import type { Subject } from '@/lib/types'
 import RedirectModal from './RedirectModal'
 import { Plus, SlidersHorizontal } from 'lucide-react'
 
@@ -51,17 +52,6 @@ const STATUS_BADGE: Record<GateStatus, string> = {
   redirecting: 'bg-yellow-tint text-[#7A5A11] border-yellow/40',
 }
 
-const SUBJECTS: Subject[] = [
-  'math',
-  'science',
-  'reading',
-  'vocabulary',
-  'bible',
-  'values',
-]
-
-const GRADES: Grade[] = [1, 2, 3, 4, 5, 6]
-
 const SUBJECT_LABELS: Record<Subject, string> = {
   math: 'Math',
   science: 'Science',
@@ -86,7 +76,6 @@ const TEMPLATES = [
 
 const inputClass =
   'border border-[rgba(92,64,51,0.14)] rounded-[10px] px-3 py-2 text-[14px] text-ink bg-paper focus:outline-none focus:ring-2 focus:ring-sage/30 focus:border-sage/50 w-full'
-const selectClass = `${inputClass} appearance-none`
 const primaryButtonClass =
   'bg-ink text-cream rounded-[10px] px-4 py-2.5 text-sm font-medium font-sans hover:bg-[#1a120e] transition-colors disabled:opacity-40'
 const outlineButtonClass =
@@ -116,6 +105,7 @@ function isCaption(p: GatePayload): p is CaptionDraftResponse {
 
 interface ReviewFlowProps {
   pkg: DailyPackage
+  planDay: PlanDay | null
 }
 
 function StatusLabel({ status }: { status: GateStatus }) {
@@ -179,16 +169,18 @@ function ProvenancePanel({
   )
 }
 
-export default function ReviewFlow({ pkg }: ReviewFlowProps) {
+export default function ReviewFlow({ pkg, planDay }: ReviewFlowProps) {
   const router = useRouter()
   const [loading, setLoading] = useState<GateName | null>(null)
   const [redirectTarget, setRedirectTarget] = useState<GateName | null>(null)
+  const existingDir = isDirection(pkg.gates.direction.payload)
+    ? pkg.gates.direction.payload
+    : null
   const [dirForm, setDirForm] = useState({
-    topic: '',
-    grade: 1 as Grade,
-    subject: 'math' as Subject,
-    objective: '',
+    topic: existingDir?.topic ?? planDay?.topic ?? '',
+    objective: existingDir?.objective ?? planDay?.objective ?? '',
   })
+  const [generatingTopic, setGeneratingTopic] = useState(false)
   const [templateId, setTemplateId] = useState('')
   const [worksheetDraft, setWorksheetDraft] =
     useState<WorksheetDraftResponse | null>(null)
@@ -327,6 +319,55 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
     }
   }
 
+  async function handleRegenerateTopic() {
+    if (!planDay) return
+    setGeneratingTopic(true)
+    try {
+      const res = await fetch('/api/ai/topic/suggest', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ grade: planDay.grade, subject: planDay.subject }),
+      })
+      if (!res.ok) return
+      const data = (await res.json()) as { topic: string; objective?: string }
+      setDirForm((c) => ({
+        topic: data.topic,
+        objective: data.objective ?? c.objective,
+      }))
+    } catch {
+      // non-fatal
+    } finally {
+      setGeneratingTopic(false)
+    }
+  }
+
+  async function approveDirection() {
+    const grade = planDay?.grade ?? 1
+    const subject = planDay?.subject ?? 'math'
+    const payload: DirectionPayload = {
+      topic: dirForm.topic,
+      grade,
+      subject,
+      objective: dirForm.objective || undefined,
+    }
+    await callGateApi('direction', 'approve', { payload })
+    if (planDay) {
+      try {
+        await fetch('/api/planner/update-day', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            date: pkg.date,
+            topic: dirForm.topic,
+            objective: dirForm.objective || undefined,
+          }),
+        })
+      } catch {
+        // non-fatal: planner sync failure does not block review
+      }
+    }
+  }
+
   function renderDirectionBody(payload: GatePayload, status: GateStatus) {
     if (status === 'approved' && isDirection(payload)) {
       return (
@@ -355,6 +396,15 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
       )
     }
 
+    if (!planDay) {
+      return (
+        <p className="text-[13px] text-ink-3">
+          No plan found for today. Generate a monthly plan first in the{' '}
+          <a href="/planner" className="underline hover:text-ink">Planner</a>.
+        </p>
+      )
+    }
+
     return (
       <div className="space-y-3">
         {status === 'redirecting' ? (
@@ -362,70 +412,46 @@ export default function ReviewFlow({ pkg }: ReviewFlowProps) {
             {pkg.gates.direction.redirectNote}
           </p>
         ) : null}
-        <input
-          type="text"
-          placeholder="Topic"
-          value={dirForm.topic}
-          onChange={(event) =>
-            setDirForm((current) => ({ ...current, topic: event.target.value }))
-          }
-          className={inputClass}
-        />
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-          <select
-            value={dirForm.grade}
-            onChange={(event) =>
-              setDirForm((current) => ({
-                ...current,
-                grade: Number(event.target.value) as Grade,
-              }))
-            }
-            className={selectClass}
-          >
-            {GRADES.map((grade) => (
-              <option key={grade} value={grade}>
-                Grade {grade}
-              </option>
-            ))}
-          </select>
-          <select
-            value={dirForm.subject}
-            onChange={(event) =>
-              setDirForm((current) => ({
-                ...current,
-                subject: event.target.value as Subject,
-              }))
-            }
-            className={selectClass}
-          >
-            {SUBJECTS.map((subject) => (
-              <option key={subject} value={subject}>
-                {SUBJECT_LABELS[subject]}
-              </option>
-            ))}
-          </select>
+
+        <div className="flex items-center gap-2">
+          <span className="rounded-full border border-yellow bg-yellow-tint px-3 py-1 text-[13px] font-medium text-ink">
+            Grade {planDay.grade}
+          </span>
+          <span className="rounded-full border border-sage/40 bg-sage-tint px-3 py-1 text-[13px] font-medium text-sage-deep">
+            {SUBJECT_LABELS[planDay.subject]}
+          </span>
+          <span className="ml-1 text-[11px] text-ink-4">Locked from planner</span>
         </div>
+
+        <div>
+          <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-ink-4">Topic</p>
+          <div className="flex items-center gap-2">
+            <p className="flex-1 rounded-[10px] border border-[rgba(92,64,51,0.14)] bg-cream px-3 py-2 text-[14px] text-ink">
+              {dirForm.topic || planDay.topic}
+            </p>
+            <button
+              type="button"
+              onClick={() => void handleRegenerateTopic()}
+              disabled={generatingTopic}
+              className={outlineButtonClass}
+            >
+              {generatingTopic ? 'Regenerating…' : 'Regenerate'}
+            </button>
+          </div>
+        </div>
+
         <input
           type="text"
           placeholder="Objective (optional)"
           value={dirForm.objective}
-          onChange={(event) =>
-            setDirForm((current) => ({
-              ...current,
-              objective: event.target.value,
-            }))
+          onChange={(e) =>
+            setDirForm((c) => ({ ...c, objective: e.target.value }))
           }
           className={inputClass}
         />
+
         <button
-          onClick={() =>
-            approve('direction', {
-              topic: dirForm.topic,
-              grade: dirForm.grade,
-              subject: dirForm.subject,
-              objective: dirForm.objective || undefined,
-            })
-          }
+          onClick={() => void approveDirection()}
           disabled={!dirForm.topic.trim() || loading === 'direction'}
           className={primaryButtonClass}
         >

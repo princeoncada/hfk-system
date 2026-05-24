@@ -8,9 +8,9 @@ Grades 1â€“6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 3.6.4-stable |
-| Status | stable |
-| Current phase | Patch 3.6.4 — Daily Review UX Polish + Print/Export Fixes (stable) |
+| Current | 3.6.5-alpha |
+| Status | alpha |
+| Current phase | Patch 3.6.5 - Print/PDF fix: @page rule, margin reset, full-width worksheet on print. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

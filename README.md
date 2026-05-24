@@ -8,8 +8,8 @@ Grades 1Ã¢â‚¬â€œ6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 4.4.0-alpha |
-| Status | alpha |
+| Current | 4.4.0-stable |
+| Status | stable |
 | Current phase | Phase 4.4.0 — Live Preview + Publish: right-panel Style/Preview toggle with scaled DynamicWorksheetTemplate live preview driven by current TemplateDefinition state and sample worksheet content. |
 
 Full planned roadmap complete as of 3.3.0-stable.

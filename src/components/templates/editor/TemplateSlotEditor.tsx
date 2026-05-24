@@ -21,6 +21,7 @@ import type {
 } from '@/lib/template.types'
 import { PropertyPanel } from './PropertyPanel'
 import { SortableSlotRow } from './SortableSlotRow'
+import { TemplatePreview } from './TemplatePreview'
 
 interface TemplateSlotEditorProps {
   initialDefinition?: TemplateDefinition
@@ -85,6 +86,7 @@ export function TemplateSlotEditor({
     initialDefinition?.slots ?? createDefaultSlots(),
   )
   const [selectedSlotId, setSelectedSlotId] = useState<string | null>(null)
+  const [rightPanel, setRightPanel] = useState<'style' | 'preview'>('style')
   const [showTypePicker, setShowTypePicker] = useState(false)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -172,6 +174,17 @@ export function TemplateSlotEditor({
     }
   }
 
+  const currentDefinition: TemplateDefinition = {
+    id: initialDefinition?.id ?? 'preview',
+    name: name.trim() || 'Untitled',
+    description: description.trim(),
+    version: '1.0.0',
+    palette,
+    avatar: avatar || undefined,
+    slots,
+    footerText: footerText || undefined,
+  }
+
   return (
     <div>
       <div className="mb-8 flex items-center justify-between gap-6">
@@ -257,28 +270,57 @@ export function TemplateSlotEditor({
         </div>
 
         <div className="w-72 shrink-0">
-          <PropertyPanel
-            palette={palette}
-            onPaletteChange={(key, value) =>
-              setPalette((current) => ({ ...current, [key]: value }))
-            }
-            footerText={footerText}
-            onFooterTextChange={setFooterText}
-            avatar={avatar}
-            onAvatarChange={setAvatar}
-            avatarOptions={avatarOptions}
-            selectedSlot={
-              selectedSlotId
-                ? slots.find((slot) => slot.id === selectedSlotId) ?? null
-                : null
-            }
-            onSlotStyleChange={(patch) => {
-              if (selectedSlotId) updateSlotStyle(selectedSlotId, patch)
-            }}
-            onSlotStyleClear={() => {
-              if (selectedSlotId) clearSlotStyle(selectedSlotId)
-            }}
-          />
+          <div className="mb-3 flex rounded-lg border border-[rgba(92,64,51,0.12)] bg-paper p-0.5">
+            <button
+              type="button"
+              onClick={() => setRightPanel('style')}
+              className={`flex-1 rounded-[6px] py-1.5 text-[12px] font-medium transition-colors ${
+                rightPanel === 'style'
+                  ? 'bg-ink text-cream'
+                  : 'text-ink-3 hover:text-ink'
+              }`}
+            >
+              Style
+            </button>
+            <button
+              type="button"
+              onClick={() => setRightPanel('preview')}
+              className={`flex-1 rounded-[6px] py-1.5 text-[12px] font-medium transition-colors ${
+                rightPanel === 'preview'
+                  ? 'bg-ink text-cream'
+                  : 'text-ink-3 hover:text-ink'
+              }`}
+            >
+              Preview
+            </button>
+          </div>
+
+          {rightPanel === 'style' ? (
+            <PropertyPanel
+              palette={palette}
+              onPaletteChange={(key, value) =>
+                setPalette((current) => ({ ...current, [key]: value }))
+              }
+              footerText={footerText}
+              onFooterTextChange={setFooterText}
+              avatar={avatar}
+              onAvatarChange={setAvatar}
+              avatarOptions={avatarOptions}
+              selectedSlot={
+                selectedSlotId
+                  ? slots.find((slot) => slot.id === selectedSlotId) ?? null
+                  : null
+              }
+              onSlotStyleChange={(patch) => {
+                if (selectedSlotId) updateSlotStyle(selectedSlotId, patch)
+              }}
+              onSlotStyleClear={() => {
+                if (selectedSlotId) clearSlotStyle(selectedSlotId)
+              }}
+            />
+          ) : (
+            <TemplatePreview definition={currentDefinition} />
+          )}
         </div>
       </div>
     </div>

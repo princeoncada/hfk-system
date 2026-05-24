@@ -8,8 +8,8 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.0.1-alpha |
-| Status | alpha |
+| Current | 5.0.1-stable |
+| Status | stable |
 | Current phase | Patch 5.0.1 — Mojibake + State Column Fix: fix-mojibake.ps1 script, promote.ps1 State field improvement, and 5.0.0-stable State column correction. |
 
 Full planned roadmap complete as of 3.3.0-stable.
@@ -61,6 +61,7 @@ Open http://localhost:3000 to see the dashboard.
 | docs/WORKFLOW.md | AI and human contribution workflow |
 | docs/FUTURE_PLANS.md | Living backlog and planned phases |
 | docs/PHASE_LOG.md | Full version and validation history |
+
 
 
 

@@ -13,7 +13,14 @@ export function PreviewControls(_props: { id: string }) {
       const el = document.querySelector('.worksheet') as HTMLElement | null
       if (!el) throw new Error('Worksheet element not found')
 
-      const dataUrl = await toPng(el, { pixelRatio: 2 })
+      const originalMinWidth = el.style.minWidth
+      el.style.minWidth = '816px'
+      const dataUrl = await toPng(el, {
+        pixelRatio: 2,
+        width: el.scrollWidth,
+        height: el.scrollHeight,
+      })
+      el.style.minWidth = originalMinWidth
 
       const img = new Image()
       await new Promise<void>((resolve) => {

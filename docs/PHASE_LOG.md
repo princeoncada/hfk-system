@@ -37,7 +37,7 @@ Date: 2026-05-24
 
 ## Patch 5.2.1 — Real Graphify Output
 
-Status: alpha
+Status: stable
 
 Version: 5.2.1-stable
 

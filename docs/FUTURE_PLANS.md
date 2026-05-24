@@ -4,8 +4,8 @@ Living backlog for HFK Publishing Engine.
 Completed items are struck through. Update this file every phase.
 
 Last updated: 2026-05-24
-Current stable version: 5.2.0-stable
-Current working version: 5.2.1-alpha
+Current stable version: 5.2.1-stable
+Current working version: 5.2.2-alpha
 
 ---
 
@@ -61,22 +61,31 @@ Current working version: 5.2.1-alpha
 - ~~Patch 5.0.2 — Mojibake Repair Completion~~ (stable 2026-05-24)
 - ~~Phase 5.1.0 — Automation Scripts~~ (stable 2026-05-24)
 - ~~Phase 5.2.0 — Graphify-Ready Codebase Graph~~ (stable 2026-05-24)
+- ~~Patch 5.2.1 — Real Graphify Output~~ (stable 2026-05-24)
 
 ---
 
 ## In Progress
 
-### Patch 5.2.1 — Real Graphify Output
-
-Install and run the real Graphify CLI from the graphifyy package. Commit
-graphify-out/graph.json, graphify-out/GRAPH_REPORT.md, and the normalized
-codebase-graph.json artifact so Codex can navigate by Graphify's AST graph
-instead of the degraded fallback scanner. Estimated Codex token reduction:
-~20–25%.
+(none)
 
 ---
 
 ## Planned
+
+### Patch 5.2.2 — Graphify Workflow Clarification
+Document exactly how the static Graphify workflow changes Claude Code and Codex
+usage. Add before/after comparisons, when to read GRAPH_REPORT.md vs
+codebase-graph.json vs direct source files, when to run graphify query/path/explain,
+and prompt examples for orientation-heavy code work. Goal: make the token-saving
+workflow obvious before adding live server/tool mode.
+
+### Patch 5.2.3 — Graphify Server/Tool Mode
+Add the live Graphify server/tool workflow on top of the committed static graph.
+Document startup commands, connection expectations for Claude Code/Codex, and the
+division of labor between static committed artifacts and live Graphify queries.
+This patch should preserve static graph fallback so sessions still work when the
+server/tool is not running.
 
 ### Phase 5.3.0 — ChromaDB Docs Extension
 Ingest all docs files (PHASE_LOG.md, AI_HANDOFF.md, FUTURE_PLANS.md, DECISIONS.md,

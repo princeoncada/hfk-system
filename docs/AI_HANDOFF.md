@@ -1,10 +1,10 @@
 # AI Handoff
 
-## Current Version: 3.6.5-stable
+## Current Version: 3.7.0-alpha
 
 ## Current Phase
 
-Patch 3.6.5 [3.6.5-stable] � Print/PDF fix: @page rule, 0.5in margin, main padding reset, full-width worksheet on print � stable.
+Phase 3.7.0 [3.7.0-alpha] — playful_v1 template: emoji-illustrated colorful layout with Fredoka/Nunito fonts, rotating activity colors, vocab tracing lines for reading/vocab subjects — alpha.
 
 ## Architecture Invariant
 
@@ -423,7 +423,7 @@ Validation:
   AI summary, 5 top posts, 5 worst posts, 36-cell heatmap, 4 recommendation cards
 - /analytics server page — calls getMockSnapshot, passes to AnalyticsDashboard
 - AnalyticsDashboard client component — AI summary card with Demo Data pill,
-  top/worst post columns, subject×grade heatmap, dismissible recommendation cards
+  top/worst post columns, subjectÃƒÆ’—grade heatmap, dismissible recommendation cards
   persisted to localStorage
 - Analytics nav link + bar chart icon added to SidebarNav
 - All 17 checks passed, build clean, 19/19 static pages

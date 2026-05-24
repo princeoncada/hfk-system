@@ -42,16 +42,17 @@ Every version change must be applied to all four simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 3.8.0-stable |
-| Phase | Phase 3.8.0 |
-| State | stable |
+| Version | 4.0.0-alpha |
+| Phase | Phase 4.0.0 |
+| State | alpha |
 | Date | 2026-05-24 |
-| Summary | Phase 3.8.0 — Direction overhaul: grade/subject locked from planner, topic read-only with AI regenerate, objective editable, direction approval syncs topic/objective back to planner. |
+| Summary | Phase 4.0.0 — Template definition schema (TemplateDefinition, TemplatePalette, TemplateSlot), template store (vault/templates/), DynamicWorksheetTemplate renderer, integrated into preview, builder, and review flow template selector. Sample modern_v1 template included. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 4.0.0-alpha | Phase 4.0.0 | alpha | 2026-05-24 | Template definition schema (TemplateDefinition, TemplatePalette, TemplateSlot), template store (vault/templates/), DynamicWorksheetTemplate renderer, integrated into preview, builder, and review flow template selector. Sample modern_v1 template included. |
 | 3.8.0-stable | Phase 3.8.0 | stable | 2026-05-24 | Direction overhaul: grade/subject locked from planner, topic read-only with AI regenerate, objective editable, direction approval syncs topic/objective back to planner. |
 | 3.7.1-stable | Patch 3.7.1 â€” Export Crop + Instructions Icon Fix | stable | 2026-05-24 | PNG export crop fix (scrollWidth/minWidth), PDF print crop fix (zero @page margin, 816px worksheet width), instructions button replaced with Lucide Plus/SlidersHorizontal icon. |
 | 3.7.0-stable | Phase 3.7.0 Ã¢â‚¬â€ playful_v1 Template | stable | 2026-05-24 | playful_v1 template: emoji-illustrated colorful layout with Fredoka/Nunito fonts, rotating activity colors, vocab tracing lines for reading/vocab subjects. |
@@ -285,7 +286,7 @@ Date: 2026-05-23
 ## Next Phase
 
 Current stable version: 3.8.0-stable
-Current working version: none
+Current working version: 4.0.0-alpha
 Next recommended phase: (none Ã¢â‚¬â€ full planned roadmap complete as of 3.3.0-stable)
 
 

@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.2.0-stable |
+| Current | 5.2.1-alpha |
 | Status | alpha |
-| Current phase | Phase 5.2.0 — Graphify-Ready Codebase Graph: codebase-graph.json, Graphify wrapper script, degraded fallback scanner, and read-first workflow wiring. |
+| Current phase | Patch 5.2.1 — Real Graphify Output: graphifyy installed, graphify-out/graph.json and GRAPH_REPORT.md generated, codebase-graph.json normalized from Graphify output. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

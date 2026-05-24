@@ -1,10 +1,10 @@
 # AI Handoff
 
-**Current Version:** 4.2.0-stable
+**Current Version:** 4.3.0-alpha
 
 ## Current Phase
 
-Phase 4.3.0 [in-progress] — Property Panel.
+Phase 4.3.0 [4.3.0-alpha] — Property Panel: right-side editor panel with global palette color controls, footer text, avatar selector, selected-slot style overrides, and two-column template editor layout — alpha.
 
 ## Completed Phase
 

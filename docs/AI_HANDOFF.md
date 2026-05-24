@@ -1,10 +1,14 @@
 # AI Handoff
 
-**Current Version:** 4.0.0-alpha
+**Current Version:** 4.0.0-stable
 
 ## Current Phase
 
-Phase 4.0.0 [4.0.0-alpha] — Template definition schema (TemplateDefinition, TemplatePalette, TemplateSlot), template store (vault/templates/), DynamicWorksheetTemplate renderer, integrated into preview, builder, and review flow template selector. Sample modern_v1 template included — alpha.
+Phase 4.1.0 [in-progress] — Template Editor UI.
+
+## Completed Phase
+
+Phase 4.0.0 [4.0.0-stable] — Template definition schema (TemplateDefinition, TemplatePalette, TemplateSlot), template store (vault/templates/), DynamicWorksheetTemplate renderer, integrated into preview, builder, and review flow template selector. Sample modern_v1 template included — complete.
 
 ## Architecture Invariant
 

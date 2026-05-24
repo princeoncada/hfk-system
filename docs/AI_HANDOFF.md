@@ -1,10 +1,10 @@
 # AI Handoff
 
-**Current Version:** 4.4.0-stable
+**Current Version:** 4.5.0-alpha
 
 ## Current Phase
 
-Phase 4.5.0 [in-progress] — Vault Ingestion + AI Template Recommendation.
+Phase 4.5.0 [4.5.0-alpha] — Vault Ingestion + AI Template Recommendation: saved TemplateDefinitions ingest into ChromaDB, review flow shows a best-fit recommendation badge, and template approval increments reuse score — alpha.
 
 ## Completed Phase
 

@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 5.4.0-alpha | Phase 5.4.0 | alpha | 2026-05-25 | Portfolio Case Studies. Two case study documents under docs/case-studies/: Case Study A (Docs-Led AI Workflow) and Case Study B (Token Optimization Journey). Portfolio material and onboarding reference. |
+| 5.4.0-stable | Phase 5.4.0 | stable | 2026-05-25 | Portfolio Case Studies. Two case study documents under docs/case-studies/: Case Study A (Docs-Led AI Workflow) and Case Study B (Token Optimization Journey). Portfolio material and onboarding reference. |
 | 5.3.0-stable | Phase 5.3.0 | stable | 2026-05-25 | ChromaDB Docs Extension. Adds hfk_docs collection to existing ChromaDB instance. ingest_docs.py + query_docs.py scripts. validate.ps1 auto-ingests docs on each run. Session start protocol updated to query before reading full docs. |
 | 5.2.8-stable | Patch 5.2.8 | stable | 2026-05-25 | Docs hardening patch. Added Infrastructure Check rule to New Phase workflow and Scoping Discipline section to CLAUDE.md. Added Behavioral Guidelines section to AGENTS.md. |
 | 5.2.7-stable | Patch 5.2.7 | stable | 2026-05-25 | read_version() Encoding Fix: reads STATE.json with `utf-8-sig` so PowerShell's UTF-8 BOM does not cause graph metadata version fallback to `unknown`. |
@@ -48,7 +48,7 @@ Date: 2026-05-24
 
 Status: alpha
 
-Version: 5.4.0-alpha
+Version: 5.4.0-stable
 
 Date: 2026-05-25
 
@@ -68,7 +68,7 @@ Changes:
 - Added Case Study A covering the docs-led AI workflow, two-layer Claude Code/Codex separation, read-first prompts, STATE.json, validation promotion, and version protocol.
 - Added Case Study B covering the 5.x token optimization series, Graphify codebase graph, ChromaDB docs extension, rejected memory-layer options, and advanced memory roadmap.
 - Moved Phase 5.3.0 to completed in docs/FUTURE_PLANS.md and moved Phase 5.4.0 to in progress.
-- Bumped all five versioning locations to 5.4.0-alpha.
+- Bumped all five versioning locations to 5.4.0-stable.
 
 ## Phase 5.3.0 — ChromaDB Docs Extension
 
@@ -2057,6 +2057,8 @@ New files:
 - TypeScript type-check: PASS
 - npm install: PASS
 - Promoted to stable: 2026-05-21
+
+
 
 
 

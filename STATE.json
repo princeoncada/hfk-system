@@ -1,10 +1,10 @@
 ﻿{
-    "version":  "6.0.0-alpha",
-    "state":  "alpha",
+    "version":  "6.0.0-stable",
+    "state":  "stable",
     "phase":  {
                   "current":  "6.0.0",
                   "name":  "Template Lab: Short O Worksheet Prototype",
-                  "status":  "alpha"
+                  "status":  "stable"
               },
     "next":  {
                  "phase":  "6.1.0",

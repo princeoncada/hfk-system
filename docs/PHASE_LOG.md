@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 5.2.4-alpha | Patch 5.2.4 | alpha | 2026-05-25 | Graphify Install Integration + CLI Syntax Fix: tailored Graphify Claude/Codex install artifacts to HFK workflow, fixed Codex hook command path, and corrected query/path/explain CLI syntax in CODEBASE_GRAPH.md. |
 | 5.2.3-stable | Patch 5.2.3 | stable | 2026-05-25 | Graphify Server/Tool Mode: documented that the installed Graphify CLI has agent install/tool integration commands but no serve/MCP daemon command, and clarified static artifact fallback rules. |
 | 5.2.2-stable | Patch 5.2.2 | stable | 2026-05-25 | Graphify Workflow Clarification: rewrote CODEBASE_GRAPH.md as the authoritative workflow reference for Graphify artifacts, freshness checks, static CLI commands, prompt examples, and direct source-read rules. |
 | 5.2.1-stable | Patch 5.2.1 | stable | 2026-05-24 | Real Graphify Output: installed graphifyy, generated graphify-out/graph.json and GRAPH_REPORT.md, normalized codebase-graph.json from Graphify output, and updated graph read-first docs. |
@@ -37,9 +38,39 @@ Date: 2026-05-24
 
 # Phase Log
 
-## Patch 5.2.3 — Graphify Server/Tool Mode
+## Patch 5.2.4 — Graphify Install Integration + CLI Syntax Fix
 
 Status: alpha
+
+Version: 5.2.4-alpha
+
+Date: 2026-05-25
+
+Scope: Documentation and config-only bug fix for Graphify install artifacts and CLI syntax.
+
+Files:
+- CLAUDE.md
+- AGENTS.md
+- .codex/hooks.json
+- docs/CODEBASE_GRAPH.md
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- README.md
+- STATE.json
+
+Changes:
+- Updated the Graphify rule in CLAUDE.md so Claude Code does not run `graphify update .`; the user refreshes the graph after Codex implementation.
+- Removed Claude-specific `/graphify` skill-tool syntax from AGENTS.md.
+- Updated AGENTS.md so Codex does not run graph refresh commands; graph refresh remains the user's responsibility.
+- Replaced the absolute Codex hook command path with portable `graphify hook-check`.
+- Added Graphify installation guidance to docs/CODEBASE_GRAPH.md.
+- Corrected query/path/explain CLI syntax in docs/CODEBASE_GRAPH.md while preserving `graphify update .`.
+- Bumped all five versioning locations to 5.2.4-alpha.
+
+## Patch 5.2.3 — Graphify Server/Tool Mode
+
+Status: stable
 
 Version: 5.2.3-stable
 

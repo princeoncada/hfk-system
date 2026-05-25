@@ -29,6 +29,47 @@ graphify update . 2>&1 | Out-Null
 python "$PSScriptRoot\generate_codebase_graph.py" 2>&1 | Out-Null
 Write-Host "PASS : graphify graph refreshed" -ForegroundColor Green
 
+# ChromaDB health check -- auto-start if not running
+Write-Host "Checking ChromaDB..." -ForegroundColor Cyan
+$chromaReady = $false
+$chromaAvailable = $false
+if (Test-NetConnection -ComputerName 127.0.0.1 -Port 8000 -InformationLevel Quiet -WarningAction SilentlyContinue) {
+    $chromaReady = $true
+} else {
+    Write-Host "  ChromaDB not running - starting background process..." -ForegroundColor Yellow
+    $chromaDataPath = Join-Path (Split-Path -Parent $PSScriptRoot) "chroma-data"
+    Start-Process -FilePath (Get-Command chroma).Source -ArgumentList @("run", "--path", $chromaDataPath) -WindowStyle Hidden
+    $retries = 0
+    while (-not $chromaReady -and $retries -lt 15) {
+        Start-Sleep -Seconds 1
+        $retries++
+        if (Test-NetConnection -ComputerName 127.0.0.1 -Port 8000 -InformationLevel Quiet -WarningAction SilentlyContinue) { $chromaReady = $true }
+    }
+}
+if ($chromaReady) {
+    $chromaAvailable = $true
+    Write-Host "PASS : ChromaDB ready" -ForegroundColor Green
+} else {
+    Write-Host "FAIL : ChromaDB failed to start after 15s - cannot continue" -ForegroundColor Red
+    $chromaAvailable = $false
+}
+
+$ingestLabel = "hfk_docs ingest - docs chunked into ChromaDB"
+if ($chromaAvailable) {
+    try {
+        $ingestOutput = python "$PSScriptRoot\ingest_docs.py" 2>&1
+        if ($LASTEXITCODE -eq 0) {
+            Pass-Check $ingestLabel
+        } else {
+            Fail-Check $ingestLabel (($ingestOutput | Out-String).Trim())
+        }
+    } catch {
+        Fail-Check $ingestLabel $_.Exception.Message
+    }
+} else {
+    Fail-Check "hfk_docs ingest" "ChromaDB not available"
+}
+
 $step1Label = "fix-mojibake.ps1 $dash idempotent repair complete"
 try {
   $step1Output = .\scripts\fix-mojibake.ps1 2>&1

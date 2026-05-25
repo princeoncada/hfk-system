@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.2.6-stable |
+| Current | 5.2.7-alpha |
 | Status | alpha |
-| Current phase | Patch 5.2.6 — Graph Refresh Automation + generate_codebase_graph.py Fix: graph normalization now reads existing Graphify output, uses STATE.json version metadata, and validate.ps1 refreshes the graph before checks. |
+| Current phase | Patch 5.2.7 — read_version() Encoding Fix: STATE.json is read with `utf-8-sig` so BOM-prefixed files no longer produce `unknown` graph metadata versions. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

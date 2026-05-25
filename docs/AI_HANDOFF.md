@@ -1,27 +1,29 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.2.2-stable
+**Current Version:** 5.2.3-alpha
 
 ## Current Phase
 
-Patch 5.2.2 [5.2.2-stable] — Graphify Workflow Clarification
+Patch 5.2.3 [5.2.3-alpha] — Graphify Server/Tool Mode
 
 Status: alpha
 
 The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 The 5.x workflow infrastructure series is now active.
 
-Current scope in progress: CODEBASE_GRAPH.md is being promoted from a short
-stub into the authoritative Graphify workflow reference for AI sessions. It
-documents when to use codebase-graph.json, when to add GRAPH_REPORT.md, why
-direct source reads are still required before edits, how to check graph
-freshness, and which static Graphify CLI commands are available.
+Current scope in progress: CODEBASE_GRAPH.md is being updated with the
+actual installed Graphify CLI server/tool capabilities. Discovery showed
+agent install/tool integration commands such as `graphify codex install`,
+`graphify claude install`, and local graph query commands, but no
+`serve`/MCP daemon command in this installed CLI.
 
-Next recommended work after validation and promotion: Patch 5.2.3 — Graphify Server/Tool Mode.
+Next recommended work after validation and promotion: Phase 5.3.0 — ChromaDB Docs Extension.
 
 ## Completed Phase
 
-Patch 5.2.2 [5.2.2-stable] — Graphify Workflow Clarification: rewrote CODEBASE_GRAPH.md as the authoritative workflow reference for Graphify artifacts, freshness checks, static CLI commands, prompt examples, and direct source-read rules — in progress.
+Patch 5.2.3 [5.2.3-alpha] — Graphify Server/Tool Mode: documented that the installed Graphify CLI has agent install/tool integration commands but no serve/MCP daemon command, and clarified static artifact fallback rules — in progress.
+
+Patch 5.2.2 [5.2.2-stable] — Graphify Workflow Clarification: rewrote CODEBASE_GRAPH.md as the authoritative workflow reference for Graphify artifacts, freshness checks, static CLI commands, prompt examples, and direct source-read rules — complete.
 
 Patch 5.2.1 [5.2.1-stable] — Real Graphify Output: installed graphifyy, generated graphify-out/graph.json and GRAPH_REPORT.md, normalized codebase-graph.json from Graphify output, and updated graph read-first docs — complete.
 
@@ -968,7 +970,6 @@ Modified files:
 
 ## Future Phase Queue
 
-- Patch 5.2.3 — Graphify Server/Tool Mode
 - Phase 5.3.0 — ChromaDB Docs Extension
 - Phase 5.4.0 — Portfolio Case Studies
 - Phase 5.5.0 — Advanced Memory Layer
@@ -976,7 +977,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Validate and promote Patch 5.2.2 — Graphify Workflow Clarification. Next planned follow-up is Patch 5.2.3 — Graphify Server/Tool Mode.
+Validate and promote Patch 5.2.3 — Graphify Server/Tool Mode. Next planned follow-up is Phase 5.3.0 — ChromaDB Docs Extension.
 
 ## What Exists
 

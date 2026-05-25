@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.2.2-alpha
+**Current Version:** 5.2.2-stable
 
 ## Current Phase
 
-Patch 5.2.2 [5.2.2-alpha] — Graphify Workflow Clarification
+Patch 5.2.2 [5.2.2-stable] — Graphify Workflow Clarification
 
 Status: alpha
 
@@ -21,7 +21,7 @@ Next recommended work after validation and promotion: Patch 5.2.3 — Graphify S
 
 ## Completed Phase
 
-Patch 5.2.2 [5.2.2-alpha] — Graphify Workflow Clarification: rewrote CODEBASE_GRAPH.md as the authoritative workflow reference for Graphify artifacts, freshness checks, static CLI commands, prompt examples, and direct source-read rules — in progress.
+Patch 5.2.2 [5.2.2-stable] — Graphify Workflow Clarification: rewrote CODEBASE_GRAPH.md as the authoritative workflow reference for Graphify artifacts, freshness checks, static CLI commands, prompt examples, and direct source-read rules — in progress.
 
 Patch 5.2.1 [5.2.1-stable] — Real Graphify Output: installed graphifyy, generated graphify-out/graph.json and GRAPH_REPORT.md, normalized codebase-graph.json from Graphify output, and updated graph read-first docs — complete.
 
@@ -997,6 +997,7 @@ dev.
   only database dependency permitted, and it is local-only.
 - Do not embed actual image or template files into ChromaDB. Only metadata
   records for non-text assets are indexed.
+
 
 
 

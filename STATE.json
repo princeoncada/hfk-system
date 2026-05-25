@@ -1,24 +1,25 @@
 ﻿{
-    "version":  "5.5.0-stable",
-    "state":  "stable",
+    "version":  "6.0.0-alpha",
+    "state":  "alpha",
     "phase":  {
-                  "current":  "5.5.0",
-                  "name":  "Workflow Hardening: Query Discipline",
-                  "status":  "stable"
+                  "current":  "6.0.0",
+                  "name":  "Template Lab: Short O Worksheet Prototype",
+                  "status":  "alpha"
               },
     "next":  {
-                 "phase":  "5.6.0",
+                 "phase":  "6.1.0",
                  "name":  "TBD",
-                 "description":  "To be scoped."
+                 "description":  "To be scoped after prototype integration."
              },
     "series":  {
                    "completed":  [
                                      "1.x",
                                      "2.x",
                                      "3.x",
-                                     "4.x"
+                                     "4.x",
+                                     "5.x"
                                  ],
-                   "active":  "5.x"
+                   "active":  "6.x"
                },
     "lastUpdated":  "2026-05-25",
     "notes":  null

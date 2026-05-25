@@ -10,14 +10,12 @@ import argparse
 import json
 import re
 import shutil
-import subprocess
 from datetime import date
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "codebase-graph.json"
-VERSION = "5.2.1-alpha"
 GRAPHIFY_DIR = ROOT / "graphify-out"
 GRAPHIFY_GRAPH = GRAPHIFY_DIR / "graph.json"
 GRAPHIFY_REPORT = GRAPHIFY_DIR / "GRAPH_REPORT.md"
@@ -33,6 +31,14 @@ PROTECTED_DIRS = {
     ".git",
 }
 SCANNED_EXTENSIONS = {".ts", ".tsx", ".js", ".jsx", ".mjs", ".ps1", ".py", ".md", ".json"}
+
+
+def read_version() -> str:
+    state_path = ROOT / "STATE.json"
+    try:
+        return json.loads(state_path.read_text(encoding="utf-8")).get("version", "unknown")
+    except Exception:
+        return "unknown"
 
 
 def is_protected(path: Path) -> bool:
@@ -148,7 +154,7 @@ def build_fallback_graph() -> dict:
 
     return {
         "schemaVersion": "hfk-codebase-graph/v1",
-        "version": VERSION,
+        "version": read_version(),
         "generatedAt": date.today().isoformat(),
         "generator": "scripts/generate_codebase_graph.py fallback scanner",
         "graphify": {
@@ -175,33 +181,21 @@ def build_fallback_graph() -> dict:
 def try_graphify() -> dict | None:
     if not shutil.which("graphify"):
         return None
-
-    extract = subprocess.run(
-        ["graphify", "extract", ".", "--out", ".", "--no-cluster"],
-        cwd=ROOT,
-        capture_output=True,
-        text=True,
-    )
-    if extract.returncode != 0:
+    if not GRAPHIFY_GRAPH.exists() or not GRAPHIFY_REPORT.exists():
         return None
 
-    cluster = subprocess.run(
-        ["graphify", "cluster-only", ".", "--no-viz"],
-        cwd=ROOT,
-        capture_output=True,
-        text=True,
-    )
-    if cluster.returncode != 0 or not GRAPHIFY_GRAPH.exists():
+    try:
+        graph = json.loads(GRAPHIFY_GRAPH.read_text(encoding="utf-8"))
+        report_excerpt = "\n".join(
+            GRAPHIFY_REPORT.read_text(encoding="utf-8", errors="replace")
+            .splitlines()[:80]
+        )
+    except Exception:
         return None
-
-    graph = json.loads(GRAPHIFY_GRAPH.read_text(encoding="utf-8"))
-    report_excerpt = ""
-    if GRAPHIFY_REPORT.exists():
-        report_excerpt = "\n".join(GRAPHIFY_REPORT.read_text(encoding="utf-8", errors="replace").splitlines()[:80])
 
     return {
         "schemaVersion": "hfk-codebase-graph/v1",
-        "version": VERSION,
+        "version": read_version(),
         "generatedAt": date.today().isoformat(),
         "generator": "graphify CLI via graphifyy",
         "graphify": {
@@ -224,7 +218,6 @@ def try_graphify() -> dict | None:
         "reportExcerpt": report_excerpt,
         "graph": graph,
     }
-    return None
 
 
 def main() -> None:

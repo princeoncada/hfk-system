@@ -1,10 +1,10 @@
 ﻿{
-    "version":  "5.2.5-alpha",
-    "state":  "alpha",
+    "version":  "5.2.5-stable",
+    "state":  "stable",
     "phase":  {
                   "current":  "5.2.5",
                   "name":  "Graphify CLI Syntax Re-correction + Query Behavior Docs",
-                  "status":  "alpha"
+                  "status":  "stable"
               },
     "next":  {
                  "phase":  "5.3.0",

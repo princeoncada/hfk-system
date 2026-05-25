@@ -95,10 +95,11 @@ Run this at the start of every session before doing anything else:
    - Next planned phase (from STATE.json)
    - Any uncommitted work (git status --short)
    - Recommended next action
-4. Read additional docs only if needed — before opening any large doc, query first:
+4. Read additional docs only if needed — before opening any large doc, query ChromaDB first:
    python scripts/query_docs.py "<your question>"
-   This returns relevant chunks from the hfk_docs ChromaDB collection without loading the full file.
-   Only open the full doc if the query result is insufficient.
+   Run exactly one query per topic. Trust the first result — do not run a second query on the same
+   topic unless the first returned zero relevant content, and state explicitly why a fallback was needed.
+   Only open the full file if the query result is insufficient and cannot answer the question.
    - docs/AI_HANDOFF.md for phase history detail
    - docs/FUTURE_PLANS.md for full roadmap
    - docs/PHASE_LOG.md for validation history
@@ -118,19 +119,22 @@ Run this at the start of every session before doing anything else:
 6. Stop — do not implement the fix yourself
 
 ### New Phase
-1. Read docs/FUTURE_PLANS.md for the next queued phase
-2. Infrastructure Check — before recommending any new tool, service, or
+1. Query ChromaDB hfk_docs for phase context (one query, trust the result).
+   Only read the full doc if the query returns zero relevant content — state why the fallback was needed.
+2. Present findings to the user. Wait for explicit direction confirmation before any scoping begins.
+   Never write a Codex prompt or begin Infrastructure Check without this confirmation.
+3. Infrastructure Check — before recommending any new tool, service, or
    dependency:
    a. List what the phase needs at runtime (server, database, API, etc.)
    b. Check whether an existing running service already covers that need
    c. If yes, prefer extending existing infrastructure — state this check
       explicitly before proposing anything new
    d. Only propose a new dependency when no existing service can serve the need
-3. Read all relevant source files for the phase scope
-4. Ask all clarifying questions upfront — wait for answers
-5. If no questions are needed, confirm that, then write the 2-section
+4. Read all relevant source files for the phase scope
+5. Ask all clarifying questions upfront — wait for answers
+6. If no questions are needed, confirm that, then write the 2-section
    master prompt
-6. Stop — do not implement the phase yourself
+7. Stop — do not implement the phase yourself
 
 ### After Codex Finishes Implementation
 1. Receive validation results pasted back by the user

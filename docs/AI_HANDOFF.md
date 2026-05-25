@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.3.0-alpha
+**Current Version:** 5.3.0-stable
 
 ## Current Phase
 
-Phase 5.3.0 [5.3.0-alpha] — ChromaDB Docs Extension
+Phase 5.3.0 [5.3.0-stable] — ChromaDB Docs Extension
 
 Status: alpha
 
@@ -20,7 +20,7 @@ Next recommended work after validation and promotion: Phase 5.4.0 — Portfolio 
 
 ## Completed Phase
 
-Phase 5.3.0 [5.3.0-alpha] — ChromaDB Docs Extension. Adds hfk_docs collection to existing ChromaDB instance. ingest_docs.py + query_docs.py scripts. validate.ps1 auto-ingests docs on each run. Session start protocol updated to query before reading full docs.
+Phase 5.3.0 [5.3.0-stable] — ChromaDB Docs Extension. Adds hfk_docs collection to existing ChromaDB instance. ingest_docs.py + query_docs.py scripts. validate.ps1 auto-ingests docs on each run. Session start protocol updated to query before reading full docs.
 
 Patch 5.2.8 [5.2.8-stable] — Docs hardening patch. Added Infrastructure Check rule to New Phase workflow and Scoping Discipline section to CLAUDE.md. Added Behavioral Guidelines section to AGENTS.md.
 
@@ -1008,6 +1008,7 @@ dev.
   only database dependency permitted, and it is local-only.
 - Do not embed actual image or template files into ChromaDB. Only metadata
   records for non-text assets are indexed.
+
 
 
 

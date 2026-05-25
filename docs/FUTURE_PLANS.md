@@ -3,9 +3,9 @@
 Living backlog for HFK Publishing Engine.
 Completed items are struck through. Update this file every phase.
 
-Last updated: 2026-05-24
-Current stable version: 5.2.1-stable
-Current working version: 5.2.2-alpha
+Last updated: 2026-05-25
+Current stable version: 5.2.7-stable
+Current working version: 5.2.8-alpha
 
 ---
 
@@ -62,6 +62,12 @@ Current working version: 5.2.2-alpha
 - ~~Phase 5.1.0 — Automation Scripts~~ (stable 2026-05-24)
 - ~~Phase 5.2.0 — Graphify-Ready Codebase Graph~~ (stable 2026-05-24)
 - ~~Patch 5.2.1 — Real Graphify Output~~ (stable 2026-05-24)
+- ~~Patch 5.2.2 — Graphify Workflow Clarification~~ (stable 2026-05-25)
+- ~~Patch 5.2.3 — Graphify Server/Tool Mode~~ (stable 2026-05-25)
+- ~~Patch 5.2.4 — Graphify Install Integration + CLI Syntax Fix~~ (stable 2026-05-25)
+- ~~Patch 5.2.5 — Graphify CLI Syntax Re-correction + Query Behavior Docs~~ (stable 2026-05-25)
+- ~~Patch 5.2.6 — Graph Refresh Automation + generate_codebase_graph.py Fix~~ (stable 2026-05-25)
+- ~~Patch 5.2.7 — read_version() Encoding Fix~~ (stable 2026-05-25)
 
 ---
 
@@ -73,21 +79,9 @@ Current working version: 5.2.2-alpha
 
 ## Planned
 
-### Patch 5.2.2 — Graphify Workflow Clarification
-Document exactly how the static Graphify workflow changes Claude Code and Codex
-usage. Add before/after comparisons, when to read GRAPH_REPORT.md vs
-codebase-graph.json vs direct source files, when to run graphify query/path/explain,
-and prompt examples for orientation-heavy code work. Goal: make the token-saving
-workflow obvious before adding live server/tool mode.
+### ~~Phase 5.3.0 — ChromaDB Docs Extension~~
+Superseded — use existing ChromaDB infrastructure.
 
-### Patch 5.2.3 — Graphify Server/Tool Mode
-Add the live Graphify server/tool workflow on top of the committed static graph.
-Document startup commands, connection expectations for Claude Code/Codex, and the
-division of labor between static committed artifacts and live Graphify queries.
-This patch should preserve static graph fallback so sessions still work when the
-server/tool is not running.
-
-### Phase 5.3.0 — ChromaDB Docs Extension
 Ingest all docs files (PHASE_LOG.md, AI_HANDOFF.md, FUTURE_PLANS.md, DECISIONS.md,
 BRAND_GUIDE.md, etc.) into a new hfk_docs ChromaDB collection. Add a query helper
 so Claude Code can answer "what was the decision for X?" with a semantic query

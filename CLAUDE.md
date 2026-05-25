@@ -95,7 +95,10 @@ Run this at the start of every session before doing anything else:
    - Next planned phase (from STATE.json)
    - Any uncommitted work (git status --short)
    - Recommended next action
-4. Read additional docs only if user requests deeper context:
+4. Read additional docs only if needed — before opening any large doc, query first:
+   python scripts/query_docs.py "<your question>"
+   This returns relevant chunks from the hfk_docs ChromaDB collection without loading the full file.
+   Only open the full doc if the query result is insufficient.
    - docs/AI_HANDOFF.md for phase history detail
    - docs/FUTURE_PLANS.md for full roadmap
    - docs/PHASE_LOG.md for validation history

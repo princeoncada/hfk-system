@@ -1,27 +1,29 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.2.5-stable
+**Current Version:** 5.2.6-alpha
 
 ## Current Phase
 
-Patch 5.2.5 [5.2.5-stable] — Graphify CLI Syntax Re-correction + Query Behavior Docs
+Patch 5.2.6 [5.2.6-alpha] — Graph Refresh Automation + generate_codebase_graph.py Fix
 
 Status: alpha
 
 The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 The 5.x workflow infrastructure series is now active.
 
-Current scope in progress: fix Graphify CLI command guidance after
-5.2.4-stable. CLAUDE.md, AGENTS.md, and docs/CODEBASE_GRAPH.md are being
-corrected to restore the required `.` directory argument for query/path/explain
-commands and to document the observed keyword/BFS query behavior plus exact
-node-name path lookup requirements.
+Current scope in progress: fix graph refresh automation after 5.2.5-stable.
+scripts/generate_codebase_graph.py is being corrected so it only normalizes
+existing Graphify output instead of re-running Graphify with the broken
+extract/cluster-only sequence. scripts/validate.ps1 is being updated to run
+`graphify update .` before normalizing codebase-graph.json.
 
 Next recommended work after validation and promotion: Phase 5.3.0 — ChromaDB Docs Extension.
 
 ## Completed Phase
 
-Patch 5.2.5 [5.2.5-stable] — Graphify CLI Syntax Re-correction + Query Behavior Docs: restores required `.` arguments to graphify query/path/explain guidance and documents keyword/BFS query behavior plus exact node-name path lookup requirements — in progress.
+Patch 5.2.6 [5.2.6-alpha] — Graph Refresh Automation + generate_codebase_graph.py Fix: stops the normalizer from re-running Graphify, reads existing Graphify output, uses STATE.json for graph version metadata, and adds graph refresh to validate.ps1 — in progress.
+
+Patch 5.2.5 [5.2.5-stable] — Graphify CLI Syntax Re-correction + Query Behavior Docs: restores required `.` arguments to graphify query/path/explain guidance and documents keyword/BFS query behavior plus exact node-name path lookup requirements — complete.
 
 Patch 5.2.4 [5.2.4-stable] — Graphify Install Integration + CLI Syntax Fix: tailored Graphify Claude/Codex install artifacts to HFK workflow, fixed Codex hook command path, and corrected query/path/explain CLI syntax in CODEBASE_GRAPH.md — complete.
 
@@ -981,7 +983,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Validate and promote Patch 5.2.5 — Graphify CLI Syntax Re-correction + Query Behavior Docs. Next planned follow-up is Phase 5.3.0 — ChromaDB Docs Extension.
+Validate and promote Patch 5.2.6 — Graph Refresh Automation + generate_codebase_graph.py Fix. Next planned follow-up is Phase 5.3.0 — ChromaDB Docs Extension.
 
 ## What Exists
 

@@ -8,7 +8,7 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 6.0.0-alpha |
+| Current | 6.0.0-stable |
 | Status | alpha |
 | Current phase | Phase 6.0.0 — Template Lab: Short O Worksheet Prototype: scaffold-only Template Lab route, asset folders, placeholder SVGs, WorksheetCanvas stub, and prototype handoff zone. |
 
@@ -62,6 +62,7 @@ Open http://localhost:3000 to see the dashboard.
 | docs/FUTURE_PLANS.md | Living backlog and planned phases |
 | docs/PHASE_LOG.md | Full version and validation history |
 | docs/CODEBASE_GRAPH.md | Codebase graph usage and refresh guide |
+
 
 
 

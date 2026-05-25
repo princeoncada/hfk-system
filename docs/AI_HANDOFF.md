@@ -1,27 +1,28 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.2.6-stable
+**Current Version:** 5.2.7-alpha
 
 ## Current Phase
 
-Patch 5.2.6 [5.2.6-stable] — Graph Refresh Automation + generate_codebase_graph.py Fix
+Patch 5.2.7 [5.2.7-alpha] — read_version() Encoding Fix
 
 Status: alpha
 
 The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 The 5.x workflow infrastructure series is now active.
 
-Current scope in progress: fix graph refresh automation after 5.2.5-stable.
-scripts/generate_codebase_graph.py is being corrected so it only normalizes
-existing Graphify output instead of re-running Graphify with the broken
-extract/cluster-only sequence. scripts/validate.ps1 is being updated to run
-`graphify update .` before normalizing codebase-graph.json.
+Current scope in progress: fix STATE.json BOM handling after 5.2.6-stable.
+scripts/generate_codebase_graph.py read_version() is being updated to read
+STATE.json with `utf-8-sig` so PowerShell's UTF-8 BOM does not force graph
+metadata version fallback to `unknown`.
 
 Next recommended work after validation and promotion: Phase 5.3.0 — ChromaDB Docs Extension.
 
 ## Completed Phase
 
-Patch 5.2.6 [5.2.6-stable] — Graph Refresh Automation + generate_codebase_graph.py Fix: stops the normalizer from re-running Graphify, reads existing Graphify output, uses STATE.json for graph version metadata, and adds graph refresh to validate.ps1 — in progress.
+Patch 5.2.7 [5.2.7-alpha] — read_version() Encoding Fix: reads STATE.json with `utf-8-sig` so PowerShell's UTF-8 BOM does not cause graph metadata version fallback to `unknown` — in progress.
+
+Patch 5.2.6 [5.2.6-stable] — Graph Refresh Automation + generate_codebase_graph.py Fix: stops the normalizer from re-running Graphify, reads existing Graphify output, uses STATE.json for graph version metadata, and adds graph refresh to validate.ps1 — complete.
 
 Patch 5.2.5 [5.2.5-stable] — Graphify CLI Syntax Re-correction + Query Behavior Docs: restores required `.` arguments to graphify query/path/explain guidance and documents keyword/BFS query behavior plus exact node-name path lookup requirements — complete.
 
@@ -983,7 +984,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Validate and promote Patch 5.2.6 — Graph Refresh Automation + generate_codebase_graph.py Fix. Next planned follow-up is Phase 5.3.0 — ChromaDB Docs Extension.
+Validate and promote Patch 5.2.7 — read_version() Encoding Fix. Next planned follow-up is Phase 5.3.0 — ChromaDB Docs Extension.
 
 ## What Exists
 

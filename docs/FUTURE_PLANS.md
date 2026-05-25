@@ -4,8 +4,8 @@ Living backlog for HFK Publishing Engine.
 Completed items are struck through. Update this file every phase.
 
 Last updated: 2026-05-25
-Current stable version: 5.2.8-stable
-Current working version: 5.3.0-alpha
+Current stable version: 5.3.0-stable
+Current working version: 5.4.0-alpha
 
 ---
 
@@ -69,17 +69,11 @@ Current working version: 5.3.0-alpha
 - ~~Patch 5.2.6 — Graph Refresh Automation + generate_codebase_graph.py Fix~~ (stable 2026-05-25)
 - ~~Patch 5.2.7 — read_version() Encoding Fix~~ (stable 2026-05-25)
 - ~~Patch 5.2.8 — Docs Hardening — Scoping Discipline~~ (stable 2026-05-25)
+- ~~Phase 5.3.0 — ChromaDB Docs Extension~~ (stable 2026-05-25)
 
 ---
 
 ## In Progress
-
-### Phase 5.3.0 — ChromaDB Docs Extension
-Extend existing ChromaDB instance with hfk_docs collection. Python ingest and query scripts for AI_HANDOFF.md, PHASE_LOG.md, FUTURE_PLANS.md, DECISIONS.md, BRAND_GUIDE.md, CONTENT_PHILOSOPHY.md. validate.ps1 auto-ingests on each run. Session start queries hfk_docs before reading full docs. No new infrastructure — uses port 8000 already running for vault_assets.
-
----
-
-## Planned
 
 ### Phase 5.4.0 — Portfolio Case Studies
 Two documents under docs/case-studies/:
@@ -89,6 +83,10 @@ Two documents under docs/case-studies/:
   5.x series and measurable token reduction at each step.
 Serves as portfolio material and a compact onboarding reference for future
 AI sessions. Indirect token reduction: ~10%.
+
+---
+
+## Planned
 
 ### Phase 5.5.0 — Advanced Memory Layer
 Integrate Zep or Mem0 as a persistent memory server. Replace the file-based

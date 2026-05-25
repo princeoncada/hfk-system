@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.2.6-alpha
+**Current Version:** 5.2.6-stable
 
 ## Current Phase
 
-Patch 5.2.6 [5.2.6-alpha] — Graph Refresh Automation + generate_codebase_graph.py Fix
+Patch 5.2.6 [5.2.6-stable] — Graph Refresh Automation + generate_codebase_graph.py Fix
 
 Status: alpha
 
@@ -21,7 +21,7 @@ Next recommended work after validation and promotion: Phase 5.3.0 — ChromaDB D
 
 ## Completed Phase
 
-Patch 5.2.6 [5.2.6-alpha] — Graph Refresh Automation + generate_codebase_graph.py Fix: stops the normalizer from re-running Graphify, reads existing Graphify output, uses STATE.json for graph version metadata, and adds graph refresh to validate.ps1 — in progress.
+Patch 5.2.6 [5.2.6-stable] — Graph Refresh Automation + generate_codebase_graph.py Fix: stops the normalizer from re-running Graphify, reads existing Graphify output, uses STATE.json for graph version metadata, and adds graph refresh to validate.ps1 — in progress.
 
 Patch 5.2.5 [5.2.5-stable] — Graphify CLI Syntax Re-correction + Query Behavior Docs: restores required `.` arguments to graphify query/path/explain guidance and documents keyword/BFS query behavior plus exact node-name path lookup requirements — complete.
 
@@ -1004,6 +1004,7 @@ dev.
   only database dependency permitted, and it is local-only.
 - Do not embed actual image or template files into ChromaDB. Only metadata
   records for non-text assets are indexed.
+
 
 
 

@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 5.2.5-alpha | Patch 5.2.5 | alpha | 2026-05-25 | Graphify CLI Syntax Re-correction + Query Behavior Docs: restores required `.` arguments to graphify query/path/explain guidance and documents keyword/BFS query behavior plus exact node-name path lookup requirements. |
 | 5.2.4-stable | Patch 5.2.4 | stable | 2026-05-25 | Graphify Install Integration + CLI Syntax Fix: tailored Graphify Claude/Codex install artifacts to HFK workflow, fixed Codex hook command path, and corrected query/path/explain CLI syntax in CODEBASE_GRAPH.md. |
 | 5.2.3-stable | Patch 5.2.3 | stable | 2026-05-25 | Graphify Server/Tool Mode: documented that the installed Graphify CLI has agent install/tool integration commands but no serve/MCP daemon command, and clarified static artifact fallback rules. |
 | 5.2.2-stable | Patch 5.2.2 | stable | 2026-05-25 | Graphify Workflow Clarification: rewrote CODEBASE_GRAPH.md as the authoritative workflow reference for Graphify artifacts, freshness checks, static CLI commands, prompt examples, and direct source-read rules. |
@@ -37,6 +38,34 @@ Date: 2026-05-24
 - Files validated: template.types.ts, template.store.ts, DynamicWorksheetTemplate.tsx, dynamic/index.ts, vault/templates/modern_v1.json, preview/[id]/page.tsx, worksheets/[id]/page.tsx, worksheets/new/page.tsx, WorksheetBuilder.tsx, review/page.tsx, ReviewFlow.tsx
 
 # Phase Log
+
+## Patch 5.2.5 — Graphify CLI Syntax Re-correction + Query Behavior Docs
+
+Status: alpha
+
+Version: 5.2.5-alpha
+
+Date: 2026-05-25
+
+Scope: Documentation and config-only correction for Graphify CLI command syntax and query behavior expectations.
+
+Files:
+- CLAUDE.md
+- AGENTS.md
+- docs/CODEBASE_GRAPH.md
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- README.md
+- STATE.json
+
+Changes:
+- Restored the required `.` directory argument to graphify query/path/explain guidance in CLAUDE.md.
+- Restored the required `.` directory argument to graphify query/path/explain guidance in AGENTS.md.
+- Documented that graphify queries are keyword/BFS-driven and not semantic.
+- Documented that graphify path lookup requires graph node names, not file paths.
+- Updated docs/CODEBASE_GRAPH.md CLI reference and added a Query Behavior section.
+- Bumped all five versioning locations to 5.2.5-alpha.
 
 ## Patch 5.2.4 — Graphify Install Integration + CLI Syntax Fix
 

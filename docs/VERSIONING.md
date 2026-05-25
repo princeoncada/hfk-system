@@ -43,16 +43,17 @@ Every version change must be applied to all five simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 5.2.8-stable |
-| Phase | Patch 5.2.8 |
-| State | stable |
+| Version | 5.3.0-alpha |
+| Phase | Phase 5.3.0 |
+| State | alpha |
 | Date | 2026-05-25 |
-| Summary | Docs hardening patch. Added Infrastructure Check rule to New Phase workflow and Scoping Discipline section to CLAUDE.md. Added Behavioral Guidelines section to AGENTS.md. |
+| Summary | ChromaDB Docs Extension. Adds hfk_docs collection to existing ChromaDB instance. ingest_docs.py + query_docs.py scripts. validate.ps1 auto-ingests docs on each run. Session start protocol updated to query before reading full docs. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 5.3.0-alpha | Phase 5.3.0 | alpha | 2026-05-25 | ChromaDB Docs Extension. Adds hfk_docs collection to existing ChromaDB instance. ingest_docs.py + query_docs.py scripts. validate.ps1 auto-ingests docs on each run. Session start protocol updated to query before reading full docs. |
 | 5.2.8-stable | Patch 5.2.8 | stable | 2026-05-25 | Docs hardening patch. Added Infrastructure Check rule to New Phase workflow and Scoping Discipline section to CLAUDE.md. Added Behavioral Guidelines section to AGENTS.md. |
 | 5.2.7-stable | Patch 5.2.7 | stable | 2026-05-25 | read_version() Encoding Fix: reads STATE.json with `utf-8-sig` so PowerShell's UTF-8 BOM does not cause graph metadata version fallback to `unknown`. |
 | 5.2.6-stable | Patch 5.2.6 | stable | 2026-05-25 | Graph Refresh Automation + generate_codebase_graph.py Fix: stops the normalizer from re-running Graphify, reads existing Graphify output, uses STATE.json for graph version metadata, and adds graph refresh to validate.ps1. |
@@ -268,8 +269,8 @@ Date: 2026-05-23
 
 ## Next Phase
 
-Current stable version: 5.2.7-stable
-Current working version: 5.2.8-stable
+Current stable version: 5.2.8-stable
+Current working version: 5.3.0-alpha
 Next recommended phase: Phase 5.4.0 — Portfolio Case Studies
 
 

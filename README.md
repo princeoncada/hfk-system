@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.2.5-stable |
+| Current | 5.2.6-alpha |
 | Status | alpha |
-| Current phase | Patch 5.2.5 — Graphify CLI Syntax Re-correction + Query Behavior Docs: required `.` arguments are restored for graphify query/path/explain guidance, with keyword/BFS query behavior and exact node-name path lookup documented. |
+| Current phase | Patch 5.2.6 — Graph Refresh Automation + generate_codebase_graph.py Fix: graph normalization now reads existing Graphify output, uses STATE.json version metadata, and validate.ps1 refreshes the graph before checks. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

@@ -48,7 +48,30 @@ Use the degraded fallback explicitly only when Graphify is unavailable:
 
 ## Graphify CLI Reference
 
-These are the static CLI commands available in the installed Graphify CLI from the `graphifyy` package. Patch 5.2.3 will add the server/tool mode; this section documents static CLI commands only.
+## Server/Tool Mode
+
+In the installed Graphify CLI, server/tool mode means installing Graphify guidance or hooks into supported coding agents and using live CLI graph queries during a session; `graphify --help` does not expose a long-running `serve` or MCP daemon command.
+
+Startup command: there is no `graphify serve` startup command in this installed CLI. `graphify serve --help` only redirects back to `graphify --help`.
+
+Connection expectations for Claude Code and Codex:
+- Claude Code integration is installed with `graphify claude install`, which writes Graphify guidance to `CLAUDE.md` and adds a PreToolUse hook.
+- Codex integration is installed with `graphify codex install`, which writes Graphify guidance to `AGENTS.md`.
+- The installed CLI does not advertise an MCP tool name, MCP invocation pattern, HTTP base URL, port, or server endpoint.
+- Live queries are CLI calls against local graph files, for example `graphify query "<question>" --graph graphify-out/graph.json`, `graphify path "A" "B" --graph graphify-out/graph.json`, and `graphify explain "X" --graph graphify-out/graph.json`.
+
+Division of labor:
+- Live CLI queries: available during active development sessions when richer, fresher graph questions are needed.
+- Static artifacts (`codebase-graph.json`, `graphify-out/GRAPH_REPORT.md`): always available, no server required, and preferred for Codex prompts sent as one-shot jobs.
+
+Fallback rule: when no live tool integration is installed or no live query is needed, fall back to the static workflow documented in the Three Artifacts section. Sessions must continue to work without a Graphify server or agent hook; never make server/tool mode a hard dependency.
+
+Session start decision:
+- Is Graphify agent integration installed and useful for this session? Use live CLI queries for orientation.
+- No live integration or server command available? Read `codebase-graph.json` as normal.
+- Graph stale (`HEAD` differs from the commit in `GRAPH_REPORT.md`)? Run `graphify update .` or `.\scripts\generate-codebase-graph.ps1` first.
+
+These are the static CLI commands available in the installed Graphify CLI from the `graphifyy` package.
 
 | Command | Use |
 | --- | --- |

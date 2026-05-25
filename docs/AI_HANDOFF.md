@@ -1,24 +1,27 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.2.1-stable
+**Current Version:** 5.2.2-alpha
 
 ## Current Phase
 
-Patch 5.2.1 [5.2.1-stable] — Real Graphify Output
+Patch 5.2.2 [5.2.2-alpha] — Graphify Workflow Clarification
 
-Status: stable
+Status: alpha
 
 The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 The 5.x workflow infrastructure series is now active.
 
-Current scope complete: graphifyy is installed in the active Python environment and
-the real graphify CLI generated graphify-out/graph.json plus GRAPH_REPORT.md.
-codebase-graph.json is normalized from Graphify output with fallbackUsed false.
-Graph read-first docs now point Codex to the report for orientation-heavy work.
+Current scope in progress: CODEBASE_GRAPH.md is being promoted from a short
+stub into the authoritative Graphify workflow reference for AI sessions. It
+documents when to use codebase-graph.json, when to add GRAPH_REPORT.md, why
+direct source reads are still required before edits, how to check graph
+freshness, and which static Graphify CLI commands are available.
 
-Next recommended work: Patch 5.2.2 — Graphify Workflow Clarification.
+Next recommended work after validation and promotion: Patch 5.2.3 — Graphify Server/Tool Mode.
 
 ## Completed Phase
+
+Patch 5.2.2 [5.2.2-alpha] — Graphify Workflow Clarification: rewrote CODEBASE_GRAPH.md as the authoritative workflow reference for Graphify artifacts, freshness checks, static CLI commands, prompt examples, and direct source-read rules — in progress.
 
 Patch 5.2.1 [5.2.1-stable] — Real Graphify Output: installed graphifyy, generated graphify-out/graph.json and GRAPH_REPORT.md, normalized codebase-graph.json from Graphify output, and updated graph read-first docs — complete.
 
@@ -965,7 +968,6 @@ Modified files:
 
 ## Future Phase Queue
 
-- Patch 5.2.2 — Graphify Workflow Clarification
 - Patch 5.2.3 — Graphify Server/Tool Mode
 - Phase 5.3.0 — ChromaDB Docs Extension
 - Phase 5.4.0 — Portfolio Case Studies
@@ -974,7 +976,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Start Patch 5.2.2 — Graphify Workflow Clarification. Next planned follow-up is Patch 5.2.3 — Graphify Server/Tool Mode.
+Validate and promote Patch 5.2.2 — Graphify Workflow Clarification. Next planned follow-up is Patch 5.2.3 — Graphify Server/Tool Mode.
 
 ## What Exists
 

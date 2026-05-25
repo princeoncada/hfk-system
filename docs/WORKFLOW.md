@@ -12,6 +12,9 @@ Codex is the IMPLEMENTATION layer.
 
 Claude Code:
 - Pulls master and reads key docs at session start
+- Queries hfk_docs with `python scripts/query_docs.py "<question>"` before
+  opening large docs such as AI_HANDOFF.md, PHASE_LOG.md, or FUTURE_PLANS.md;
+  opens the full file only when the query result is insufficient
 - Reports current state before any work begins
 - Diagnoses bugs and writes Codex fix prompts
 - Scopes new phases and writes Codex master prompts

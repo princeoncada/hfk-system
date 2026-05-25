@@ -4,8 +4,8 @@ Living backlog for HFK Publishing Engine.
 Completed items are struck through. Update this file every phase.
 
 Last updated: 2026-05-25
-Current stable version: 5.2.7-stable
-Current working version: 5.2.8-alpha
+Current stable version: 5.2.8-stable
+Current working version: 5.3.0-alpha
 
 ---
 
@@ -68,25 +68,18 @@ Current working version: 5.2.8-alpha
 - ~~Patch 5.2.5 — Graphify CLI Syntax Re-correction + Query Behavior Docs~~ (stable 2026-05-25)
 - ~~Patch 5.2.6 — Graph Refresh Automation + generate_codebase_graph.py Fix~~ (stable 2026-05-25)
 - ~~Patch 5.2.7 — read_version() Encoding Fix~~ (stable 2026-05-25)
+- ~~Patch 5.2.8 — Docs Hardening — Scoping Discipline~~ (stable 2026-05-25)
 
 ---
 
 ## In Progress
 
-(none)
+### Phase 5.3.0 — ChromaDB Docs Extension
+Extend existing ChromaDB instance with hfk_docs collection. Python ingest and query scripts for AI_HANDOFF.md, PHASE_LOG.md, FUTURE_PLANS.md, DECISIONS.md, BRAND_GUIDE.md, CONTENT_PHILOSOPHY.md. validate.ps1 auto-ingests on each run. Session start queries hfk_docs before reading full docs. No new infrastructure — uses port 8000 already running for vault_assets.
 
 ---
 
 ## Planned
-
-### ~~Phase 5.3.0 — ChromaDB Docs Extension~~
-Superseded — use existing ChromaDB infrastructure.
-
-Ingest all docs files (PHASE_LOG.md, AI_HANDOFF.md, FUTURE_PLANS.md, DECISIONS.md,
-BRAND_GUIDE.md, etc.) into a new hfk_docs ChromaDB collection. Add a query helper
-so Claude Code can answer "what was the decision for X?" with a semantic query
-instead of reading entire files. Estimated Claude Code token reduction: ~15–20%
-on session starts and planning turns.
 
 ### Phase 5.4.0 — Portfolio Case Studies
 Two documents under docs/case-studies/:

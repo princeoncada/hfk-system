@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 5.5.0-alpha | Phase 5.5.0 | alpha | 2026-05-25 | Workflow Hardening: Query Discipline. Hardens ChromaDB one-query-per-topic discipline and requires explicit user direction confirmation before phase scoping. |
+| 5.5.0-stable | Phase 5.5.0 | stable | 2026-05-25 | Workflow Hardening: Query Discipline. Hardens ChromaDB one-query-per-topic discipline and requires explicit user direction confirmation before phase scoping. |
 | 5.4.0-stable | Phase 5.4.0 | stable | 2026-05-25 | Portfolio Case Studies. Two case study documents under docs/case-studies/: Case Study A (Docs-Led AI Workflow) and Case Study B (Token Optimization Journey). Portfolio material and onboarding reference. |
 | 5.3.0-stable | Phase 5.3.0 | stable | 2026-05-25 | ChromaDB Docs Extension. Adds hfk_docs collection to existing ChromaDB instance. ingest_docs.py + query_docs.py scripts. validate.ps1 auto-ingests docs on each run. Session start protocol updated to query before reading full docs. |
 | 5.2.8-stable | Patch 5.2.8 | stable | 2026-05-25 | Docs hardening patch. Added Infrastructure Check rule to New Phase workflow and Scoping Discipline section to CLAUDE.md. Added Behavioral Guidelines section to AGENTS.md. |
@@ -49,7 +49,7 @@ Date: 2026-05-24
 
 Status: alpha
 
-Version: 5.5.0-alpha
+Version: 5.5.0-stable
 
 Date: 2026-05-25
 
@@ -72,7 +72,7 @@ Changes:
 - Updated New Phase workflow to require one hfk_docs query, present findings, and wait for explicit direction confirmation before scoping or Infrastructure Check.
 - Updated docs/WORKFLOW.md with one-query-per-topic discipline, explicit phase-direction confirmation, and QUERY/CONFIRM steps in the standard phase cycle.
 - Replaced the planned 5.5.0 Advanced Memory Layer with Workflow Hardening: Query Discipline and deferred Zep/Mem0 indefinitely at current scale.
-- Bumped all five versioning locations to 5.5.0-alpha.
+- Bumped all five versioning locations to 5.5.0-stable.
 
 ## Phase 5.4.0 — Portfolio Case Studies
 
@@ -2087,6 +2087,8 @@ New files:
 - TypeScript type-check: PASS
 - npm install: PASS
 - Promoted to stable: 2026-05-21
+
+
 
 
 

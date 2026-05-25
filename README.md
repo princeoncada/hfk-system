@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.2.8-stable |
+| Current | 5.3.0-alpha |
 | Status | alpha |
-| Current phase | Patch 5.2.8 — Docs Hardening: Infrastructure Check rule added to New Phase workflow, Scoping Discipline added to CLAUDE.md, and Behavioral Guidelines added to AGENTS.md. |
+| Current phase | Phase 5.3.0 — ChromaDB Docs Extension: hfk_docs collection, Python ingest/query scripts, validate.ps1 auto-ingest, and session-start query-before-full-doc guidance. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

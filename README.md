@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.2.7-stable |
+| Current | 5.2.8-alpha |
 | Status | alpha |
-| Current phase | Patch 5.2.7 — read_version() Encoding Fix: STATE.json is read with `utf-8-sig` so BOM-prefixed files no longer produce `unknown` graph metadata versions. |
+| Current phase | Patch 5.2.8 — Docs Hardening: Infrastructure Check rule added to New Phase workflow, Scoping Discipline added to CLAUDE.md, and Behavioral Guidelines added to AGENTS.md. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

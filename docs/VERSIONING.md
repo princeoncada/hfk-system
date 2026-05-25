@@ -43,9 +43,9 @@ Every version change must be applied to all five simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 5.2.8-alpha |
+| Version | 5.2.8-stable |
 | Phase | Patch 5.2.8 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-25 |
 | Summary | Docs hardening patch. Added Infrastructure Check rule to New Phase workflow and Scoping Discipline section to CLAUDE.md. Added Behavioral Guidelines section to AGENTS.md. |
 
@@ -53,7 +53,7 @@ Every version change must be applied to all five simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 5.2.8-alpha | Patch 5.2.8 | alpha | 2026-05-25 | Docs hardening patch. Added Infrastructure Check rule to New Phase workflow and Scoping Discipline section to CLAUDE.md. Added Behavioral Guidelines section to AGENTS.md. |
+| 5.2.8-stable | Patch 5.2.8 | stable | 2026-05-25 | Docs hardening patch. Added Infrastructure Check rule to New Phase workflow and Scoping Discipline section to CLAUDE.md. Added Behavioral Guidelines section to AGENTS.md. |
 | 5.2.7-stable | Patch 5.2.7 | stable | 2026-05-25 | read_version() Encoding Fix: reads STATE.json with `utf-8-sig` so PowerShell's UTF-8 BOM does not cause graph metadata version fallback to `unknown`. |
 | 5.2.6-stable | Patch 5.2.6 | stable | 2026-05-25 | Graph Refresh Automation + generate_codebase_graph.py Fix: stops the normalizer from re-running Graphify, reads existing Graphify output, uses STATE.json for graph version metadata, and adds graph refresh to validate.ps1. |
 | 5.2.5-stable | Patch 5.2.5 | stable | 2026-05-25 | Graphify CLI Syntax Re-correction + Query Behavior Docs: restores required `.` arguments to graphify query/path/explain guidance and documents keyword/BFS query behavior plus exact node-name path lookup requirements. |
@@ -269,7 +269,7 @@ Date: 2026-05-23
 ## Next Phase
 
 Current stable version: 5.2.7-stable
-Current working version: 5.2.8-alpha
+Current working version: 5.2.8-stable
 Next recommended phase: Phase 5.4.0 — Portfolio Case Studies
 
 
@@ -327,6 +327,8 @@ Next recommended phase: Phase 5.4.0 — Portfolio Case Studies
 | 1.0.2-stable | Patch 1.0.2 | stable | 2026-05-21 | Next.js config compatibility — replace next.config.ts with next.config.mjs |
 | 1.0.1-stable | Patch 1.0.1 | stable | 2026-05-21 | Docs hardening — chathead opener + session checkpoint workflow |
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
+
+
 
 
 

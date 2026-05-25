@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.3.0-stable |
+| Current | 5.4.0-alpha |
 | Status | alpha |
-| Current phase | Phase 5.3.0 — ChromaDB Docs Extension: hfk_docs collection, Python ingest/query scripts, validate.ps1 auto-ingest, and session-start query-before-full-doc guidance. |
+| Current phase | Phase 5.4.0 — Portfolio Case Studies: docs-led AI workflow and token optimization journey case studies under docs/case-studies/. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

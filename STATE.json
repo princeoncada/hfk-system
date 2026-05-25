@@ -1,15 +1,15 @@
 ﻿{
-    "version":  "5.3.0-stable",
-    "state":  "stable",
+    "version":  "5.4.0-alpha",
+    "state":  "alpha",
     "phase":  {
-                  "current":  "5.3.0",
-                  "name":  "ChromaDB Docs Extension",
-                  "status":  "stable"
+                  "current":  "5.4.0",
+                  "name":  "Portfolio Case Studies",
+                  "status":  "alpha"
               },
     "next":  {
-                 "phase":  "5.4.0",
-                 "name":  "Portfolio Case Studies",
-                 "description":  "Create portfolio case studies for the docs-led AI workflow and token optimization journey."
+                 "phase":  "5.5.0",
+                 "name":  "Advanced Memory Layer",
+                 "description":  "Evaluate and integrate a persistent memory layer if ChromaDB docs retrieval is no longer sufficient at project scale."
              },
     "series":  {
                    "completed":  [

@@ -43,9 +43,9 @@ Every version change must be applied to all five simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 5.2.2-alpha |
+| Version | 5.2.2-stable |
 | Phase | Patch 5.2.2 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-25 |
 | Summary | Graphify Workflow Clarification: rewrote CODEBASE_GRAPH.md as the authoritative workflow reference for Graphify artifacts, freshness checks, static CLI commands, prompt examples, and direct source-read rules. |
 
@@ -53,7 +53,7 @@ Every version change must be applied to all five simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 5.2.2-alpha | Patch 5.2.2 | alpha | 2026-05-25 | Graphify Workflow Clarification: rewrote CODEBASE_GRAPH.md as the authoritative workflow reference for Graphify artifacts, freshness checks, static CLI commands, prompt examples, and direct source-read rules. |
+| 5.2.2-stable | Patch 5.2.2 | stable | 2026-05-25 | Graphify Workflow Clarification: rewrote CODEBASE_GRAPH.md as the authoritative workflow reference for Graphify artifacts, freshness checks, static CLI commands, prompt examples, and direct source-read rules. |
 | 5.2.1-stable | Patch 5.2.1 | stable | 2026-05-24 | Real Graphify Output: installed graphifyy, generated graphify-out/graph.json and GRAPH_REPORT.md, normalized codebase-graph.json from Graphify output, and updated graph read-first docs. |
 | 5.2.0-stable | Phase 5.2.0 | stable | 2026-05-24 | Graphify-Ready Codebase Graph: committed codebase-graph.json, added Graphify wrapper and degraded fallback scanner, and wired the graph into Codex read-first workflow docs. |
 | 5.1.1-stable | Patch 5.1.1 | stable | 2026-05-24 | Future Plans Queue: populated FUTURE_PLANS.md with 5.0.x + 5.1.0 completions and 5.2.0–5.5.0 planned phases (Graphify, ChromaDB Docs, Case Studies, Advanced Memory) with token optimization rationale. |
@@ -263,7 +263,7 @@ Date: 2026-05-23
 ## Next Phase
 
 Current stable version: 5.2.1-stable
-Current working version: 5.2.2-alpha
+Current working version: 5.2.2-stable
 Next recommended phase: Patch 5.2.3 — Graphify Server/Tool Mode
 
 
@@ -321,6 +321,8 @@ Next recommended phase: Patch 5.2.3 — Graphify Server/Tool Mode
 | 1.0.2-stable | Patch 1.0.2 | stable | 2026-05-21 | Next.js config compatibility — replace next.config.ts with next.config.mjs |
 | 1.0.1-stable | Patch 1.0.1 | stable | 2026-05-21 | Docs hardening — chathead opener + session checkpoint workflow |
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
+
+
 
 
 

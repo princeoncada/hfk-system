@@ -8,7 +8,7 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.2.3-alpha |
+| Current | 5.2.3-stable |
 | Status | alpha |
 | Current phase | Patch 5.2.3 — Graphify Server/Tool Mode: CODEBASE_GRAPH.md documents the installed Graphify CLI's agent integration commands, absence of a serve/MCP daemon command, and static artifact fallback rules. |
 
@@ -62,6 +62,7 @@ Open http://localhost:3000 to see the dashboard.
 | docs/FUTURE_PLANS.md | Living backlog and planned phases |
 | docs/PHASE_LOG.md | Full version and validation history |
 | docs/CODEBASE_GRAPH.md | Codebase graph usage and refresh guide |
+
 
 
 

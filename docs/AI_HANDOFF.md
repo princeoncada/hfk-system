@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.2.4-alpha
+**Current Version:** 5.2.4-stable
 
 ## Current Phase
 
-Patch 5.2.4 [5.2.4-alpha] — Graphify Install Integration + CLI Syntax Fix
+Patch 5.2.4 [5.2.4-stable] — Graphify Install Integration + CLI Syntax Fix
 
 Status: alpha
 
@@ -21,7 +21,7 @@ Next recommended work after validation and promotion: Phase 5.3.0 — ChromaDB D
 
 ## Completed Phase
 
-Patch 5.2.4 [5.2.4-alpha] — Graphify Install Integration + CLI Syntax Fix: tailored Graphify Claude/Codex install artifacts to HFK workflow, fixed Codex hook command path, and corrected query/path/explain CLI syntax in CODEBASE_GRAPH.md — in progress.
+Patch 5.2.4 [5.2.4-stable] — Graphify Install Integration + CLI Syntax Fix: tailored Graphify Claude/Codex install artifacts to HFK workflow, fixed Codex hook command path, and corrected query/path/explain CLI syntax in CODEBASE_GRAPH.md — in progress.
 
 Patch 5.2.3 [5.2.3-stable] — Graphify Server/Tool Mode: documented that the installed Graphify CLI has agent install/tool integration commands but no serve/MCP daemon command, and clarified static artifact fallback rules — complete.
 
@@ -1000,6 +1000,7 @@ dev.
   only database dependency permitted, and it is local-only.
 - Do not embed actual image or template files into ChromaDB. Only metadata
   records for non-text assets are indexed.
+
 
 
 

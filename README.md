@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.4.0-stable |
+| Current | 5.5.0-alpha |
 | Status | alpha |
-| Current phase | Phase 5.4.0 — Portfolio Case Studies: docs-led AI workflow and token optimization journey case studies under docs/case-studies/. |
+| Current phase | Phase 5.5.0 — Workflow Hardening: Query Discipline: one ChromaDB query per topic and explicit user direction confirmation before phase scoping. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

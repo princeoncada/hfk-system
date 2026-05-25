@@ -43,9 +43,9 @@ Every version change must be applied to all five simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 6.0.0-alpha |
+| Version | 6.0.0-stable |
 | Phase | Phase 6.0.0 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-25 |
 | Summary | Template Lab: Short O Worksheet Prototype. Opens 6.x template production series. Closes 5.x workflow infrastructure series. Scaffold only: asset folders, placeholder SVGs, route stub, WorksheetCanvas stub, and asset library guide. |
 
@@ -53,7 +53,7 @@ Every version change must be applied to all five simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 6.0.0-alpha | Phase 6.0.0 | alpha | 2026-05-25 | Template Lab: Short O Worksheet Prototype. Opens 6.x template production series. Closes 5.x workflow infrastructure series. Scaffold only: asset folders, placeholder SVGs, route stub, WorksheetCanvas stub, and asset library guide. |
+| 6.0.0-stable | Phase 6.0.0 | stable | 2026-05-25 | Template Lab: Short O Worksheet Prototype. Opens 6.x template production series. Closes 5.x workflow infrastructure series. Scaffold only: asset folders, placeholder SVGs, route stub, WorksheetCanvas stub, and asset library guide. |
 | 5.5.0-stable | Phase 5.5.0 | stable | 2026-05-25 | Workflow Hardening: Query Discipline. Hardens ChromaDB one-query-per-topic discipline and requires explicit user direction confirmation before phase scoping. |
 | 5.4.0-stable | Phase 5.4.0 | stable | 2026-05-25 | Portfolio Case Studies. Two case study documents under docs/case-studies/: Case Study A (Docs-Led AI Workflow) and Case Study B (Token Optimization Journey). Portfolio material and onboarding reference. |
 | 5.3.0-stable | Phase 5.3.0 | stable | 2026-05-25 | ChromaDB Docs Extension. Adds hfk_docs collection to existing ChromaDB instance. ingest_docs.py + query_docs.py scripts. validate.ps1 auto-ingests docs on each run. Session start protocol updated to query before reading full docs. |
@@ -273,7 +273,7 @@ Date: 2026-05-23
 ## Next Phase
 
 Current stable version: 5.5.0-stable
-Current working version: 6.0.0-alpha
+Current working version: 6.0.0-stable
 Next recommended phase: Phase 6.1.0 — TBD
 
 
@@ -331,6 +331,8 @@ Next recommended phase: Phase 6.1.0 — TBD
 | 1.0.2-stable | Patch 1.0.2 | stable | 2026-05-21 | Next.js config compatibility — replace next.config.ts with next.config.mjs |
 | 1.0.1-stable | Patch 1.0.1 | stable | 2026-05-21 | Docs hardening — chathead opener + session checkpoint workflow |
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
+
+
 
 
 

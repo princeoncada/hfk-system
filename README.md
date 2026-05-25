@@ -8,7 +8,7 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.2.6-alpha |
+| Current | 5.2.6-stable |
 | Status | alpha |
 | Current phase | Patch 5.2.6 — Graph Refresh Automation + generate_codebase_graph.py Fix: graph normalization now reads existing Graphify output, uses STATE.json version metadata, and validate.ps1 refreshes the graph before checks. |
 
@@ -62,6 +62,7 @@ Open http://localhost:3000 to see the dashboard.
 | docs/FUTURE_PLANS.md | Living backlog and planned phases |
 | docs/PHASE_LOG.md | Full version and validation history |
 | docs/CODEBASE_GRAPH.md | Codebase graph usage and refresh guide |
+
 
 
 

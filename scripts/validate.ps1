@@ -23,6 +23,12 @@ function Fail-Check {
   }
 }
 
+# Graph refresh — runs graphify update then normalizes codebase-graph.json
+Write-Host "Refreshing graphify graph..." -ForegroundColor Cyan
+graphify update . 2>&1 | Out-Null
+python "$PSScriptRoot\generate_codebase_graph.py" 2>&1 | Out-Null
+Write-Host "PASS : graphify graph refreshed" -ForegroundColor Green
+
 $step1Label = "fix-mojibake.ps1 $dash idempotent repair complete"
 try {
   $step1Output = .\scripts\fix-mojibake.ps1 2>&1

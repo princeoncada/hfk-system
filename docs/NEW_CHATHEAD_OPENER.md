@@ -16,10 +16,12 @@ Before doing anything else:
    - Next phase and recommended action
 4. Run: git status --short and report any uncommitted work
 
-Current expected state: 5.2.1-stable. Next planned work:
-Patch 5.2.2 — Graphify Workflow Clarification.
+Current expected state: 5.3.0-stable. Next planned work:
+Decide between 5.4.0 Portfolio Case Studies (portfolio phase — may defer until app is actively publishing) or the next infrastructure phase. Read docs/SESSION_LOG/2026-05-25-session-01.md for open decisions from the last session.
 
 Do not read other docs or begin implementation until I confirm.
 See CLAUDE.md and docs/CODEX_RULES.md for full rules after confirmation.
+
+Do not change anything else in NEW_CHATHEAD_OPENER.md.
 
 --- END ---

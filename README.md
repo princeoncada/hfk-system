@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.2.2-stable |
+| Current | 5.2.3-alpha |
 | Status | alpha |
-| Current phase | Patch 5.2.2 — Graphify Workflow Clarification: CODEBASE_GRAPH.md is the authoritative guide for Graphify artifacts, freshness checks, static CLI commands, prompt examples, and direct source-read rules. |
+| Current phase | Patch 5.2.3 — Graphify Server/Tool Mode: CODEBASE_GRAPH.md documents the installed Graphify CLI's agent integration commands, absence of a serve/MCP daemon command, and static artifact fallback rules. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

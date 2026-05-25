@@ -1,27 +1,29 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.2.3-stable
+**Current Version:** 5.2.4-alpha
 
 ## Current Phase
 
-Patch 5.2.3 [5.2.3-stable] — Graphify Server/Tool Mode
+Patch 5.2.4 [5.2.4-alpha] — Graphify Install Integration + CLI Syntax Fix
 
 Status: alpha
 
 The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 The 5.x workflow infrastructure series is now active.
 
-Current scope in progress: CODEBASE_GRAPH.md is being updated with the
-actual installed Graphify CLI server/tool capabilities. Discovery showed
-agent install/tool integration commands such as `graphify codex install`,
-`graphify claude install`, and local graph query commands, but no
-`serve`/MCP daemon command in this installed CLI.
+Current scope in progress: fix Graphify install integration artifacts after
+5.2.3-stable. CLAUDE.md and AGENTS.md are being tailored so Claude Code and
+Codex do not run graph refresh commands themselves, .codex/hooks.json is being
+made portable by using `graphify hook-check`, and CODEBASE_GRAPH.md is being
+corrected to use the installed CLI syntax for query/path/explain commands.
 
 Next recommended work after validation and promotion: Phase 5.3.0 — ChromaDB Docs Extension.
 
 ## Completed Phase
 
-Patch 5.2.3 [5.2.3-stable] — Graphify Server/Tool Mode: documented that the installed Graphify CLI has agent install/tool integration commands but no serve/MCP daemon command, and clarified static artifact fallback rules — in progress.
+Patch 5.2.4 [5.2.4-alpha] — Graphify Install Integration + CLI Syntax Fix: tailored Graphify Claude/Codex install artifacts to HFK workflow, fixed Codex hook command path, and corrected query/path/explain CLI syntax in CODEBASE_GRAPH.md — in progress.
+
+Patch 5.2.3 [5.2.3-stable] — Graphify Server/Tool Mode: documented that the installed Graphify CLI has agent install/tool integration commands but no serve/MCP daemon command, and clarified static artifact fallback rules — complete.
 
 Patch 5.2.2 [5.2.2-stable] — Graphify Workflow Clarification: rewrote CODEBASE_GRAPH.md as the authoritative workflow reference for Graphify artifacts, freshness checks, static CLI commands, prompt examples, and direct source-read rules — complete.
 
@@ -977,7 +979,7 @@ Modified files:
 
 ## Recommended Next Step
 
-Validate and promote Patch 5.2.3 — Graphify Server/Tool Mode. Next planned follow-up is Phase 5.3.0 — ChromaDB Docs Extension.
+Validate and promote Patch 5.2.4 — Graphify Install Integration + CLI Syntax Fix. Next planned follow-up is Phase 5.3.0 — ChromaDB Docs Extension.
 
 ## What Exists
 

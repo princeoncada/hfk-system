@@ -43,16 +43,17 @@ Every version change must be applied to all five simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 5.2.4-stable |
-| Phase | Patch 5.2.4 |
-| State | stable |
+| Version | 5.2.5-alpha |
+| Phase | Patch 5.2.5 |
+| State | alpha |
 | Date | 2026-05-25 |
-| Summary | Graphify Install Integration + CLI Syntax Fix: tailored Graphify Claude/Codex install artifacts to HFK workflow, fixed Codex hook command path, and corrected query/path/explain CLI syntax in CODEBASE_GRAPH.md. |
+| Summary | Graphify CLI Syntax Re-correction + Query Behavior Docs: restores required `.` arguments to graphify query/path/explain guidance and documents keyword/BFS query behavior plus exact node-name path lookup requirements. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 5.2.5-alpha | Patch 5.2.5 | alpha | 2026-05-25 | Graphify CLI Syntax Re-correction + Query Behavior Docs: restores required `.` arguments to graphify query/path/explain guidance and documents keyword/BFS query behavior plus exact node-name path lookup requirements. |
 | 5.2.4-stable | Patch 5.2.4 | stable | 2026-05-25 | Graphify Install Integration + CLI Syntax Fix: tailored Graphify Claude/Codex install artifacts to HFK workflow, fixed Codex hook command path, and corrected query/path/explain CLI syntax in CODEBASE_GRAPH.md. |
 | 5.2.3-stable | Patch 5.2.3 | stable | 2026-05-25 | Graphify Server/Tool Mode: documented that the installed Graphify CLI has agent install/tool integration commands but no serve/MCP daemon command, and clarified static artifact fallback rules. |
 | 5.2.2-stable | Patch 5.2.2 | stable | 2026-05-25 | Graphify Workflow Clarification: rewrote CODEBASE_GRAPH.md as the authoritative workflow reference for Graphify artifacts, freshness checks, static CLI commands, prompt examples, and direct source-read rules. |
@@ -264,8 +265,8 @@ Date: 2026-05-23
 
 ## Next Phase
 
-Current stable version: 5.2.1-stable
-Current working version: 5.2.4-stable
+Current stable version: 5.2.4-stable
+Current working version: 5.2.5-alpha
 Next recommended phase: Phase 5.3.0 — ChromaDB Docs Extension
 
 

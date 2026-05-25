@@ -8,7 +8,7 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.2.4-alpha |
+| Current | 5.2.4-stable |
 | Status | alpha |
 | Current phase | Patch 5.2.4 — Graphify Install Integration + CLI Syntax Fix: Graphify Claude/Codex install artifacts are tailored to HFK workflow, Codex hook path is portable, and query/path/explain CLI syntax is corrected. |
 
@@ -62,6 +62,7 @@ Open http://localhost:3000 to see the dashboard.
 | docs/FUTURE_PLANS.md | Living backlog and planned phases |
 | docs/PHASE_LOG.md | Full version and validation history |
 | docs/CODEBASE_GRAPH.md | Codebase graph usage and refresh guide |
+
 
 
 

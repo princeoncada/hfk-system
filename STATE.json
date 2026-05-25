@@ -1,15 +1,15 @@
 ﻿{
-    "version":  "5.2.1-stable",
-    "state":  "stable",
+    "version":  "5.2.2-alpha",
+    "state":  "alpha",
     "phase":  {
-                  "current":  "5.2.1",
-                  "name":  "Real Graphify Output",
-                  "status":  "stable"
+                  "current":  "5.2.2",
+                  "name":  "Graphify Workflow Clarification",
+                  "status":  "alpha"
               },
     "next":  {
-                 "phase":  "5.2.2",
-                 "name":  "Graphify Workflow Clarification",
-                 "description":  "Document the static Graphify workflow with before/after comparisons, usage rules for GRAPH_REPORT.md, codebase-graph.json, Graphify queries, and direct source reads."
+                 "phase":  "5.2.3",
+                 "name":  "Graphify Server/Tool Mode",
+                 "description":  "Add the live Graphify server/tool workflow while preserving static committed graph fallback."
              },
     "series":  {
                    "completed":  [
@@ -20,6 +20,6 @@
                                  ],
                    "active":  "5.x"
                },
-    "lastUpdated":  "2026-05-24",
+    "lastUpdated":  "2026-05-25",
     "notes":  null
 }

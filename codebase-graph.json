@@ -1,6 +1,6 @@
 {
   "schemaVersion": "hfk-codebase-graph/v1",
-  "version": "5.5.0-alpha",
+  "version": "6.0.0-alpha",
   "generatedAt": "2026-05-25",
   "generator": "graphify CLI via graphifyy",
   "graphify": {
@@ -20,7 +20,7 @@
     "docs/PHASE_LOG.md",
     "docs/WORKFLOW.md"
   ],
-  "reportExcerpt": "# Graph Report - hfk-system  (2026-05-25)\n\n## Corpus Check\n- 119 files · ~31,497 words\n- Verdict: corpus is large enough that graph structure adds value.\n\n## Summary\n- 778 nodes · 1418 edges · 54 communities (49 shown, 5 thin omitted)\n- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.8)\n- Token cost: 0 input · 0 output\n\n## Graph Freshness\n- Built from commit: `b13cb7e0`\n- Run `git rev-parse HEAD` and compare to check if the graph is stale.\n- Run `graphify update .` after code changes (no API cost).\n\n## Community Hubs (Navigation)\n- [[_COMMUNITY_Community 0|Community 0]]\n- [[_COMMUNITY_Community 1|Community 1]]\n- [[_COMMUNITY_Community 2|Community 2]]\n- [[_COMMUNITY_Community 3|Community 3]]\n- [[_COMMUNITY_Community 4|Community 4]]\n- [[_COMMUNITY_Community 5|Community 5]]\n- [[_COMMUNITY_Community 6|Community 6]]\n- [[_COMMUNITY_Community 7|Community 7]]\n- [[_COMMUNITY_Community 8|Community 8]]\n- [[_COMMUNITY_Community 9|Community 9]]\n- [[_COMMUNITY_Community 10|Community 10]]\n- [[_COMMUNITY_Community 11|Community 11]]\n- [[_COMMUNITY_Community 12|Community 12]]\n- [[_COMMUNITY_Community 13|Community 13]]\n- [[_COMMUNITY_Community 14|Community 14]]\n- [[_COMMUNITY_Community 15|Community 15]]\n- [[_COMMUNITY_Community 16|Community 16]]\n- [[_COMMUNITY_Community 17|Community 17]]\n- [[_COMMUNITY_Community 18|Community 18]]\n- [[_COMMUNITY_Community 19|Community 19]]\n- [[_COMMUNITY_Community 20|Community 20]]\n- [[_COMMUNITY_Community 21|Community 21]]\n- [[_COMMUNITY_Community 22|Community 22]]\n- [[_COMMUNITY_Community 23|Community 23]]\n- [[_COMMUNITY_Community 24|Community 24]]\n- [[_COMMUNITY_Community 25|Community 25]]\n- [[_COMMUNITY_Community 26|Community 26]]\n- [[_COMMUNITY_Community 27|Community 27]]\n- [[_COMMUNITY_Community 28|Community 28]]\n- [[_COMMUNITY_Community 29|Community 29]]\n- [[_COMMUNITY_Community 30|Community 30]]\n- [[_COMMUNITY_Community 31|Community 31]]\n- [[_COMMUNITY_Community 32|Community 32]]\n- [[_COMMUNITY_Community 33|Community 33]]\n- [[_COMMUNITY_Community 35|Community 35]]\n- [[_COMMUNITY_Community 36|Community 36]]\n- [[_COMMUNITY_Community 46|Community 46]]\n- [[_COMMUNITY_Community 47|Community 47]]\n- [[_COMMUNITY_Community 48|Community 48]]\n- [[_COMMUNITY_Community 49|Community 49]]\n- [[_COMMUNITY_Community 50|Community 50]]\n- [[_COMMUNITY_Community 51|Community 51]]\n- [[_COMMUNITY_Community 52|Community 52]]\n\n## God Nodes (most connected - your core abstractions)\n1. `Subject` - 35 edges\n2. `Grade` - 33 edges\n3. `WorksheetContent` - 20 edges\n4. `Path` - 17 edges\n5. `compilerOptions` - 16 edges\n6. `TemplateDefinition` - 16 edges\n7. `getPackage()` - 14 edges\n8. `getPlan()` - 13 edges\n9. `VaultProvenance` - 13 edges\n10. `generate()` - 11 edges\n\n## Surprising Connections (you probably didn't know these)\n- `main()` --calls--> `Path`  [INFERRED]\n  scripts/ingest_docs.py → scripts/generate_codebase_graph.py\n- `POST()` --calls--> `generate()`  [EXTRACTED]\n  src/app/api/ai/summary/route.ts → src/lib/deepseek.ts\n- `POST()` --calls--> `generate()`  [EXTRACTED]\n  src/app/api/ai/topic/suggest/route.ts → src/lib/deepseek.ts",
+  "reportExcerpt": "# Graph Report - hfk-system  (2026-05-25)\n\n## Corpus Check\n- 122 files · ~32,293 words\n- Verdict: corpus is large enough that graph structure adds value.\n\n## Summary\n- 784 nodes · 1423 edges · 40 communities (34 shown, 6 thin omitted)\n- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.8)\n- Token cost: 0 input · 0 output\n\n## Graph Freshness\n- Built from commit: `204c0fc0`\n- Run `git rev-parse HEAD` and compare to check if the graph is stale.\n- Run `graphify update .` after code changes (no API cost).\n\n## Community Hubs (Navigation)\n- [[_COMMUNITY_Community 0|Community 0]]\n- [[_COMMUNITY_Community 1|Community 1]]\n- [[_COMMUNITY_Community 2|Community 2]]\n- [[_COMMUNITY_Community 3|Community 3]]\n- [[_COMMUNITY_Community 4|Community 4]]\n- [[_COMMUNITY_Community 5|Community 5]]\n- [[_COMMUNITY_Community 6|Community 6]]\n- [[_COMMUNITY_Community 7|Community 7]]\n- [[_COMMUNITY_Community 8|Community 8]]\n- [[_COMMUNITY_Community 9|Community 9]]\n- [[_COMMUNITY_Community 10|Community 10]]\n- [[_COMMUNITY_Community 11|Community 11]]\n- [[_COMMUNITY_Community 12|Community 12]]\n- [[_COMMUNITY_Community 13|Community 13]]\n- [[_COMMUNITY_Community 14|Community 14]]\n- [[_COMMUNITY_Community 15|Community 15]]\n- [[_COMMUNITY_Community 16|Community 16]]\n- [[_COMMUNITY_Community 17|Community 17]]\n- [[_COMMUNITY_Community 18|Community 18]]\n- [[_COMMUNITY_Community 19|Community 19]]\n- [[_COMMUNITY_Community 20|Community 20]]\n- [[_COMMUNITY_Community 21|Community 21]]\n- [[_COMMUNITY_Community 30|Community 30]]\n- [[_COMMUNITY_Community 31|Community 31]]\n- [[_COMMUNITY_Community 32|Community 32]]\n- [[_COMMUNITY_Community 33|Community 33]]\n- [[_COMMUNITY_Community 35|Community 35]]\n- [[_COMMUNITY_Community 36|Community 36]]\n\n## God Nodes (most connected - your core abstractions)\n1. `Subject` - 35 edges\n2. `Grade` - 33 edges\n3. `WorksheetContent` - 20 edges\n4. `Path` - 17 edges\n5. `compilerOptions` - 16 edges\n6. `TemplateDefinition` - 16 edges\n7. `getPackage()` - 14 edges\n8. `getPlan()` - 13 edges\n9. `VaultProvenance` - 13 edges\n10. `generate()` - 11 edges\n\n## Surprising Connections (you probably didn't know these)\n- `TemplateSlotEditorProps` --references--> `TemplateDefinition`  [EXTRACTED]\n  src/components/templates/editor/TemplateSlotEditor.tsx → src/lib/template.types.ts\n- `main()` --calls--> `Path`  [INFERRED]\n  scripts/ingest_docs.py → scripts/generate_codebase_graph.py\n- `POST()` --calls--> `retrieveCaptionContext()`  [EXTRACTED]\n  src/app/api/ai/draft/caption/route.ts → src/lib/vault.rag.ts\n- `POST()` --calls--> `retrieveWorksheetContext()`  [EXTRACTED]\n  src/app/api/ai/draft/worksheet/route.ts → src/lib/vault.rag.ts\n- `POST()` --calls--> `generate()`  [EXTRACTED]\n  src/app/api/ai/summary/route.ts → src/lib/deepseek.ts\n\n## Communities (40 total, 6 thin omitted)\n\n### Community 0 - \"Community 0\"\nCohesion: 0.12\nNodes (15): lastUpdated, next, description, name, phase, notes, phase, current (+7 more)\n\n### Community 1 - \"Community 1\"\nCohesion: 0.08\nNodes (25): name, payload, status, createdAt, date, name, payload, status (+17 more)\n",
   "graph": {
     "directed": false,
     "multigraph": false,
@@ -516,7 +516,7 @@
         "label": "active",
         "file_type": "code",
         "source_file": "STATE.json",
-        "source_location": "L21",
+        "source_location": "L22",
         "id": "hfk_system_state_series_active",
         "community": 0,
         "norm_label": "active"
@@ -525,7 +525,7 @@
         "label": "lastUpdated",
         "file_type": "code",
         "source_file": "STATE.json",
-        "source_location": "L23",
+        "source_location": "L24",
         "id": "hfk_system_state_lastupdated",
         "community": 0,
         "norm_label": "lastupdated"
@@ -534,7 +534,7 @@
         "label": "notes",
         "file_type": "code",
         "source_file": "STATE.json",
-        "source_location": "L24",
+        "source_location": "L25",
         "id": "hfk_system_state_notes",
         "community": 0,
         "norm_label": "notes"
@@ -2534,7 +2534,7 @@
         "source_file": "src/app/page.tsx",
         "source_location": "L1",
         "id": "src_app_page_tsx",
-        "community": 51,
+        "community": 7,
         "norm_label": "page.tsx"
       },
       {
@@ -2543,7 +2543,7 @@
         "source_file": "src/app/page.tsx",
         "source_location": "L5",
         "id": "app_page_dashboardpage",
-        "community": 51,
+        "community": 7,
         "norm_label": "dashboardpage()"
       },
       {
@@ -2921,7 +2921,7 @@
         "source_file": "src/app/api/planning/generate/route.ts",
         "source_location": "L1",
         "id": "src_app_api_planning_generate_route_ts",
-        "community": 16,
+        "community": 17,
         "norm_label": "route.ts"
       },
       {
@@ -2930,7 +2930,7 @@
         "source_file": "src/app/api/planning/generate/route.ts",
         "source_location": "L7",
         "id": "generate_route_post",
-        "community": 16,
+        "community": 17,
         "norm_label": "post()"
       },
       {
@@ -2975,7 +2975,7 @@
         "source_file": "src/app/api/prompts/route.ts",
         "source_location": "L1",
         "id": "src_app_api_prompts_route_ts",
-        "community": 28,
+        "community": 17,
         "norm_label": "route.ts"
       },
       {
@@ -2984,7 +2984,7 @@
         "source_file": "src/app/api/prompts/route.ts",
         "source_location": "L4",
         "id": "prompts_route_get",
-        "community": 28,
+        "community": 17,
         "norm_label": "get()"
       },
       {
@@ -2993,7 +2993,7 @@
         "source_file": "src/app/api/prompts/assemble/route.ts",
         "source_location": "L1",
         "id": "src_app_api_prompts_assemble_route_ts",
-        "community": 22,
+        "community": 17,
         "norm_label": "route.ts"
       },
       {
@@ -3002,7 +3002,7 @@
         "source_file": "src/app/api/prompts/assemble/route.ts",
         "source_location": "L5",
         "id": "assemble_route_post",
-        "community": 22,
+        "community": 17,
         "norm_label": "post()"
       },
       {
@@ -3011,7 +3011,7 @@
         "source_file": "src/app/api/save/route.ts",
         "source_location": "L1",
         "id": "src_app_api_save_route_ts",
-        "community": 29,
+        "community": 6,
         "norm_label": "route.ts"
       },
       {
@@ -3020,7 +3020,7 @@
         "source_file": "src/app/api/save/route.ts",
         "source_location": "L6",
         "id": "src_app_api_save_route_ts_save_route_post",
-        "community": 29,
+        "community": 6,
         "norm_label": "post()"
       },
       {
@@ -3101,7 +3101,7 @@
         "source_file": "src/app/api/worksheets/[id]/route.ts",
         "source_location": "L1",
         "id": "src_app_api_worksheets_id_route_ts",
-        "community": 29,
+        "community": 6,
         "norm_label": "route.ts"
       },
       {
@@ -3110,7 +3110,7 @@
         "source_file": "src/app/api/worksheets/[id]/route.ts",
         "source_location": "L6",
         "id": "id_route_delete",
-        "community": 29,
+        "community": 6,
         "norm_label": "delete()"
       },
       {
@@ -3119,7 +3119,7 @@
         "source_file": "src/app/edit/WorksheetEditor.tsx",
         "source_location": "L1",
         "id": "src_app_edit_worksheeteditor_tsx",
-        "community": 25,
+        "community": 19,
         "norm_label": "worksheeteditor.tsx"
       },
       {
@@ -3128,7 +3128,7 @@
         "source_file": "src/app/edit/WorksheetEditor.tsx",
         "source_location": "L8",
         "id": "edit_worksheeteditor_worksheeteditorprops",
-        "community": 25,
+        "community": 19,
         "norm_label": "worksheeteditorprops"
       },
       {
@@ -3137,7 +3137,7 @@
         "source_file": "src/app/edit/WorksheetEditor.tsx",
         "source_location": "L12",
         "id": "edit_worksheeteditor_worksheeteditor",
-        "community": 25,
+        "community": 19,
         "norm_label": "worksheeteditor()"
       },
       {
@@ -3200,7 +3200,7 @@
         "source_file": "src/app/planner/[month]/page.tsx",
         "source_location": "L1",
         "id": "src_app_planner_month_page_tsx",
-        "community": 49,
+        "community": 7,
         "norm_label": "page.tsx"
       },
       {
@@ -3209,7 +3209,7 @@
         "source_file": "src/app/planner/[month]/page.tsx",
         "source_location": "L7",
         "id": "month_page_plannermonthpage",
-        "community": 49,
+        "community": 7,
         "norm_label": "plannermonthpage()"
       },
       {
@@ -3218,7 +3218,7 @@
         "source_file": "src/app/preview/[id]/page.tsx",
         "source_location": "L1",
         "id": "src_app_preview_id_page_tsx",
-        "community": 2,
+        "community": 19,
         "norm_label": "page.tsx"
       },
       {
@@ -3227,7 +3227,7 @@
         "source_file": "src/app/preview/[id]/page.tsx",
         "source_location": "L10",
         "id": "id_page_resolvetemplate",
-        "community": 2,
+        "community": 19,
         "norm_label": "resolvetemplate()"
       },
       {
@@ -3236,7 +3236,7 @@
         "source_file": "src/app/preview/[id]/page.tsx",
         "source_location": "L15",
         "id": "id_page_previewpageprops",
-        "community": 2,
+        "community": 19,
         "norm_label": "previewpageprops"
       },
       {
@@ -3245,7 +3245,7 @@
         "source_file": "src/app/preview/[id]/page.tsx",
         "source_location": "L19",
         "id": "id_page_previewpage",
-        "community": 2,
+        "community": 19,
         "norm_label": "previewpage()"
       },
       {
@@ -3254,7 +3254,7 @@
         "source_file": "src/app/preview/[id]/PreviewControls.tsx",
         "source_location": "L1",
         "id": "src_app_preview_id_previewcontrols_tsx",
-        "community": 2,
+        "community": 19,
         "norm_label": "previewcontrols.tsx"
       },
       {
@@ -3263,7 +3263,7 @@
         "source_file": "src/app/preview/[id]/PreviewControls.tsx",
         "source_location": "L7",
         "id": "id_previewcontrols_previewcontrols",
-        "community": 2,
+        "community": 19,
         "norm_label": "previewcontrols()"
       },
       {
@@ -3283,6 +3283,24 @@
         "id": "review_page_reviewpage",
         "community": 2,
         "norm_label": "reviewpage()"
+      },
+      {
+        "label": "page.tsx",
+        "file_type": "code",
+        "source_file": "src/app/template-lab/short-o/page.tsx",
+        "source_location": "L1",
+        "id": "src_app_template_lab_short_o_page_tsx",
+        "community": 22,
+        "norm_label": "page.tsx"
+      },
+      {
+        "label": "ShortOWorksheetPage()",
+        "file_type": "code",
+        "source_file": "src/app/template-lab/short-o/page.tsx",
+        "source_location": "L5",
+        "id": "short_o_page_shortoworksheetpage",
+        "community": 22,
+        "norm_label": "shortoworksheetpage()"
       },
       {
         "label": "page.tsx",
@@ -3362,7 +3380,7 @@
         "source_file": "src/app/worksheets/page.tsx",
         "source_location": "L1",
         "id": "src_app_worksheets_page_tsx",
-        "community": 2,
+        "community": 19,
         "norm_label": "page.tsx"
       },
       {
@@ -3371,7 +3389,7 @@
         "source_file": "src/app/worksheets/page.tsx",
         "source_location": "L4",
         "id": "worksheets_page_worksheetspage",
-        "community": 2,
+        "community": 19,
         "norm_label": "worksheetspage()"
       },
       {
@@ -3398,7 +3416,7 @@
         "source_file": "src/app/worksheets/[id]/page.tsx",
         "source_location": "L1",
         "id": "src_app_worksheets_id_page_tsx",
-        "community": 2,
+        "community": 19,
         "norm_label": "page.tsx"
       },
       {
@@ -3407,7 +3425,7 @@
         "source_file": "src/app/worksheets/[id]/page.tsx",
         "source_location": "L7",
         "id": "id_page_worksheetbuilderpage",
-        "community": 2,
+        "community": 19,
         "norm_label": "worksheetbuilderpage()"
       },
       {
@@ -3515,7 +3533,7 @@
         "source_file": "src/components/command/MonthProgress.tsx",
         "source_location": "L1",
         "id": "src_components_command_monthprogress_tsx",
-        "community": 51,
+        "community": 7,
         "norm_label": "monthprogress.tsx"
       },
       {
@@ -3524,7 +3542,7 @@
         "source_file": "src/components/command/MonthProgress.tsx",
         "source_location": "L4",
         "id": "command_monthprogress_currentmonth",
-        "community": 51,
+        "community": 7,
         "norm_label": "currentmonth()"
       },
       {
@@ -3533,7 +3551,7 @@
         "source_file": "src/components/command/MonthProgress.tsx",
         "source_location": "L8",
         "id": "command_monthprogress_formatmonthlabel",
-        "community": 51,
+        "community": 7,
         "norm_label": "formatmonthlabel()"
       },
       {
@@ -3542,7 +3560,7 @@
         "source_file": "src/components/command/MonthProgress.tsx",
         "source_location": "L16",
         "id": "command_monthprogress_monthprogress",
-        "community": 51,
+        "community": 7,
         "norm_label": "monthprogress()"
       },
       {
@@ -3605,7 +3623,7 @@
         "source_file": "src/components/command/VaultAlerts.tsx",
         "source_location": "L1",
         "id": "src_components_command_vaultalerts_tsx",
-        "community": 28,
+        "community": 17,
         "norm_label": "vaultalerts.tsx"
       },
       {
@@ -3614,7 +3632,7 @@
         "source_file": "src/components/command/VaultAlerts.tsx",
         "source_location": "L4",
         "id": "command_vaultalerts_istopic",
-        "community": 28,
+        "community": 17,
         "norm_label": "istopic()"
       },
       {
@@ -3623,8 +3641,44 @@
         "source_file": "src/components/command/VaultAlerts.tsx",
         "source_location": "L12",
         "id": "command_vaultalerts_vaultalerts",
-        "community": 28,
+        "community": 17,
         "norm_label": "vaultalerts()"
+      },
+      {
+        "label": "index.ts",
+        "file_type": "code",
+        "source_file": "src/components/hfk-template/index.ts",
+        "source_location": "L1",
+        "id": "src_components_hfk_template_index_ts",
+        "community": 16,
+        "norm_label": "index.ts"
+      },
+      {
+        "label": "WorksheetCanvas.tsx",
+        "file_type": "code",
+        "source_file": "src/components/hfk-template/WorksheetCanvas.tsx",
+        "source_location": "L1",
+        "id": "src_components_hfk_template_worksheetcanvas_tsx",
+        "community": 16,
+        "norm_label": "worksheetcanvas.tsx"
+      },
+      {
+        "label": "WorksheetCanvasProps",
+        "file_type": "code",
+        "source_file": "src/components/hfk-template/WorksheetCanvas.tsx",
+        "source_location": "L5",
+        "id": "hfk_template_worksheetcanvas_worksheetcanvasprops",
+        "community": 16,
+        "norm_label": "worksheetcanvasprops"
+      },
+      {
+        "label": "WorksheetCanvas()",
+        "file_type": "code",
+        "source_file": "src/components/hfk-template/WorksheetCanvas.tsx",
+        "source_location": "L9",
+        "id": "hfk_template_worksheetcanvas_worksheetcanvas",
+        "community": 16,
+        "norm_label": "worksheetcanvas()"
       },
       {
         "label": "OnboardingOverlay.tsx",
@@ -3659,7 +3713,7 @@
         "source_file": "src/components/planner/PlannerView.tsx",
         "source_location": "L1",
         "id": "src_components_planner_plannerview_tsx",
-        "community": 48,
+        "community": 7,
         "norm_label": "plannerview.tsx"
       },
       {
@@ -3668,7 +3722,7 @@
         "source_file": "src/components/planner/PlannerView.tsx",
         "source_location": "L9",
         "id": "planner_plannerview_subject_colors",
-        "community": 48,
+        "community": 7,
         "norm_label": "subject_colors"
       },
       {
@@ -3677,7 +3731,7 @@
         "source_file": "src/components/planner/PlannerView.tsx",
         "source_location": "L18",
         "id": "planner_plannerview_subject_labels",
-        "community": 48,
+        "community": 7,
         "norm_label": "subject_labels"
       },
       {
@@ -3686,7 +3740,7 @@
         "source_file": "src/components/planner/PlannerView.tsx",
         "source_location": "L27",
         "id": "planner_plannerview_day_headers",
-        "community": 48,
+        "community": 7,
         "norm_label": "day_headers"
       },
       {
@@ -3695,7 +3749,7 @@
         "source_file": "src/components/planner/PlannerView.tsx",
         "source_location": "L29",
         "id": "planner_plannerview_getcalendarweeks",
-        "community": 48,
+        "community": 7,
         "norm_label": "getcalendarweeks()"
       },
       {
@@ -3704,7 +3758,7 @@
         "source_file": "src/components/planner/PlannerView.tsx",
         "source_location": "L53",
         "id": "planner_plannerview_confidencecolor",
-        "community": 48,
+        "community": 7,
         "norm_label": "confidencecolor()"
       },
       {
@@ -3713,7 +3767,7 @@
         "source_file": "src/components/planner/PlannerView.tsx",
         "source_location": "L59",
         "id": "planner_plannerview_confidencelabel",
-        "community": 48,
+        "community": 7,
         "norm_label": "confidencelabel()"
       },
       {
@@ -3722,7 +3776,7 @@
         "source_file": "src/components/planner/PlannerView.tsx",
         "source_location": "L63",
         "id": "planner_plannerview_subjectlabel",
-        "community": 48,
+        "community": 7,
         "norm_label": "subjectlabel()"
       },
       {
@@ -3731,7 +3785,7 @@
         "source_file": "src/components/planner/PlannerView.tsx",
         "source_location": "L71",
         "id": "planner_plannerview_getpackagesummary",
-        "community": 48,
+        "community": 7,
         "norm_label": "getpackagesummary()"
       },
       {
@@ -3740,7 +3794,7 @@
         "source_file": "src/components/planner/PlannerView.tsx",
         "source_location": "L89",
         "id": "planner_plannerview_ispastdate",
-        "community": 48,
+        "community": 7,
         "norm_label": "ispastdate()"
       },
       {
@@ -3749,7 +3803,7 @@
         "source_file": "src/components/planner/PlannerView.tsx",
         "source_location": "L93",
         "id": "planner_plannerview_plannerviewprops",
-        "community": 49,
+        "community": 7,
         "norm_label": "plannerviewprops"
       },
       {
@@ -3758,7 +3812,7 @@
         "source_file": "src/components/planner/PlannerView.tsx",
         "source_location": "L100",
         "id": "planner_plannerview_plannerview",
-        "community": 48,
+        "community": 7,
         "norm_label": "plannerview()"
       },
       {
@@ -3902,7 +3956,7 @@
         "source_file": "src/components/review/ReviewFlow.tsx",
         "source_location": "L107",
         "id": "review_reviewflow_reviewflowprops",
-        "community": 20,
+        "community": 7,
         "norm_label": "reviewflowprops"
       },
       {
@@ -4001,7 +4055,7 @@
         "source_file": "src/components/templates/cozy_v1/index.ts",
         "source_location": "L1",
         "id": "src_components_templates_cozy_v1_index_ts",
-        "community": 24,
+        "community": 19,
         "norm_label": "index.ts"
       },
       {
@@ -4010,7 +4064,7 @@
         "source_file": "src/components/templates/cozy_v1/WorksheetTemplate.tsx",
         "source_location": "L1",
         "id": "src_components_templates_cozy_v1_worksheettemplate_tsx",
-        "community": 24,
+        "community": 19,
         "norm_label": "worksheettemplate.tsx"
       },
       {
@@ -4019,7 +4073,7 @@
         "source_file": "src/components/templates/cozy_v1/WorksheetTemplate.tsx",
         "source_location": "L6",
         "id": "cozy_v1_worksheettemplate_worksheettemplateprops",
-        "community": 24,
+        "community": 19,
         "norm_label": "worksheettemplateprops"
       },
       {
@@ -4028,7 +4082,7 @@
         "source_file": "src/components/templates/cozy_v1/WorksheetTemplate.tsx",
         "source_location": "L10",
         "id": "cozy_v1_worksheettemplate_activitylabels",
-        "community": 24,
+        "community": 19,
         "norm_label": "activitylabels"
       },
       {
@@ -4037,7 +4091,7 @@
         "source_file": "src/components/templates/cozy_v1/WorksheetTemplate.tsx",
         "source_location": "L18",
         "id": "cozy_v1_worksheettemplate_capitalize",
-        "community": 24,
+        "community": 19,
         "norm_label": "capitalize()"
       },
       {
@@ -4046,7 +4100,7 @@
         "source_file": "src/components/templates/cozy_v1/WorksheetTemplate.tsx",
         "source_location": "L22",
         "id": "cozy_v1_worksheettemplate_renderactivityitems",
-        "community": 24,
+        "community": 19,
         "norm_label": "renderactivityitems()"
       },
       {
@@ -4055,7 +4109,7 @@
         "source_file": "src/components/templates/cozy_v1/WorksheetTemplate.tsx",
         "source_location": "L90",
         "id": "cozy_v1_worksheettemplate_worksheettemplate",
-        "community": 24,
+        "community": 19,
         "norm_label": "worksheettemplate()"
       },
       {
@@ -4316,7 +4370,7 @@
         "source_file": "src/components/templates/editor/TemplatePreview.tsx",
         "source_location": "L49",
         "id": "editor_templatepreview_templatepreview",
-        "community": 19,
+        "community": 2,
         "norm_label": "templatepreview()"
       },
       {
@@ -4334,7 +4388,7 @@
         "source_file": "src/components/templates/editor/TemplateSlotEditor.tsx",
         "source_location": "L26",
         "id": "editor_templatesloteditor_templatesloteditorprops",
-        "community": 19,
+        "community": 2,
         "norm_label": "templatesloteditorprops"
       },
       {
@@ -4388,7 +4442,7 @@
         "source_file": "src/components/templates/playful_v1/index.ts",
         "source_location": "L1",
         "id": "src_components_templates_playful_v1_index_ts",
-        "community": 26,
+        "community": 19,
         "norm_label": "index.ts"
       },
       {
@@ -4397,7 +4451,7 @@
         "source_file": "src/components/templates/playful_v1/WorksheetTemplate.tsx",
         "source_location": "L1",
         "id": "src_components_templates_playful_v1_worksheettemplate_tsx",
-        "community": 26,
+        "community": 19,
         "norm_label": "worksheettemplate.tsx"
       },
       {
@@ -4406,7 +4460,7 @@
         "source_file": "src/components/templates/playful_v1/WorksheetTemplate.tsx",
         "source_location": "L6",
         "id": "playful_v1_worksheettemplate_worksheettemplateprops",
-        "community": 26,
+        "community": 19,
         "norm_label": "worksheettemplateprops"
       },
       {
@@ -4415,7 +4469,7 @@
         "source_file": "src/components/templates/playful_v1/WorksheetTemplate.tsx",
         "source_location": "L10",
         "id": "playful_v1_worksheettemplate_activity_emoji",
-        "community": 26,
+        "community": 19,
         "norm_label": "activity_emoji"
       },
       {
@@ -4424,7 +4478,7 @@
         "source_file": "src/components/templates/playful_v1/WorksheetTemplate.tsx",
         "source_location": "L18",
         "id": "playful_v1_worksheettemplate_activity_labels",
-        "community": 26,
+        "community": 19,
         "norm_label": "activity_labels"
       },
       {
@@ -4433,7 +4487,7 @@
         "source_file": "src/components/templates/playful_v1/WorksheetTemplate.tsx",
         "source_location": "L26",
         "id": "playful_v1_worksheettemplate_subject_emoji",
-        "community": 26,
+        "community": 19,
         "norm_label": "subject_emoji"
       },
       {
@@ -4442,7 +4496,7 @@
         "source_file": "src/components/templates/playful_v1/WorksheetTemplate.tsx",
         "source_location": "L35",
         "id": "playful_v1_worksheettemplate_activity_colors",
-        "community": 26,
+        "community": 19,
         "norm_label": "activity_colors"
       },
       {
@@ -4451,7 +4505,7 @@
         "source_file": "src/components/templates/playful_v1/WorksheetTemplate.tsx",
         "source_location": "L42",
         "id": "playful_v1_worksheettemplate_capitalize",
-        "community": 26,
+        "community": 19,
         "norm_label": "capitalize()"
       },
       {
@@ -4460,7 +4514,7 @@
         "source_file": "src/components/templates/playful_v1/WorksheetTemplate.tsx",
         "source_location": "L46",
         "id": "playful_v1_worksheettemplate_renderactivityitems",
-        "community": 26,
+        "community": 19,
         "norm_label": "renderactivityitems()"
       },
       {
@@ -4469,7 +4523,7 @@
         "source_file": "src/components/templates/playful_v1/WorksheetTemplate.tsx",
         "source_location": "L105",
         "id": "playful_v1_worksheettemplate_worksheettemplate",
-        "community": 26,
+        "community": 19,
         "norm_label": "worksheettemplate()"
       },
       {
@@ -4613,7 +4667,7 @@
         "source_file": "src/components/worksheets/WorksheetBuilder.tsx",
         "source_location": "L1",
         "id": "src_components_worksheets_worksheetbuilder_tsx",
-        "community": 52,
+        "community": 19,
         "norm_label": "worksheetbuilder.tsx"
       },
       {
@@ -4631,7 +4685,7 @@
         "source_file": "src/components/worksheets/WorksheetBuilder.tsx",
         "source_location": "L20",
         "id": "worksheets_worksheetbuilder_normalizefordirty",
-        "community": 52,
+        "community": 19,
         "norm_label": "normalizefordirty()"
       },
       {
@@ -4640,7 +4694,7 @@
         "source_file": "src/components/worksheets/WorksheetBuilder.tsx",
         "source_location": "L27",
         "id": "worksheets_worksheetbuilder_worksheetbuilder",
-        "community": 52,
+        "community": 19,
         "norm_label": "worksheetbuilder()"
       },
       {
@@ -4649,7 +4703,7 @@
         "source_file": "src/components/worksheets/WorksheetList.tsx",
         "source_location": "L1",
         "id": "src_components_worksheets_worksheetlist_tsx",
-        "community": 25,
+        "community": 19,
         "norm_label": "worksheetlist.tsx"
       },
       {
@@ -4658,7 +4712,7 @@
         "source_file": "src/components/worksheets/WorksheetList.tsx",
         "source_location": "L8",
         "id": "worksheets_worksheetlist_worksheetlistprops",
-        "community": 25,
+        "community": 19,
         "norm_label": "worksheetlistprops"
       },
       {
@@ -4667,7 +4721,7 @@
         "source_file": "src/components/worksheets/WorksheetList.tsx",
         "source_location": "L12",
         "id": "worksheets_worksheetlist_capitalize",
-        "community": 25,
+        "community": 19,
         "norm_label": "capitalize()"
       },
       {
@@ -4676,7 +4730,7 @@
         "source_file": "src/components/worksheets/WorksheetList.tsx",
         "source_location": "L16",
         "id": "worksheets_worksheetlist_worksheetlist",
-        "community": 25,
+        "community": 19,
         "norm_label": "worksheetlist()"
       },
       {
@@ -4685,7 +4739,7 @@
         "source_file": "src/lib/ai.types.ts",
         "source_location": "L1",
         "id": "src_lib_ai_types_ts",
-        "community": 6,
+        "community": 17,
         "norm_label": "ai.types.ts"
       },
       {
@@ -4694,7 +4748,7 @@
         "source_file": "src/lib/ai.types.ts",
         "source_location": "L9",
         "id": "lib_ai_types_worksheetdraftrequest",
-        "community": 6,
+        "community": 17,
         "norm_label": "worksheetdraftrequest"
       },
       {
@@ -4703,7 +4757,7 @@
         "source_file": "src/lib/ai.types.ts",
         "source_location": "L18",
         "id": "lib_ai_types_worksheetdraft",
-        "community": 46,
+        "community": 13,
         "norm_label": "worksheetdraft"
       },
       {
@@ -4712,7 +4766,7 @@
         "source_file": "src/lib/ai.types.ts",
         "source_location": "L25",
         "id": "lib_ai_types_worksheetdraftresponse",
-        "community": 16,
+        "community": 17,
         "norm_label": "worksheetdraftresponse"
       },
       {
@@ -4721,7 +4775,7 @@
         "source_file": "src/lib/ai.types.ts",
         "source_location": "L30",
         "id": "lib_ai_types_captiondraftrequest",
-        "community": 6,
+        "community": 17,
         "norm_label": "captiondraftrequest"
       },
       {
@@ -4730,7 +4784,7 @@
         "source_file": "src/lib/ai.types.ts",
         "source_location": "L38",
         "id": "lib_ai_types_captiondraftresponse",
-        "community": 6,
+        "community": 17,
         "norm_label": "captiondraftresponse"
       },
       {
@@ -4847,7 +4901,7 @@
         "source_file": "src/lib/analytics.types.ts",
         "source_location": "L23",
         "id": "lib_analytics_types_heatmapcell",
-        "community": 4,
+        "community": 17,
         "norm_label": "heatmapcell"
       },
       {
@@ -5090,7 +5144,7 @@
         "source_file": "src/lib/approval.types.ts",
         "source_location": "L16",
         "id": "lib_approval_types_directionpayload",
-        "community": 3,
+        "community": 17,
         "norm_label": "directionpayload"
       },
       {
@@ -5099,7 +5153,7 @@
         "source_file": "src/lib/approval.types.ts",
         "source_location": "L23",
         "id": "lib_approval_types_templatepayload",
-        "community": 3,
+        "community": 20,
         "norm_label": "templatepayload"
       },
       {
@@ -5108,7 +5162,7 @@
         "source_file": "src/lib/approval.types.ts",
         "source_location": "L27",
         "id": "lib_approval_types_gatepayload",
-        "community": 3,
+        "community": 20,
         "norm_label": "gatepayload"
       },
       {
@@ -5126,7 +5180,7 @@
         "source_file": "src/lib/approval.types.ts",
         "source_location": "L46",
         "id": "lib_approval_types_dailypackage",
-        "community": 49,
+        "community": 7,
         "norm_label": "dailypackage"
       },
       {
@@ -5189,7 +5243,7 @@
         "source_file": "src/lib/calendar.ts",
         "source_location": "L1",
         "id": "src_lib_calendar_ts",
-        "community": 49,
+        "community": 7,
         "norm_label": "calendar.ts"
       },
       {
@@ -5198,7 +5252,7 @@
         "source_file": "src/lib/calendar.ts",
         "source_location": "L5",
         "id": "lib_calendar_packages_dir",
-        "community": 49,
+        "community": 7,
         "norm_label": "packages_dir"
       },
       {
@@ -5207,7 +5261,7 @@
         "source_file": "src/lib/calendar.ts",
         "source_location": "L7",
         "id": "lib_calendar_getpackagesformonth",
-        "community": 49,
+        "community": 7,
         "norm_label": "getpackagesformonth()"
       },
       {
@@ -5216,7 +5270,7 @@
         "source_file": "src/lib/chroma.ts",
         "source_location": "L1",
         "id": "src_lib_chroma_ts",
-        "community": 47,
+        "community": 3,
         "norm_label": "chroma.ts"
       },
       {
@@ -5225,7 +5279,7 @@
         "source_file": "src/lib/chroma.ts",
         "source_location": "L9",
         "id": "lib_chroma_getchromacollection",
-        "community": 47,
+        "community": 3,
         "norm_label": "getchromacollection()"
       },
       {
@@ -5234,7 +5288,7 @@
         "source_file": "src/lib/content.ts",
         "source_location": "L1",
         "id": "src_lib_content_ts",
-        "community": 2,
+        "community": 19,
         "norm_label": "content.ts"
       },
       {
@@ -5243,7 +5297,7 @@
         "source_file": "src/lib/content.ts",
         "source_location": "L5",
         "id": "lib_content_content_dir",
-        "community": 2,
+        "community": 19,
         "norm_label": "content_dir"
       },
       {
@@ -5252,7 +5306,7 @@
         "source_file": "src/lib/content.ts",
         "source_location": "L7",
         "id": "lib_content_getworksheets",
-        "community": 2,
+        "community": 19,
         "norm_label": "getworksheets()"
       },
       {
@@ -5261,7 +5315,7 @@
         "source_file": "src/lib/content.ts",
         "source_location": "L20",
         "id": "lib_content_getworksheetbyid",
-        "community": 2,
+        "community": 19,
         "norm_label": "getworksheetbyid()"
       },
       {
@@ -5342,7 +5396,7 @@
         "source_file": "src/lib/planning.generate.ts",
         "source_location": "L1",
         "id": "src_lib_planning_generate_ts",
-        "community": 16,
+        "community": 17,
         "norm_label": "planning.generate.ts"
       },
       {
@@ -5351,7 +5405,7 @@
         "source_file": "src/lib/planning.generate.ts",
         "source_location": "L12",
         "id": "lib_planning_generate_default_subject_rotation",
-        "community": 16,
+        "community": 17,
         "norm_label": "default_subject_rotation"
       },
       {
@@ -5360,7 +5414,7 @@
         "source_file": "src/lib/planning.generate.ts",
         "source_location": "L19",
         "id": "lib_planning_generate_default_grade_rotation",
-        "community": 16,
+        "community": 17,
         "norm_label": "default_grade_rotation"
       },
       {
@@ -5369,7 +5423,7 @@
         "source_file": "src/lib/planning.generate.ts",
         "source_location": "L21",
         "id": "lib_planning_generate_subject_labels",
-        "community": 16,
+        "community": 17,
         "norm_label": "subject_labels"
       },
       {
@@ -5378,7 +5432,7 @@
         "source_file": "src/lib/planning.generate.ts",
         "source_location": "L30",
         "id": "lib_planning_generate_getdaysinmonth",
-        "community": 16,
+        "community": 17,
         "norm_label": "getdaysinmonth()"
       },
       {
@@ -5387,7 +5441,7 @@
         "source_file": "src/lib/planning.generate.ts",
         "source_location": "L42",
         "id": "lib_planning_generate_hasrequireddayfields",
-        "community": 16,
+        "community": 17,
         "norm_label": "hasrequireddayfields()"
       },
       {
@@ -5396,7 +5450,7 @@
         "source_file": "src/lib/planning.generate.ts",
         "source_location": "L49",
         "id": "lib_planning_generate_generatemonthlyplan",
-        "community": 16,
+        "community": 17,
         "norm_label": "generatemonthlyplan()"
       },
       {
@@ -5459,7 +5513,7 @@
         "source_file": "src/lib/planning.rag.ts",
         "source_location": "L35",
         "id": "lib_planning_rag_retrieveplanningcontext",
-        "community": 16,
+        "community": 17,
         "norm_label": "retrieveplanningcontext()"
       },
       {
@@ -5504,7 +5558,7 @@
         "source_file": "src/lib/planning.types.ts",
         "source_location": "L1",
         "id": "src_lib_planning_types_ts",
-        "community": 16,
+        "community": 17,
         "norm_label": "planning.types.ts"
       },
       {
@@ -5513,7 +5567,7 @@
         "source_file": "src/lib/planning.types.ts",
         "source_location": "L4",
         "id": "lib_planning_types_planday",
-        "community": 20,
+        "community": 17,
         "norm_label": "planday"
       },
       {
@@ -5522,7 +5576,7 @@
         "source_file": "src/lib/planning.types.ts",
         "source_location": "L16",
         "id": "lib_planning_types_monthlyplan",
-        "community": 16,
+        "community": 17,
         "norm_label": "monthlyplan"
       },
       {
@@ -5531,7 +5585,7 @@
         "source_file": "src/lib/planning.types.ts",
         "source_location": "L24",
         "id": "lib_planning_types_planrequest",
-        "community": 16,
+        "community": 17,
         "norm_label": "planrequest"
       },
       {
@@ -5540,7 +5594,7 @@
         "source_file": "src/lib/planning.types.ts",
         "source_location": "L30",
         "id": "lib_planning_types_planresponse",
-        "community": 16,
+        "community": 17,
         "norm_label": "planresponse"
       },
       {
@@ -5549,7 +5603,7 @@
         "source_file": "src/lib/prompt.assemble.ts",
         "source_location": "L1",
         "id": "src_lib_prompt_assemble_ts",
-        "community": 22,
+        "community": 17,
         "norm_label": "prompt.assemble.ts"
       },
       {
@@ -5558,7 +5612,7 @@
         "source_file": "src/lib/prompt.assemble.ts",
         "source_location": "L14",
         "id": "lib_prompt_assemble_subject_display",
-        "community": 22,
+        "community": 17,
         "norm_label": "subject_display"
       },
       {
@@ -5567,7 +5621,7 @@
         "source_file": "src/lib/prompt.assemble.ts",
         "source_location": "L23",
         "id": "lib_prompt_assemble_isprompt",
-        "community": 22,
+        "community": 17,
         "norm_label": "isprompt()"
       },
       {
@@ -5576,7 +5630,7 @@
         "source_file": "src/lib/prompt.assemble.ts",
         "source_location": "L27",
         "id": "lib_prompt_assemble_isbrandrule",
-        "community": 22,
+        "community": 17,
         "norm_label": "isbrandrule()"
       },
       {
@@ -5585,7 +5639,7 @@
         "source_file": "src/lib/prompt.assemble.ts",
         "source_location": "L31",
         "id": "lib_prompt_assemble_interpolate",
-        "community": 22,
+        "community": 17,
         "norm_label": "interpolate()"
       },
       {
@@ -5594,7 +5648,7 @@
         "source_file": "src/lib/prompt.assemble.ts",
         "source_location": "L46",
         "id": "lib_prompt_assemble_hasplaceholders",
-        "community": 22,
+        "community": 17,
         "norm_label": "hasplaceholders()"
       },
       {
@@ -5603,7 +5657,7 @@
         "source_file": "src/lib/prompt.assemble.ts",
         "source_location": "L50",
         "id": "lib_prompt_assemble_toprovenance",
-        "community": 22,
+        "community": 17,
         "norm_label": "toprovenance()"
       },
       {
@@ -5612,7 +5666,7 @@
         "source_file": "src/lib/prompt.assemble.ts",
         "source_location": "L58",
         "id": "lib_prompt_assemble_listprompts",
-        "community": 28,
+        "community": 17,
         "norm_label": "listprompts()"
       },
       {
@@ -5621,7 +5675,7 @@
         "source_file": "src/lib/prompt.assemble.ts",
         "source_location": "L63",
         "id": "lib_prompt_assemble_assembleprompt",
-        "community": 22,
+        "community": 17,
         "norm_label": "assembleprompt()"
       },
       {
@@ -5630,7 +5684,7 @@
         "source_file": "src/lib/prompt.types.ts",
         "source_location": "L1",
         "id": "src_lib_prompt_types_ts",
-        "community": 22,
+        "community": 17,
         "norm_label": "prompt.types.ts"
       },
       {
@@ -5639,7 +5693,7 @@
         "source_file": "src/lib/prompt.types.ts",
         "source_location": "L4",
         "id": "lib_prompt_types_promptassemblyrequest",
-        "community": 22,
+        "community": 17,
         "norm_label": "promptassemblyrequest"
       },
       {
@@ -5648,7 +5702,7 @@
         "source_file": "src/lib/prompt.types.ts",
         "source_location": "L12",
         "id": "lib_prompt_types_assembledprompt",
-        "community": 22,
+        "community": 17,
         "norm_label": "assembledprompt"
       },
       {
@@ -5657,7 +5711,7 @@
         "source_file": "src/lib/save.ts",
         "source_location": "L1",
         "id": "src_lib_save_ts",
-        "community": 29,
+        "community": 6,
         "norm_label": "save.ts"
       },
       {
@@ -5666,7 +5720,7 @@
         "source_file": "src/lib/save.ts",
         "source_location": "L7",
         "id": "lib_save_worksheets_dir",
-        "community": 29,
+        "community": 6,
         "norm_label": "worksheets_dir"
       },
       {
@@ -5675,7 +5729,7 @@
         "source_file": "src/lib/save.ts",
         "source_location": "L9",
         "id": "lib_save_saveworksheet",
-        "community": 29,
+        "community": 6,
         "norm_label": "saveworksheet()"
       },
       {
@@ -5684,7 +5738,7 @@
         "source_file": "src/lib/save.ts",
         "source_location": "L29",
         "id": "lib_save_deleteworksheet",
-        "community": 29,
+        "community": 6,
         "norm_label": "deleteworksheet()"
       },
       {
@@ -5765,7 +5819,7 @@
         "source_file": "src/lib/schema.ts",
         "source_location": "L69",
         "id": "lib_schema_validateworksheet",
-        "community": 29,
+        "community": 6,
         "norm_label": "validateworksheet()"
       },
       {
@@ -5981,7 +6035,7 @@
         "source_file": "src/lib/types.ts",
         "source_location": "L1",
         "id": "src_lib_types_ts",
-        "community": 25,
+        "community": 17,
         "norm_label": "types.ts"
       },
       {
@@ -5990,7 +6044,7 @@
         "source_file": "src/lib/types.ts",
         "source_location": "L1",
         "id": "lib_types_subject",
-        "community": 22,
+        "community": 17,
         "norm_label": "subject"
       },
       {
@@ -5999,7 +6053,7 @@
         "source_file": "src/lib/types.ts",
         "source_location": "L9",
         "id": "lib_types_grade",
-        "community": 6,
+        "community": 17,
         "norm_label": "grade"
       },
       {
@@ -6008,7 +6062,7 @@
         "source_file": "src/lib/types.ts",
         "source_location": "L11",
         "id": "lib_types_contentstatus",
-        "community": 25,
+        "community": 17,
         "norm_label": "contentstatus"
       },
       {
@@ -6017,7 +6071,7 @@
         "source_file": "src/lib/types.ts",
         "source_location": "L13",
         "id": "lib_types_vocabularyentry",
-        "community": 46,
+        "community": 13,
         "norm_label": "vocabularyentry"
       },
       {
@@ -6026,7 +6080,7 @@
         "source_file": "src/lib/types.ts",
         "source_location": "L18",
         "id": "lib_types_activitytype",
-        "community": 25,
+        "community": 13,
         "norm_label": "activitytype"
       },
       {
@@ -6035,7 +6089,7 @@
         "source_file": "src/lib/types.ts",
         "source_location": "L25",
         "id": "lib_types_activity",
-        "community": 46,
+        "community": 13,
         "norm_label": "activity"
       },
       {
@@ -6044,7 +6098,7 @@
         "source_file": "src/lib/types.ts",
         "source_location": "L32",
         "id": "lib_types_worksheetcontent",
-        "community": 25,
+        "community": 19,
         "norm_label": "worksheetcontent"
       },
       {
@@ -6053,7 +6107,7 @@
         "source_file": "src/lib/types.ts",
         "source_location": "L49",
         "id": "lib_types_facebookpostcontent",
-        "community": 25,
+        "community": 17,
         "norm_label": "facebookpostcontent"
       },
       {
@@ -6062,7 +6116,7 @@
         "source_file": "src/lib/types.ts",
         "source_location": "L62",
         "id": "lib_types_contentitem",
-        "community": 25,
+        "community": 17,
         "norm_label": "contentitem"
       },
       {
@@ -6071,7 +6125,7 @@
         "source_file": "src/lib/vault.constants.ts",
         "source_location": "L1",
         "id": "src_lib_vault_constants_ts",
-        "community": 50,
+        "community": 14,
         "norm_label": "vault.constants.ts"
       },
       {
@@ -6080,7 +6134,7 @@
         "source_file": "src/lib/vault.ingest.ts",
         "source_location": "L1",
         "id": "src_lib_vault_ingest_ts",
-        "community": 47,
+        "community": 3,
         "norm_label": "vault.ingest.ts"
       },
       {
@@ -6089,7 +6143,7 @@
         "source_file": "src/lib/vault.ingest.ts",
         "source_location": "L4",
         "id": "lib_vault_ingest_builddocumenttext",
-        "community": 47,
+        "community": 3,
         "norm_label": "builddocumenttext()"
       },
       {
@@ -6098,7 +6152,7 @@
         "source_file": "src/lib/vault.ingest.ts",
         "source_location": "L23",
         "id": "lib_vault_ingest_buildchromametadata",
-        "community": 47,
+        "community": 3,
         "norm_label": "buildchromametadata()"
       },
       {
@@ -6107,7 +6161,7 @@
         "source_file": "src/lib/vault.ingest.ts",
         "source_location": "L44",
         "id": "lib_vault_ingest_ingestasset",
-        "community": 47,
+        "community": 3,
         "norm_label": "ingestasset()"
       },
       {
@@ -6116,7 +6170,7 @@
         "source_file": "src/lib/vault.ingest.ts",
         "source_location": "L56",
         "id": "lib_vault_ingest_removeasset",
-        "community": 47,
+        "community": 3,
         "norm_label": "removeasset()"
       },
       {
@@ -6125,7 +6179,7 @@
         "source_file": "src/lib/vault.query.ts",
         "source_location": "L1",
         "id": "src_lib_vault_query_ts",
-        "community": 23,
+        "community": 17,
         "norm_label": "vault.query.ts"
       },
       {
@@ -6134,7 +6188,7 @@
         "source_file": "src/lib/vault.query.ts",
         "source_location": "L11",
         "id": "lib_vault_query_whereclause",
-        "community": 23,
+        "community": 17,
         "norm_label": "whereclause"
       },
       {
@@ -6143,7 +6197,7 @@
         "source_file": "src/lib/vault.query.ts",
         "source_location": "L15",
         "id": "lib_vault_query_queryfilters",
-        "community": 23,
+        "community": 17,
         "norm_label": "queryfilters"
       },
       {
@@ -6152,7 +6206,7 @@
         "source_file": "src/lib/vault.query.ts",
         "source_location": "L22",
         "id": "lib_vault_query_queryoptions",
-        "community": 23,
+        "community": 17,
         "norm_label": "queryoptions"
       },
       {
@@ -6161,7 +6215,7 @@
         "source_file": "src/lib/vault.query.ts",
         "source_location": "L28",
         "id": "lib_vault_query_buildwhere",
-        "community": 23,
+        "community": 17,
         "norm_label": "buildwhere()"
       },
       {
@@ -6170,7 +6224,7 @@
         "source_file": "src/lib/vault.query.ts",
         "source_location": "L40",
         "id": "lib_vault_query_parsemetadataasset",
-        "community": 23,
+        "community": 17,
         "norm_label": "parsemetadataasset()"
       },
       {
@@ -6179,7 +6233,7 @@
         "source_file": "src/lib/vault.query.ts",
         "source_location": "L54",
         "id": "lib_vault_query_queryvault",
-        "community": 23,
+        "community": 17,
         "norm_label": "queryvault()"
       },
       {
@@ -6188,7 +6242,7 @@
         "source_file": "src/lib/vault.query.ts",
         "source_location": "L83",
         "id": "lib_vault_query_getassetbyid",
-        "community": 23,
+        "community": 17,
         "norm_label": "getassetbyid()"
       },
       {
@@ -6197,7 +6251,7 @@
         "source_file": "src/lib/vault.query.ts",
         "source_location": "L90",
         "id": "lib_vault_query_getassetsbytype",
-        "community": 28,
+        "community": 17,
         "norm_label": "getassetsbytype()"
       },
       {
@@ -6278,7 +6332,7 @@
         "source_file": "src/lib/vault.rag.ts",
         "source_location": "L45",
         "id": "lib_vault_rag_retrieveworksheetcontext",
-        "community": 6,
+        "community": 17,
         "norm_label": "retrieveworksheetcontext()"
       },
       {
@@ -6287,7 +6341,7 @@
         "source_file": "src/lib/vault.rag.ts",
         "source_location": "L111",
         "id": "lib_vault_rag_retrievecaptioncontext",
-        "community": 6,
+        "community": 17,
         "norm_label": "retrievecaptioncontext()"
       },
       {
@@ -6296,7 +6350,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L1",
         "id": "src_lib_vault_schema_ts",
-        "community": 27,
+        "community": 14,
         "norm_label": "vault.schema.ts"
       },
       {
@@ -6305,7 +6359,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L16",
         "id": "lib_vault_schema_vaultassettypeschema",
-        "community": 27,
+        "community": 14,
         "norm_label": "vaultassettypeschema"
       },
       {
@@ -6314,7 +6368,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L26",
         "id": "lib_vault_schema_vaultlifecycleschema",
-        "community": 27,
+        "community": 14,
         "norm_label": "vaultlifecycleschema"
       },
       {
@@ -6323,7 +6377,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L33",
         "id": "lib_vault_schema_freshnesslevelschema",
-        "community": 27,
+        "community": 14,
         "norm_label": "freshnesslevelschema"
       },
       {
@@ -6332,7 +6386,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L41",
         "id": "lib_vault_schema_rejectionreasonschema",
-        "community": 27,
+        "community": 14,
         "norm_label": "rejectionreasonschema"
       },
       {
@@ -6341,7 +6395,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L43",
         "id": "lib_vault_schema_vaultprovenanceschema",
-        "community": 27,
+        "community": 14,
         "norm_label": "vaultprovenanceschema"
       },
       {
@@ -6350,7 +6404,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L49",
         "id": "lib_vault_schema_vaultrejectionrecordschema",
-        "community": 27,
+        "community": 14,
         "norm_label": "vaultrejectionrecordschema"
       },
       {
@@ -6359,7 +6413,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L55",
         "id": "lib_vault_schema_vaultassetbaseschema",
-        "community": 27,
+        "community": 14,
         "norm_label": "vaultassetbaseschema"
       },
       {
@@ -6368,7 +6422,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L74",
         "id": "lib_vault_schema_allsubjectsschema",
-        "community": 27,
+        "community": 14,
         "norm_label": "allsubjectsschema"
       },
       {
@@ -6377,7 +6431,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L75",
         "id": "lib_vault_schema_allgradesschema",
-        "community": 27,
+        "community": 14,
         "norm_label": "allgradesschema"
       },
       {
@@ -6386,7 +6440,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L77",
         "id": "lib_vault_schema_vaulttemplateschema",
-        "community": 27,
+        "community": 14,
         "norm_label": "vaulttemplateschema"
       },
       {
@@ -6395,7 +6449,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L85",
         "id": "lib_vault_schema_vaultworksheetschema",
-        "community": 27,
+        "community": 14,
         "norm_label": "vaultworksheetschema"
       },
       {
@@ -6404,7 +6458,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L97",
         "id": "lib_vault_schema_vaultcaptionschema",
-        "community": 27,
+        "community": 14,
         "norm_label": "vaultcaptionschema"
       },
       {
@@ -6413,7 +6467,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L107",
         "id": "lib_vault_schema_vaultpromptschema",
-        "community": 27,
+        "community": 14,
         "norm_label": "vaultpromptschema"
       },
       {
@@ -6422,7 +6476,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L116",
         "id": "lib_vault_schema_vaulttopicschema",
-        "community": 27,
+        "community": 14,
         "norm_label": "vaulttopicschema"
       },
       {
@@ -6431,7 +6485,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L126",
         "id": "lib_vault_schema_vaultavatarschema",
-        "community": 27,
+        "community": 14,
         "norm_label": "vaultavatarschema"
       },
       {
@@ -6440,7 +6494,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L133",
         "id": "lib_vault_schema_vaultbrandruleschema",
-        "community": 27,
+        "community": 14,
         "norm_label": "vaultbrandruleschema"
       },
       {
@@ -6449,7 +6503,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L140",
         "id": "lib_vault_schema_vaultassetschema",
-        "community": 27,
+        "community": 14,
         "norm_label": "vaultassetschema"
       },
       {
@@ -6458,7 +6512,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L150",
         "id": "lib_vault_schema_vaultqueryresultschema",
-        "community": 27,
+        "community": 14,
         "norm_label": "vaultqueryresultschema"
       },
       {
@@ -6467,7 +6521,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L156",
         "id": "lib_vault_schema_validatevaultasset",
-        "community": 23,
+        "community": 17,
         "norm_label": "validatevaultasset()"
       },
       {
@@ -6476,7 +6530,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L160",
         "id": "lib_vault_schema_isvalidvaultasset",
-        "community": 27,
+        "community": 14,
         "norm_label": "isvalidvaultasset()"
       },
       {
@@ -6521,7 +6575,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L180",
         "id": "lib_vault_schema_validatevaulttopic",
-        "community": 27,
+        "community": 14,
         "norm_label": "validatevaulttopic()"
       },
       {
@@ -6548,7 +6602,7 @@
         "source_file": "src/lib/vault.schema.ts",
         "source_location": "L192",
         "id": "lib_vault_schema_validatevaultqueryresult",
-        "community": 27,
+        "community": 14,
         "norm_label": "validatevaultqueryresult()"
       },
       {
@@ -6764,7 +6818,7 @@
         "source_file": "src/lib/vault.types.ts",
         "source_location": "L1",
         "id": "src_lib_vault_types_ts",
-        "community": 50,
+        "community": 17,
         "norm_label": "vault.types.ts"
       },
       {
@@ -6773,7 +6827,7 @@
         "source_file": "src/lib/vault.types.ts",
         "source_location": "L3",
         "id": "lib_vault_types_vaultassettype",
-        "community": 23,
+        "community": 17,
         "norm_label": "vaultassettype"
       },
       {
@@ -6782,7 +6836,7 @@
         "source_file": "src/lib/vault.types.ts",
         "source_location": "L12",
         "id": "lib_vault_types_vaultlifecycle",
-        "community": 23,
+        "community": 17,
         "norm_label": "vaultlifecycle"
       },
       {
@@ -6791,7 +6845,7 @@
         "source_file": "src/lib/vault.types.ts",
         "source_location": "L14",
         "id": "lib_vault_types_freshnesslevel",
-        "community": 50,
+        "community": 14,
         "norm_label": "freshnesslevel"
       },
       {
@@ -6800,7 +6854,7 @@
         "source_file": "src/lib/vault.types.ts",
         "source_location": "L21",
         "id": "lib_vault_types_rejectionreason",
-        "community": 50,
+        "community": 14,
         "norm_label": "rejectionreason"
       },
       {
@@ -6809,7 +6863,7 @@
         "source_file": "src/lib/vault.types.ts",
         "source_location": "L28",
         "id": "lib_vault_types_vaultprovenance",
-        "community": 16,
+        "community": 17,
         "norm_label": "vaultprovenance"
       },
       {
@@ -6818,7 +6872,7 @@
         "source_file": "src/lib/vault.types.ts",
         "source_location": "L34",
         "id": "lib_vault_types_vaultrejectionrecord",
-        "community": 50,
+        "community": 17,
         "norm_label": "vaultrejectionrecord"
       },
       {
@@ -6827,7 +6881,7 @@
         "source_file": "src/lib/vault.types.ts",
         "source_location": "L40",
         "id": "lib_vault_types_vaultassetbase",
-        "community": 50,
+        "community": 17,
         "norm_label": "vaultassetbase"
       },
       {
@@ -6836,7 +6890,7 @@
         "source_file": "src/lib/vault.types.ts",
         "source_location": "L59",
         "id": "lib_vault_types_vaulttemplate",
-        "community": 14,
+        "community": 17,
         "norm_label": "vaulttemplate"
       },
       {
@@ -6863,7 +6917,7 @@
         "source_file": "src/lib/vault.types.ts",
         "source_location": "L89",
         "id": "lib_vault_types_vaultprompt",
-        "community": 22,
+        "community": 17,
         "norm_label": "vaultprompt"
       },
       {
@@ -6872,7 +6926,7 @@
         "source_file": "src/lib/vault.types.ts",
         "source_location": "L98",
         "id": "lib_vault_types_vaulttopic",
-        "community": 28,
+        "community": 17,
         "norm_label": "vaulttopic"
       },
       {
@@ -6881,7 +6935,7 @@
         "source_file": "src/lib/vault.types.ts",
         "source_location": "L108",
         "id": "lib_vault_types_vaultavatar",
-        "community": 50,
+        "community": 14,
         "norm_label": "vaultavatar"
       },
       {
@@ -6899,7 +6953,7 @@
         "source_file": "src/lib/vault.types.ts",
         "source_location": "L122",
         "id": "lib_vault_types_vaultasset",
-        "community": 47,
+        "community": 17,
         "norm_label": "vaultasset"
       },
       {
@@ -6908,7 +6962,7 @@
         "source_file": "src/lib/vault.types.ts",
         "source_location": "L131",
         "id": "lib_vault_types_vaultqueryresult",
-        "community": 23,
+        "community": 17,
         "norm_label": "vaultqueryresult"
       },
       {
@@ -6917,7 +6971,7 @@
         "source_file": "src/lib/worksheet.blocks.ts",
         "source_location": "L1",
         "id": "src_lib_worksheet_blocks_ts",
-        "community": 46,
+        "community": 13,
         "norm_label": "worksheet.blocks.ts"
       },
       {
@@ -6926,7 +6980,7 @@
         "source_file": "src/lib/worksheet.blocks.ts",
         "source_location": "L9",
         "id": "lib_worksheet_blocks_blocktype",
-        "community": 46,
+        "community": 13,
         "norm_label": "blocktype"
       },
       {
@@ -6935,7 +6989,7 @@
         "source_file": "src/lib/worksheet.blocks.ts",
         "source_location": "L11",
         "id": "lib_worksheet_blocks_headerblock",
-        "community": 46,
+        "community": 17,
         "norm_label": "headerblock"
       },
       {
@@ -6944,7 +6998,7 @@
         "source_file": "src/lib/worksheet.blocks.ts",
         "source_location": "L24",
         "id": "lib_worksheet_blocks_vocabularyblock",
-        "community": 46,
+        "community": 13,
         "norm_label": "vocabularyblock"
       },
       {
@@ -6953,7 +7007,7 @@
         "source_file": "src/lib/worksheet.blocks.ts",
         "source_location": "L32",
         "id": "lib_worksheet_blocks_activityblock",
-        "community": 46,
+        "community": 13,
         "norm_label": "activityblock"
       },
       {
@@ -6962,7 +7016,7 @@
         "source_file": "src/lib/worksheet.blocks.ts",
         "source_location": "L38",
         "id": "lib_worksheet_blocks_parentnotesblock",
-        "community": 46,
+        "community": 13,
         "norm_label": "parentnotesblock"
       },
       {
@@ -6971,7 +7025,7 @@
         "source_file": "src/lib/worksheet.blocks.ts",
         "source_location": "L46",
         "id": "lib_worksheet_blocks_footerblock",
-        "community": 46,
+        "community": 13,
         "norm_label": "footerblock"
       },
       {
@@ -6989,7 +7043,7 @@
         "source_file": "src/lib/worksheet.blocks.ts",
         "source_location": "L62",
         "id": "lib_worksheet_blocks_sectionname",
-        "community": 46,
+        "community": 13,
         "norm_label": "sectionname"
       },
       {
@@ -6998,7 +7052,7 @@
         "source_file": "src/lib/worksheet.blocks.ts",
         "source_location": "L64",
         "id": "lib_worksheet_blocks_defaultorder",
-        "community": 46,
+        "community": 13,
         "norm_label": "defaultorder"
       },
       {
@@ -7007,7 +7061,7 @@
         "source_file": "src/lib/worksheet.blocks.ts",
         "source_location": "L66",
         "id": "lib_worksheet_blocks_getsectionorder",
-        "community": 46,
+        "community": 13,
         "norm_label": "getsectionorder()"
       },
       {
@@ -7016,7 +7070,7 @@
         "source_file": "src/lib/worksheet.blocks.ts",
         "source_location": "L71",
         "id": "lib_worksheet_blocks_worksheettoblocks",
-        "community": 46,
+        "community": 13,
         "norm_label": "worksheettoblocks()"
       },
       {
@@ -7025,7 +7079,7 @@
         "source_file": "src/lib/worksheet.blocks.ts",
         "source_location": "L127",
         "id": "lib_worksheet_blocks_blockstoworksheet",
-        "community": 52,
+        "community": 19,
         "norm_label": "blockstoworksheet()"
       }
     ],
@@ -9826,9 +9880,9 @@
         "source_file": "scripts/ingest_docs.py",
         "source_location": "L17",
         "weight": 1.0,
+        "confidence_score": 1.0,
         "source": "scripts_ingest_docs_py",
-        "target": "scripts_ingest_docs_split_on_h2",
-        "confidence_score": 1.0
+        "target": "scripts_ingest_docs_split_on_h2"
       },
       {
         "relation": "contains",
@@ -9836,9 +9890,9 @@
         "source_file": "scripts/ingest_docs.py",
         "source_location": "L35",
         "weight": 1.0,
+        "confidence_score": 1.0,
         "source": "scripts_ingest_docs_py",
-        "target": "scripts_ingest_docs_chunk_id",
-        "confidence_score": 1.0
+        "target": "scripts_ingest_docs_chunk_id"
       },
       {
         "relation": "contains",
@@ -9846,9 +9900,9 @@
         "source_file": "scripts/ingest_docs.py",
         "source_location": "L39",
         "weight": 1.0,
+        "confidence_score": 1.0,
         "source": "scripts_ingest_docs_py",
-        "target": "scripts_ingest_docs_main",
-        "confidence_score": 1.0
+        "target": "scripts_ingest_docs_main"
       },
       {
         "relation": "calls",
@@ -9857,9 +9911,9 @@
         "source_file": "scripts/ingest_docs.py",
         "source_location": "L53",
         "weight": 1.0,
+        "confidence_score": 1.0,
         "source": "scripts_ingest_docs_main",
-        "target": "scripts_ingest_docs_split_on_h2",
-        "confidence_score": 1.0
+        "target": "scripts_ingest_docs_split_on_h2"
       },
       {
         "relation": "calls",
@@ -9868,9 +9922,9 @@
         "source_file": "scripts/ingest_docs.py",
         "source_location": "L56",
         "weight": 1.0,
+        "confidence_score": 1.0,
         "source": "scripts_ingest_docs_main",
-        "target": "scripts_ingest_docs_chunk_id",
-        "confidence_score": 1.0
+        "target": "scripts_ingest_docs_chunk_id"
       },
       {
         "relation": "contains",
@@ -9878,9 +9932,9 @@
         "source_file": "scripts/query_docs.py",
         "source_location": "L6",
         "weight": 1.0,
+        "confidence_score": 1.0,
         "source": "scripts_query_docs_py",
-        "target": "scripts_query_docs_main",
-        "confidence_score": 1.0
+        "target": "scripts_query_docs_main"
       },
       {
         "relation": "contains",
@@ -12527,6 +12581,16 @@
         "target": "lib_template_chroma_querybesttemplate"
       },
       {
+        "relation": "contains",
+        "confidence": "EXTRACTED",
+        "source_file": "src/app/template-lab/short-o/page.tsx",
+        "source_location": "L5",
+        "weight": 1.0,
+        "source": "src_app_template_lab_short_o_page_tsx",
+        "target": "short_o_page_shortoworksheetpage",
+        "confidence_score": 1.0
+      },
+      {
         "relation": "imports_from",
         "context": "import",
         "confidence": "EXTRACTED",
@@ -13432,6 +13496,48 @@
         "weight": 1.0,
         "source": "command_vaultalerts_vaultalerts",
         "target": "lib_vault_query_getassetsbytype"
+      },
+      {
+        "relation": "re_exports",
+        "context": "export",
+        "confidence": "EXTRACTED",
+        "source_file": "src/components/hfk-template/index.ts",
+        "source_location": "L1",
+        "weight": 1.0,
+        "source": "src_components_hfk_template_index_ts",
+        "target": "src_components_hfk_template_worksheetcanvas_tsx",
+        "confidence_score": 1.0
+      },
+      {
+        "relation": "re_exports",
+        "context": "re-export",
+        "confidence": "EXTRACTED",
+        "source_file": "src/components/hfk-template/index.ts",
+        "source_location": "L1",
+        "weight": 1.0,
+        "source": "src_components_hfk_template_index_ts",
+        "target": "hfk_template_worksheetcanvas_worksheetcanvas",
+        "confidence_score": 1.0
+      },
+      {
+        "relation": "contains",
+        "confidence": "EXTRACTED",
+        "source_file": "src/components/hfk-template/WorksheetCanvas.tsx",
+        "source_location": "L5",
+        "weight": 1.0,
+        "source": "src_components_hfk_template_worksheetcanvas_tsx",
+        "target": "hfk_template_worksheetcanvas_worksheetcanvasprops",
+        "confidence_score": 1.0
+      },
+      {
+        "relation": "contains",
+        "confidence": "EXTRACTED",
+        "source_file": "src/components/hfk-template/WorksheetCanvas.tsx",
+        "source_location": "L9",
+        "weight": 1.0,
+        "source": "src_components_hfk_template_worksheetcanvas_tsx",
+        "target": "hfk_template_worksheetcanvas_worksheetcanvas",
+        "confidence_score": 1.0
       },
       {
         "relation": "contains",
@@ -21975,6 +22081,6 @@
       }
     ],
     "hyperedges": [],
-    "built_at_commit": "b13cb7e037b88020abbadfe1b285090c5e7f0a16"
+    "built_at_commit": "204c0fc05ff19844ada4cf8cf3bdc71729c3f36c"
   }
 }

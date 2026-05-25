@@ -1,15 +1,15 @@
 ﻿{
-    "version":  "5.4.0-stable",
-    "state":  "stable",
+    "version":  "5.5.0-alpha",
+    "state":  "alpha",
     "phase":  {
-                  "current":  "5.4.0",
-                  "name":  "Portfolio Case Studies",
-                  "status":  "stable"
+                  "current":  "5.5.0",
+                  "name":  "Workflow Hardening: Query Discipline",
+                  "status":  "alpha"
               },
     "next":  {
-                 "phase":  "5.5.0",
-                 "name":  "Advanced Memory Layer",
-                 "description":  "Evaluate and integrate a persistent memory layer if ChromaDB docs retrieval is no longer sufficient at project scale."
+                 "phase":  "5.6.0",
+                 "name":  "TBD",
+                 "description":  "To be scoped."
              },
     "series":  {
                    "completed":  [

@@ -1,10 +1,10 @@
 ﻿{
-    "version":  "5.2.4-alpha",
-    "state":  "alpha",
+    "version":  "5.2.4-stable",
+    "state":  "stable",
     "phase":  {
                   "current":  "5.2.4",
                   "name":  "Graphify Install Integration + CLI Syntax Fix",
-                  "status":  "alpha"
+                  "status":  "stable"
               },
     "next":  {
                  "phase":  "5.3.0",

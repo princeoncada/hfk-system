@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-**Current Version:** 6.0.0-alpha
+**Current Version:** 6.0.0-stable
 
 ## Current Phase
 
-Phase 6.0.0 [6.0.0-alpha] — Template Lab: Short O Worksheet Prototype
+Phase 6.0.0 [6.0.0-stable] — Template Lab: Short O Worksheet Prototype
 
 Status: alpha
 
@@ -1013,6 +1013,7 @@ dev.
   only database dependency permitted, and it is local-only.
 - Do not embed actual image or template files into ChromaDB. Only metadata
   records for non-text assets are indexed.
+
 
 
 

@@ -1,22 +1,22 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.4.0-stable
+**Current Version:** 5.5.0-alpha
 
 ## Current Phase
 
-Phase 5.4.0 [5.4.0-stable] — Portfolio Case Studies
+Phase 5.5.0 [5.5.0-alpha] — Workflow Hardening: Query Discipline
 
 Status: alpha
 
 The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 The 5.x workflow infrastructure series is now active.
 
-Current scope in progress: create two portfolio case study documents under
-docs/case-studies/: Case Study A (Docs-Led AI Workflow) and Case Study B
-(Token Optimization Journey). These serve as portfolio material and onboarding
-reference for future AI sessions.
+Current scope in progress: harden ChromaDB query discipline and
+phase-direction confirmation protocol in CLAUDE.md and docs/WORKFLOW.md.
+One query per topic, trust the first result, never re-query without stating
+why, and never scope a phase without explicit user direction confirmation.
 
-Next recommended work after validation and promotion: Phase 5.5.0 — Advanced Memory Layer.
+Next recommended work after validation and promotion: Phase 5.6.0 — TBD.
 
 ## Completed Phase
 
@@ -983,12 +983,12 @@ Modified files:
 
 ## Future Phase Queue
 
-- Phase 5.5.0 — Advanced Memory Layer
+- Phase 5.6.0 — TBD
 - hfk-token-dashboard has been scoped as a separate standalone project, not part of the HFK phase queue.
 
 ## Recommended Next Step
 
-Validate and promote Phase 5.4.0 — Portfolio Case Studies. Next planned follow-up is Phase 5.5.0 — Advanced Memory Layer.
+Validate and promote Phase 5.5.0 — Workflow Hardening: Query Discipline. Next planned follow-up is Phase 5.6.0 — TBD.
 
 ## What Exists
 

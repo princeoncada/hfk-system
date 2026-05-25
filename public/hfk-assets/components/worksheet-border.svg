@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="816" height="1056" viewBox="0 0 816 1056">
+  <rect x="8" y="8" width="800" height="1040" rx="24" fill="none" stroke="#000" stroke-width="3"/>
+  <rect x="24" y="24" width="768" height="1008" rx="18" fill="none" stroke="#000" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="408" y="528" text-anchor="middle" font-size="28" font-family="sans-serif" fill="#000">worksheet border</text>
+</svg>

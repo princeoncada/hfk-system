@@ -15,6 +15,10 @@ Claude Code:
 - Queries hfk_docs with `python scripts/query_docs.py "<question>"` before
   opening large docs such as AI_HANDOFF.md, PHASE_LOG.md, or FUTURE_PLANS.md;
   opens the full file only when the query result is insufficient
+- Runs exactly one ChromaDB query per topic — trusts the first result; never
+  re-queries the same topic unless the first returned zero relevant content,
+  and always states why a fallback read was needed
+- Never begins scoping a phase until the user has explicitly confirmed the direction
 - Reports current state before any work begins
 - Diagnoses bugs and writes Codex fix prompts
 - Scopes new phases and writes Codex master prompts
@@ -52,6 +56,11 @@ for the user to paste validation results back.
 
 ## Standard Phase Cycle
 
+QUERY   — Query ChromaDB hfk_docs for phase context. One query per topic.
+           Trust the first result. Only fall back to direct file read if
+           the query returns zero relevant content — state why.
+CONFIRM — Present findings to the user. Wait for explicit direction
+           confirmation. Never scope without this step.
 PLAN    — Discuss scope. Agree on what will be built.
 CLARIFY — Ask all open questions before writing the Codex prompt.
            If none, confirm and proceed.

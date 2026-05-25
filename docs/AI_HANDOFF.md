@@ -1,26 +1,27 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.2.7-stable
+**Current Version:** 5.2.8-alpha
 
 ## Current Phase
 
-Patch 5.2.7 [5.2.7-stable] — read_version() Encoding Fix
+Patch 5.2.8 [5.2.8-alpha] — Docs Hardening — Scoping Discipline
 
 Status: alpha
 
 The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 The 5.x workflow infrastructure series is now active.
 
-Current scope in progress: fix STATE.json BOM handling after 5.2.6-stable.
-scripts/generate_codebase_graph.py read_version() is being updated to read
-STATE.json with `utf-8-sig` so PowerShell's UTF-8 BOM does not force graph
-metadata version fallback to `unknown`.
+Current scope in progress: docs hardening patch. Add an Infrastructure Check
+rule to the New Phase workflow, add Scoping Discipline to CLAUDE.md, and add
+Behavioral Guidelines to AGENTS.md.
 
-Next recommended work after validation and promotion: Phase 5.3.0 — ChromaDB Docs Extension.
+Next recommended work after validation and promotion: Phase 5.4.0 — Portfolio Case Studies.
 
 ## Completed Phase
 
-Patch 5.2.7 [5.2.7-stable] — read_version() Encoding Fix: reads STATE.json with `utf-8-sig` so PowerShell's UTF-8 BOM does not cause graph metadata version fallback to `unknown` — in progress.
+Patch 5.2.8 [5.2.8-alpha] — Docs hardening patch. Added Infrastructure Check rule to New Phase workflow and Scoping Discipline section to CLAUDE.md. Added Behavioral Guidelines section to AGENTS.md.
+
+Patch 5.2.7 [5.2.7-stable] — read_version() Encoding Fix: reads STATE.json with `utf-8-sig` so PowerShell's UTF-8 BOM does not cause graph metadata version fallback to `unknown` — complete.
 
 Patch 5.2.6 [5.2.6-stable] — Graph Refresh Automation + generate_codebase_graph.py Fix: stops the normalizer from re-running Graphify, reads existing Graphify output, uses STATE.json for graph version metadata, and adds graph refresh to validate.ps1 — complete.
 
@@ -977,14 +978,14 @@ Modified files:
 
 ## Future Phase Queue
 
-- Phase 5.3.0 — ChromaDB Docs Extension
+- ~~Phase 5.3.0 — ChromaDB Docs Extension~~ (superseded — use existing ChromaDB infrastructure)
 - Phase 5.4.0 — Portfolio Case Studies
 - Phase 5.5.0 — Advanced Memory Layer
 - hfk-token-dashboard has been scoped as a separate standalone project, not part of the HFK phase queue.
 
 ## Recommended Next Step
 
-Validate and promote Patch 5.2.7 — read_version() Encoding Fix. Next planned follow-up is Phase 5.3.0 — ChromaDB Docs Extension.
+Validate and promote Patch 5.2.8 — Docs Hardening — Scoping Discipline. Next planned follow-up is Phase 5.4.0 — Portfolio Case Studies.
 
 ## What Exists
 

@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 5.2.2-alpha | Patch 5.2.2 | alpha | 2026-05-25 | Graphify Workflow Clarification: rewrote CODEBASE_GRAPH.md as the authoritative workflow reference for Graphify artifacts, freshness checks, static CLI commands, prompt examples, and direct source-read rules. |
+| 5.2.2-stable | Patch 5.2.2 | stable | 2026-05-25 | Graphify Workflow Clarification: rewrote CODEBASE_GRAPH.md as the authoritative workflow reference for Graphify artifacts, freshness checks, static CLI commands, prompt examples, and direct source-read rules. |
 | 5.2.1-stable | Patch 5.2.1 | stable | 2026-05-24 | Real Graphify Output: installed graphifyy, generated graphify-out/graph.json and GRAPH_REPORT.md, normalized codebase-graph.json from Graphify output, and updated graph read-first docs. |
 | 5.2.0-stable | Phase 5.2.0 | stable | 2026-05-24 | Graphify-Ready Codebase Graph: committed codebase-graph.json, added Graphify wrapper and degraded fallback scanner, and wired the graph into Codex read-first workflow docs. |
 | 5.1.1-stable | Patch 5.1.1 | stable | 2026-05-24 | Future Plans Queue: populated FUTURE_PLANS.md with 5.0.x + 5.1.0 completions and 5.2.0–5.5.0 planned phases (Graphify, ChromaDB Docs, Case Studies, Advanced Memory) with token optimization rationale. |
@@ -40,7 +40,7 @@ Date: 2026-05-24
 
 Status: alpha
 
-Version: 5.2.2-alpha
+Version: 5.2.2-stable
 
 Date: 2026-05-25
 
@@ -59,7 +59,7 @@ Changes:
 - Documented the three required orientation sources: codebase-graph.json, graphify-out/GRAPH_REPORT.md, and direct source file reads.
 - Added a before/after comparison for Codex orientation before Graphify and after Graphify.
 - Documented graph freshness checks, refresh commands, static Graphify CLI commands, protected paths, and prompt examples.
-- Bumped all five versioning locations to 5.2.2-alpha.
+- Bumped all five versioning locations to 5.2.2-stable.
 
 ## Patch 5.2.1 — Real Graphify Output
 
@@ -1831,6 +1831,8 @@ New files:
 - TypeScript type-check: PASS
 - npm install: PASS
 - Promoted to stable: 2026-05-21
+
+
 
 
 

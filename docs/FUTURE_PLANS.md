@@ -4,8 +4,8 @@ Living backlog for HFK Publishing Engine.
 Completed items are struck through. Update this file every phase.
 
 Last updated: 2026-05-25
-Current stable version: 5.3.0-stable
-Current working version: 5.4.0-alpha
+Current stable version: 5.4.0-stable
+Current working version: 5.5.0-alpha
 
 ---
 
@@ -70,29 +70,25 @@ Current working version: 5.4.0-alpha
 - ~~Patch 5.2.7 — read_version() Encoding Fix~~ (stable 2026-05-25)
 - ~~Patch 5.2.8 — Docs Hardening — Scoping Discipline~~ (stable 2026-05-25)
 - ~~Phase 5.3.0 — ChromaDB Docs Extension~~ (stable 2026-05-25)
+- ~~Phase 5.4.0 — Portfolio Case Studies~~ (stable 2026-05-25)
 
 ---
 
 ## In Progress
 
-### Phase 5.4.0 — Portfolio Case Studies
-Two documents under docs/case-studies/:
-- Case Study A — Docs-Led AI Workflow: How structured documentation replaced
-  ad-hoc prompting and created a reproducible AI-assisted build process.
-- Case Study B — Token Optimization Journey: Specific optimizations made in the
-  5.x series and measurable token reduction at each step.
-Serves as portfolio material and a compact onboarding reference for future
-AI sessions. Indirect token reduction: ~10%.
+### Phase 5.5.0 — Workflow Hardening: Query Discipline
+Harden ChromaDB query discipline and phase-direction confirmation protocol in
+CLAUDE.md and WORKFLOW.md. One query per topic, trust the first result, never
+re-query without stating why. Never scope a phase without explicit user direction
+confirmation. Evaluated: persistent memory server (Zep/Mem0) is premature at
+current scale — deferred indefinitely.
 
 ---
 
 ## Planned
 
-### Phase 5.5.0 — Advanced Memory Layer
-Integrate Zep or Mem0 as a persistent memory server. Replace the file-based
-memory/ system with query-based memory retrieval. Session start reads STATE.json
-and queries memory instead of opening multiple large docs. Estimated Claude Code
-token reduction: ~30–40% on session start overhead.
+### Phase 5.6.0 — TBD
+To be scoped.
 
 ## Potential Next Directions
 

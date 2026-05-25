@@ -1,10 +1,10 @@
 ﻿{
-    "version":  "5.2.8-stable",
-    "state":  "stable",
+    "version":  "5.3.0-alpha",
+    "state":  "alpha",
     "phase":  {
-                  "current":  "5.2.8",
-                  "name":  "Docs Hardening — Scoping Discipline",
-                  "status":  "stable"
+                  "current":  "5.3.0",
+                  "name":  "ChromaDB Docs Extension",
+                  "status":  "alpha"
               },
     "next":  {
                  "phase":  "5.4.0",

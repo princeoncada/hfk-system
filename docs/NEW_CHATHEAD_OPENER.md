@@ -16,8 +16,8 @@ Before doing anything else:
    - Next phase and recommended action
 4. Run: git status --short and report any uncommitted work
 
-Current expected state: 5.3.0-stable. Next planned work:
-Decide between 5.4.0 Portfolio Case Studies (portfolio phase — may defer until app is actively publishing) or the next infrastructure phase. Read docs/SESSION_LOG/2026-05-25-session-01.md for open decisions from the last session.
+Current expected state: 5.4.0-stable. Next planned work:
+Phase 5.5.0 — Advanced Memory Layer. Evaluate whether ChromaDB hfk_docs retrieval is sufficient at current scale before committing to a persistent memory server.
 
 Do not read other docs or begin implementation until I confirm.
 See CLAUDE.md and docs/CODEX_RULES.md for full rules after confirmation.

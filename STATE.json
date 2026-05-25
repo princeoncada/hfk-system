@@ -1,10 +1,10 @@
 ﻿{
-    "version":  "5.2.7-alpha",
-    "state":  "alpha",
+    "version":  "5.2.7-stable",
+    "state":  "stable",
     "phase":  {
                   "current":  "5.2.7",
                   "name":  "read_version() Encoding Fix",
-                  "status":  "alpha"
+                  "status":  "stable"
               },
     "next":  {
                  "phase":  "5.3.0",

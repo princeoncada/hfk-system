@@ -43,9 +43,9 @@ Every version change must be applied to all five simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 5.2.4-alpha |
+| Version | 5.2.4-stable |
 | Phase | Patch 5.2.4 |
-| State | alpha |
+| State | stable |
 | Date | 2026-05-25 |
 | Summary | Graphify Install Integration + CLI Syntax Fix: tailored Graphify Claude/Codex install artifacts to HFK workflow, fixed Codex hook command path, and corrected query/path/explain CLI syntax in CODEBASE_GRAPH.md. |
 
@@ -53,7 +53,7 @@ Every version change must be applied to all five simultaneously:
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 5.2.4-alpha | Patch 5.2.4 | alpha | 2026-05-25 | Graphify Install Integration + CLI Syntax Fix: tailored Graphify Claude/Codex install artifacts to HFK workflow, fixed Codex hook command path, and corrected query/path/explain CLI syntax in CODEBASE_GRAPH.md. |
+| 5.2.4-stable | Patch 5.2.4 | stable | 2026-05-25 | Graphify Install Integration + CLI Syntax Fix: tailored Graphify Claude/Codex install artifacts to HFK workflow, fixed Codex hook command path, and corrected query/path/explain CLI syntax in CODEBASE_GRAPH.md. |
 | 5.2.3-stable | Patch 5.2.3 | stable | 2026-05-25 | Graphify Server/Tool Mode: documented that the installed Graphify CLI has agent install/tool integration commands but no serve/MCP daemon command, and clarified static artifact fallback rules. |
 | 5.2.2-stable | Patch 5.2.2 | stable | 2026-05-25 | Graphify Workflow Clarification: rewrote CODEBASE_GRAPH.md as the authoritative workflow reference for Graphify artifacts, freshness checks, static CLI commands, prompt examples, and direct source-read rules. |
 | 5.2.1-stable | Patch 5.2.1 | stable | 2026-05-24 | Real Graphify Output: installed graphifyy, generated graphify-out/graph.json and GRAPH_REPORT.md, normalized codebase-graph.json from Graphify output, and updated graph read-first docs. |
@@ -265,7 +265,7 @@ Date: 2026-05-23
 ## Next Phase
 
 Current stable version: 5.2.1-stable
-Current working version: 5.2.4-alpha
+Current working version: 5.2.4-stable
 Next recommended phase: Phase 5.3.0 — ChromaDB Docs Extension
 
 
@@ -323,6 +323,8 @@ Next recommended phase: Phase 5.3.0 — ChromaDB Docs Extension
 | 1.0.2-stable | Patch 1.0.2 | stable | 2026-05-21 | Next.js config compatibility — replace next.config.ts with next.config.mjs |
 | 1.0.1-stable | Patch 1.0.1 | stable | 2026-05-21 | Docs hardening — chathead opener + session checkpoint workflow |
 | 1.0.0-stable | Phase 1.0.0 | stable | 2026-05-21 | Bootstrap — docs foundation + Next.js project scaffold |
+
+
 
 
 

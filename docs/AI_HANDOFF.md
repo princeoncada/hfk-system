@@ -1,24 +1,26 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.3.0-stable
+**Current Version:** 5.4.0-alpha
 
 ## Current Phase
 
-Phase 5.3.0 [5.3.0-stable] — ChromaDB Docs Extension
+Phase 5.4.0 [5.4.0-alpha] — Portfolio Case Studies
 
 Status: alpha
 
 The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 The 5.x workflow infrastructure series is now active.
 
-Current scope in progress: extend the existing ChromaDB instance with an
-hfk_docs collection for chunked documentation retrieval. Add Python ingest
-and query scripts, auto-ingest docs during validate.ps1, and update session
-start guidance to query before reading full docs.
+Current scope in progress: create two portfolio case study documents under
+docs/case-studies/: Case Study A (Docs-Led AI Workflow) and Case Study B
+(Token Optimization Journey). These serve as portfolio material and onboarding
+reference for future AI sessions.
 
-Next recommended work after validation and promotion: Phase 5.4.0 — Portfolio Case Studies.
+Next recommended work after validation and promotion: Phase 5.5.0 — Advanced Memory Layer.
 
 ## Completed Phase
+
+Phase 5.4.0 [5.4.0-alpha] — Portfolio Case Studies. Two case study documents under docs/case-studies/: Case Study A (Docs-Led AI Workflow) and Case Study B (Token Optimization Journey). Portfolio material and onboarding reference.
 
 Phase 5.3.0 [5.3.0-stable] — ChromaDB Docs Extension. Adds hfk_docs collection to existing ChromaDB instance. ingest_docs.py + query_docs.py scripts. validate.ps1 auto-ingests docs on each run. Session start protocol updated to query before reading full docs.
 
@@ -981,13 +983,12 @@ Modified files:
 
 ## Future Phase Queue
 
-- Phase 5.4.0 — Portfolio Case Studies
 - Phase 5.5.0 — Advanced Memory Layer
 - hfk-token-dashboard has been scoped as a separate standalone project, not part of the HFK phase queue.
 
 ## Recommended Next Step
 
-Validate and promote Phase 5.3.0 — ChromaDB Docs Extension. Next planned follow-up is Phase 5.4.0 — Portfolio Case Studies.
+Validate and promote Phase 5.4.0 — Portfolio Case Studies. Next planned follow-up is Phase 5.5.0 — Advanced Memory Layer.
 
 ## What Exists
 

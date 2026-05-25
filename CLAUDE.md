@@ -116,11 +116,18 @@ Run this at the start of every session before doing anything else:
 
 ### New Phase
 1. Read docs/FUTURE_PLANS.md for the next queued phase
-2. Read all relevant source files for the phase scope
-3. Ask all clarifying questions upfront — wait for answers
-4. If no questions are needed, confirm that, then write the 2-section
+2. Infrastructure Check — before recommending any new tool, service, or
+   dependency:
+   a. List what the phase needs at runtime (server, database, API, etc.)
+   b. Check whether an existing running service already covers that need
+   c. If yes, prefer extending existing infrastructure — state this check
+      explicitly before proposing anything new
+   d. Only propose a new dependency when no existing service can serve the need
+3. Read all relevant source files for the phase scope
+4. Ask all clarifying questions upfront — wait for answers
+5. If no questions are needed, confirm that, then write the 2-section
    master prompt
-5. Stop — do not implement the phase yourself
+6. Stop — do not implement the phase yourself
 
 ### After Codex Finishes Implementation
 1. Receive validation results pasted back by the user
@@ -213,6 +220,44 @@ Codex writes or modifies files:
 For post-validation documentation Codex prompts:
 - Single plain txt code block only
 - No Section 2
+
+## Scoping Discipline
+
+These principles govern Claude Code's planning and recommendation quality. They balance speed with correctness — apply proportionally. Architectural decisions need full rigor; trivial tasks need minimal ceremony.
+
+### Think Before Scoping
+
+Before writing a Codex prompt or recommending a phase direction:
+- State assumptions explicitly. If uncertain about the approach, surface it before committing to a direction.
+- If multiple valid approaches exist, present them with tradeoffs — don't pick silently and reverse later.
+- If a simpler or cheaper approach exists, say so immediately and push back if complexity isn't justified.
+- If the problem is unclear, name what's confusing and ask once. Don't paper over ambiguity with a prompt.
+
+### Simplicity First
+
+Minimum scope that solves the stated problem. Nothing speculative.
+- No new infrastructure when an existing running service covers the need.
+- No new phases for problems a single rule change or doc edit can solve.
+- No future-proofing scope that wasn't requested.
+
+If the phase reduces to a doc edit, reduce it.
+
+### Focused Scope
+
+Touch only what the phase requires.
+- Don't expand scope to adjacent improvements unless asked.
+- If an unrelated issue surfaces, flag it as a separate task — don't absorb it into the current phase.
+- Every file in a Codex prompt should trace directly to the stated goal.
+
+### Goal-Driven Prompts
+
+Define verifiable success before writing a Codex prompt.
+For each phase, state:
+- What problem it solves
+- What success looks like (Section 2 validation confirms this)
+- What is explicitly out of scope
+
+Vague goals ("improve token usage") require constant clarification. Specific goals ("replace PHASE_LOG.md reads at session start with ChromaDB chunk queries") let Section 2 confirm success without ambiguity.
 
 ## Version Protocol (summary)
 

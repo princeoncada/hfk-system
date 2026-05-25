@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.2.3-alpha
+**Current Version:** 5.2.3-stable
 
 ## Current Phase
 
-Patch 5.2.3 [5.2.3-alpha] — Graphify Server/Tool Mode
+Patch 5.2.3 [5.2.3-stable] — Graphify Server/Tool Mode
 
 Status: alpha
 
@@ -21,7 +21,7 @@ Next recommended work after validation and promotion: Phase 5.3.0 — ChromaDB D
 
 ## Completed Phase
 
-Patch 5.2.3 [5.2.3-alpha] — Graphify Server/Tool Mode: documented that the installed Graphify CLI has agent install/tool integration commands but no serve/MCP daemon command, and clarified static artifact fallback rules — in progress.
+Patch 5.2.3 [5.2.3-stable] — Graphify Server/Tool Mode: documented that the installed Graphify CLI has agent install/tool integration commands but no serve/MCP daemon command, and clarified static artifact fallback rules — in progress.
 
 Patch 5.2.2 [5.2.2-stable] — Graphify Workflow Clarification: rewrote CODEBASE_GRAPH.md as the authoritative workflow reference for Graphify artifacts, freshness checks, static CLI commands, prompt examples, and direct source-read rules — complete.
 
@@ -998,6 +998,7 @@ dev.
   only database dependency permitted, and it is local-only.
 - Do not embed actual image or template files into ChromaDB. Only metadata
   records for non-text assets are indexed.
+
 
 
 

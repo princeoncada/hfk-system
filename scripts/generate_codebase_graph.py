@@ -36,7 +36,7 @@ SCANNED_EXTENSIONS = {".ts", ".tsx", ".js", ".jsx", ".mjs", ".ps1", ".py", ".md"
 def read_version() -> str:
     state_path = ROOT / "STATE.json"
     try:
-        return json.loads(state_path.read_text(encoding="utf-8")).get("version", "unknown")
+        return json.loads(state_path.read_text(encoding="utf-8-sig")).get("version", "unknown")
     except Exception:
         return "unknown"
 

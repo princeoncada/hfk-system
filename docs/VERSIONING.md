@@ -43,16 +43,17 @@ Every version change must be applied to all five simultaneously:
 
 | Field | Value |
 | --- | --- |
-| Version | 5.3.0-stable |
-| Phase | Phase 5.3.0 |
-| State | stable |
+| Version | 5.4.0-alpha |
+| Phase | Phase 5.4.0 |
+| State | alpha |
 | Date | 2026-05-25 |
-| Summary | ChromaDB Docs Extension. Adds hfk_docs collection to existing ChromaDB instance. ingest_docs.py + query_docs.py scripts. validate.ps1 auto-ingests docs on each run. Session start protocol updated to query before reading full docs. |
+| Summary | Portfolio Case Studies. Two case study documents under docs/case-studies/: Case Study A (Docs-Led AI Workflow) and Case Study B (Token Optimization Journey). Portfolio material and onboarding reference. |
 
 ## Complete Version History
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 5.4.0-alpha | Phase 5.4.0 | alpha | 2026-05-25 | Portfolio Case Studies. Two case study documents under docs/case-studies/: Case Study A (Docs-Led AI Workflow) and Case Study B (Token Optimization Journey). Portfolio material and onboarding reference. |
 | 5.3.0-stable | Phase 5.3.0 | stable | 2026-05-25 | ChromaDB Docs Extension. Adds hfk_docs collection to existing ChromaDB instance. ingest_docs.py + query_docs.py scripts. validate.ps1 auto-ingests docs on each run. Session start protocol updated to query before reading full docs. |
 | 5.2.8-stable | Patch 5.2.8 | stable | 2026-05-25 | Docs hardening patch. Added Infrastructure Check rule to New Phase workflow and Scoping Discipline section to CLAUDE.md. Added Behavioral Guidelines section to AGENTS.md. |
 | 5.2.7-stable | Patch 5.2.7 | stable | 2026-05-25 | read_version() Encoding Fix: reads STATE.json with `utf-8-sig` so PowerShell's UTF-8 BOM does not cause graph metadata version fallback to `unknown`. |
@@ -269,9 +270,9 @@ Date: 2026-05-23
 
 ## Next Phase
 
-Current stable version: 5.2.8-stable
-Current working version: 5.3.0-stable
-Next recommended phase: Phase 5.4.0 — Portfolio Case Studies
+Current stable version: 5.3.0-stable
+Current working version: 5.4.0-alpha
+Next recommended phase: Phase 5.5.0 — Advanced Memory Layer
 
 
 

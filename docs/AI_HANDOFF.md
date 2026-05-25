@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.2.8-alpha
+**Current Version:** 5.2.8-stable
 
 ## Current Phase
 
-Patch 5.2.8 [5.2.8-alpha] — Docs Hardening — Scoping Discipline
+Patch 5.2.8 [5.2.8-stable] — Docs Hardening — Scoping Discipline
 
 Status: alpha
 
@@ -19,7 +19,7 @@ Next recommended work after validation and promotion: Phase 5.4.0 — Portfolio 
 
 ## Completed Phase
 
-Patch 5.2.8 [5.2.8-alpha] — Docs hardening patch. Added Infrastructure Check rule to New Phase workflow and Scoping Discipline section to CLAUDE.md. Added Behavioral Guidelines section to AGENTS.md.
+Patch 5.2.8 [5.2.8-stable] — Docs hardening patch. Added Infrastructure Check rule to New Phase workflow and Scoping Discipline section to CLAUDE.md. Added Behavioral Guidelines section to AGENTS.md.
 
 Patch 5.2.7 [5.2.7-stable] — read_version() Encoding Fix: reads STATE.json with `utf-8-sig` so PowerShell's UTF-8 BOM does not cause graph metadata version fallback to `unknown` — complete.
 
@@ -1006,6 +1006,7 @@ dev.
   only database dependency permitted, and it is local-only.
 - Do not embed actual image or template files into ChromaDB. Only metadata
   records for non-text assets are indexed.
+
 
 
 

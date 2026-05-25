@@ -1,6 +1,6 @@
 {
   "schemaVersion": "hfk-codebase-graph/v1",
-  "version": "5.4.0-alpha",
+  "version": "5.5.0-alpha",
   "generatedAt": "2026-05-25",
   "generator": "graphify CLI via graphifyy",
   "graphify": {

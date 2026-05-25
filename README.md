@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.2.4-stable |
+| Current | 5.2.5-alpha |
 | Status | alpha |
-| Current phase | Patch 5.2.4 — Graphify Install Integration + CLI Syntax Fix: Graphify Claude/Codex install artifacts are tailored to HFK workflow, Codex hook path is portable, and query/path/explain CLI syntax is corrected. |
+| Current phase | Patch 5.2.5 — Graphify CLI Syntax Re-correction + Query Behavior Docs: required `.` arguments are restored for graphify query/path/explain guidance, with keyword/BFS query behavior and exact node-name path lookup documented. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

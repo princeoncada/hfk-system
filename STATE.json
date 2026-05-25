@@ -1,10 +1,10 @@
 ﻿{
-    "version":  "5.4.0-alpha",
-    "state":  "alpha",
+    "version":  "5.4.0-stable",
+    "state":  "stable",
     "phase":  {
                   "current":  "5.4.0",
                   "name":  "Portfolio Case Studies",
-                  "status":  "alpha"
+                  "status":  "stable"
               },
     "next":  {
                  "phase":  "5.5.0",

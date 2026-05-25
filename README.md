@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.2.3-stable |
+| Current | 5.2.4-alpha |
 | Status | alpha |
-| Current phase | Patch 5.2.3 — Graphify Server/Tool Mode: CODEBASE_GRAPH.md documents the installed Graphify CLI's agent integration commands, absence of a serve/MCP daemon command, and static artifact fallback rules. |
+| Current phase | Patch 5.2.4 — Graphify Install Integration + CLI Syntax Fix: Graphify Claude/Codex install artifacts are tailored to HFK workflow, Codex hook path is portable, and query/path/explain CLI syntax is corrected. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

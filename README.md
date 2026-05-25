@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.5.0-stable |
+| Current | 6.0.0-alpha |
 | Status | alpha |
-| Current phase | Phase 5.5.0 — Workflow Hardening: Query Discipline: one ChromaDB query per topic and explicit user direction confirmation before phase scoping. |
+| Current phase | Phase 6.0.0 — Template Lab: Short O Worksheet Prototype: scaffold-only Template Lab route, asset folders, placeholder SVGs, WorksheetCanvas stub, and prototype handoff zone. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 5.3.0-alpha | Phase 5.3.0 | alpha | 2026-05-25 | ChromaDB Docs Extension. Adds hfk_docs collection to existing ChromaDB instance. ingest_docs.py + query_docs.py scripts. validate.ps1 auto-ingests docs on each run. Session start protocol updated to query before reading full docs. |
+| 5.3.0-stable | Phase 5.3.0 | stable | 2026-05-25 | ChromaDB Docs Extension. Adds hfk_docs collection to existing ChromaDB instance. ingest_docs.py + query_docs.py scripts. validate.ps1 auto-ingests docs on each run. Session start protocol updated to query before reading full docs. |
 | 5.2.8-stable | Patch 5.2.8 | stable | 2026-05-25 | Docs hardening patch. Added Infrastructure Check rule to New Phase workflow and Scoping Discipline section to CLAUDE.md. Added Behavioral Guidelines section to AGENTS.md. |
 | 5.2.7-stable | Patch 5.2.7 | stable | 2026-05-25 | read_version() Encoding Fix: reads STATE.json with `utf-8-sig` so PowerShell's UTF-8 BOM does not cause graph metadata version fallback to `unknown`. |
 | 5.2.6-stable | Patch 5.2.6 | stable | 2026-05-25 | Graph Refresh Automation + generate_codebase_graph.py Fix: stops the normalizer from re-running Graphify, reads existing Graphify output, uses STATE.json for graph version metadata, and adds graph refresh to validate.ps1. |
@@ -47,7 +47,7 @@ Date: 2026-05-24
 
 Status: alpha
 
-Version: 5.3.0-alpha
+Version: 5.3.0-stable
 
 Date: 2026-05-25
 
@@ -71,7 +71,7 @@ Changes:
 - Added query_docs.py for top-5 documentation chunk retrieval.
 - Added ChromaDB readiness and hfk_docs ingest steps to validate.ps1.
 - Updated Claude Code session-start guidance to query hfk_docs before opening full large docs.
-- Bumped all five versioning locations to 5.3.0-alpha.
+- Bumped all five versioning locations to 5.3.0-stable.
 
 ## Patch 5.2.8 — Docs Hardening — Scoping Discipline
 
@@ -2030,6 +2030,8 @@ New files:
 - TypeScript type-check: PASS
 - npm install: PASS
 - Promoted to stable: 2026-05-21
+
+
 
 
 

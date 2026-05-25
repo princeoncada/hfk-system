@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 5.2.8-alpha | Patch 5.2.8 | alpha | 2026-05-25 | Docs hardening patch. Added Infrastructure Check rule to New Phase workflow and Scoping Discipline section to CLAUDE.md. Added Behavioral Guidelines section to AGENTS.md. |
 | 5.2.7-stable | Patch 5.2.7 | stable | 2026-05-25 | read_version() Encoding Fix: reads STATE.json with `utf-8-sig` so PowerShell's UTF-8 BOM does not cause graph metadata version fallback to `unknown`. |
 | 5.2.6-stable | Patch 5.2.6 | stable | 2026-05-25 | Graph Refresh Automation + generate_codebase_graph.py Fix: stops the normalizer from re-running Graphify, reads existing Graphify output, uses STATE.json for graph version metadata, and adds graph refresh to validate.ps1. |
 | 5.2.5-stable | Patch 5.2.5 | stable | 2026-05-25 | Graphify CLI Syntax Re-correction + Query Behavior Docs: restores required `.` arguments to graphify query/path/explain guidance and documents keyword/BFS query behavior plus exact node-name path lookup requirements. |
@@ -40,6 +41,33 @@ Date: 2026-05-24
 - Files validated: template.types.ts, template.store.ts, DynamicWorksheetTemplate.tsx, dynamic/index.ts, vault/templates/modern_v1.json, preview/[id]/page.tsx, worksheets/[id]/page.tsx, worksheets/new/page.tsx, WorksheetBuilder.tsx, review/page.tsx, ReviewFlow.tsx
 
 # Phase Log
+
+## Patch 5.2.8 — Docs Hardening — Scoping Discipline
+
+Status: alpha
+
+Version: 5.2.8-alpha
+
+Date: 2026-05-25
+
+Scope: Documentation-only hardening for phase scoping and implementation behavior.
+
+Files:
+- CLAUDE.md
+- AGENTS.md
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- docs/FUTURE_PLANS.md
+- README.md
+- STATE.json
+
+Changes:
+- Added Infrastructure Check rule to the New Phase workflow in CLAUDE.md.
+- Added Scoping Discipline section to CLAUDE.md.
+- Added Behavioral Guidelines section to AGENTS.md.
+- Updated docs/FUTURE_PLANS.md so 5.2.2 through 5.2.7 are completed and the old 5.3.0 ChromaDB Docs Extension is marked superseded.
+- Bumped all five versioning locations to 5.2.8-alpha.
 
 ## Patch 5.2.7 — read_version() Encoding Fix
 

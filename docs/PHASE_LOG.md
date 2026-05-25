@@ -2,6 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
+| 5.3.0-alpha | Phase 5.3.0 | alpha | 2026-05-25 | ChromaDB Docs Extension. Adds hfk_docs collection to existing ChromaDB instance. ingest_docs.py + query_docs.py scripts. validate.ps1 auto-ingests docs on each run. Session start protocol updated to query before reading full docs. |
 | 5.2.8-stable | Patch 5.2.8 | stable | 2026-05-25 | Docs hardening patch. Added Infrastructure Check rule to New Phase workflow and Scoping Discipline section to CLAUDE.md. Added Behavioral Guidelines section to AGENTS.md. |
 | 5.2.7-stable | Patch 5.2.7 | stable | 2026-05-25 | read_version() Encoding Fix: reads STATE.json with `utf-8-sig` so PowerShell's UTF-8 BOM does not cause graph metadata version fallback to `unknown`. |
 | 5.2.6-stable | Patch 5.2.6 | stable | 2026-05-25 | Graph Refresh Automation + generate_codebase_graph.py Fix: stops the normalizer from re-running Graphify, reads existing Graphify output, uses STATE.json for graph version metadata, and adds graph refresh to validate.ps1. |
@@ -42,9 +43,39 @@ Date: 2026-05-24
 
 # Phase Log
 
-## Patch 5.2.8 — Docs Hardening — Scoping Discipline
+## Phase 5.3.0 — ChromaDB Docs Extension
 
 Status: alpha
+
+Version: 5.3.0-alpha
+
+Date: 2026-05-25
+
+Scope: Extend existing ChromaDB on port 8000 with chunked documentation retrieval.
+
+Files:
+- scripts/ingest_docs.py
+- scripts/query_docs.py
+- scripts/validate.ps1
+- CLAUDE.md
+- docs/WORKFLOW.md
+- docs/FUTURE_PLANS.md
+- docs/VERSIONING.md
+- docs/AI_HANDOFF.md
+- docs/PHASE_LOG.md
+- README.md
+- STATE.json
+
+Changes:
+- Added hfk_docs collection ingestion for AI_HANDOFF.md, PHASE_LOG.md, FUTURE_PLANS.md, DECISIONS.md, BRAND_GUIDE.md, and CONTENT_PHILOSOPHY.md.
+- Added query_docs.py for top-5 documentation chunk retrieval.
+- Added ChromaDB readiness and hfk_docs ingest steps to validate.ps1.
+- Updated Claude Code session-start guidance to query hfk_docs before opening full large docs.
+- Bumped all five versioning locations to 5.3.0-alpha.
+
+## Patch 5.2.8 — Docs Hardening — Scoping Discipline
+
+Status: stable
 
 Version: 5.2.8-stable
 

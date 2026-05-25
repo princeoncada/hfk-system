@@ -46,6 +46,19 @@ Use the degraded fallback explicitly only when Graphify is unavailable:
 .\scripts\generate-codebase-graph.ps1 -FallbackOnly
 ```
 
+## Installation
+
+Two one-time setup commands install Graphify guidance and hooks into Claude Code and Codex for this project.
+
+- `graphify claude install`
+  Appends a `## graphify` section to `CLAUDE.md` with usage rules. Registers a PreToolUse hook in `.claude/settings.json` that fires when Claude Code tries to grep or find files and suggests using graphify queries instead. The hook is advisory only and non-blocking.
+- `graphify codex install`
+  Creates `AGENTS.md` with graphify usage rules for Codex sessions. Registers a PreToolUse hook in `.codex/hooks.json`.
+
+Graphify must be accessible via `PATH`. It is installed as part of the `graphifyy` PyPI package. Run `(Get-Command graphify).Source` to confirm the executable is found before running the install commands.
+
+These commands are already run for this project. The artifacts (`.claude/settings.json`, `AGENTS.md`, `.codex/hooks.json`) are committed to the repo. Do not run these install commands again unless reinstalling from scratch.
+
 ## Graphify CLI Reference
 
 ## Server/Tool Mode
@@ -76,9 +89,9 @@ These are the static CLI commands available in the installed Graphify CLI from t
 | Command | Use |
 | --- | --- |
 | `graphify update .` | Re-analyze the project and refresh the graph. No API cost; fast. |
-| `graphify query . "<natural language question>"` | Ask a question about the codebase structure. |
-| `graphify path . <fileA> <fileB>` | Show the dependency/import path between two files. |
-| `graphify explain . <symbol>` | Explain what a symbol does and where it is used. |
+| `graphify query "<question>"` | Ask a question about the codebase structure. |
+| `graphify path "<fileA>" "<fileB>"` | Show the dependency/import path between two files. |
+| `graphify explain "<concept>"` | Explain what a concept or symbol does and where it is used. |
 
 ## Prompt Examples
 

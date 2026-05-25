@@ -2,7 +2,7 @@
 
 | Version | Phase | State | Date | Summary |
 | --- | --- | --- | --- | --- |
-| 5.2.7-alpha | Patch 5.2.7 | alpha | 2026-05-25 | read_version() Encoding Fix: reads STATE.json with `utf-8-sig` so PowerShell's UTF-8 BOM does not cause graph metadata version fallback to `unknown`. |
+| 5.2.7-stable | Patch 5.2.7 | stable | 2026-05-25 | read_version() Encoding Fix: reads STATE.json with `utf-8-sig` so PowerShell's UTF-8 BOM does not cause graph metadata version fallback to `unknown`. |
 | 5.2.6-stable | Patch 5.2.6 | stable | 2026-05-25 | Graph Refresh Automation + generate_codebase_graph.py Fix: stops the normalizer from re-running Graphify, reads existing Graphify output, uses STATE.json for graph version metadata, and adds graph refresh to validate.ps1. |
 | 5.2.5-stable | Patch 5.2.5 | stable | 2026-05-25 | Graphify CLI Syntax Re-correction + Query Behavior Docs: restores required `.` arguments to graphify query/path/explain guidance and documents keyword/BFS query behavior plus exact node-name path lookup requirements. |
 | 5.2.4-stable | Patch 5.2.4 | stable | 2026-05-25 | Graphify Install Integration + CLI Syntax Fix: tailored Graphify Claude/Codex install artifacts to HFK workflow, fixed Codex hook command path, and corrected query/path/explain CLI syntax in CODEBASE_GRAPH.md. |
@@ -45,7 +45,7 @@ Date: 2026-05-24
 
 Status: alpha
 
-Version: 5.2.7-alpha
+Version: 5.2.7-stable
 
 Date: 2026-05-25
 
@@ -62,7 +62,7 @@ Files:
 Changes:
 - Updated read_version() to read STATE.json with `utf-8-sig`.
 - Preserved the existing silent fallback to `unknown` for unreadable state.
-- Bumped all five versioning locations to 5.2.7-alpha.
+- Bumped all five versioning locations to 5.2.7-stable.
 
 ## Patch 5.2.6 — Graph Refresh Automation + generate_codebase_graph.py Fix
 
@@ -1971,6 +1971,8 @@ New files:
 - TypeScript type-check: PASS
 - npm install: PASS
 - Promoted to stable: 2026-05-21
+
+
 
 
 

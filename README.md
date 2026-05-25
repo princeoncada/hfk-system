@@ -8,7 +8,7 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.2.7-alpha |
+| Current | 5.2.7-stable |
 | Status | alpha |
 | Current phase | Patch 5.2.7 — read_version() Encoding Fix: STATE.json is read with `utf-8-sig` so BOM-prefixed files no longer produce `unknown` graph metadata versions. |
 
@@ -62,6 +62,7 @@ Open http://localhost:3000 to see the dashboard.
 | docs/FUTURE_PLANS.md | Living backlog and planned phases |
 | docs/PHASE_LOG.md | Full version and validation history |
 | docs/CODEBASE_GRAPH.md | Codebase graph usage and refresh guide |
+
 
 
 

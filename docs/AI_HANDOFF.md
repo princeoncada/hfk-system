@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.4.0-alpha
+**Current Version:** 5.4.0-stable
 
 ## Current Phase
 
-Phase 5.4.0 [5.4.0-alpha] — Portfolio Case Studies
+Phase 5.4.0 [5.4.0-stable] — Portfolio Case Studies
 
 Status: alpha
 
@@ -20,7 +20,7 @@ Next recommended work after validation and promotion: Phase 5.5.0 — Advanced M
 
 ## Completed Phase
 
-Phase 5.4.0 [5.4.0-alpha] — Portfolio Case Studies. Two case study documents under docs/case-studies/: Case Study A (Docs-Led AI Workflow) and Case Study B (Token Optimization Journey). Portfolio material and onboarding reference.
+Phase 5.4.0 [5.4.0-stable] — Portfolio Case Studies. Two case study documents under docs/case-studies/: Case Study A (Docs-Led AI Workflow) and Case Study B (Token Optimization Journey). Portfolio material and onboarding reference.
 
 Phase 5.3.0 [5.3.0-stable] — ChromaDB Docs Extension. Adds hfk_docs collection to existing ChromaDB instance. ingest_docs.py + query_docs.py scripts. validate.ps1 auto-ingests docs on each run. Session start protocol updated to query before reading full docs.
 
@@ -1009,6 +1009,7 @@ dev.
   only database dependency permitted, and it is local-only.
 - Do not embed actual image or template files into ChromaDB. Only metadata
   records for non-text assets are indexed.
+
 
 
 

@@ -89,9 +89,27 @@ These are the static CLI commands available in the installed Graphify CLI from t
 | Command | Use |
 | --- | --- |
 | `graphify update .` | Re-analyze the project and refresh the graph. No API cost; fast. |
-| `graphify query "<question>"` | Ask a question about the codebase structure. |
-| `graphify path "<fileA>" "<fileB>"` | Show the dependency/import path between two files. |
-| `graphify explain "<concept>"` | Explain what a concept or symbol does and where it is used. |
+| `graphify query . "<keyword>"` | BFS traversal from keyword-matched nodes. Matches literal node names, not semantic meaning. Useful for symbol-level lookups; misleading for semantic questions. |
+| `graphify path . "<nodeA>" "<nodeB>"` | Show the path between two graph nodes. Requires exact node names from the graph — not file paths. Check GRAPH_REPORT.md for node names first. |
+| `graphify explain . "<nodeName>"` | Return details and connections for the closest matching node. Uses fuzzy name matching against node IDs. |
+
+## Query Behavior
+
+graphify CLI queries are keyword-based and BFS-traversal-driven, not
+semantic. The query engine matches the query string against node names
+literally, starts a breadth-first traversal from matched nodes, and
+returns a subgraph of related nodes and edges. This means:
+
+- `graphify query . "worksheet"` finds nodes named or containing
+  "worksheet" and their neighbors — useful.
+- `graphify query . "what handles content loading"` matches nodes
+  containing "content" or "loading" as substrings — returns unrelated
+  JSON field nodes, not the content loader source file.
+
+For semantic questions, read graphify-out/GRAPH_REPORT.md (god nodes,
+communities) or codebase-graph.json (compact file/symbol map) instead
+of running a query. Use live CLI queries for symbol-level lookups where
+the search term matches an actual node name in the graph.
 
 ## Prompt Examples
 

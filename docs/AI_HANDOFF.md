@@ -1,10 +1,10 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.2.5-alpha
+**Current Version:** 5.2.5-stable
 
 ## Current Phase
 
-Patch 5.2.5 [5.2.5-alpha] — Graphify CLI Syntax Re-correction + Query Behavior Docs
+Patch 5.2.5 [5.2.5-stable] — Graphify CLI Syntax Re-correction + Query Behavior Docs
 
 Status: alpha
 
@@ -21,7 +21,7 @@ Next recommended work after validation and promotion: Phase 5.3.0 — ChromaDB D
 
 ## Completed Phase
 
-Patch 5.2.5 [5.2.5-alpha] — Graphify CLI Syntax Re-correction + Query Behavior Docs: restores required `.` arguments to graphify query/path/explain guidance and documents keyword/BFS query behavior plus exact node-name path lookup requirements — in progress.
+Patch 5.2.5 [5.2.5-stable] — Graphify CLI Syntax Re-correction + Query Behavior Docs: restores required `.` arguments to graphify query/path/explain guidance and documents keyword/BFS query behavior plus exact node-name path lookup requirements — in progress.
 
 Patch 5.2.4 [5.2.4-stable] — Graphify Install Integration + CLI Syntax Fix: tailored Graphify Claude/Codex install artifacts to HFK workflow, fixed Codex hook command path, and corrected query/path/explain CLI syntax in CODEBASE_GRAPH.md — complete.
 
@@ -1002,6 +1002,7 @@ dev.
   only database dependency permitted, and it is local-only.
 - Do not embed actual image or template files into ChromaDB. Only metadata
   records for non-text assets are indexed.
+
 
 
 

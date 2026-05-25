@@ -1,10 +1,10 @@
 ﻿{
-    "version":  "5.2.3-stable",
-    "state":  "stable",
+    "version":  "5.2.4-alpha",
+    "state":  "alpha",
     "phase":  {
-                  "current":  "5.2.3",
-                  "name":  "Graphify Server/Tool Mode",
-                  "status":  "stable"
+                  "current":  "5.2.4",
+                  "name":  "Graphify Install Integration + CLI Syntax Fix",
+                  "status":  "alpha"
               },
     "next":  {
                  "phase":  "5.3.0",

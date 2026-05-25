@@ -1,23 +1,26 @@
 ﻿# AI Handoff
 
-**Current Version:** 5.2.8-stable
+**Current Version:** 5.3.0-alpha
 
 ## Current Phase
 
-Patch 5.2.8 [5.2.8-stable] — Docs Hardening — Scoping Discipline
+Phase 5.3.0 [5.3.0-alpha] — ChromaDB Docs Extension
 
 Status: alpha
 
 The 4.x template builder series (4.0.0 through 4.5.0) is fully complete.
 The 5.x workflow infrastructure series is now active.
 
-Current scope in progress: docs hardening patch. Add an Infrastructure Check
-rule to the New Phase workflow, add Scoping Discipline to CLAUDE.md, and add
-Behavioral Guidelines to AGENTS.md.
+Current scope in progress: extend the existing ChromaDB instance with an
+hfk_docs collection for chunked documentation retrieval. Add Python ingest
+and query scripts, auto-ingest docs during validate.ps1, and update session
+start guidance to query before reading full docs.
 
 Next recommended work after validation and promotion: Phase 5.4.0 — Portfolio Case Studies.
 
 ## Completed Phase
+
+Phase 5.3.0 [5.3.0-alpha] — ChromaDB Docs Extension. Adds hfk_docs collection to existing ChromaDB instance. ingest_docs.py + query_docs.py scripts. validate.ps1 auto-ingests docs on each run. Session start protocol updated to query before reading full docs.
 
 Patch 5.2.8 [5.2.8-stable] — Docs hardening patch. Added Infrastructure Check rule to New Phase workflow and Scoping Discipline section to CLAUDE.md. Added Behavioral Guidelines section to AGENTS.md.
 
@@ -978,14 +981,13 @@ Modified files:
 
 ## Future Phase Queue
 
-- ~~Phase 5.3.0 — ChromaDB Docs Extension~~ (superseded — use existing ChromaDB infrastructure)
 - Phase 5.4.0 — Portfolio Case Studies
 - Phase 5.5.0 — Advanced Memory Layer
 - hfk-token-dashboard has been scoped as a separate standalone project, not part of the HFK phase queue.
 
 ## Recommended Next Step
 
-Validate and promote Patch 5.2.8 — Docs Hardening — Scoping Discipline. Next planned follow-up is Phase 5.4.0 — Portfolio Case Studies.
+Validate and promote Phase 5.3.0 — ChromaDB Docs Extension. Next planned follow-up is Phase 5.4.0 — Portfolio Case Studies.
 
 ## What Exists
 

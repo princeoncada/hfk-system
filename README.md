@@ -8,9 +8,9 @@ Grades 1–6 learners.
 
 | Field | Value |
 | --- | --- |
-| Current | 5.2.1-stable |
-| Status | stable |
-| Current phase | Patch 5.2.1 — Real Graphify Output: graphifyy installed, graphify-out/graph.json and GRAPH_REPORT.md generated, codebase-graph.json normalized from Graphify output. |
+| Current | 5.2.2-alpha |
+| Status | alpha |
+| Current phase | Patch 5.2.2 — Graphify Workflow Clarification: CODEBASE_GRAPH.md is the authoritative guide for Graphify artifacts, freshness checks, static CLI commands, prompt examples, and direct source-read rules. |
 
 Full planned roadmap complete as of 3.3.0-stable.
 

@@ -46,6 +46,15 @@ Use the degraded fallback explicitly only when Graphify is unavailable:
 .\scripts\generate-codebase-graph.ps1 -FallbackOnly
 ```
 
+Note: Always run `graphify update .` BEFORE running
+`.\scripts\generate-codebase-graph.ps1`. The script reads Graphify's
+output — it does not re-run Graphify. Running the script without
+updating first will normalize stale data.
+
+In normal workflow this is handled automatically by validate.ps1.
+Only run these commands manually when refreshing outside of a
+validation cycle.
+
 ## Installation
 
 Two one-time setup commands install Graphify guidance and hooks into Claude Code and Codex for this project.
